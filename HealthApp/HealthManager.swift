@@ -115,9 +115,8 @@ class HealthManager {
             statsCollection.enumerateStatisticsFromDate(startDates, toDate: endDates) {
                 [unowned self] statistics, stop in
                 //                if let quantity = statistics.sumQuantity() {
-                let dateFormatter = NSDateFormatter()
-                dateFormatter.dateFormat = "yyyy-MM-dd"
-                let str = dateFormatter.stringFromDate(statistics.startDate)
+                
+                let str = ModelInterface.sharedInstance.convertDate(statistics.startDate)
                 
                 //                    if !dates.contains(str) {
                 //                        dates.append(str)
@@ -157,9 +156,7 @@ class HealthManager {
                 statsCollection.enumerateStatisticsFromDate(startDate, toDate: endDate) {
                     [unowned self] statistics, stop in
                     if let quantity = statistics.sumQuantity() {
-                        let dateFormatter = NSDateFormatter()
-                        dateFormatter.dateFormat = "yyyy-MM-dd"
-                        let str = dateFormatter.stringFromDate(statistics.startDate)
+                        let str = ModelInterface.sharedInstance.convertDate(statistics.startDate)
                         
                         let dateAndStat:(String, HKQuantity) = (str, quantity)
                         completion(dateAndStat, nil)
@@ -187,9 +184,7 @@ class HealthManager {
                 statsCollection.enumerateStatisticsFromDate(startDate, toDate: endDate) {
                     [unowned self] statistics, stop in
                     if let quantity = statistics.sumQuantity() {
-                        let dateFormatter = NSDateFormatter()
-                        dateFormatter.dateFormat = "yyyy-MM-dd"
-                        let str = dateFormatter.stringFromDate(statistics.startDate)
+                        let str = ModelInterface.sharedInstance.convertDate(statistics.startDate)
                         
                         let dateAndStat:(String, HKQuantity) = (str, quantity)
                         completion(dateAndStat, nil)

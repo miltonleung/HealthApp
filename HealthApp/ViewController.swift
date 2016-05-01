@@ -90,9 +90,7 @@ class ViewController: UIViewController {
                 print("\(dates): \(quantity)")
             }
             
-            let dateFormatter = NSDateFormatter()
-            dateFormatter.dateFormat = "yyyy-MM-dd"
-            let str = dateFormatter.stringFromDate(NSDate())
+            let str = ModelInterface.sharedInstance.convertDate(NSDate())
             
             dispatch_async(dispatch_get_main_queue(), { () -> Void in
                 if let currentSteps = mostRecentSteps[str] {
@@ -114,9 +112,7 @@ class ViewController: UIViewController {
                 return;
             }
             
-            let dateFormatter = NSDateFormatter()
-            dateFormatter.dateFormat = "yyyy-MM-dd"
-            let str = dateFormatter.stringFromDate(NSDate())
+            let str = ModelInterface.sharedInstance.convertDate(NSDate())
             
             dispatch_async(dispatch_get_main_queue(), { () -> Void in
                 if let currentDoubleDistance = mostRecentDistance[str] {
