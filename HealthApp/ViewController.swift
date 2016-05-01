@@ -8,6 +8,7 @@
 
 import UIKit
 import HealthKit
+import CoreMotion
 
 class ViewController: UIViewController {
     
@@ -15,10 +16,12 @@ class ViewController: UIViewController {
     @IBOutlet weak var today: UILabel!
     @IBOutlet weak var todayDistance: UILabel!
     @IBOutlet weak var totalDistance: UILabel!
+    @IBOutlet weak var pedometerSteps: UILabel!
     var steps, distance:HKQuantitySample?
     var stepsDictionary = [String: HKQuantity]()
     var distanceDictionary = [String: HKQuantity]()
     var healthManager:HealthManager?
+    let pedometer = CMPedometer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +31,8 @@ class ViewController: UIViewController {
         
         
         authorizeHealthKit()
+        self.updatePedometer()
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -46,6 +51,7 @@ class ViewController: UIViewController {
                 self.updateTotalDistance()
                 self.updateSteps()
                 self.updateDistance()
+                
             }
             else {
                 print("HealthKit denied")
@@ -140,6 +146,32 @@ class ViewController: UIViewController {
                 print(self.totalDistance.text!)
             });
         });
+    }
+    
+    func updatePedometer() {
+        
+        if (CMPedometer.isStepCountingAvailable()) {
+            let beginningOfDay = NSCalendar.currentCalendar().dateBySettingHour(0, minute: 0, second: 0, ofDate: NSDate(), options: [])
+            self.pedometer.queryPedometerDataFromDate(beginningOfDay!, toDate: NSDate()) { (data : CMPedometerData?, error) -> Void in
+                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                    if error == nil {
+                        if let numberOfSteps = data?.numberOfSteps {
+                            self.pedometerSteps.text = "\(numberOfSteps)"
+                            print(data?.numberOfSteps)
+                        }
+                    }
+                });
+            }
+            self.pedometer.startPedometerUpdatesFromDate(beginningOfDay!) { (data : CMPedometerData?, error) -> Void in
+                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                    if let numberOfSteps = data?.numberOfSteps {
+                        self.pedometerSteps.text = "\(numberOfSteps)"
+                        print(data?.numberOfSteps)
+                    }
+                });
+            }
+        }
+        
     }
 }
 

@@ -41,6 +41,12 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JS1-E6-J2c">
+                                <rect key="frame" x="279" y="511" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -48,14 +54,17 @@
                             <constraint firstItem="4lv-rc-mgy" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="3ge-AK-wb6"/>
                             <constraint firstItem="AzU-Sq-Nig" firstAttribute="top" secondItem="JtA-BT-LK8" secondAttribute="bottom" constant="20" id="GC5-Iq-2oB"/>
                             <constraint firstItem="4lv-rc-mgy" firstAttribute="top" secondItem="JtA-BT-LK8" secondAttribute="bottom" constant="63" id="Izf-83-VYx"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="JS1-E6-J2c" secondAttribute="bottom" constant="68" id="Lps-U4-FP1"/>
                             <constraint firstItem="a45-AM-hGt" firstAttribute="top" secondItem="4lv-rc-mgy" secondAttribute="bottom" constant="20" id="OXJ-Jg-ZbZ"/>
                             <constraint firstItem="AzU-Sq-Nig" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="VH4-GX-Qe5"/>
                             <constraint firstItem="4lv-rc-mgy" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Ydu-4C-gW3"/>
                             <constraint firstItem="JtA-BT-LK8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="d8J-aP-vvF"/>
+                            <constraint firstItem="JS1-E6-J2c" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="maq-d9-llu"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="label" destination="4lv-rc-mgy" id="CVf-yh-tz5"/>
+                        <outlet property="pedometerSteps" destination="JS1-E6-J2c" id="96j-BK-k4z"/>
                         <outlet property="today" destination="JtA-BT-LK8" id="j8w-M6-rLR"/>
                         <outlet property="todayDistance" destination="AzU-Sq-Nig" id="K1N-5R-kHj"/>
                         <outlet property="totalDistance" destination="a45-AM-hGt" id="hnh-7N-lB9"/>
