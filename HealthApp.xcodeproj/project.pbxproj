@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		5212CAA71CD5BD5000041771 /* ModelInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5212CAA61CD5BD5000041771 /* ModelInterface.swift */; };
 		5212CAA91CD5BD7300041771 /* DateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5212CAA81CD5BD7300041771 /* DateModel.swift */; };
+		5253C8B61CD6976B00F2713A /* AchivementModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5253C8B51CD6976B00F2713A /* AchivementModel.swift */; };
+		5253C8B81CD697DD00F2713A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5253C8B71CD697DD00F2713A /* Constants.swift */; };
 		528B37E31CD4612B00F8338D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528B37E21CD4612B00F8338D /* AppDelegate.swift */; };
 		528B37E51CD4612B00F8338D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528B37E41CD4612B00F8338D /* ViewController.swift */; };
 		528B37E81CD4612B00F8338D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 528B37E61CD4612B00F8338D /* Main.storyboard */; };
@@ -40,6 +42,8 @@
 /* Begin PBXFileReference section */
 		5212CAA61CD5BD5000041771 /* ModelInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelInterface.swift; sourceTree = "<group>"; };
 		5212CAA81CD5BD7300041771 /* DateModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateModel.swift; sourceTree = "<group>"; };
+		5253C8B51CD6976B00F2713A /* AchivementModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AchivementModel.swift; sourceTree = "<group>"; };
+		5253C8B71CD697DD00F2713A /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		528B37DF1CD4612B00F8338D /* HealthApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HealthApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		528B37E21CD4612B00F8338D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		528B37E41CD4612B00F8338D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -84,6 +88,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5253C8B41CD6975000F2713A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5212CAA81CD5BD7300041771 /* DateModel.swift */,
+				5253C8B51CD6976B00F2713A /* AchivementModel.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		528B37D61CD4612B00F8338D = {
 			isa = PBXGroup;
 			children = (
@@ -108,7 +121,9 @@
 		528B37E11CD4612B00F8338D /* HealthApp */ = {
 			isa = PBXGroup;
 			children = (
+				5253C8B41CD6975000F2713A /* Model */,
 				528B38141CD461B500F8338D /* HealthApp.entitlements */,
+				5253C8B71CD697DD00F2713A /* Constants.swift */,
 				528B37E21CD4612B00F8338D /* AppDelegate.swift */,
 				528B38101CD4614F00F8338D /* HealthManager.swift */,
 				528B37E41CD4612B00F8338D /* ViewController.swift */,
@@ -117,7 +132,6 @@
 				528B37EB1CD4612B00F8338D /* LaunchScreen.storyboard */,
 				528B37EE1CD4612B00F8338D /* Info.plist */,
 				5212CAA61CD5BD5000041771 /* ModelInterface.swift */,
-				5212CAA81CD5BD7300041771 /* DateModel.swift */,
 			);
 			path = HealthApp;
 			sourceTree = "<group>";
@@ -283,7 +297,9 @@
 				528B37E51CD4612B00F8338D /* ViewController.swift in Sources */,
 				5212CAA71CD5BD5000041771 /* ModelInterface.swift in Sources */,
 				528B38111CD4614F00F8338D /* HealthManager.swift in Sources */,
+				5253C8B81CD697DD00F2713A /* Constants.swift in Sources */,
 				528B37E31CD4612B00F8338D /* AppDelegate.swift in Sources */,
+				5253C8B61CD6976B00F2713A /* AchivementModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
