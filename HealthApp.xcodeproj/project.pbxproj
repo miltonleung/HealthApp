@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5212CAA71CD5BD5000041771 /* ModelInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5212CAA61CD5BD5000041771 /* ModelInterface.swift */; };
+		5212CAA91CD5BD7300041771 /* DateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5212CAA81CD5BD7300041771 /* DateModel.swift */; };
 		528B37E31CD4612B00F8338D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528B37E21CD4612B00F8338D /* AppDelegate.swift */; };
 		528B37E51CD4612B00F8338D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528B37E41CD4612B00F8338D /* ViewController.swift */; };
 		528B37E81CD4612B00F8338D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 528B37E61CD4612B00F8338D /* Main.storyboard */; };
@@ -36,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5212CAA61CD5BD5000041771 /* ModelInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelInterface.swift; sourceTree = "<group>"; };
+		5212CAA81CD5BD7300041771 /* DateModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateModel.swift; sourceTree = "<group>"; };
 		528B37DF1CD4612B00F8338D /* HealthApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HealthApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		528B37E21CD4612B00F8338D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		528B37E41CD4612B00F8338D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -112,6 +116,8 @@
 				528B37E91CD4612B00F8338D /* Assets.xcassets */,
 				528B37EB1CD4612B00F8338D /* LaunchScreen.storyboard */,
 				528B37EE1CD4612B00F8338D /* Info.plist */,
+				5212CAA61CD5BD5000041771 /* ModelInterface.swift */,
+				5212CAA81CD5BD7300041771 /* DateModel.swift */,
 			);
 			path = HealthApp;
 			sourceTree = "<group>";
@@ -273,7 +279,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5212CAA91CD5BD7300041771 /* DateModel.swift in Sources */,
 				528B37E51CD4612B00F8338D /* ViewController.swift in Sources */,
+				5212CAA71CD5BD5000041771 /* ModelInterface.swift in Sources */,
 				528B38111CD4614F00F8338D /* HealthManager.swift in Sources */,
 				528B37E31CD4612B00F8338D /* AppDelegate.swift in Sources */,
 			);
@@ -502,6 +510,7 @@
 				528B38091CD4612B00F8338D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		528B380A1CD4612B00F8338D /* Build configuration list for PBXNativeTarget "HealthAppTests" */ = {
 			isa = XCConfigurationList;
@@ -510,6 +519,7 @@
 				528B380C1CD4612B00F8338D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		528B380D1CD4612B00F8338D /* Build configuration list for PBXNativeTarget "HealthAppUITests" */ = {
 			isa = XCConfigurationList;
@@ -518,6 +528,7 @@
 				528B380F1CD4612B00F8338D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -38,6 +38,28 @@ class HealthManager {
         }
     }
     
+    func readFirstDate(completion: (String, NSError!) -> Void) {
+        let startDate = NSDate.distantPast()
+        let sortDescriptor = NSSortDescriptor(key: HKSampleSortIdentifierStartDate, ascending: true)
+        let sampleType = HKSampleType.quantityTypeForIdentifier(HKQuantityTypeIdentifierStepCount)
+        
+        let query = HKSampleQuery(sampleType: sampleType!, predicate: nil, limit: 1, sortDescriptors: [sortDescriptor]) { (query, results, error) -> Void in
+            if error != nil {
+                print("Error retrieving first date")
+                return
+            }
+            if let firstDate = results!.first?.startDate {
+                let firstDateasString = ModelInterface.sharedInstance.convertDate(firstDate)
+                completion(firstDateasString, nil)
+            }
+            
+            
+        }
+        
+        self.healthKitStore.executeQuery(query)
+    }
+    
+    
     func readRecentSample(sampleType:HKQuantityType, inout recentData: [String: HKQuantity], completion: (([String: HKQuantity]!, NSError!) -> Void)!)
     {
         let endDate = NSDate()
@@ -70,13 +92,8 @@ class HealthManager {
             statsCollection.enumerateStatisticsFromDate(startDates, toDate: endDates) {
                 [unowned self] statistics, stop in
                 if let quantity = statistics.sumQuantity() {
-                    let dateFormatter = NSDateFormatter()
-                    dateFormatter.dateFormat = "yyyy-MM-dd"
-                    let str = dateFormatter.stringFromDate(statistics.startDate)
                     
-                    //                    if !dates.contains(str) {
-                    //                        dates.append(str)
-                    //                    }
+                    let str = ModelInterface.sharedInstance.convertDate(statistics.startDate)
                     recentData[str] = quantity
                 }
             }

@@ -22,6 +22,7 @@ class ViewController: UIViewController {
     var distanceDictionary = [String: HKQuantity]()
     var healthManager:HealthManager?
     let pedometer = CMPedometer()
+    var firstDate: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,6 +48,7 @@ class ViewController: UIViewController {
                 print("HealthKit authorized")
                 self.today.text = "0"
                 self.todayDistance.text = "0"
+                self.updateFirstDate()
                 self.updateTotalSteps()
                 self.updateTotalDistance()
                 self.updateSteps()
@@ -60,6 +62,18 @@ class ViewController: UIViewController {
                 }
             }
         }
+    }
+    
+    func updateFirstDate() {
+        
+        self.healthManager?.readFirstDate({ (date, error) -> Void in
+            if (error != nil) {
+                print("Error reading first date from HealthKit")
+                return
+            }
+            
+            self.firstDate = date
+        });
     }
     
     func updateSteps() {
@@ -126,7 +140,7 @@ class ViewController: UIViewController {
             
             dispatch_async(dispatch_get_main_queue(), { () -> Void in
                 let totalResult = Int(totalSteps.1.doubleValueForUnit(HKUnit.countUnit()))
-                self.label.text = "total steps: \(totalResult) since \(totalSteps.0)"
+                self.label.text = "total steps: \(totalResult) since \(self.firstDate)"
                 print(self.label.text!)
             });
         });
@@ -142,7 +156,7 @@ class ViewController: UIViewController {
             
             dispatch_async(dispatch_get_main_queue(), { () -> Void in
                 let totalResult = Int(totalDistance.1.doubleValueForUnit(HKUnit.meterUnitWithMetricPrefix(.Kilo)))
-                self.totalDistance.text = "total distance: \(totalResult) since \(totalDistance.0)"
+                self.totalDistance.text = "total distance: \(totalResult) since \(self.firstDate)"
                 print(self.totalDistance.text!)
             });
         });
