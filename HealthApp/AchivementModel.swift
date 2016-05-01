@@ -9,10 +9,26 @@
 import Foundation
 
 protocol AchievementProtocol {
+    func reachedAchievement(distance: Int) -> String
+    
     
 }
 
 extension ModelInterface: AchievementProtocol {
-    
+    func reachedAchievement(distance: Int) -> String {
+        var done:Int = 0
+        if doneAchievements.count > 0 {
+            done = doneAchievements.last!
+        }
+        var retMessage = ""
+        for (steps, message) in achievements {
+            if distance >= steps && !doneAchievements.contains(steps) {
+                doneAchievements.append(steps)
+                retMessage = message
+            }
+        }
+        return retMessage
+        
+    }
 
 }
