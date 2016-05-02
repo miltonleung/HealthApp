@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -59,18 +60,25 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pxX-RA-AWM">
-                                <rect key="frame" x="180" y="269" width="240" height="128"/>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pxX-RA-AWM">
+                                <rect key="frame" x="0.0" y="193" width="600" height="244"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="244" id="vE1-7r-mD1"/>
+                                </constraints>
                                 <connections>
                                     <segue destination="KEZ-UB-2XL" kind="embed" id="WKt-t7-A4w"/>
                                 </connections>
                             </containerView>
                         </subviews>
-                        <color key="backgroundColor" red="0.0" green="0.26446752416242614" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.97309277520399429" green="0.9479504660864978" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="a45-AM-hGt" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="1AG-AS-2Iq"/>
                             <constraint firstItem="4lv-rc-mgy" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="3ge-AK-wb6"/>
+                            <constraint firstItem="pxX-RA-AWM" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-10" id="4bh-ns-rXq"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="pxX-RA-AWM" secondAttribute="trailing" constant="-20" id="4jR-Pc-I0V"/>
                             <constraint firstItem="ZR0-ec-RYC" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="59" id="9ZG-td-QnY"/>
+                            <constraint firstItem="pxX-RA-AWM" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="9oD-sZ-Jg9"/>
+                            <constraint firstItem="LUf-YB-80H" firstAttribute="top" secondItem="pxX-RA-AWM" secondAttribute="bottom" constant="32" id="EMA-sE-gqi"/>
                             <constraint firstItem="AzU-Sq-Nig" firstAttribute="top" secondItem="JtA-BT-LK8" secondAttribute="bottom" constant="20" id="GC5-Iq-2oB"/>
                             <constraint firstItem="ZR0-ec-RYC" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="GxA-10-l45"/>
                             <constraint firstItem="4lv-rc-mgy" firstAttribute="top" secondItem="JtA-BT-LK8" secondAttribute="bottom" constant="63" id="Izf-83-VYx"/>
@@ -80,9 +88,20 @@
                             <constraint firstItem="LUf-YB-80H" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Wuq-MR-OaY"/>
                             <constraint firstItem="4lv-rc-mgy" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Ydu-4C-gW3"/>
                             <constraint firstItem="LUf-YB-80H" firstAttribute="top" secondItem="a45-AM-hGt" secondAttribute="bottom" constant="118" id="Zhn-vK-8eZ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="pxX-RA-AWM" secondAttribute="trailing" constant="-20" id="bW9-jq-Hal"/>
                             <constraint firstItem="JtA-BT-LK8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="d8J-aP-vvF"/>
+                            <constraint firstItem="pxX-RA-AWM" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="gj8-vz-NHe"/>
                             <constraint firstItem="JS1-E6-J2c" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="maq-d9-llu"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="pxX-RA-AWM" secondAttribute="trailing" constant="-10" id="su5-Tn-R6X"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="4bh-ns-rXq"/>
+                                <exclude reference="4jR-Pc-I0V"/>
+                                <exclude reference="9oD-sZ-Jg9"/>
+                                <exclude reference="su5-Tn-R6X"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="banner" destination="ZR0-ec-RYC" id="pwh-zF-q66"/>
@@ -96,7 +115,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="321" y="260"/>
+            <point key="canvasLocation" x="26" y="260"/>
         </scene>
         <!--Page View Controller-->
         <scene sceneID="jDu-EC-Uia">
@@ -111,41 +130,89 @@
             </objects>
             <point key="canvasLocation" x="870" y="260"/>
         </scene>
-        <!--View Controller-->
+        <!--Current Stats View Controller-->
         <scene sceneID="TCy-BN-7bT">
             <objects>
-                <viewController storyboardIdentifier="stepPage" id="15V-Jg-sjG" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="stepPage" id="15V-Jg-sjG" customClass="CurrentStatsViewController" customModule="HealthApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="C3n-kc-lFH"/>
                         <viewControllerLayoutGuide type="bottom" id="YMI-pV-fPx"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kFP-sb-qLP">
-                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="244"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tHC-UJ-264">
+                                <rect key="frame" x="279" y="49" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SVY-Jj-1rb">
+                                <rect key="frame" x="279" y="173" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="0.8417232090202833" green="1" blue="0.8950669295446696" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="SVY-Jj-1rb" firstAttribute="centerX" secondItem="kFP-sb-qLP" secondAttribute="centerX" id="G8I-Ir-AEy"/>
+                            <constraint firstItem="YMI-pV-fPx" firstAttribute="top" secondItem="SVY-Jj-1rb" secondAttribute="bottom" constant="50" id="QUg-67-gca"/>
+                            <constraint firstItem="tHC-UJ-264" firstAttribute="centerX" secondItem="kFP-sb-qLP" secondAttribute="centerX" id="SWY-TP-cYB"/>
+                            <constraint firstItem="tHC-UJ-264" firstAttribute="top" secondItem="C3n-kc-lFH" secondAttribute="bottom" constant="49" id="dHQ-5o-lGE"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="currentDistance" destination="SVY-Jj-1rb" id="4B8-dG-Rev"/>
+                        <outlet property="currentSteps" destination="tHC-UJ-264" id="HkX-Cs-JhH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vIU-wr-ZR1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="779" y="605"/>
+            <point key="canvasLocation" x="491" y="875"/>
         </scene>
-        <!--View Controller-->
+        <!--Cumulative Stats View Controller-->
         <scene sceneID="Jyd-H8-Alf">
             <objects>
-                <viewController storyboardIdentifier="distancePage" id="nFZ-GX-ATK" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="distancePage" id="nFZ-GX-ATK" customClass="CumulativeStatsViewController" customModule="HealthApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="L14-a4-wzU"/>
                         <viewControllerLayoutGuide type="bottom" id="XKT-rD-WNk"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="S0d-Qf-EqC">
-                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="244"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q8W-W2-wHT">
+                                <rect key="frame" x="279" y="55" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hmg-Ld-ZZI">
+                                <rect key="frame" x="279" y="179" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="0.66512963370067069" blue="0.68081878585008027" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="hmg-Ld-ZZI" firstAttribute="centerX" secondItem="S0d-Qf-EqC" secondAttribute="centerX" id="4mi-LM-zle"/>
+                            <constraint firstItem="Q8W-W2-wHT" firstAttribute="centerX" secondItem="S0d-Qf-EqC" secondAttribute="centerX" id="LWh-V6-sm2"/>
+                            <constraint firstItem="XKT-rD-WNk" firstAttribute="top" secondItem="hmg-Ld-ZZI" secondAttribute="bottom" constant="44" id="NBz-uS-WTP"/>
+                            <constraint firstItem="Q8W-W2-wHT" firstAttribute="top" secondItem="L14-a4-wzU" secondAttribute="bottom" constant="55" id="O1Y-re-65V"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="cumulativeDistance" destination="hmg-Ld-ZZI" id="7dt-OS-XRj"/>
+                        <outlet property="cumulativeSteps" destination="Q8W-W2-wHT" id="Vke-Q3-i2l"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UuY-Ta-RwW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1051" y="605"/>
+            <point key="canvasLocation" x="1161" y="875"/>
         </scene>
     </scenes>
 </document>

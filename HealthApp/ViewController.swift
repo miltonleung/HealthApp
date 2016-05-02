@@ -19,7 +19,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var pedometerSteps: UILabel!
     @IBOutlet weak var banner: UILabel!
     @IBOutlet weak var pedometerDistance: UILabel!
-    var steps, distance:HKQuantitySample?
+    
     var stepsDictionary = [String: HKQuantity]()
     var distanceDictionary = [String: HKQuantity]()
     var healthManager:HealthManager?

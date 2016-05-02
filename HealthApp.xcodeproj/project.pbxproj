@@ -13,6 +13,8 @@
 		5253C8B81CD697DD00F2713A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5253C8B71CD697DD00F2713A /* Constants.swift */; };
 		5253C8BA1CD69FD000F2713A /* TestForAchievements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5253C8B91CD69FD000F2713A /* TestForAchievements.swift */; };
 		5253C8BC1CD7054A00F2713A /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5253C8BB1CD7054A00F2713A /* PageViewController.swift */; };
+		5253C8BE1CD7394C00F2713A /* CurrentStatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5253C8BD1CD7394C00F2713A /* CurrentStatsViewController.swift */; };
+		5253C8C01CD73A2600F2713A /* CumulativeStatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5253C8BF1CD73A2600F2713A /* CumulativeStatsViewController.swift */; };
 		528B37E31CD4612B00F8338D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528B37E21CD4612B00F8338D /* AppDelegate.swift */; };
 		528B37E51CD4612B00F8338D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528B37E41CD4612B00F8338D /* ViewController.swift */; };
 		528B37E81CD4612B00F8338D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 528B37E61CD4612B00F8338D /* Main.storyboard */; };
@@ -48,6 +50,8 @@
 		5253C8B71CD697DD00F2713A /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		5253C8B91CD69FD000F2713A /* TestForAchievements.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TestForAchievements.swift; path = ../HealthApp/TestForAchievements.swift; sourceTree = "<group>"; };
 		5253C8BB1CD7054A00F2713A /* PageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
+		5253C8BD1CD7394C00F2713A /* CurrentStatsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentStatsViewController.swift; sourceTree = "<group>"; };
+		5253C8BF1CD73A2600F2713A /* CumulativeStatsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CumulativeStatsViewController.swift; sourceTree = "<group>"; };
 		528B37DF1CD4612B00F8338D /* HealthApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HealthApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		528B37E21CD4612B00F8338D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		528B37E41CD4612B00F8338D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -133,6 +137,8 @@
 				528B38101CD4614F00F8338D /* HealthManager.swift */,
 				528B37E41CD4612B00F8338D /* ViewController.swift */,
 				528B37E61CD4612B00F8338D /* Main.storyboard */,
+				5253C8BF1CD73A2600F2713A /* CumulativeStatsViewController.swift */,
+				5253C8BD1CD7394C00F2713A /* CurrentStatsViewController.swift */,
 				5253C8BB1CD7054A00F2713A /* PageViewController.swift */,
 				528B37E91CD4612B00F8338D /* Assets.xcassets */,
 				528B37EB1CD4612B00F8338D /* LaunchScreen.storyboard */,
@@ -300,12 +306,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				5212CAA91CD5BD7300041771 /* DateModel.swift in Sources */,
+				5253C8C01CD73A2600F2713A /* CumulativeStatsViewController.swift in Sources */,
 				528B37E51CD4612B00F8338D /* ViewController.swift in Sources */,
 				5212CAA71CD5BD5000041771 /* ModelInterface.swift in Sources */,
 				528B38111CD4614F00F8338D /* HealthManager.swift in Sources */,
 				5253C8B81CD697DD00F2713A /* Constants.swift in Sources */,
 				528B37E31CD4612B00F8338D /* AppDelegate.swift in Sources */,
 				5253C8B61CD6976B00F2713A /* AchievementModel.swift in Sources */,
+				5253C8BE1CD7394C00F2713A /* CurrentStatsViewController.swift in Sources */,
 				5253C8BC1CD7054A00F2713A /* PageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
