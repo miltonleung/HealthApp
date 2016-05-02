@@ -74,12 +74,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HealthApp/ViewController.swift"
-            timestampString = "483856123.355469"
+            timestampString = "483859294.903003"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "58"
-            endingLineNumber = "58"
-            landmarkName = "authorizeHealthKit()"
+            startingLineNumber = "116"
+            endingLineNumber = "116"
+            landmarkName = "updateDistance()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -90,12 +90,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HealthApp/ViewController.swift"
-            timestampString = "483856123.355469"
+            timestampString = "483859294.903003"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "71"
-            endingLineNumber = "71"
-            landmarkName = "updateFirstDate()"
+            startingLineNumber = "129"
+            endingLineNumber = "129"
+            landmarkName = "updateTotalSteps()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

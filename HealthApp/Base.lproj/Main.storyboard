@@ -60,13 +60,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pxX-RA-AWM">
-                                <rect key="frame" x="180" y="277" width="240" height="128"/>
+                                <rect key="frame" x="180" y="269" width="240" height="128"/>
                                 <connections>
                                     <segue destination="KEZ-UB-2XL" kind="embed" id="WKt-t7-A4w"/>
                                 </connections>
                             </containerView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.0" green="0.26446752416242614" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="a45-AM-hGt" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="1AG-AS-2Iq"/>
                             <constraint firstItem="4lv-rc-mgy" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="3ge-AK-wb6"/>
