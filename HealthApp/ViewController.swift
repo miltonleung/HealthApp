@@ -17,6 +17,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var todayDistance: UILabel!
     @IBOutlet weak var totalDistance: UILabel!
     @IBOutlet weak var pedometerSteps: UILabel!
+    @IBOutlet weak var banner: UILabel!
+    @IBOutlet weak var pedometerDistance: UILabel!
     var steps, distance:HKQuantitySample?
     var stepsDictionary = [String: HKQuantity]()
     var distanceDictionary = [String: HKQuantity]()
@@ -160,14 +162,22 @@ class ViewController: UIViewController {
     
     func updatePedometer() {
         
-        if (CMPedometer.isStepCountingAvailable()) {
+        if (CMPedometer.isStepCountingAvailable() && CMPedometer.isDistanceAvailable()) {
             let beginningOfDay = NSCalendar.currentCalendar().dateBySettingHour(0, minute: 0, second: 0, ofDate: NSDate(), options: [])
             self.pedometer.queryPedometerDataFromDate(beginningOfDay!, toDate: NSDate()) { (data : CMPedometerData?, error) -> Void in
                 dispatch_async(dispatch_get_main_queue(), { () -> Void in
                     if error == nil {
                         if let numberOfSteps = data?.numberOfSteps {
                             self.pedometerSteps.text = "\(numberOfSteps)"
+//                            self.banner.text = ModelInterface.sharedInstance.reachedAchievement(numberOfSteps.integerValue)
+//                            print(self.banner.text)
                             print(data?.numberOfSteps)
+                        }
+                        if let distance = data?.distance {
+                            self.pedometerDistance.text = String(format: "%.2f", distance.doubleValue/1000)
+                            self.banner.text = ModelInterface.sharedInstance.reachedAchievement(distance.integerValue/1000)
+                            print(self.banner.text)
+                            print(data?.distance)
                         }
                     }
                 });
@@ -175,8 +185,16 @@ class ViewController: UIViewController {
             self.pedometer.startPedometerUpdatesFromDate(beginningOfDay!) { (data : CMPedometerData?, error) -> Void in
                 dispatch_async(dispatch_get_main_queue(), { () -> Void in
                     if let numberOfSteps = data?.numberOfSteps {
-                        self.pedometerSteps.text = "\(numberOfSteps)"
+                        self.pedometerSteps.text = "this is the updated \(numberOfSteps.integerValue)"
+//                        self.banner.text = ModelInterface.sharedInstance.reachedAchievement(numberOfSteps.integerValue)
+//                        print(self.banner.text)
                         print(data?.numberOfSteps)
+                    }
+                    if let distance = data?.distance {
+                        self.pedometerDistance.text = String(format: "%.2f", distance.doubleValue/1000)
+                        self.banner.text = ModelInterface.sharedInstance.reachedAchievement(distance.integerValue/1000)
+                        print(self.banner.text)
+                        print(data?.distance)
                     }
                 });
             }

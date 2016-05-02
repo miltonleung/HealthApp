@@ -74,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HealthApp/ViewController.swift"
-            timestampString = "483771998.386403"
+            timestampString = "483840664.340829"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "56"
-            endingLineNumber = "56"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
             landmarkName = "authorizeHealthKit()"
             landmarkType = "5">
          </BreakpointContent>
@@ -90,75 +90,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HealthApp/ViewController.swift"
-            timestampString = "483772319.939773"
+            timestampString = "483840664.340829"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "163"
-            endingLineNumber = "163"
-            landmarkName = "updatePedometer()"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "HealthApp/ViewController.swift"
-            timestampString = "483772319.939773"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "164"
-            endingLineNumber = "164"
-            landmarkName = "updatePedometer()"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "HealthApp/ViewController.swift"
-            timestampString = "483772319.939773"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "169"
-            endingLineNumber = "169"
-            landmarkName = "updatePedometer()"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "HealthApp/ViewController.swift"
-            timestampString = "483772319.939773"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "167"
-            endingLineNumber = "167"
-            landmarkName = "updatePedometer()"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "HealthApp/ViewController.swift"
-            timestampString = "483771998.386403"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "69"
-            endingLineNumber = "69"
+            startingLineNumber = "71"
+            endingLineNumber = "71"
             landmarkName = "updateFirstDate()"
             landmarkType = "5">
          </BreakpointContent>
@@ -198,76 +134,60 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HealthApp/TestForAchievements.swift"
-            timestampString = "483828975.47327"
+            timestampString = "483830002.651519"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "39"
-            endingLineNumber = "39"
-            landmarkName = "testReachedAchievement()"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "testReachedAchievementFive()"
             landmarkType = "5">
             <Locations>
                <Location
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "HealthAppTests.TestForAchievements.testReachedAchievement () -&gt; ()"
+                  symbolName = "HealthAppTests.TestForAchievements.testReachedAchievementDelayed () -&gt; ()"
                   moduleName = "HealthAppTests"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Milton/Developer/HealthApp/HealthApp/TestForAchievements.swift"
-                  timestampString = "483829057.835939"
+                  timestampString = "483830136.754123"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "39"
-                  endingLineNumber = "39"
-                  offsetFromSymbolStart = "348">
+                  startingLineNumber = "36"
+                  endingLineNumber = "36"
+                  offsetFromSymbolStart = "43">
                </Location>
                <Location
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "HealthAppTests.TestForAchievements.(testReachedAchievement () -&gt; ()).(implicit closure #3)"
+                  symbolName = "HealthAppTests.TestForAchievements.(testReachedAchievementDelayed () -&gt; ()).(implicit closure #1)"
                   moduleName = "HealthAppTests"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Milton/Developer/HealthApp/HealthApp/TestForAchievements.swift"
-                  timestampString = "483829057.83612"
+                  timestampString = "483830136.754283"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "39"
-                  endingLineNumber = "39"
+                  startingLineNumber = "36"
+                  endingLineNumber = "36"
                   offsetFromSymbolStart = "15">
                </Location>
                <Location
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "HealthAppTests.TestForAchievements.(testReachedAchievement () -&gt; ()).(implicit closure #4)"
+                  symbolName = "HealthAppTests.TestForAchievements.(testReachedAchievementDelayed () -&gt; ()).(implicit closure #2)"
                   moduleName = "HealthAppTests"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Milton/Developer/HealthApp/HealthApp/TestForAchievements.swift"
-                  timestampString = "483829057.836298"
+                  timestampString = "483830136.754397"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "39"
-                  endingLineNumber = "39"
+                  startingLineNumber = "36"
+                  endingLineNumber = "36"
                   offsetFromSymbolStart = "33">
                </Location>
             </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "HealthApp/TestForAchievements.swift"
-            timestampString = "483829070.973179"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
-            landmarkName = "testReachedAchievement()"
-            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

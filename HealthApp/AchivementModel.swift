@@ -17,14 +17,18 @@ protocol AchievementProtocol {
 extension ModelInterface: AchievementProtocol {
     func reachedAchievement(distance: Int) -> String {
         var done:Int = 0
+        var retMessage = ""
+        
         if doneAchievements.count > 0 {
             done = doneAchievements.last!
+            retMessage = achievements[done]!
         }
-        var retMessage = ""
+        
         for (steps, message) in achievements {
-            if distance >= steps && !doneAchievements.contains(steps) {
+            if distance >= steps && steps > done && !doneAchievements.contains(steps) {
                 doneAchievements.append(steps)
                 retMessage = message
+                done = steps
             }
         }
         return retMessage
