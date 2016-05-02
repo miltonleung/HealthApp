@@ -45,7 +45,7 @@
 		5212CAA81CD5BD7300041771 /* DateModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateModel.swift; sourceTree = "<group>"; };
 		5253C8B51CD6976B00F2713A /* AchievementModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AchievementModel.swift; sourceTree = "<group>"; };
 		5253C8B71CD697DD00F2713A /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		5253C8B91CD69FD000F2713A /* TestForAchievements.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestForAchievements.swift; sourceTree = "<group>"; };
+		5253C8B91CD69FD000F2713A /* TestForAchievements.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TestForAchievements.swift; path = ../HealthApp/TestForAchievements.swift; sourceTree = "<group>"; };
 		528B37DF1CD4612B00F8338D /* HealthApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HealthApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		528B37E21CD4612B00F8338D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		528B37E41CD4612B00F8338D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -127,7 +127,6 @@
 				5253C8B41CD6975000F2713A /* Model */,
 				528B38141CD461B500F8338D /* HealthApp.entitlements */,
 				5253C8B71CD697DD00F2713A /* Constants.swift */,
-				5253C8B91CD69FD000F2713A /* TestForAchievements.swift */,
 				528B37E21CD4612B00F8338D /* AppDelegate.swift */,
 				528B38101CD4614F00F8338D /* HealthManager.swift */,
 				528B37E41CD4612B00F8338D /* ViewController.swift */,
@@ -143,6 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				528B37F71CD4612B00F8338D /* HealthAppTests.swift */,
+				5253C8B91CD69FD000F2713A /* TestForAchievements.swift */,
 				528B37F91CD4612B00F8338D /* Info.plist */,
 			);
 			path = HealthAppTests;
