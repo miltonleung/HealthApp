@@ -255,7 +255,6 @@
 		52888D6E1CD8810600A30E8A /* Muli-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Muli-Light.ttf"; sourceTree = "<group>"; };
 		52888D6F1CD8810600A30E8A /* Muli-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Muli-LightItalic.ttf"; sourceTree = "<group>"; };
 		52888D701CD8810600A30E8A /* Muli-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Muli-Regular.ttf"; sourceTree = "<group>"; };
-		52888D851CD88A1300A30E8A /* ChartsDemo.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ChartsDemo.xcodeproj; path = "../../../Downloads/Charts-master/ChartsDemo/ChartsDemo.xcodeproj"; sourceTree = "<group>"; };
 		52888E831CD88C1800A30E8A /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = "../../../Downloads/Charts-master/Charts/Charts.xcodeproj"; sourceTree = "<group>"; };
 		52888E931CD88CC000A30E8A /* Cartfile.private */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile.private; sourceTree = "<group>"; };
 		52888E941CD88CC000A30E8A /* Cartfile.resolved */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile.resolved; sourceTree = "<group>"; };
@@ -423,7 +422,6 @@
 		5253C8B41CD6975000F2713A /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				52888D851CD88A1300A30E8A /* ChartsDemo.xcodeproj */,
 				5212CAA81CD5BD7300041771 /* DateModel.swift */,
 				5253C8B51CD6976B00F2713A /* AchievementModel.swift */,
 				5212CAA61CD5BD5000041771 /* ModelInterface.swift */,
@@ -882,12 +880,12 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 52888E961CD88CC000A30E8A /* Products */;
-					ProjectRef = 52888E951CD88CC000A30E8A /* Charts.xcodeproj */;
-				},
-				{
 					ProductGroup = 52888E841CD88C1800A30E8A /* Products */;
 					ProjectRef = 52888E831CD88C1800A30E8A /* Charts.xcodeproj */;
+				},
+				{
+					ProductGroup = 52888E961CD88CC000A30E8A /* Products */;
+					ProjectRef = 52888E951CD88CC000A30E8A /* Charts.xcodeproj */;
 				},
 			);
 			projectRoot = "";

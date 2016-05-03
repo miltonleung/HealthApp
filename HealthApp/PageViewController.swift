@@ -31,13 +31,20 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource, 
     
     func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
         let currentIndex = pages.indexOf(viewController)!
-        let previousIndex = abs((currentIndex - 1) % pages.count)
+        if currentIndex - 1 < 0 {
+            return nil
+        }
+        let previousIndex = currentIndex - 1
         return pages[previousIndex]
+        
     }
     
     func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
         let currentIndex = pages.indexOf(viewController)!
-        let nextIndex = abs((currentIndex + 1) % pages.count)
+        if currentIndex == pages.count - 1 {
+            return nil
+        }
+        let nextIndex = currentIndex + 1
         return pages[nextIndex]
     }
     
