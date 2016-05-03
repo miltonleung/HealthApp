@@ -19,7 +19,6 @@
 		528B37E51CD4612B00F8338D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528B37E41CD4612B00F8338D /* ViewController.swift */; };
 		528B37E81CD4612B00F8338D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 528B37E61CD4612B00F8338D /* Main.storyboard */; };
 		528B37EA1CD4612B00F8338D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 528B37E91CD4612B00F8338D /* Assets.xcassets */; };
-		528B37ED1CD4612B00F8338D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 528B37EB1CD4612B00F8338D /* LaunchScreen.storyboard */; };
 		528B37F81CD4612B00F8338D /* HealthAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528B37F71CD4612B00F8338D /* HealthAppTests.swift */; };
 		528B38031CD4612B00F8338D /* HealthAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528B38021CD4612B00F8338D /* HealthAppUITests.swift */; };
 		528B38111CD4614F00F8338D /* HealthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528B38101CD4614F00F8338D /* HealthManager.swift */; };
@@ -57,7 +56,6 @@
 		528B37E41CD4612B00F8338D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		528B37E71CD4612B00F8338D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		528B37E91CD4612B00F8338D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		528B37EC1CD4612B00F8338D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		528B37EE1CD4612B00F8338D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		528B37F31CD4612B00F8338D /* HealthAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HealthAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		528B37F71CD4612B00F8338D /* HealthAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthAppTests.swift; sourceTree = "<group>"; };
@@ -141,7 +139,6 @@
 				5253C8BD1CD7394C00F2713A /* CurrentStatsViewController.swift */,
 				5253C8BB1CD7054A00F2713A /* PageViewController.swift */,
 				528B37E91CD4612B00F8338D /* Assets.xcassets */,
-				528B37EB1CD4612B00F8338D /* LaunchScreen.storyboard */,
 				528B37EE1CD4612B00F8338D /* Info.plist */,
 			);
 			path = HealthApp;
@@ -278,7 +275,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				528B37ED1CD4612B00F8338D /* LaunchScreen.storyboard in Resources */,
 				528B37EA1CD4612B00F8338D /* Assets.xcassets in Resources */,
 				528B37E81CD4612B00F8338D /* Main.storyboard in Resources */,
 			);
@@ -357,14 +353,6 @@
 				528B37E71CD4612B00F8338D /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		528B37EB1CD4612B00F8338D /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				528B37EC1CD4612B00F8338D /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -457,6 +445,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = HealthApp/HealthApp.entitlements;
 				INFOPLIST_FILE = HealthApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -469,6 +458,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = HealthApp/HealthApp.entitlements;
 				INFOPLIST_FILE = HealthApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
