@@ -5,6 +5,17 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Muli-Light.ttf">
+            <string>Muli-Light</string>
+            <string>Muli-Light</string>
+            <string>Muli-Light</string>
+            <string>Muli-Light</string>
+            <string>Muli-Light</string>
+            <string>Muli-Light</string>
+            <string>Muli-Light</string>
+        </mutableArray>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -22,20 +33,14 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JS1-E6-J2c">
-                                <rect key="frame" x="279" y="511" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="278" y="511" width="44" height="21"/>
+                                <fontDescription key="fontDescription" name="Muli-Light" family="Muli" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZR0-ec-RYC">
-                                <rect key="frame" x="279" y="79" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LUf-YB-80H">
-                                <rect key="frame" x="279" y="469" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="278" y="79" width="44" height="21"/>
+                                <fontDescription key="fontDescription" name="Muli-Light" family="Muli" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -48,6 +53,12 @@
                                     <segue destination="KEZ-UB-2XL" kind="embed" id="WKt-t7-A4w"/>
                                 </connections>
                             </containerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LUf-YB-80H">
+                                <rect key="frame" x="278" y="469" width="44" height="21"/>
+                                <fontDescription key="fontDescription" name="Muli-Light" family="Muli" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.97309277520399429" green="0.9479504660864978" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -95,6 +106,7 @@
                     <connections>
                         <segue destination="15V-Jg-sjG" kind="show" identifier="" id="mul-0I-9j8"/>
                         <segue destination="nFZ-GX-ATK" kind="show" identifier="" id="rEN-Bv-XPv"/>
+                        <segue destination="4P1-3E-UAj" kind="show" id="rH7-SU-16q"/>
                     </connections>
                 </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AV8-Na-nHM" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -114,14 +126,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tHC-UJ-264">
-                                <rect key="frame" x="279" y="49" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="278" y="49" width="44" height="21"/>
+                                <fontDescription key="fontDescription" name="Muli-Light" family="Muli" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SVY-Jj-1rb">
-                                <rect key="frame" x="279" y="173" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="278" y="173" width="44" height="21"/>
+                                <fontDescription key="fontDescription" name="Muli-Light" family="Muli" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -143,6 +155,40 @@
             </objects>
             <point key="canvasLocation" x="491" y="875"/>
         </scene>
+        <!--Graph View Controller-->
+        <scene sceneID="YG1-q1-POn">
+            <objects>
+                <viewController storyboardIdentifier="graphPage" id="4P1-3E-UAj" customClass="GraphViewController" customModule="HealthApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xCr-vg-Lln"/>
+                        <viewControllerLayoutGuide type="bottom" id="Yxe-2O-bLW"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="m8H-kx-GxW">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="244"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="c7G-Zf-wHu" customClass="BarChartView" customModule="HealthApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="244"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="c7G-Zf-wHu" secondAttribute="trailing" id="AbS-VI-mvA"/>
+                            <constraint firstItem="Yxe-2O-bLW" firstAttribute="top" secondItem="c7G-Zf-wHu" secondAttribute="bottom" id="DFh-tQ-bpx"/>
+                            <constraint firstItem="c7G-Zf-wHu" firstAttribute="leading" secondItem="m8H-kx-GxW" secondAttribute="leadingMargin" id="Nxa-b8-Zs3"/>
+                            <constraint firstItem="c7G-Zf-wHu" firstAttribute="top" secondItem="xCr-vg-Lln" secondAttribute="bottom" id="Siu-As-O9P"/>
+                        </constraints>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
+                    <connections>
+                        <outlet property="barChartView" destination="c7G-Zf-wHu" id="ZGA-6m-C7t"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="02G-xt-3w8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1507" y="578"/>
+        </scene>
         <!--Cumulative Stats View Controller-->
         <scene sceneID="Jyd-H8-Alf">
             <objects>
@@ -155,15 +201,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="244"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q8W-W2-wHT">
-                                <rect key="frame" x="279" y="55" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hmg-Ld-ZZI">
+                                <rect key="frame" x="278" y="179" width="44" height="21"/>
+                                <fontDescription key="fontDescription" name="Muli-Light" family="Muli" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hmg-Ld-ZZI">
-                                <rect key="frame" x="279" y="179" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q8W-W2-wHT">
+                                <rect key="frame" x="278" y="55" width="44" height="21"/>
+                                <fontDescription key="fontDescription" name="Muli-Light" family="Muli" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>

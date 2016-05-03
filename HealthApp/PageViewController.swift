@@ -20,9 +20,11 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource, 
         
         let stepPage: UIViewController! = storyboard?.instantiateViewControllerWithIdentifier("stepPage")
         let distancePage: UIViewController! = storyboard?.instantiateViewControllerWithIdentifier("distancePage")
+        let graphPage: UIViewController! = storyboard?.instantiateViewControllerWithIdentifier("graphPage")
         
         pages.append(stepPage)
         pages.append(distancePage)
+        pages.append(graphPage)
         
         setViewControllers([stepPage], direction: UIPageViewControllerNavigationDirection.Forward, animated: false, completion: nil)
     }
