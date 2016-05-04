@@ -23,6 +23,8 @@ class GraphViewController: UIViewController {
         
         healthManager = HealthManager()
         
+        days = [String]()
+        
         self.view.backgroundColor = UIColor.clearColor()
         barChartView.backgroundColor = UIColor.clearColor()
         readData()
@@ -66,17 +68,27 @@ class GraphViewController: UIViewController {
             dataEntries.append(dataEntry)
         }
         
-        let chartDataSet = BarChartDataSet(yVals: dataEntries, label: "Units Sold")
+        let chartDataSet = BarChartDataSet(yVals: dataEntries, label: "Distance")
         let chartData = BarChartData(xVals: dataPoints, dataSet: chartDataSet)
+        barChartView.legend.enabled = false
         barChartView.data = chartData
         barChartView.xAxis.labelPosition = .Bottom
+        barChartView.xAxis.drawAxisLineEnabled = false
+        barChartView.xAxis.drawGridLinesEnabled = false
+        barChartView._leftAxis.drawGridLinesEnabled = false
+        barChartView.rightAxis.drawGridLinesEnabled = false
+        barChartView.rightAxis.drawLabelsEnabled = false
+        barChartView.leftAxis.drawAxisLineEnabled = false
+        barChartView.rightAxis.drawAxisLineEnabled = false
+        
+        
         
         let ll = ChartLimitLine(limit: 8.0, label: "Daily goal")
         barChartView.rightAxis.addLimitLine(ll)
         
         let entry = ChartDataEntry(value: values.last!, xIndex: values.count - 1)
         chartDataSet.addEntry(entry)
-//        chartDataSet.removeLast()
+        
         
         barChartView.backgroundColor = UIColor(red: 189/255, green: 195/255, blue: 199/255, alpha: 0)
         barChartView.descriptionText = ""
