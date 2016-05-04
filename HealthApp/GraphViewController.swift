@@ -43,13 +43,12 @@ class GraphViewController: UIViewController {
         
         barChartView.backgroundColor = UIColor(red: 189/255, green: 195/255, blue: 199/255, alpha: 0)
         barChartView.descriptionText = ""
-        barChartView.animate(yAxisDuration: 3.0)
+        barChartView.animate(yAxisDuration: 2.0)
         barChartView.gridBackgroundColor = UIColor(red: 189/255, green: 195/255, blue: 199/255, alpha: 0)
 
         barChartView.drawGridBackgroundEnabled = true
         
         chartDataSet.colors = [UIColor(red: 242/255, green: 242/255, blue: 242/255, alpha: 0.88)]
-        chartDataSet
 
     }
 }
