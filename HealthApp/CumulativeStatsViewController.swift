@@ -14,8 +14,6 @@ class CumulativeStatsViewController: UIViewController {
     @IBOutlet weak var cumulativeSteps: UILabel!
     @IBOutlet weak var cumulativeDistance: UILabel!
     
-    var stepsDictionary = [String: HKQuantity]()
-    var distanceDictionary = [String: HKQuantity]()
     var healthManager:HealthManager?
     var firstDate: String = ""
     

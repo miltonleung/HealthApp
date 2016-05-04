@@ -60,7 +60,7 @@ class HealthManager {
     }
     
     
-    func readRecentSample(sampleType:HKQuantityType, inout recentData: [String: HKQuantity], completion: (([String: HKQuantity]!, NSError!) -> Void)!)
+    func readRecentSample(sampleType:HKQuantityType, completion: ([String]!, [Double]!, NSError!) -> Void)
     {
         let endDate = NSDate()
         let beginningOfDay = NSCalendar.currentCalendar().dateBySettingHour(0, minute: 0, second: 0, ofDate: NSDate(), options: [])
@@ -70,13 +70,13 @@ class HealthManager {
         let intervalComponent = NSDateComponents()
         intervalComponent.day = 1
         let anchorDate = NSCalendar.currentCalendar().dateFromComponents(intervalComponent)
-        //        var dates = [String]()
-        //        var recentData = [String: HKQuantity]()
+        var dates = [String]()
+        var distance = [Double]()
         
         let query = HKStatisticsCollectionQuery(quantityType: sampleType, quantitySamplePredicate: predicate, options: .CumulativeSum, anchorDate: anchorDate!, intervalComponents: intervalComponent)
         query.initialResultsHandler = { query, result, error in
             if let queryError = error {
-                completion(nil, queryError)
+                completion(nil, nil, queryError)
                 return
             }
             
@@ -91,14 +91,15 @@ class HealthManager {
             
             statsCollection.enumerateStatisticsFromDate(startDates, toDate: endDates) {
                 [unowned self] statistics, stop in
-                if let quantity = statistics.sumQuantity() {
+                if let quantity = statistics.sumQuantity()?.doubleValueForUnit(HKUnit.meterUnitWithMetricPrefix(.Kilo)){
                     
                     let str = ModelInterface.sharedInstance.convertDate(statistics.startDate)
-                    recentData[str] = quantity
+                    distance.append(quantity)
+                    dates.append(str)
                 }
             }
             if  result != nil {
-                completion(recentData, nil)
+                completion(dates, distance, nil)
             }
         }
         query.statisticsUpdateHandler = { query, resultStatistics, statisticsCollection, error in
@@ -112,23 +113,27 @@ class HealthManager {
                 fatalError("*** Unable to calculate the start date ***")
             }
             
+            dates = [String]()
+            distance = [Double]()
+            
             statsCollection.enumerateStatisticsFromDate(startDates, toDate: endDates) {
                 [unowned self] statistics, stop in
-                //                if let quantity = statistics.sumQuantity() {
+                if let quantity = statistics.sumQuantity()?.doubleValueForUnit(HKUnit.meterUnitWithMetricPrefix(.Kilo)){
+                    
+                    let str = ModelInterface.sharedInstance.convertDate(statistics.startDate)
+                    distance.append(quantity)
+                    dates.append(str)
+                    print("new data available")
+                }
                 
-                let str = ModelInterface.sharedInstance.convertDate(statistics.startDate)
-                
-                //                    if !dates.contains(str) {
-                //                        dates.append(str)
-                //                    }
-                recentData[str] = statistics.sumQuantity()
-                //                }
-            }
-            if  statisticsCollection != nil {
-                completion(recentData, nil)
+                if  statisticsCollection != nil {
+                    completion(dates, distance, nil)
+                }
             }
         }
         self.healthKitStore.executeQuery(query)
+            
+        
     }
     
     func readTotalSample(sampleType: HKQuantityType, completion: ((String, HKQuantity)!, NSError!) -> Void)
@@ -151,7 +156,7 @@ class HealthManager {
                 // Perform proper error handling here
                 fatalError("*** An error occurred while calculating the statistics: \(error?.localizedDescription) ***")
             }
-
+            
             if result != nil {
                 statsCollection.enumerateStatisticsFromDate(startDate, toDate: endDate) {
                     [unowned self] statistics, stop in

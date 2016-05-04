@@ -10,12 +10,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HealthApp/HealthManager.swift"
-            timestampString = "483771998.386403"
+            timestampString = "484016750.962744"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "98"
-            endingLineNumber = "98"
-            landmarkName = "readRecentSample(_:recentData:completion:)"
+            startingLineNumber = "99"
+            endingLineNumber = "99"
+            landmarkName = "readRecentSample(_:completion:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -26,12 +26,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HealthApp/HealthManager.swift"
-            timestampString = "483771998.386403"
+            timestampString = "484016750.962744"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "115"
-            endingLineNumber = "115"
-            landmarkName = "readRecentSample(_:recentData:completion:)"
+            startingLineNumber = "119"
+            endingLineNumber = "119"
+            landmarkName = "readRecentSample(_:completion:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -42,12 +42,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HealthApp/HealthManager.swift"
-            timestampString = "483771998.386403"
+            timestampString = "484016750.962744"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "114"
-            endingLineNumber = "114"
-            landmarkName = "readRecentSample(_:recentData:completion:)"
+            startingLineNumber = "117"
+            endingLineNumber = "117"
+            landmarkName = "readRecentSample(_:completion:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HealthApp/HealthManager.swift"
-            timestampString = "483772319.939773"
+            timestampString = "484023461.348919"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "153"
-            endingLineNumber = "153"
+            startingLineNumber = "158"
+            endingLineNumber = "158"
             landmarkName = "readTotalSample(_:completion:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -156,6 +156,195 @@
                   offsetFromSymbolStart = "33">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HealthApp/HealthManager.swift"
+            timestampString = "484016068.112038"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
+            landmarkName = "readRecentSample(_:completion:)"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HealthApp.HealthManager.readRecentSample (__ObjC.HKQuantityType, recentData : inout Swift.Dictionary&lt;Swift.String, __ObjC.HKQuantity&gt;, completion : Swift.ImplicitlyUnwrappedOptional&lt;(Swift.ImplicitlyUnwrappedOptional&lt;Swift.Dictionary&lt;Swift.String, __ObjC.HKQuantity&gt;&gt;, Swift.ImplicitlyUnwrappedOptional&lt;__ObjC.NSError&gt;) -&gt; ()&gt;) -&gt; ()"
+                  moduleName = "HealthApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Milton/Developer/HealthApp/HealthApp/HealthManager.swift"
+                  timestampString = "484016068.160356"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "65"
+                  endingLineNumber = "65"
+                  offsetFromSymbolStart = "228">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HealthApp.HealthManager.(readRecentSample (__ObjC.HKQuantityType, recentData : inout Swift.Dictionary&lt;Swift.String, __ObjC.HKQuantity&gt;, completion : Swift.ImplicitlyUnwrappedOptional&lt;(Swift.ImplicitlyUnwrappedOptional&lt;Swift.Dictionary&lt;Swift.String, __ObjC.HKQuantity&gt;&gt;, Swift.ImplicitlyUnwrappedOptional&lt;__ObjC.NSError&gt;) -&gt; ()&gt;) -&gt; ()).(closure #1)"
+                  moduleName = "HealthApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Milton/Developer/HealthApp/HealthApp/HealthManager.swift"
+                  timestampString = "484016068.160503"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "63"
+                  endingLineNumber = "63"
+                  offsetFromSymbolStart = "44">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HealthApp.HealthManager.(readRecentSample (__ObjC.HKQuantityType, recentData : inout Swift.Dictionary&lt;Swift.String, __ObjC.HKQuantity&gt;, completion : Swift.ImplicitlyUnwrappedOptional&lt;(Swift.ImplicitlyUnwrappedOptional&lt;Swift.Dictionary&lt;Swift.String, __ObjC.HKQuantity&gt;&gt;, Swift.ImplicitlyUnwrappedOptional&lt;__ObjC.NSError&gt;) -&gt; ()&gt;) -&gt; ()).(closure #1).(closure #1)"
+                  moduleName = "HealthApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Milton/Developer/HealthApp/HealthApp/HealthManager.swift"
+                  timestampString = "484016068.160608"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "63"
+                  endingLineNumber = "63"
+                  offsetFromSymbolStart = "28">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HealthApp.HealthManager.(readRecentSample (__ObjC.HKQuantityType, recentData : inout Swift.Dictionary&lt;Swift.String, __ObjC.HKQuantity&gt;, completion : Swift.ImplicitlyUnwrappedOptional&lt;(Swift.ImplicitlyUnwrappedOptional&lt;Swift.Dictionary&lt;Swift.String, __ObjC.HKQuantity&gt;&gt;, Swift.ImplicitlyUnwrappedOptional&lt;__ObjC.NSError&gt;) -&gt; ()&gt;) -&gt; ()).(closure #2)"
+                  moduleName = "HealthApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Milton/Developer/HealthApp/HealthApp/HealthManager.swift"
+                  timestampString = "484016068.160727"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "63"
+                  endingLineNumber = "63"
+                  offsetFromSymbolStart = "44">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HealthApp.HealthManager.(readRecentSample (__ObjC.HKQuantityType, recentData : inout Swift.Dictionary&lt;Swift.String, __ObjC.HKQuantity&gt;, completion : Swift.ImplicitlyUnwrappedOptional&lt;(Swift.ImplicitlyUnwrappedOptional&lt;Swift.Dictionary&lt;Swift.String, __ObjC.HKQuantity&gt;&gt;, Swift.ImplicitlyUnwrappedOptional&lt;__ObjC.NSError&gt;) -&gt; ()&gt;) -&gt; ()).(closure #2).(closure #1)"
+                  moduleName = "HealthApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Milton/Developer/HealthApp/HealthApp/HealthManager.swift"
+                  timestampString = "484016068.160828"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "63"
+                  endingLineNumber = "63"
+                  offsetFromSymbolStart = "20">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HealthApp/GraphViewController.swift"
+            timestampString = "484023617.643042"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
+            landmarkName = "readData()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HealthApp/GraphViewController.swift"
+            timestampString = "484016895.773547"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "readData()"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HealthApp.GraphViewController.readData () -&gt; ()"
+                  moduleName = "HealthApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Milton/Developer/HealthApp/HealthApp/GraphViewController.swift"
+                  timestampString = "484017025.095415"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "38"
+                  endingLineNumber = "38"
+                  offsetFromSymbolStart = "160">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HealthApp.GraphViewController.(readData () -&gt; ()).(closure #1)"
+                  moduleName = "HealthApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Milton/Developer/HealthApp/HealthApp/GraphViewController.swift"
+                  timestampString = "484017025.095542"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "39"
+                  endingLineNumber = "39"
+                  offsetFromSymbolStart = "52">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HealthApp/GraphViewController.swift"
+            timestampString = "484016972.379813"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
+            landmarkName = "readData()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HealthApp/GraphViewController.swift"
+            timestampString = "484023617.643042"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
+            landmarkName = "setChart(_:values:)"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
