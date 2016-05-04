@@ -38,4 +38,11 @@ class TestForAchievements: XCTestCase {
     func testReachedAchievementFour() {
         XCTAssertEqual(ModelInterface.sharedInstance.reachedAchievement(4), "You have reached 3 km!")
     }
+    
+    func testDateString() {
+        XCTAssertEqual(ModelInterface.sharedInstance.getDayNameBy("2016-05-03"), "Tue")
+        XCTAssertEqual(ModelInterface.sharedInstance.getDayNameBy("2016-05-04"), "Wed")
+        XCTAssertEqual(ModelInterface.sharedInstance.getDayNameBy("2016-05-05"), "Thu")
+        XCTAssertEqual(ModelInterface.sharedInstance.getDayNameBy("2016-05-06"), "Fri")
+    }
 }

@@ -11,7 +11,6 @@ import Foundation
 protocol AchievementProtocol {
     func reachedAchievement(distance: Int) -> String
     
-    
 }
 
 extension ModelInterface: AchievementProtocol {

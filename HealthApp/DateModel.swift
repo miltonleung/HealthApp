@@ -21,4 +21,12 @@ extension ModelInterface: DateProtocol {
         return str
     }
     
+    func getDayNameBy(stringDate: String) -> String
+    {
+        let df  = NSDateFormatter()
+        df.dateFormat = "YYYY-MM-dd"
+        let date = df.dateFromString(stringDate)!
+        df.dateFormat = "EE"
+        return df.stringFromDate(date);
+    }
 }

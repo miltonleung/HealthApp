@@ -13,13 +13,12 @@ import HealthKit
 class GraphViewController: UIViewController {
     @IBOutlet weak var barChartView: BarChartView!
     
-    var months: [String]!
+    var days = [String]()
     var healthManager: HealthManager?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
         let unitsSold = [20.0, 4.0, 6.0, 3.0, 12.0, 16.0, 4.0, 18.0, 2.0, 4.0, 5.0, 4.0]
         
         healthManager = HealthManager()
@@ -40,13 +39,18 @@ class GraphViewController: UIViewController {
                 print("Error reading past week steps from Healthkit")
                 return
             }
-            for x in dates {
-                print(x)
-            }
-            print("test")
+            
+//            for date in dates {
+//                let day = ModelInterface.sharedInstance.getDayNameBy(date)
+//                self.days.append(day)
+//            }
             
             dispatch_async(dispatch_get_main_queue(), { () -> Void  in
-                self.setChart(dates, values: distances)
+                for date in dates {
+                    let day = ModelInterface.sharedInstance.getDayNameBy(date)
+                    self.days.append(day)
+                }
+                self.setChart(self.days, values: distances)
             });
         });
     }
@@ -63,8 +67,12 @@ class GraphViewController: UIViewController {
         }
         
         let chartDataSet = BarChartDataSet(yVals: dataEntries, label: "Units Sold")
-        let chartData = BarChartData(xVals: months, dataSet: chartDataSet)
+        let chartData = BarChartData(xVals: dataPoints, dataSet: chartDataSet)
         barChartView.data = chartData
+        barChartView.xAxis.labelPosition = .Bottom
+        
+        let ll = ChartLimitLine(limit: 8.0, label: "Daily goal")
+        barChartView.rightAxis.addLimitLine(ll)
         
         let entry = ChartDataEntry(value: values.last!, xIndex: values.count - 1)
         chartDataSet.addEntry(entry)
