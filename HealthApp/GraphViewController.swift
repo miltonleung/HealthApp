@@ -75,16 +75,26 @@ class GraphViewController: UIViewController {
         barChartView.xAxis.labelPosition = .Bottom
         barChartView.xAxis.drawAxisLineEnabled = false
         barChartView.xAxis.drawGridLinesEnabled = false
-        barChartView._leftAxis.drawGridLinesEnabled = false
-        barChartView.rightAxis.drawGridLinesEnabled = false
-        barChartView.rightAxis.drawLabelsEnabled = false
+        barChartView.leftAxis.drawGridLinesEnabled = false
         barChartView.leftAxis.drawAxisLineEnabled = false
-        barChartView.rightAxis.drawAxisLineEnabled = false
+        barChartView.rightAxis.enabled = false
+        barChartView.leftAxis.enabled = false
+        
+        barChartView.xAxis.labelTextColor = UIColor.whiteColor()
+        barChartView.xAxis.labelFont = UIFont(name: "Muli", size: 12)!
+        barChartView.leftAxis.labelTextColor = UIColor.whiteColor()
+        barChartView.leftAxis.labelFont = UIFont(name: "Muli", size: 13)!
+        
+        chartData.setValueTextColor(UIColor.whiteColor())
+        chartData.highlightEnabled = false
+        chartData.setValueFont(UIFont(name: "Muli", size: 12))
         
         
         
         let ll = ChartLimitLine(limit: 8.0, label: "Daily goal")
+        ll.lineWidth = 1.5
         barChartView.rightAxis.addLimitLine(ll)
+        
         
         let entry = ChartDataEntry(value: values.last!, xIndex: values.count - 1)
         chartDataSet.addEntry(entry)

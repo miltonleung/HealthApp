@@ -274,11 +274,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HealthApp/GraphViewController.swift"
-            timestampString = "484043049.895782"
+            timestampString = "484044786.401068"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "111"
-            endingLineNumber = "111"
+            startingLineNumber = "121"
+            endingLineNumber = "121"
             landmarkName = "GraphViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -344,6 +344,22 @@
             startingLineNumber = "111"
             endingLineNumber = "111"
             landmarkName = "readRecentSample(_:completion:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HealthApp/GraphViewController.swift"
+            timestampString = "484044786.401068"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "90"
+            endingLineNumber = "90"
+            landmarkName = "setChart(_:values:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
