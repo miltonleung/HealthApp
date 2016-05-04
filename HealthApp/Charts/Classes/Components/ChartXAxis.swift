@@ -83,7 +83,7 @@ public class ChartXAxis: ChartAxisBase
     }
     
     /// the position of the x-labels relative to the chart
-    public var labelPosition = LabelPosition.Top
+    public var labelPosition = LabelPosition.BottomInside
     
     /// if set to true, word wrapping the labels will be enabled.
     /// word wrapping is done using `(value width * labelRotatedWidth)`

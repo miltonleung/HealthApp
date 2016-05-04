@@ -45,4 +45,10 @@ class TestForAchievements: XCTestCase {
         XCTAssertEqual(ModelInterface.sharedInstance.getDayNameBy("2016-05-05"), "Thu")
         XCTAssertEqual(ModelInterface.sharedInstance.getDayNameBy("2016-05-06"), "Fri")
     }
+    
+    func testDateMDY() {
+        XCTAssertEqual(ModelInterface.sharedInstance.getDayNameByString("2016-05-03"), "May 3, 2016")
+        XCTAssertEqual(ModelInterface.sharedInstance.getDayNameByString("2016-04-30"), "Apr 30, 2016")
+        XCTAssertEqual(ModelInterface.sharedInstance.getDayNameByString("2016-12-01"), "Dec 1, 2016")
+    }
 }

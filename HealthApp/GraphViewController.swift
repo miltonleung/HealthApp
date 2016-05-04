@@ -47,7 +47,9 @@ class GraphViewController: UIViewController {
                 let day = ModelInterface.sharedInstance.getDayNameBy(date)
                 self.days.append(day)
             }
-            self.days[self.days.count - 1] = "Today"
+            if !self.days.isEmpty {
+                self.days[self.days.count - 1] = "Today"
+            }
             self.setChart(self.days, values: distances)
             dispatch_async(dispatch_get_main_queue(), { () -> Void  in
                 self.barChartView.animate(yAxisDuration: 2.0)
@@ -58,6 +60,10 @@ class GraphViewController: UIViewController {
     }
     
     func setChart(dataPoints: [String], values: [Double]) {
+        
+        if dataPoints.isEmpty || values.isEmpty {
+            return
+        }
         
         barChartView.noDataText = "You need to provide data for the chart"
         
@@ -85,6 +91,12 @@ class GraphViewController: UIViewController {
         barChartView.xAxis.labelFont = UIFont(name: "Muli", size: 12)!
         barChartView.leftAxis.labelTextColor = UIColor.whiteColor()
         barChartView.leftAxis.labelFont = UIFont(name: "Muli", size: 13)!
+        
+        barChartView.dragEnabled = false
+        barChartView.pinchZoomEnabled = false
+        barChartView.scaleXEnabled = false
+        barChartView.scaleYEnabled = false
+        
         
         chartData.setValueTextColor(UIColor.whiteColor())
         chartData.highlightEnabled = false
