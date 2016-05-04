@@ -19,10 +19,10 @@ class GraphViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let unitsSold = [20.0, 4.0, 6.0, 3.0, 12.0, 16.0, 4.0, 18.0, 2.0, 4.0, 5.0, 4.0]
-        
         healthManager = HealthManager()
-        
+    }
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(false)
         days = [String]()
         
         self.view.backgroundColor = UIColor.clearColor()
@@ -42,17 +42,17 @@ class GraphViewController: UIViewController {
                 return
             }
             
-//            for date in dates {
-//                let day = ModelInterface.sharedInstance.getDayNameBy(date)
-//                self.days.append(day)
-//            }
-            
+            self.days = [String]()
+            for date in dates {
+                let day = ModelInterface.sharedInstance.getDayNameBy(date)
+                self.days.append(day)
+            }
+            self.days[self.days.count - 1] = "Today"
+            self.setChart(self.days, values: distances)
             dispatch_async(dispatch_get_main_queue(), { () -> Void  in
-                for date in dates {
-                    let day = ModelInterface.sharedInstance.getDayNameBy(date)
-                    self.days.append(day)
-                }
-                self.setChart(self.days, values: distances)
+                self.barChartView.animate(yAxisDuration: 2.0)
+                
+                
             });
         });
     }
@@ -80,6 +80,7 @@ class GraphViewController: UIViewController {
         barChartView.rightAxis.enabled = false
         barChartView.leftAxis.enabled = false
         
+        barChartView.xAxis.setLabelsToSkip(0)
         barChartView.xAxis.labelTextColor = UIColor.whiteColor()
         barChartView.xAxis.labelFont = UIFont(name: "Muli", size: 12)!
         barChartView.leftAxis.labelTextColor = UIColor.whiteColor()
@@ -91,7 +92,7 @@ class GraphViewController: UIViewController {
         
         
         
-        let ll = ChartLimitLine(limit: 8.0, label: "Daily goal")
+        let ll = ChartLimitLine(limit: 8.0, label: "")
         ll.lineWidth = 1.5
         barChartView.rightAxis.addLimitLine(ll)
         
