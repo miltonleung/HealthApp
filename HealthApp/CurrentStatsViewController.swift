@@ -13,10 +13,15 @@ class CurrentStatsViewController: UIViewController {
     
     @IBOutlet weak var currentSteps: UILabel!
     @IBOutlet weak var currentDistance: UILabel!
+    @IBOutlet weak var date: UILabel!
     let pedometer = CMPedometer()
+    var distanceValue = 0.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let dateext = ModelInterface.sharedInstance.convertDate(NSDate())
+        self.date.text = "for \(ModelInterface.sharedInstance.getDayNameByString(dateext))"
         
         self.updatePedometer()
     }
@@ -51,11 +56,15 @@ class CurrentStatsViewController: UIViewController {
                         self.currentDistance.text = String(format: "%.2f", distance.doubleValue/1000)
 //                        self.banner.text = ModelInterface.sharedInstance.reachedAchievement(distance.integerValue/1000)
 //                        print(self.banner.text)
+                        self.distanceValue = distance.doubleValue/1000
                         print(data?.distance)
                     }
                 });
             }
         }
         
+    }
+    func getDistance() -> Double {
+        return distanceValue
     }
 }

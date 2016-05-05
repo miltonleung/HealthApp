@@ -51,4 +51,12 @@ class TestForAchievements: XCTestCase {
         XCTAssertEqual(ModelInterface.sharedInstance.getDayNameByString("2016-04-30"), "Apr 30, 2016")
         XCTAssertEqual(ModelInterface.sharedInstance.getDayNameByString("2016-12-01"), "Dec 1, 2016")
     }
+    
+    func testHardestHole() {
+        XCTAssertEqual(ModelInterface.sharedInstance.hardestHole(0.9), "The first km's the hardest.")
+        XCTAssertEqual(ModelInterface.sharedInstance.hardestHole(1.9), "The second km's the hardest.")
+        XCTAssertEqual(ModelInterface.sharedInstance.hardestHole(2.9), "The third km's the hardest.")
+        XCTAssertEqual(ModelInterface.sharedInstance.hardestHole(3.9), "The 4th km's the hardest.")
+        XCTAssertEqual(ModelInterface.sharedInstance.hardestHole(11), "The 11th km's the hardest.")
+    }
 }

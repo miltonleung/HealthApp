@@ -14,10 +14,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var banner: UILabel!
     
-    var stepsDictionary = [String: HKQuantity]()
-    var distanceDictionary = [String: HKQuantity]()
     var healthManager:HealthManager?
-    let pedometer = CMPedometer()
     var firstDate: String = ""
     
     override func viewDidLoad() {
@@ -28,7 +25,7 @@ class ViewController: UIViewController {
         
         
         authorizeHealthKit()
-        
+//        banner.text = ModelInterface.sharedInstance.hardestHole(CurrentStatsViewController.getDistance())
     }
     
     override func didReceiveMemoryWarning() {

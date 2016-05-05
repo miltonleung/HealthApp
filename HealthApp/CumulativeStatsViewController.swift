@@ -51,8 +51,7 @@ class CumulativeStatsViewController: UIViewController {
                 print("Error reading first date from HealthKit")
                 return
             }
-            
-            self.firstDate = date
+            self.firstDate = ModelInterface.sharedInstance.getDayNameByString(date)
         });
     }
 
