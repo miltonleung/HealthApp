@@ -8,11 +8,15 @@
 
 import Foundation
 
-protocol DateProtocol {
+protocol ConvertProtocol {
     func convertDate(date: NSDate) -> String
+    func getDayNameBy(stringDate: String) -> String
+    func getMonthNameBy(stringDate: String) -> String
+    func getDayNameByString(stringDate: String) -> String
+    func addThousandSeperator(number: Int) -> String
 }
 
-extension ModelInterface: DateProtocol {
+extension ModelInterface: ConvertProtocol {
     
     func convertDate(date: NSDate) -> String {
         let dateFormatter = NSDateFormatter()
@@ -50,5 +54,11 @@ extension ModelInterface: DateProtocol {
         dateFormatter.locale = NSLocale(localeIdentifier: "en_US")
         
         return dateFormatter.stringFromDate(date);
+    }
+    func addThousandSeperator(number: Int) -> String
+    {
+        var numberFormatter = NSNumberFormatter()
+        numberFormatter.numberStyle = NSNumberFormatterStyle.DecimalStyle
+        return numberFormatter.stringFromNumber(number)!
     }
 }

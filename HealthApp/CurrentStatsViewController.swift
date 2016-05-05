@@ -15,7 +15,7 @@ class CurrentStatsViewController: UIViewController {
     @IBOutlet weak var currentDistance: UILabel!
     @IBOutlet weak var date: UILabel!
     let pedometer = CMPedometer()
-    var distanceValue = 0.0
+//    var delegate: CurrentStatsViewControllerProtocol?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,13 +34,15 @@ class CurrentStatsViewController: UIViewController {
                 dispatch_async(dispatch_get_main_queue(), { () -> Void in
                     if error == nil {
                         if let numberOfSteps = data?.numberOfSteps {
-                            self.currentSteps.text = "\(numberOfSteps)"
+                            let result = ModelInterface.sharedInstance.addThousandSeperator(numberOfSteps.integerValue)
+                            self.currentSteps.text = "\(result)"
                             print(data?.numberOfSteps)
                         }
                         if let distance = data?.distance {
                             self.currentDistance.text = String(format: "%.2f", distance.doubleValue/1000)
 //                            self.banner.text = ModelInterface.sharedInstance.reachedAchievement(distance.integerValue/1000)
 //                            print(self.banner.text)
+//                            self.delegate?.setBannerText(self.currentDistance.text!)
                             print(data?.distance)
                         }
                     }
@@ -49,14 +51,14 @@ class CurrentStatsViewController: UIViewController {
             self.pedometer.startPedometerUpdatesFromDate(beginningOfDay!) { (data : CMPedometerData?, error) -> Void in
                 dispatch_async(dispatch_get_main_queue(), { () -> Void in
                     if let numberOfSteps = data?.numberOfSteps {
-                        self.currentSteps.text = "\(numberOfSteps.integerValue)"
+                        let result = ModelInterface.sharedInstance.addThousandSeperator(numberOfSteps.integerValue)
+                        self.currentSteps.text = "\(result)"
                         print(data?.numberOfSteps)
                     }
                     if let distance = data?.distance {
                         self.currentDistance.text = String(format: "%.2f", distance.doubleValue/1000)
 //                        self.banner.text = ModelInterface.sharedInstance.reachedAchievement(distance.integerValue/1000)
 //                        print(self.banner.text)
-                        self.distanceValue = distance.doubleValue/1000
                         print(data?.distance)
                     }
                 });
@@ -64,7 +66,8 @@ class CurrentStatsViewController: UIViewController {
         }
         
     }
-    func getDistance() -> Double {
-        return distanceValue
-    }
 }
+//
+//protocol CurrentStatsViewControllerProtocol {
+//    func setBannerText(string: String)
+//}
