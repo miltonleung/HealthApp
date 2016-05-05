@@ -49,7 +49,7 @@ class CurrentStatsViewController: UIViewController {
             self.pedometer.startPedometerUpdatesFromDate(beginningOfDay!) { (data : CMPedometerData?, error) -> Void in
                 dispatch_async(dispatch_get_main_queue(), { () -> Void in
                     if let numberOfSteps = data?.numberOfSteps {
-                        self.currentSteps.text = "this is the updated \(numberOfSteps.integerValue)"
+                        self.currentSteps.text = "\(numberOfSteps.integerValue)"
                         print(data?.numberOfSteps)
                     }
                     if let distance = data?.distance {

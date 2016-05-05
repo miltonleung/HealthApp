@@ -136,6 +136,86 @@ class HealthManager {
         
     }
     
+    func readYearSample(sampleType:HKQuantityType, completion: ([String]!, [Double]!, NSError!) -> Void)
+    {
+        let endDate = NSDate()
+        
+        let components = NSCalendar.currentCalendar().components([.Year, .Month], fromDate: NSDate())
+        let startOfMonth = NSCalendar.currentCalendar().dateFromComponents(components)!
+        
+//        let beginningOfDay = NSCalendar.currentCalendar().dateBySettingHour(0, minute: 0, second: 0, ofDate: NSDate(), options: [])
+        let startDate = NSCalendar.currentCalendar().dateByAddingUnit(.Year, value: -1, toDate: startOfMonth, options: [])
+        let predicate = HKQuery.predicateForSamplesWithStartDate(startDate, endDate: endDate, options:HKQueryOptions.StrictStartDate)
+        
+        let intervalComponent = NSDateComponents()
+        intervalComponent.month = 1
+        let anchorDate = NSCalendar.currentCalendar().dateFromComponents(intervalComponent)
+        var dates = [String]()
+        var distance = [Double]()
+        
+        let query = HKStatisticsCollectionQuery(quantityType: sampleType, quantitySamplePredicate: predicate, options: .CumulativeSum, anchorDate: anchorDate!, intervalComponents: intervalComponent)
+        query.initialResultsHandler = { query, result, error in
+            if let queryError = error {
+                completion(nil, nil, queryError)
+                return
+            }
+            
+            guard let statsCollection = result else {
+                // Perform proper error handling here
+                fatalError("*** An error occurred while calculating the statistics: \(error?.localizedDescription) ***")
+            }
+            let endDates = NSDate()
+            guard let startDates = NSCalendar.currentCalendar().dateByAddingUnit(.Year, value: -1, toDate: startOfMonth, options: []) else {
+                fatalError("*** Unable to calculate the start date ***")
+            }
+            
+            statsCollection.enumerateStatisticsFromDate(startDates, toDate: endDates) {
+                [unowned self] statistics, stop in
+                if let quantity = statistics.sumQuantity()?.doubleValueForUnit(HKUnit.meterUnitWithMetricPrefix(.Kilo)){
+                    
+                    let str = ModelInterface.sharedInstance.convertDate(statistics.startDate)
+                    distance.append(quantity)
+                    dates.append(str)
+                }
+            }
+            if  result != nil {
+                completion(dates, distance, nil)
+            }
+        }
+        query.statisticsUpdateHandler = { query, resultStatistics, statisticsCollection, error in
+            
+            guard let statsCollection = statisticsCollection else {
+                // Perform proper error handling here
+                fatalError("*** An error occurred while calculating the statistics: \(error?.localizedDescription) ***")
+            }
+            let endDates = NSDate()
+            guard let startDates = NSCalendar.currentCalendar().dateByAddingUnit(.Year, value: -1, toDate: startOfMonth, options: []) else {
+                fatalError("*** Unable to calculate the start date ***")
+            }
+            
+            dates = [String]()
+            distance = [Double]()
+            
+            statsCollection.enumerateStatisticsFromDate(startDates, toDate: endDates) {
+                [unowned self] statistics, stop in
+                if let quantity = statistics.sumQuantity()?.doubleValueForUnit(HKUnit.meterUnitWithMetricPrefix(.Kilo)){
+                    
+                    let str = ModelInterface.sharedInstance.convertDate(statistics.startDate)
+                    distance.append(quantity)
+                    dates.append(str)
+                    print("new data available")
+                }
+                
+                if  statisticsCollection != nil {
+                    completion(dates, distance, nil)
+                }
+            }
+        }
+        self.healthKitStore.executeQuery(query)
+        
+        
+    }
+    
     func readTotalSample(sampleType: HKQuantityType, completion: ((String, HKQuantity)!, NSError!) -> Void)
     {
         

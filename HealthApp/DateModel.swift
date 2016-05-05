@@ -30,6 +30,15 @@ extension ModelInterface: DateProtocol {
         return df.stringFromDate(date);
     }
     
+    func getMonthNameBy(stringDate: String) -> String
+    {
+        let df  = NSDateFormatter()
+        df.dateFormat = "YYYY-MM-dd"
+        let date = df.dateFromString(stringDate)!
+        df.dateFormat = "MMM"
+        return df.stringFromDate(date);
+    }
+    
     func getDayNameByString(stringDate: String) -> String
     {
         let dateFormatter  = NSDateFormatter()

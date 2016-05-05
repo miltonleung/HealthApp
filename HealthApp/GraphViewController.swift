@@ -12,13 +12,34 @@ import HealthKit
 
 class GraphViewController: UIViewController {
     @IBOutlet weak var barChartView: BarChartView!
+    @IBOutlet weak var dailyAverage: UILabel!
     
+    @IBOutlet weak var monthlyLabel: UIButton!
+    @IBOutlet weak var weeklyLabel: UIButton!
+    @IBAction func monthly(sender: UIButton) {
+//        sender.state = UIControlState.Selected
+        weeklyLabel.selected = false
+        sender.selected = true
+        days = [String]()
+        weeklyOrMonthly = 0
+        readMonthlyData()
+    }
+    
+    @IBAction func weekly(sender: UIButton) {
+        monthlyLabel.selected = false
+        sender.selected = true
+        days = [String]()
+        weeklyOrMonthly = 1
+        readData()
+    }
     var days = [String]()
     var healthManager: HealthManager?
+    var weeklyOrMonthly = 1
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        weeklyOrMonthly = 1
+        weeklyLabel.selected = true
         healthManager = HealthManager()
     }
     override func viewWillAppear(animated: Bool) {
@@ -27,10 +48,42 @@ class GraphViewController: UIViewController {
         
         self.view.backgroundColor = UIColor.clearColor()
         barChartView.backgroundColor = UIColor.clearColor()
-        readData()
+        if weeklyOrMonthly == 0 {
+            weeklyOrMonthly = 1
+            readMonthlyData()
+        } else {
+            readData()
+        }
         
+    }
+    
+    func readMonthlyData() {
+        let distanceType = HKQuantityType.quantityTypeForIdentifier(HKQuantityTypeIdentifierDistanceWalkingRunning)
         
-        
+        self.healthManager?.readYearSample(distanceType!, completion: { (dates, distances, error) -> Void in
+            if (error != nil) {
+                print("Error reading past week steps from Healthkit")
+                return
+            }
+            
+            self.days = [String]()
+            for date in dates {
+                let day = ModelInterface.sharedInstance.getMonthNameBy(date)
+                self.days.append(day)
+            }
+            
+            self.setChart(self.days, values: distances, isWeekly: 0)
+            
+            dispatch_async(dispatch_get_main_queue(), { () -> Void  in
+                self.barChartView.animate(yAxisDuration: 1.5)
+                var average = 0.0
+                for distance in distances {
+                    average += distance
+                }
+                let avg = average/365
+                self.dailyAverage.text = "daily average: \(String(format: "%.2f", avg)) km"
+            });
+        });
     }
     
     func readData() {
@@ -47,19 +100,25 @@ class GraphViewController: UIViewController {
                 let day = ModelInterface.sharedInstance.getDayNameBy(date)
                 self.days.append(day)
             }
+            
             if !self.days.isEmpty {
                 self.days[self.days.count - 1] = "Today"
             }
-            self.setChart(self.days, values: distances)
+            self.setChart(self.days, values: distances, isWeekly: 1)
             dispatch_async(dispatch_get_main_queue(), { () -> Void  in
-                self.barChartView.animate(yAxisDuration: 2.0)
-                
+                self.barChartView.animate(yAxisDuration: 1.5)
+                var average = 0.0
+                for distance in distances {
+                    average += distance
+                }
+                let avg = average/Double(distances.count)
+                self.dailyAverage.text = "daily average: \(String(format: "%.2f", avg)) km"
                 
             });
         });
     }
     
-    func setChart(dataPoints: [String], values: [Double]) {
+    func setChart(dataPoints: [String], values: [Double], isWeekly: Int) {
         
         if dataPoints.isEmpty || values.isEmpty {
             return
@@ -85,8 +144,11 @@ class GraphViewController: UIViewController {
         barChartView.leftAxis.drawAxisLineEnabled = false
         barChartView.rightAxis.enabled = false
         barChartView.leftAxis.enabled = false
-        
-        barChartView.xAxis.setLabelsToSkip(0)
+        if isWeekly == 1 {
+            barChartView.xAxis.setLabelsToSkip(0)
+        } else {
+            barChartView.xAxis.setLabelsToSkip(1)
+        }
         barChartView.xAxis.labelTextColor = UIColor.whiteColor()
         barChartView.xAxis.labelFont = UIFont(name: "Muli", size: 12)!
         barChartView.leftAxis.labelTextColor = UIColor.whiteColor()
@@ -98,16 +160,23 @@ class GraphViewController: UIViewController {
         barChartView.scaleYEnabled = false
         
         
-        chartData.setValueTextColor(UIColor.whiteColor())
+        chartData.setValueTextColor(UIColor(red: 242/255, green: 242/255, blue: 242/255, alpha: 0.95))
         chartData.highlightEnabled = false
         chartData.setValueFont(UIFont(name: "Muli", size: 12))
         
         
-        
-        let ll = ChartLimitLine(limit: 8.0, label: "")
-        ll.lineWidth = 1.5
-        barChartView.rightAxis.addLimitLine(ll)
-        
+        if isWeekly == 1 {
+            barChartView.rightAxis.removeAllLimitLines()
+            let ll = ChartLimitLine(limit: 8.0, label: "")
+            ll.lineWidth = 1.5
+            barChartView.rightAxis.addLimitLine(ll)
+            
+        } else {
+            barChartView.rightAxis.removeAllLimitLines()
+            let ll = ChartLimitLine(limit: 248.0, label: "")
+            ll.lineWidth = 1.5
+            barChartView.rightAxis.addLimitLine(ll)
+        }
         
         let entry = ChartDataEntry(value: values.last!, xIndex: values.count - 1)
         chartDataSet.addEntry(entry)
@@ -115,7 +184,7 @@ class GraphViewController: UIViewController {
         
         barChartView.backgroundColor = UIColor(red: 189/255, green: 195/255, blue: 199/255, alpha: 0)
         barChartView.descriptionText = ""
-        barChartView.animate(yAxisDuration: 2.0)
+        //        barChartView.animate(yAxisDuration: 2.0)
         barChartView.gridBackgroundColor = UIColor(red: 189/255, green: 195/255, blue: 199/255, alpha: 0)
         
         barChartView.drawGridBackgroundEnabled = true
