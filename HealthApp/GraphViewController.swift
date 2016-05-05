@@ -31,6 +31,7 @@ class GraphViewController: UIViewController {
         days = [String]()
         weeklyOrMonthly = 1
         readData()
+        
     }
     var days = [String]()
     var healthManager: HealthManager?
@@ -41,6 +42,7 @@ class GraphViewController: UIViewController {
         weeklyOrMonthly = 1
         weeklyLabel.selected = true
         healthManager = HealthManager()
+        self.dailyAverage.text = "daily average: 0 km"
     }
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(false)
@@ -76,12 +78,14 @@ class GraphViewController: UIViewController {
             
             dispatch_async(dispatch_get_main_queue(), { () -> Void  in
                 self.barChartView.animate(yAxisDuration: 1.5)
-                var average = 0.0
-                for distance in distances {
-                    average += distance
+                if !distances.isEmpty {
+                    var average = 0.0
+                    for distance in distances {
+                        average += distance
+                    }
+                    let avg = average/365
+                    self.dailyAverage.text = "daily average: \(String(format: "%.2f", avg)) km"
                 }
-                let avg = average/365
-                self.dailyAverage.text = "daily average: \(String(format: "%.2f", avg)) km"
             });
         });
     }
@@ -107,12 +111,14 @@ class GraphViewController: UIViewController {
             self.setChart(self.days, values: distances, isWeekly: 1)
             dispatch_async(dispatch_get_main_queue(), { () -> Void  in
                 self.barChartView.animate(yAxisDuration: 1.5)
-                var average = 0.0
-                for distance in distances {
-                    average += distance
+                if !distances.isEmpty {
+                    var average = 0.0
+                    for distance in distances {
+                        average += distance
+                    }
+                    let avg = average/Double(distances.count)
+                    self.dailyAverage.text = "daily average: \(String(format: "%.2f", avg)) km"
                 }
-                let avg = average/Double(distances.count)
-                self.dailyAverage.text = "daily average: \(String(format: "%.2f", avg)) km"
                 
             });
         });
