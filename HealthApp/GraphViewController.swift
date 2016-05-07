@@ -39,7 +39,6 @@ class GraphViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        weeklyOrMonthly = 1
         weeklyLabel.selected = true
         healthManager = HealthManager()
         self.dailyAverage.text = "daily average: 0 km"
@@ -51,7 +50,7 @@ class GraphViewController: UIViewController {
         self.view.backgroundColor = UIColor.clearColor()
         barChartView.backgroundColor = UIColor.clearColor()
         if weeklyOrMonthly == 0 {
-            weeklyOrMonthly = 1
+            
             readMonthlyData()
         } else {
             readData()
@@ -77,7 +76,7 @@ class GraphViewController: UIViewController {
             self.setChart(self.days, values: distances, isWeekly: 0)
             
             dispatch_async(dispatch_get_main_queue(), { () -> Void  in
-                self.barChartView.animate(yAxisDuration: 1.5)
+                self.barChartView.animate(yAxisDuration: 1.0)
                 if !distances.isEmpty {
                     var average = 0.0
                     for distance in distances {
@@ -110,7 +109,7 @@ class GraphViewController: UIViewController {
             }
             self.setChart(self.days, values: distances, isWeekly: 1)
             dispatch_async(dispatch_get_main_queue(), { () -> Void  in
-                self.barChartView.animate(yAxisDuration: 1.5)
+                self.barChartView.animate(yAxisDuration: 1.0)
                 if !distances.isEmpty {
                     var average = 0.0
                     for distance in distances {

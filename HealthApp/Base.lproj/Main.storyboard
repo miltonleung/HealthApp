@@ -235,7 +235,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yzU-5u-WXB">
-                                <rect key="frame" x="105" y="64" width="73" height="21"/>
+                                <rect key="frame" x="90" y="63" width="82" height="22"/>
                                 <fontDescription key="fontDescription" name="Muli-Light" family="Muli" pointSize="14"/>
                                 <state key="normal" title="weekly">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -249,10 +249,10 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xMq-b4-GVS">
-                                <rect key="frame" x="422" y="64" width="73" height="21"/>
+                                <rect key="frame" x="428" y="63" width="82" height="22"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="4cs-OJ-8jr"/>
-                                    <constraint firstAttribute="width" constant="73" id="Ef5-8a-VBN"/>
+                                    <constraint firstAttribute="height" constant="22" id="4cs-OJ-8jr"/>
+                                    <constraint firstAttribute="width" constant="82" id="Ef5-8a-VBN"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Muli-Light" family="Muli" pointSize="14"/>
                                 <state key="normal" title="monthly">
@@ -279,11 +279,11 @@
                             <constraint firstItem="c7G-Zf-wHu" firstAttribute="top" secondItem="ilI-11-Hkt" secondAttribute="bottom" constant="5" id="fPl-vZ-EQH"/>
                             <constraint firstItem="yzU-5u-WXB" firstAttribute="height" secondItem="xMq-b4-GVS" secondAttribute="height" id="gP1-tQ-ZrJ"/>
                             <constraint firstItem="ilI-11-Hkt" firstAttribute="top" secondItem="w7M-ks-tUD" secondAttribute="bottom" constant="5" id="lUW-NW-YJe"/>
-                            <constraint firstItem="yzU-5u-WXB" firstAttribute="leading" secondItem="m8H-kx-GxW" secondAttribute="leadingMargin" constant="85" id="nOc-PC-Kro"/>
+                            <constraint firstItem="yzU-5u-WXB" firstAttribute="leading" secondItem="m8H-kx-GxW" secondAttribute="leadingMargin" constant="70" id="nOc-PC-Kro"/>
                             <constraint firstItem="c7G-Zf-wHu" firstAttribute="height" secondItem="m8H-kx-GxW" secondAttribute="height" multiplier="0.65" id="nXh-BS-l36"/>
                             <constraint firstItem="3aM-hY-Qcq" firstAttribute="centerX" secondItem="m8H-kx-GxW" secondAttribute="centerX" id="nlI-ZL-Qdk"/>
                             <constraint firstItem="ilI-11-Hkt" firstAttribute="centerX" secondItem="m8H-kx-GxW" secondAttribute="centerX" id="pQA-eo-FWA"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="xMq-b4-GVS" secondAttribute="trailing" constant="85" id="uXf-zm-jlk"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="xMq-b4-GVS" secondAttribute="trailing" constant="70" id="uXf-zm-jlk"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
