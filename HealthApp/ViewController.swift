@@ -16,7 +16,7 @@ class ViewController: UIViewController {
     
     var healthManager:HealthManager?
     var firstDate: String = ""
-    
+    let pedometer = CMPedometer()
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -25,7 +25,7 @@ class ViewController: UIViewController {
         
         
         authorizeHealthKit()
-//        banner.text = ModelInterface.sharedInstance.hardestHole(CurrentStatsViewController.getDistance())
+        updateBanner()
     }
     
     override func didReceiveMemoryWarning() {
@@ -48,6 +48,52 @@ class ViewController: UIViewController {
             }
         }
     }
+    
+    func updateBanner() {
+        
+        if (CMPedometer.isStepCountingAvailable() && CMPedometer.isDistanceAvailable()) {
+            let beginningOfDay = NSCalendar.currentCalendar().dateBySettingHour(0, minute: 0, second: 0, ofDate: NSDate(), options: [])
+            self.pedometer.queryPedometerDataFromDate(beginningOfDay!, toDate: NSDate()) { (data : CMPedometerData?, error) -> Void in
+                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                    if error == nil {
+                        if let distance = data?.distance {
+                            
+                            let currentBannerText = self.banner.text
+                            self.banner.text = ModelInterface.sharedInstance.hardestHole(distance.doubleValue/1000)
+                            
+                            let achievementString = ModelInterface.sharedInstance.reachedAchievement(distance.integerValue/1000)
+                            
+                            if achievementString != currentBannerText {
+                                self.banner.text = ModelInterface.sharedInstance.reachedAchievement(distance.integerValue/1000)
+                            }
+                            
+                            
+                            print(data?.distance)
+                        }
+                    }
+                });
+            }
+            self.pedometer.startPedometerUpdatesFromDate(beginningOfDay!) { (data : CMPedometerData?, error) -> Void in
+                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                    if let distance = data?.distance {
+                        
+                        let currentBannerText = self.banner.text
+                        self.banner.text = ModelInterface.sharedInstance.hardestHole(distance.doubleValue/1000)
+                        
+                        let achievementString = ModelInterface.sharedInstance.reachedAchievement(distance.integerValue/1000)
+                        
+                        if achievementString != currentBannerText {
+                            self.banner.text = ModelInterface.sharedInstance.reachedAchievement(distance.integerValue/1000)
+                        }
+                        
+                        print(data?.distance)
+                    }
+                });
+            }
+        }
+        
+    }
+    
     
 }
 

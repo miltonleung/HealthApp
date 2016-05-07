@@ -38,18 +38,18 @@ extension ModelInterface: AchievementProtocol {
     func hardestHole(distance: Double) -> String {
         var holeNumber = 0
         if (distance <= 1) {
-            return "The first km's the hardest."
+            return "The first kilometre's the hardest."
         }
         else if distance <= 2 {
-            return "The second km's the hardest."
+            return "The second kilometre's the hardest."
         } else if distance <= 3 {
-            return "The third km's the hardest."
+            return "The third kilometre's the hardest."
         } else {
             holeNumber = Int(ceil(distance))
         }
         
         
-        return "The \(holeNumber)th km's the hardest."
+        return "The \(holeNumber)th kilometre's the hardest."
     }
 
 }

@@ -40,9 +40,6 @@ class CurrentStatsViewController: UIViewController {
                         }
                         if let distance = data?.distance {
                             self.currentDistance.text = String(format: "%.2f", distance.doubleValue/1000)
-//                            self.banner.text = ModelInterface.sharedInstance.reachedAchievement(distance.integerValue/1000)
-//                            print(self.banner.text)
-//                            self.delegate?.setBannerText(self.currentDistance.text!)
                             print(data?.distance)
                         }
                     }
@@ -57,8 +54,6 @@ class CurrentStatsViewController: UIViewController {
                     }
                     if let distance = data?.distance {
                         self.currentDistance.text = String(format: "%.2f", distance.doubleValue/1000)
-//                        self.banner.text = ModelInterface.sharedInstance.reachedAchievement(distance.integerValue/1000)
-//                        print(self.banner.text)
                         print(data?.distance)
                     }
                 });
@@ -67,7 +62,3 @@ class CurrentStatsViewController: UIViewController {
         
     }
 }
-//
-//protocol CurrentStatsViewControllerProtocol {
-//    func setBannerText(string: String)
-//}
