@@ -14,6 +14,8 @@ protocol ConvertProtocol {
     func getMonthNameBy(stringDate: String) -> String
     func getDayNameByString(stringDate: String) -> String
     func addThousandSeperator(number: Int) -> String
+    func getDayNumberBy(stringDate: String) -> Int
+    func daysDifference(startString: String, endDate: NSDate) -> Int
 }
 
 extension ModelInterface: ConvertProtocol {
@@ -60,5 +62,23 @@ extension ModelInterface: ConvertProtocol {
         var numberFormatter = NSNumberFormatter()
         numberFormatter.numberStyle = NSNumberFormatterStyle.DecimalStyle
         return numberFormatter.stringFromNumber(number)!
+    }
+    func getDayNumberBy(stringDate: String) -> Int
+    {
+        let df  = NSDateFormatter()
+        df.dateFormat = "YYYY-MM-dd"
+        let date = df.dateFromString(stringDate)!
+        df.dateFormat = "dd"
+        let retString = df.stringFromDate(date)
+        return Int(retString)!
+    }
+    func daysDifference(startString: String, endDate: NSDate) -> Int
+    {
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        let startDate = dateFormatter.dateFromString(startString)
+        let calendar = NSCalendar.currentCalendar()
+        let components = calendar.components([.Day], fromDate: startDate!, toDate: endDate, options: [])
+        return components.day
     }
 }

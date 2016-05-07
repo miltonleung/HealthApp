@@ -82,7 +82,9 @@ class GraphViewController: UIViewController {
                     for distance in distances {
                         average += distance
                     }
-                    let avg = average/365
+                    let startDate = dates.first
+                    let averageDenom = ModelInterface.sharedInstance.daysDifference(startDate!, endDate: NSDate())
+                    let avg = average/Double(averageDenom)
                     self.dailyAverage.text = "daily average: \(String(format: "%.2f", avg)) km"
                 }
             });
