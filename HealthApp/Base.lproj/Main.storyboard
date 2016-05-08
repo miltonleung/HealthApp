@@ -60,6 +60,13 @@
                                     <segue destination="KEZ-UB-2XL" kind="embed" id="WKt-t7-A4w"/>
                                 </connections>
                             </containerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PRL-or-Sf4">
+                                <rect key="frame" x="20" y="550" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="mKg-va-Np3" kind="presentation" id="3qT-su-GS7"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.97309277520399429" green="0.9479504660864978" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -72,6 +79,8 @@
                             <constraint firstItem="pxX-RA-AWM" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="9oD-sZ-Jg9"/>
                             <constraint firstItem="ZR0-ec-RYC" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="GxA-10-l45"/>
                             <constraint firstItem="pxX-RA-AWM" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.65" id="WAy-3w-0Vw"/>
+                            <constraint firstItem="PRL-or-Sf4" firstAttribute="top" secondItem="qno-gL-zLA" secondAttribute="bottom" constant="-50" id="ZNP-1k-5NO"/>
+                            <constraint firstItem="qno-gL-zLA" firstAttribute="leading" secondItem="PRL-or-Sf4" secondAttribute="trailing" constant="-66" id="ZtJ-bq-HPE"/>
                             <constraint firstAttribute="trailingMargin" secondItem="pxX-RA-AWM" secondAttribute="trailing" constant="-20" id="bW9-jq-Hal"/>
                             <constraint firstItem="pxX-RA-AWM" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="gj8-vz-NHe"/>
                             <constraint firstItem="qno-gL-zLA" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="k3r-ur-xjX"/>
@@ -94,6 +103,38 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="26" y="260"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="QmE-VS-Gf1">
+            <objects>
+                <viewController modalPresentationStyle="overCurrentContext" id="mKg-va-Np3" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1Yh-kS-qg6"/>
+                        <viewControllerLayoutGuide type="bottom" id="vg2-Mb-FFe"/>
+                    </layoutGuides>
+                    <view key="view" opaque="NO" contentMode="scaleToFill" id="ynD-Pz-CUS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HoD-kc-XOc">
+                                <rect key="frame" x="165" y="165" width="270" height="270"/>
+                                <color key="backgroundColor" red="1" green="0.53801949477993705" blue="0.50622860114600887" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="270" id="8ub-8a-5cR"/>
+                                    <constraint firstAttribute="width" constant="270" id="GOl-g4-5iX"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="HoD-kc-XOc" firstAttribute="centerY" secondItem="ynD-Pz-CUS" secondAttribute="centerY" id="05c-oo-lRa"/>
+                            <constraint firstItem="HoD-kc-XOc" firstAttribute="centerX" secondItem="ynD-Pz-CUS" secondAttribute="centerX" id="nGg-ja-mAm"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1Zm-QL-Ymg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-127" y="1086"/>
         </scene>
         <!--Page View Controller-->
         <scene sceneID="jDu-EC-Uia">
