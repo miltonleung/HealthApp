@@ -147,7 +147,6 @@
 		528B38111CD4614F00F8338D /* HealthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528B38101CD4614F00F8338D /* HealthManager.swift */; };
 		528B38131CD461B500F8338D /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 528B38121CD461B500F8338D /* HealthKit.framework */; };
 		52E966501CF16573008D60E6 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E9664F1CF16573008D60E6 /* SettingsViewController.swift */; };
-		52E966551CF16EA5008D60E6 /* Line.png in Resources */ = {isa = PBXBuildFile; fileRef = 52E966541CF16EA5008D60E6 /* Line.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -393,7 +392,6 @@
 		528B38121CD461B500F8338D /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		528B38141CD461B500F8338D /* HealthApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = HealthApp.entitlements; sourceTree = "<group>"; };
 		52E9664F1CF16573008D60E6 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
-		52E966541CF16EA5008D60E6 /* Line.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Line.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -759,7 +757,6 @@
 				52888E831CD88C1800A30E8A /* Charts.xcodeproj */,
 				52888E921CD88CC000A30E8A /* Charts */,
 				528B37E91CD4612B00F8338D /* Assets.xcassets */,
-				52E966541CF16EA5008D60E6 /* Line.png */,
 				528B37EE1CD4612B00F8338D /* Info.plist */,
 			);
 			path = HealthApp;
@@ -974,7 +971,6 @@
 				52888D711CD8810600A30E8A /* Muli-Italic.ttf in Resources */,
 				52888FC41CD88CC000A30E8A /* Info.plist in Resources */,
 				52888D721CD8810600A30E8A /* Muli-Light.ttf in Resources */,
-				52E966551CF16EA5008D60E6 /* Line.png in Resources */,
 				52888F381CD88CC000A30E8A /* Cartfile.private in Resources */,
 				528B37E81CD4612B00F8338D /* Main.storyboard in Resources */,
 			);
