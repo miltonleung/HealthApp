@@ -16,6 +16,7 @@ class GraphViewController: UIViewController {
     
     @IBOutlet weak var monthlyLabel: UIButton!
     @IBOutlet weak var weeklyLabel: UIButton!
+    @IBOutlet weak var dailyTarget: UILabel!
     @IBAction func monthly(sender: UIButton) {
 //        sender.state = UIControlState.Selected
         weeklyLabel.selected = false
@@ -45,6 +46,9 @@ class GraphViewController: UIViewController {
     }
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(false)
+        
+        dailyTarget.text = "daily goal: \(targetDistance) km"
+        
         days = [String]()
         
         self.view.backgroundColor = UIColor.clearColor()
@@ -174,13 +178,13 @@ class GraphViewController: UIViewController {
         
         if isWeekly == 1 {
             barChartView.rightAxis.removeAllLimitLines()
-            let ll = ChartLimitLine(limit: 8.0, label: "")
+            let ll = ChartLimitLine(limit: Double(targetDistance), label: "")
             ll.lineWidth = 1.5
             barChartView.rightAxis.addLimitLine(ll)
             
         } else {
             barChartView.rightAxis.removeAllLimitLines()
-            let ll = ChartLimitLine(limit: 248.0, label: "")
+            let ll = ChartLimitLine(limit: Double(targetDistance) * 31.0, label: "")
             ll.lineWidth = 1.5
             barChartView.rightAxis.addLimitLine(ll)
         }

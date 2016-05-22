@@ -119,7 +119,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HoD-kc-XOc">
-                                <rect key="frame" x="165" y="165" width="270" height="270"/>
+                                <rect key="frame" x="165" y="114" width="270" height="270"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cyb-p2-SbE">
                                         <rect key="frame" x="0.0" y="226" width="270" height="39"/>
@@ -200,7 +200,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="HoD-kc-XOc" firstAttribute="centerY" secondItem="ynD-Pz-CUS" secondAttribute="centerY" id="05c-oo-lRa"/>
+                            <constraint firstItem="HoD-kc-XOc" firstAttribute="centerY" secondItem="ynD-Pz-CUS" secondAttribute="centerY" multiplier="0.83" id="05c-oo-lRa"/>
                             <constraint firstItem="HoD-kc-XOc" firstAttribute="centerX" secondItem="ynD-Pz-CUS" secondAttribute="centerX" id="nGg-ja-mAm"/>
                         </constraints>
                     </view>
@@ -240,13 +240,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="390"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tHC-UJ-264">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tHC-UJ-264">
                                 <rect key="frame" x="480" y="107" width="12" height="25"/>
                                 <fontDescription key="fontDescription" name="Muli-Light" family="Muli" pointSize="20"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SVY-Jj-1rb">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SVY-Jj-1rb">
                                 <rect key="frame" x="490" y="167" width="12" height="25"/>
                                 <fontDescription key="fontDescription" name="Muli-Light" family="Muli" pointSize="20"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -270,13 +270,13 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="out of 15,000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZLT-fE-i26">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZLT-fE-i26">
                                 <rect key="frame" x="500" y="117" width="62.5" height="12"/>
                                 <fontDescription key="fontDescription" name="Muli-Light" family="Muli" pointSize="10"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="out of 8 km" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aon-Wi-JFt">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aon-Wi-JFt">
                                 <rect key="frame" x="509" y="177" width="54" height="13"/>
                                 <fontDescription key="fontDescription" name="Muli-Light" family="Muli" pointSize="10"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -313,6 +313,8 @@
                         <outlet property="currentDistance" destination="SVY-Jj-1rb" id="4B8-dG-Rev"/>
                         <outlet property="currentSteps" destination="tHC-UJ-264" id="HkX-Cs-JhH"/>
                         <outlet property="date" destination="Nyt-UQ-iqD" id="Dxl-PK-NiV"/>
+                        <outlet property="outOfDistance" destination="Aon-Wi-JFt" id="jgg-op-QP0"/>
+                        <outlet property="outOfSteps" destination="ZLT-fE-i26" id="hg5-q3-DSh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vIU-wr-ZR1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -331,7 +333,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="390"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="daily goal: 8 km" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ilI-11-Hkt">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ilI-11-Hkt">
                                 <rect key="frame" x="248" y="113" width="104.5" height="18"/>
                                 <fontDescription key="fontDescription" name="Muli-Light" family="Muli" pointSize="14"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -347,13 +349,13 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="daily average: 8 km" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w7M-ks-tUD">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="daily average: 8 km" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w7M-ks-tUD">
                                 <rect key="frame" x="235" y="90" width="130" height="17.5"/>
                                 <fontDescription key="fontDescription" name="Muli-Light" family="Muli" pointSize="14"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yzU-5u-WXB">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yzU-5u-WXB">
                                 <rect key="frame" x="90" y="63" width="82" height="22"/>
                                 <fontDescription key="fontDescription" name="Muli-Light" family="Muli" pointSize="14"/>
                                 <state key="normal" title="weekly">
@@ -367,7 +369,7 @@
                                     <action selector="weekly:" destination="4P1-3E-UAj" eventType="touchUpInside" id="qFI-b4-ugH"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xMq-b4-GVS">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xMq-b4-GVS">
                                 <rect key="frame" x="428" y="63" width="82" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="22" id="4cs-OJ-8jr"/>
@@ -409,6 +411,7 @@
                     <connections>
                         <outlet property="barChartView" destination="c7G-Zf-wHu" id="ZGA-6m-C7t"/>
                         <outlet property="dailyAverage" destination="w7M-ks-tUD" id="kOM-hB-1FY"/>
+                        <outlet property="dailyTarget" destination="ilI-11-Hkt" id="v5b-lg-m18"/>
                         <outlet property="monthlyLabel" destination="xMq-b4-GVS" id="QOH-dg-rkv"/>
                         <outlet property="weeklyLabel" destination="yzU-5u-WXB" id="EnA-Y8-lAQ"/>
                     </connections>

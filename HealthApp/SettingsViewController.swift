@@ -14,7 +14,10 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var inputTarget: UITextField!
     @IBAction func closeButton(sender: AnyObject) {
         
-        print(inputTarget)
+        if (inputTarget.text != "" && inputTarget.text != "0") {
+            targetDistance = Int(inputTarget.text!)!
+        }
+        
         dismissViewControllerAnimated(true, completion: nil)
     }
     override func viewDidLoad() {

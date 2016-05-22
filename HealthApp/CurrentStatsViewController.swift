@@ -14,6 +14,8 @@ class CurrentStatsViewController: UIViewController {
     @IBOutlet weak var currentSteps: UILabel!
     @IBOutlet weak var currentDistance: UILabel!
     @IBOutlet weak var date: UILabel!
+    @IBOutlet weak var outOfSteps: UILabel!
+    @IBOutlet weak var outOfDistance: UILabel!
     let pedometer = CMPedometer()
 //    var delegate: CurrentStatsViewControllerProtocol?
     
@@ -24,6 +26,11 @@ class CurrentStatsViewController: UIViewController {
         self.date.text = "for \(ModelInterface.sharedInstance.getDayNameByString(dateext))"
         
         self.updatePedometer()
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        outOfSteps.text = "out of 15,000"
+        outOfDistance.text = "out of \(targetDistance) km"
     }
     
     func updatePedometer() {
