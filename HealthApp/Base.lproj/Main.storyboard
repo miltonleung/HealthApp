@@ -27,6 +27,7 @@
             <string>Muli-Light</string>
             <string>Muli-Light</string>
             <string>Muli-Light</string>
+            <string>Muli-Light</string>
         </mutableArray>
         <mutableArray key="Muli-Regular.ttf">
             <string>Muli</string>
@@ -119,10 +120,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HoD-kc-XOc">
-                                <rect key="frame" x="165" y="114" width="270" height="270"/>
+                                <rect key="frame" x="165" y="131" width="270" height="235"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cyb-p2-SbE">
-                                        <rect key="frame" x="0.0" y="226" width="270" height="39"/>
+                                        <rect key="frame" x="0.0" y="191" width="270" height="39"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <state key="normal" title="OK"/>
                                         <connections>
@@ -136,21 +137,35 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Line" translatesAutoresizingMaskIntoConstraints="NO" id="1Nd-DB-bVJ">
-                                        <rect key="frame" x="0.0" y="223" width="270" height="1"/>
+                                        <rect key="frame" x="0.0" y="188" width="270" height="1"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Line" translatesAutoresizingMaskIntoConstraints="NO" id="JbF-a8-71H">
                                         <rect key="frame" x="0.0" y="43" width="270" height="1"/>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="daily target (km)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xQI-Zz-ES4">
-                                        <rect key="frame" x="22" y="81" width="132" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="target distance (km)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xQI-Zz-ES4">
+                                        <rect key="frame" x="22" y="76" width="162" height="21"/>
                                         <fontDescription key="fontDescription" name="Muli-Light" family="Muli" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HSc-yU-TDn">
-                                        <rect key="frame" x="221" y="77" width="39" height="30"/>
+                                        <rect key="frame" x="221" y="71" width="39" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="39" id="oJ0-Rt-hua"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad" enablesReturnKeyAutomatically="YES"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="target steps (thousands)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jgi-mj-KJE">
+                                        <rect key="frame" x="22" y="119" width="196" height="21"/>
+                                        <fontDescription key="fontDescription" name="Muli-Light" family="Muli" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="T8w-ot-wMR">
+                                        <rect key="frame" x="221" y="115" width="39" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="39" id="Qa9-zo-5ck"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad" enablesReturnKeyAutomatically="YES"/>
@@ -160,9 +175,10 @@
                                 <constraints>
                                     <constraint firstItem="Cyb-p2-SbE" firstAttribute="centerX" secondItem="HoD-kc-XOc" secondAttribute="centerX" id="1Yg-HM-qF4"/>
                                     <constraint firstItem="Cyb-p2-SbE" firstAttribute="leading" secondItem="HoD-kc-XOc" secondAttribute="leading" id="3Qe-k7-j6O"/>
-                                    <constraint firstItem="xQI-Zz-ES4" firstAttribute="top" secondItem="JbF-a8-71H" secondAttribute="bottom" constant="37" id="3Sx-rC-fyw"/>
+                                    <constraint firstItem="xQI-Zz-ES4" firstAttribute="top" secondItem="JbF-a8-71H" secondAttribute="bottom" constant="32" id="3Sx-rC-fyw"/>
                                     <constraint firstAttribute="trailing" secondItem="JbF-a8-71H" secondAttribute="trailing" id="8OV-3P-4Zz"/>
-                                    <constraint firstAttribute="height" constant="270" id="8ub-8a-5cR"/>
+                                    <constraint firstAttribute="height" constant="235" id="8ub-8a-5cR"/>
+                                    <constraint firstItem="Jgi-mj-KJE" firstAttribute="leading" secondItem="HoD-kc-XOc" secondAttribute="leading" constant="22" id="BMn-8x-J1w"/>
                                     <constraint firstItem="JbF-a8-71H" firstAttribute="centerX" secondItem="HoD-kc-XOc" secondAttribute="centerX" id="EL3-PR-6kJ"/>
                                     <constraint firstItem="1Nd-DB-bVJ" firstAttribute="centerX" secondItem="HoD-kc-XOc" secondAttribute="centerX" id="Ey1-BP-aO5"/>
                                     <constraint firstItem="1Nd-DB-bVJ" firstAttribute="leading" secondItem="HoD-kc-XOc" secondAttribute="leading" id="Fvn-Pb-DJH"/>
@@ -172,18 +188,22 @@
                                     <constraint firstAttribute="trailing" secondItem="Cyb-p2-SbE" secondAttribute="trailing" id="HAU-Ah-w9B"/>
                                     <constraint firstItem="JbF-a8-71H" firstAttribute="leading" secondItem="HoD-kc-XOc" secondAttribute="leading" id="HfN-Tf-76p"/>
                                     <constraint firstItem="HSc-yU-TDn" firstAttribute="centerY" secondItem="xQI-Zz-ES4" secondAttribute="centerY" id="Jxz-XI-I0M"/>
+                                    <constraint firstAttribute="trailing" secondItem="T8w-ot-wMR" secondAttribute="trailing" constant="10" id="QT4-yt-LGA"/>
                                     <constraint firstItem="xQI-Zz-ES4" firstAttribute="top" secondItem="JbF-a8-71H" secondAttribute="bottom" constant="37" id="Uct-zI-fQy"/>
                                     <constraint firstItem="xQI-Zz-ES4" firstAttribute="leading" secondItem="HoD-kc-XOc" secondAttribute="leading" constant="22" id="W09-5N-gSa"/>
                                     <constraint firstAttribute="bottom" secondItem="Cyb-p2-SbE" secondAttribute="bottom" constant="5" id="XwU-x5-Gjz"/>
                                     <constraint firstItem="xQI-Zz-ES4" firstAttribute="leading" secondItem="HoD-kc-XOc" secondAttribute="leading" constant="22" id="ZcG-CB-cJn"/>
                                     <constraint firstItem="JbF-a8-71H" firstAttribute="top" secondItem="HoD-kc-XOc" secondAttribute="top" constant="43" id="abj-1u-xa5"/>
+                                    <constraint firstItem="Jgi-mj-KJE" firstAttribute="top" secondItem="xQI-Zz-ES4" secondAttribute="bottom" constant="22" id="cp2-sc-0cz"/>
                                     <constraint firstAttribute="bottom" secondItem="1Nd-DB-bVJ" secondAttribute="bottom" constant="46" id="cwQ-Tx-Vb4"/>
                                     <constraint firstAttribute="trailing" secondItem="HSc-yU-TDn" secondAttribute="trailing" constant="10" id="d7a-aA-P9N"/>
+                                    <constraint firstItem="T8w-ot-wMR" firstAttribute="leading" secondItem="Jgi-mj-KJE" secondAttribute="trailing" constant="3" id="dWq-be-A2q"/>
                                     <constraint firstItem="Wac-rE-UjI" firstAttribute="top" secondItem="HoD-kc-XOc" secondAttribute="top" constant="15" id="iZY-Wk-zoh"/>
                                     <constraint firstItem="Cyb-p2-SbE" firstAttribute="top" secondItem="1Nd-DB-bVJ" secondAttribute="bottom" constant="2" id="mFd-iD-TO9"/>
-                                    <constraint firstItem="HSc-yU-TDn" firstAttribute="top" secondItem="JbF-a8-71H" secondAttribute="bottom" constant="33" id="neC-nI-rYa"/>
+                                    <constraint firstItem="HSc-yU-TDn" firstAttribute="top" secondItem="JbF-a8-71H" secondAttribute="bottom" constant="27" id="neC-nI-rYa"/>
+                                    <constraint firstItem="T8w-ot-wMR" firstAttribute="top" secondItem="HSc-yU-TDn" secondAttribute="bottom" constant="14" id="no0-Qq-hLb"/>
                                     <constraint firstAttribute="trailing" secondItem="1Nd-DB-bVJ" secondAttribute="trailing" id="ubG-q7-408"/>
-                                    <constraint firstItem="HSc-yU-TDn" firstAttribute="leading" secondItem="xQI-Zz-ES4" secondAttribute="trailing" constant="67" id="vMl-g8-pos"/>
+                                    <constraint firstItem="HSc-yU-TDn" firstAttribute="leading" secondItem="xQI-Zz-ES4" secondAttribute="trailing" constant="37" id="vMl-g8-pos"/>
                                     <constraint firstItem="Cyb-p2-SbE" firstAttribute="top" secondItem="1Nd-DB-bVJ" secondAttribute="bottom" id="zJI-fu-RXG"/>
                                 </constraints>
                                 <variation key="default">
@@ -205,6 +225,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="inputSteps" destination="T8w-ot-wMR" id="GKi-vw-1DN"/>
                         <outlet property="inputTarget" destination="HSc-yU-TDn" id="lyk-9K-WLo"/>
                         <outlet property="popUpView" destination="HoD-kc-XOc" id="ncw-xM-PzE"/>
                         <outlet property="view" destination="HoD-kc-XOc" id="1dj-Bo-hGI"/>

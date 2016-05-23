@@ -12,6 +12,7 @@ class SettingsViewController: UIViewController {
 
     @IBOutlet weak var popUpView: UIView!
     @IBOutlet weak var inputTarget: UITextField!
+    @IBOutlet weak var inputSteps: UITextField!
     @IBAction func closeButton(sender: AnyObject) {
         
         if (inputTarget.text != "" && inputTarget.text != "0") {
@@ -33,7 +34,7 @@ class SettingsViewController: UIViewController {
     func dismissKeyboard() {
         view.endEditing(true)
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
