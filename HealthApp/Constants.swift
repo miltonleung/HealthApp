@@ -13,3 +13,4 @@ var achievements = [1: "Baby Steps", 3: "You have reached 3 km!", 5: "You have r
 var doneAchievements = [Int]()
 
 var targetDistance = 8
+var targetSteps = 10000

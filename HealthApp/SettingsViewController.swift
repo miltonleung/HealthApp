@@ -19,16 +19,23 @@ class SettingsViewController: UIViewController {
             targetDistance = Int(inputTarget.text!)!
         }
         
+        if (inputSteps.text != "" && inputSteps.text != "0") {
+            targetSteps = Int(inputSteps.text!)! * 1000
+        }
+        
         dismissViewControllerAnimated(true, completion: nil)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
         popUpView.layer.cornerRadius = 25
 //        self.view.backgroundColor = UIColor.blackColor().colorWithAlphaComponent(0.2)
-        inputTarget.text = String(targetDistance)
+        
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
         view.addGestureRecognizer(tap)
-
+    }
+    override func viewWillAppear(animated: Bool) {
+        inputTarget.text = String(targetDistance)
+        inputSteps.text = String(targetSteps/1000)
     }
     
     func dismissKeyboard() {

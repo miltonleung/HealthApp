@@ -29,7 +29,8 @@ class CurrentStatsViewController: UIViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
-        outOfSteps.text = "out of 15,000"
+        let steps = ModelInterface.sharedInstance.addThousandSeperator(targetSteps)
+        outOfSteps.text = "out of \(steps)"
         outOfDistance.text = "out of \(targetDistance) km"
     }
     
