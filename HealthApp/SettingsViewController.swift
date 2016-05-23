@@ -25,7 +25,13 @@ class SettingsViewController: UIViewController {
         popUpView.layer.cornerRadius = 25
 //        self.view.backgroundColor = UIColor.blackColor().colorWithAlphaComponent(0.2)
         inputTarget.text = String(targetDistance)
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        view.addGestureRecognizer(tap)
 
+    }
+    
+    func dismissKeyboard() {
+        view.endEditing(true)
     }
 
     override func didReceiveMemoryWarning() {
