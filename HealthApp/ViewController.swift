@@ -82,7 +82,7 @@ class ViewController: UIViewController {
                         
                         let achievementString = ModelInterface.sharedInstance.reachedAchievement(distance.integerValue/1000)
                         
-                        if achievementString != currentBannerText {
+                        if achievementString != currentBannerText && achievementString != "" {
                             self.banner.text = ModelInterface.sharedInstance.reachedAchievement(distance.integerValue/1000)
                         }
                         
