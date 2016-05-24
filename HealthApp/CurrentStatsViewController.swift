@@ -22,16 +22,18 @@ class CurrentStatsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let dateext = ModelInterface.sharedInstance.convertDate(NSDate())
-        self.date.text = "for \(ModelInterface.sharedInstance.getDayNameByString(dateext))"
         
-        self.updatePedometer()
     }
     
     override func viewWillAppear(animated: Bool) {
         let steps = ModelInterface.sharedInstance.addThousandSeperator(targetSteps)
         outOfSteps.text = "out of \(steps)"
         outOfDistance.text = "out of \(targetDistance) km"
+        
+        let dateext = ModelInterface.sharedInstance.convertDate(NSDate())
+        self.date.text = "for \(ModelInterface.sharedInstance.getDayNameByString(dateext))"
+        
+        self.updatePedometer()
     }
     
     func updatePedometer() {
