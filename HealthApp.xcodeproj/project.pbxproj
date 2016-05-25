@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5211CDB71CF51F3E002DA19E /* AchievementsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5211CDB61CF51F3E002DA19E /* AchievementsViewController.swift */; };
 		5212CAA71CD5BD5000041771 /* ModelInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5212CAA61CD5BD5000041771 /* ModelInterface.swift */; };
 		5212CAA91CD5BD7300041771 /* DateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5212CAA81CD5BD7300041771 /* DateModel.swift */; };
 		5253C8B61CD6976B00F2713A /* AchievementModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5253C8B51CD6976B00F2713A /* AchievementModel.swift */; };
@@ -244,6 +245,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5211CDB61CF51F3E002DA19E /* AchievementsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AchievementsViewController.swift; sourceTree = "<group>"; };
 		5212CAA61CD5BD5000041771 /* ModelInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelInterface.swift; sourceTree = "<group>"; };
 		5212CAA81CD5BD7300041771 /* DateModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateModel.swift; sourceTree = "<group>"; };
 		5253C8B51CD6976B00F2713A /* AchievementModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AchievementModel.swift; sourceTree = "<group>"; };
@@ -749,6 +751,7 @@
 				528B38101CD4614F00F8338D /* HealthManager.swift */,
 				528B37E41CD4612B00F8338D /* ViewController.swift */,
 				528B37E61CD4612B00F8338D /* Main.storyboard */,
+				5211CDB61CF51F3E002DA19E /* AchievementsViewController.swift */,
 				52E9664F1CF16573008D60E6 /* SettingsViewController.swift */,
 				5253C8BF1CD73A2600F2713A /* CumulativeStatsViewController.swift */,
 				5253C8BD1CD7394C00F2713A /* CurrentStatsViewController.swift */,
@@ -883,12 +886,12 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 52888E841CD88C1800A30E8A /* Products */;
-					ProjectRef = 52888E831CD88C1800A30E8A /* Charts.xcodeproj */;
-				},
-				{
 					ProductGroup = 52888E961CD88CC000A30E8A /* Products */;
 					ProjectRef = 52888E951CD88CC000A30E8A /* Charts.xcodeproj */;
+				},
+				{
+					ProductGroup = 52888E841CD88C1800A30E8A /* Products */;
+					ProjectRef = 52888E831CD88C1800A30E8A /* Charts.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -1051,6 +1054,7 @@
 				52888F691CD88CC000A30E8A /* BarChartData.swift in Sources */,
 				52888FB71CD88CC000A30E8A /* LineRadarChartRenderer.swift in Sources */,
 				52888F9C1CD88CC000A30E8A /* CandleChartDataProvider.swift in Sources */,
+				5211CDB71CF51F3E002DA19E /* AchievementsViewController.swift in Sources */,
 				52888F881CD88CC000A30E8A /* ILineRadarChartDataSet.swift in Sources */,
 				52888FC31CD88CC000A30E8A /* ChartViewPortHandler.swift in Sources */,
 				52888F821CD88CC000A30E8A /* IBarChartDataSet.swift in Sources */,
