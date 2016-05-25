@@ -27,7 +27,7 @@ class SettingsViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        popUpView.layer.cornerRadius = 25
+        popUpView.layer.cornerRadius = 11
 //        self.view.backgroundColor = UIColor.blackColor().colorWithAlphaComponent(0.2)
         
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
