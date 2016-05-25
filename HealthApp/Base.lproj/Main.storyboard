@@ -129,7 +129,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZR0-ec-RYC">
-                                <rect key="frame" x="297" y="79" width="5" height="39"/>
+                                <rect key="frame" x="297" y="79" width="5" height="45"/>
                                 <fontDescription key="fontDescription" name="Muli-Light" family="Muli" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -140,18 +140,18 @@
                                     <segue destination="KEZ-UB-2XL" kind="embed" id="WKt-t7-A4w"/>
                                 </connections>
                             </containerView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PRL-or-Sf4">
-                                <rect key="frame" x="550" y="5" width="61" height="61"/>
-                                <state key="normal" backgroundImage="GearIcon"/>
-                                <connections>
-                                    <segue destination="UI8-c1-9my" kind="presentation" modalPresentationStyle="overCurrentContext" id="9Bt-Dx-nH9"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cu8-Fo-3wl">
-                                <rect key="frame" x="20" y="20" width="46" height="30"/>
+                                <rect key="frame" x="12" y="562" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
                                     <segue destination="HvX-cF-QBg" kind="presentation" modalPresentationStyle="overCurrentContext" id="ANQ-dh-SGa"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PRL-or-Sf4">
+                                <rect key="frame" x="6" y="20" width="40" height="40"/>
+                                <state key="normal" backgroundImage="GearIcon"/>
+                                <connections>
+                                    <segue destination="UI8-c1-9my" kind="presentation" modalPresentationStyle="overCurrentContext" id="9Bt-Dx-nH9"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -164,16 +164,16 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="qno-gL-zLA" secondAttribute="bottom" id="7HJ-HF-Lzs"/>
                             <constraint firstItem="ZR0-ec-RYC" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="59" id="9ZG-td-QnY"/>
                             <constraint firstItem="pxX-RA-AWM" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="9oD-sZ-Jg9"/>
-                            <constraint firstItem="qno-gL-zLA" firstAttribute="top" secondItem="Cu8-Fo-3wl" secondAttribute="bottom" constant="-50" id="AwT-z0-G9y"/>
+                            <constraint firstItem="PRL-or-Sf4" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Gko-Ss-Dg2"/>
                             <constraint firstItem="ZR0-ec-RYC" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="GxA-10-l45"/>
-                            <constraint firstItem="qno-gL-zLA" firstAttribute="top" secondItem="PRL-or-Sf4" secondAttribute="bottom" constant="-66" id="Trd-nE-cho"/>
                             <constraint firstItem="pxX-RA-AWM" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.65" id="WAy-3w-0Vw"/>
-                            <constraint firstItem="pxX-RA-AWM" firstAttribute="top" secondItem="ZR0-ec-RYC" secondAttribute="bottom" constant="41" id="WYB-H9-tlc"/>
-                            <constraint firstItem="PRL-or-Sf4" firstAttribute="leading" secondItem="qno-gL-zLA" secondAttribute="trailing" constant="-50" id="XVP-VC-UbT"/>
+                            <constraint firstItem="pxX-RA-AWM" firstAttribute="top" secondItem="ZR0-ec-RYC" secondAttribute="bottom" constant="35" id="WYB-H9-tlc"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Cu8-Fo-3wl" secondAttribute="bottom" constant="8" id="XSJ-Zq-tZ0"/>
                             <constraint firstAttribute="trailingMargin" secondItem="pxX-RA-AWM" secondAttribute="trailing" constant="-20" id="bW9-jq-Hal"/>
                             <constraint firstItem="pxX-RA-AWM" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="gj8-vz-NHe"/>
+                            <constraint firstItem="PRL-or-Sf4" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-14" id="jce-4p-NZG"/>
                             <constraint firstItem="qno-gL-zLA" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="k3r-ur-xjX"/>
-                            <constraint firstItem="qno-gL-zLA" firstAttribute="leading" secondItem="Cu8-Fo-3wl" secondAttribute="trailing" constant="-66" id="mDk-3z-ieM"/>
+                            <constraint firstItem="Cu8-Fo-3wl" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-8" id="lDv-xZ-pDD"/>
                             <constraint firstAttribute="trailingMargin" secondItem="pxX-RA-AWM" secondAttribute="trailing" constant="-10" id="su5-Tn-R6X"/>
                             <constraint firstItem="pxX-RA-AWM" firstAttribute="centerY" secondItem="qno-gL-zLA" secondAttribute="centerY" multiplier="1.18" id="vYr-1i-K9D"/>
                         </constraints>
@@ -589,7 +589,7 @@
     </scenes>
     <resources>
         <image name="Gear" width="61" height="61"/>
-        <image name="GearIcon" width="38" height="38"/>
+        <image name="GearIcon" width="40" height="40"/>
         <image name="Image" width="640" height="1136"/>
         <image name="Medal" width="61" height="61"/>
         <image name="buttonBackground" width="66" height="17"/>
