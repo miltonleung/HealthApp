@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SettingsViewController: UIViewController {
+class SettingsViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var popUpView: UIView!
     @IBOutlet weak var inputTarget: UITextField!
@@ -28,10 +28,12 @@ class SettingsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         popUpView.layer.cornerRadius = 11
-//        self.view.backgroundColor = UIColor.blackColor().colorWithAlphaComponent(0.2)
         
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
         view.addGestureRecognizer(tap)
+        
+        inputTarget.delegate = self
+        inputSteps.delegate = self
     }
     override func viewWillAppear(animated: Bool) {
         inputTarget.text = String(targetDistance)
