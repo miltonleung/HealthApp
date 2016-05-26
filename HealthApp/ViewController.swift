@@ -23,11 +23,23 @@ class ViewController: UIViewController {
         
         healthManager = HealthManager()
         
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "performLifetimeSegue:", name:"lifetimeNotification", object: nil)
+        
         
         authorizeHealthKit()
         updateBanner()
+        //        lifetimeAchievements()
     }
     
+    func performLifetimeSegue(notification: NSNotification) {
+        self.performSegueWithIdentifier("lifetimeSegue", sender: nil)
+        
+    }
+    
+    @IBAction func achievementButton(sender: AnyObject) {
+        //        self.performSegueWithIdentifier("lifetimeSegue", sender: nil)
+        showLifetime()
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

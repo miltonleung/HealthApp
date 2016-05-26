@@ -111,7 +111,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PY1-Q0-MRm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-649" y="437"/>
+            <point key="canvasLocation" x="-658" y="444"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -140,19 +140,23 @@
                                     <segue destination="KEZ-UB-2XL" kind="embed" id="WKt-t7-A4w"/>
                                 </connections>
                             </containerView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cu8-Fo-3wl">
-                                <rect key="frame" x="12" y="562" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <segue destination="HvX-cF-QBg" kind="presentation" modalPresentationStyle="overCurrentContext" id="ANQ-dh-SGa"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PRL-or-Sf4">
                                 <rect key="frame" x="6" y="20" width="40" height="40"/>
                                 <state key="normal" backgroundImage="GearIcon"/>
                                 <connections>
-                                    <segue destination="UI8-c1-9my" kind="presentation" modalPresentationStyle="overCurrentContext" id="9Bt-Dx-nH9"/>
+                                    <segue destination="UI8-c1-9my" kind="presentation" identifier="" modalPresentationStyle="overCurrentContext" id="9Bt-Dx-nH9"/>
                                 </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Poj-p8-vO4">
+                                <rect key="frame" x="485" y="562" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="achievementButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WDO-ga-I8Q"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cu8-Fo-3wl">
+                                <rect key="frame" x="12" y="562" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.97309277520399429" green="0.9479504660864978" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -164,6 +168,7 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="qno-gL-zLA" secondAttribute="bottom" id="7HJ-HF-Lzs"/>
                             <constraint firstItem="ZR0-ec-RYC" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="59" id="9ZG-td-QnY"/>
                             <constraint firstItem="pxX-RA-AWM" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="9oD-sZ-Jg9"/>
+                            <constraint firstItem="Poj-p8-vO4" firstAttribute="top" secondItem="qno-gL-zLA" secondAttribute="bottom" constant="-38" id="G4f-LA-cTa"/>
                             <constraint firstItem="PRL-or-Sf4" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Gko-Ss-Dg2"/>
                             <constraint firstItem="ZR0-ec-RYC" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="GxA-10-l45"/>
                             <constraint firstItem="pxX-RA-AWM" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.65" id="WAy-3w-0Vw"/>
@@ -176,6 +181,7 @@
                             <constraint firstItem="Cu8-Fo-3wl" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-8" id="lDv-xZ-pDD"/>
                             <constraint firstAttribute="trailingMargin" secondItem="pxX-RA-AWM" secondAttribute="trailing" constant="-10" id="su5-Tn-R6X"/>
                             <constraint firstItem="pxX-RA-AWM" firstAttribute="centerY" secondItem="qno-gL-zLA" secondAttribute="centerY" multiplier="1.18" id="vYr-1i-K9D"/>
+                            <constraint firstItem="Poj-p8-vO4" firstAttribute="leading" secondItem="qno-gL-zLA" secondAttribute="trailing" constant="-115" id="ypk-43-biy"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -188,6 +194,7 @@
                     </view>
                     <connections>
                         <outlet property="banner" destination="ZR0-ec-RYC" id="pwh-zF-q66"/>
+                        <segue destination="HvX-cF-QBg" kind="presentation" identifier="lifetimeSegue" modalPresentationStyle="overCurrentContext" id="azM-6p-Cxi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

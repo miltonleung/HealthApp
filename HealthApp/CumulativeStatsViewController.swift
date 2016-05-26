@@ -16,6 +16,7 @@ class CumulativeStatsViewController: UIViewController {
     @IBOutlet weak var date: UILabel!
     
     var healthManager:HealthManager?
+    let data = Data()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,6 +69,7 @@ class CumulativeStatsViewController: UIViewController {
             
             dispatch_async(dispatch_get_main_queue(), { () -> Void in
                 let totalResult = Int(totalSteps.1.doubleValueForUnit(HKUnit.countUnit()))
+                self.data.totalSteps = totalResult
                 let totalResultwithCommas = ModelInterface.sharedInstance.addThousandSeperator(totalResult)
                 self.cumulativeSteps.text = "\(totalResultwithCommas)"
                 print(self.cumulativeSteps.text!)
@@ -85,6 +87,7 @@ class CumulativeStatsViewController: UIViewController {
             
             dispatch_async(dispatch_get_main_queue(), { () -> Void in
                 let totalResult = Int(totalDistance.1.doubleValueForUnit(HKUnit.meterUnitWithMetricPrefix(.Kilo)))
+                self.data.totalDistance = totalResult
                 let totalResultwithCommas = ModelInterface.sharedInstance.addThousandSeperator(totalResult)
                 self.cumulativeDistance.text = "\(totalResultwithCommas) km"
                 print(self.cumulativeDistance.text!)

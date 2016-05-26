@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HealthApp/ViewController.swift"
-            timestampString = "485821045.338411"
+            timestampString = "485931654.874727"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "78"
-            endingLineNumber = "78"
+            startingLineNumber = "134"
+            endingLineNumber = "134"
             landmarkName = "updateBanner()"
             landmarkType = "5">
             <Locations>

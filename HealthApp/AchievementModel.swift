@@ -11,6 +11,7 @@ import Foundation
 protocol AchievementProtocol {
     func reachedAchievement(distance: Int) -> String
     func hardestHole(distance: Double) -> String
+    func reachedDistanceLifetimeAchievement(distance: Int) -> Bool
     
 }
 
@@ -50,6 +51,21 @@ extension ModelInterface: AchievementProtocol {
         
         
         return "The \(holeNumber)th kilometre's the hardest."
+    }
+    
+    func reachedDistanceLifetimeAchievement(distance: Int) -> Bool {
+        
+        
+        if distance % 1000000 == 0 {
+            return true
+        }
+        else {
+            return false
+        }
+    }
+    
+    func reachedStepsLifetimeAchievement(steps: Int) -> Bool {
+        return false
     }
 
 }
