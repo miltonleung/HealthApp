@@ -19,17 +19,4 @@ var doneLifeTimeDistance = [Int]()
 var targetDistance = 8
 var targetSteps = 10000
 
-class Data {
-    var viewcontroller = ViewController()
-    var totalSteps: Int = 0 {
-        didSet {
-            print("New total steps value set")
-        }
-    }
-    var totalDistance: Int = 0 {
-        didSet {
-            print("New total distance value set")
-            NSNotificationCenter.defaultCenter().postNotificationName("lifetimeNotification", object: nil)
-        }
-    }
-}
+

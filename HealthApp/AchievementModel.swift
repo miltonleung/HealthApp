@@ -11,7 +11,6 @@ import Foundation
 protocol AchievementProtocol {
     func reachedAchievement(distance: Int) -> String
     func hardestHole(distance: Double) -> String
-    func reachedDistanceLifetimeAchievement(distance: Int) -> Bool
     
 }
 

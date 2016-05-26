@@ -28,17 +28,23 @@ class ViewController: UIViewController {
         
         authorizeHealthKit()
         updateBanner()
-        //        lifetimeAchievements()
     }
     
     func performLifetimeSegue(notification: NSNotification) {
-        self.performSegueWithIdentifier("lifetimeSegue", sender: nil)
-        
+        if let awards = notification.userInfo as? Dictionary<Int, Int> {
+            let size = awards.count
+            for index in 1 ... size {
+                print(index)
+                self.performSegueWithIdentifier("lifetimeSegue", sender: nil)
+            }
+        } else {
+            print("error in userinfo type")
+        }
     }
     
     @IBAction func achievementButton(sender: AnyObject) {
         //        self.performSegueWithIdentifier("lifetimeSegue", sender: nil)
-        showLifetime()
+        
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

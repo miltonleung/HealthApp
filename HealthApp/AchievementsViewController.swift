@@ -10,7 +10,12 @@ import UIKit
 
 class AchievementsViewController: UIViewController {
 
+    let data = Data()
+    
     @IBOutlet weak var AchievementsView: UIView!
+    
+    @IBOutlet weak var number: UILabel!
+    @IBOutlet weak var message: UILabel!
     @IBAction func closeButton(sender: AnyObject) {
         dismissViewControllerAnimated(true, completion: nil)
     }
@@ -18,6 +23,9 @@ class AchievementsViewController: UIViewController {
         super.viewDidLoad()
         AchievementsView.layer.cornerRadius = 11
         // Do any additional setup after loading the view.
+        number.text = "\(data.currentLifetimeDistanceAchievements.last) km!"
+//        let days = ModelInterface.sharedInstance().daysDifference(<#T##startString: String##String#>, endDate: <#T##NSDate#>)
+        message.text = "It only took you 91 days? Keep it up! Here's to the next thousand!"
     }
 
     override func didReceiveMemoryWarning() {

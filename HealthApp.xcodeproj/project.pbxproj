@@ -148,6 +148,7 @@
 		528B38111CD4614F00F8338D /* HealthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528B38101CD4614F00F8338D /* HealthManager.swift */; };
 		528B38131CD461B500F8338D /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 528B38121CD461B500F8338D /* HealthKit.framework */; };
 		52E966501CF16573008D60E6 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E9664F1CF16573008D60E6 /* SettingsViewController.swift */; };
+		52EBEFE41CF6C4050028EDAC /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EBEFE31CF6C4050028EDAC /* Data.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -394,6 +395,7 @@
 		528B38121CD461B500F8338D /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		528B38141CD461B500F8338D /* HealthApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = HealthApp.entitlements; sourceTree = "<group>"; };
 		52E9664F1CF16573008D60E6 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		52EBEFE31CF6C4050028EDAC /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -747,6 +749,7 @@
 				5253C8B41CD6975000F2713A /* Model */,
 				528B38141CD461B500F8338D /* HealthApp.entitlements */,
 				5253C8B71CD697DD00F2713A /* Constants.swift */,
+				52EBEFE31CF6C4050028EDAC /* Data.swift */,
 				528B37E21CD4612B00F8338D /* AppDelegate.swift */,
 				528B38101CD4614F00F8338D /* HealthManager.swift */,
 				528B37E41CD4612B00F8338D /* ViewController.swift */,
@@ -886,12 +889,12 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 52888E961CD88CC000A30E8A /* Products */;
-					ProjectRef = 52888E951CD88CC000A30E8A /* Charts.xcodeproj */;
-				},
-				{
 					ProductGroup = 52888E841CD88C1800A30E8A /* Products */;
 					ProjectRef = 52888E831CD88C1800A30E8A /* Charts.xcodeproj */;
+				},
+				{
+					ProductGroup = 52888E961CD88CC000A30E8A /* Products */;
+					ProjectRef = 52888E951CD88CC000A30E8A /* Charts.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -1017,6 +1020,7 @@
 				5212CAA91CD5BD7300041771 /* DateModel.swift in Sources */,
 				52888F591CD88CC000A30E8A /* ChartViewBase.swift in Sources */,
 				5253C8C01CD73A2600F2713A /* CumulativeStatsViewController.swift in Sources */,
+				52EBEFE41CF6C4050028EDAC /* Data.swift in Sources */,
 				52888F801CD88CC000A30E8A /* ScatterChartData.swift in Sources */,
 				52888F871CD88CC000A30E8A /* ILineChartDataSet.swift in Sources */,
 				52888F8F1CD88CC000A30E8A /* ChartDefaultFillFormatter.swift in Sources */,
