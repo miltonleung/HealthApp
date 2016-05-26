@@ -39,7 +39,8 @@ class AchievementsViewController: UIViewController {
     func updateAchievements() {
         if !currentLifetimeStepsAchievements.isEmpty {
             if let text = currentLifetimeStepsAchievements.last {
-                number.text = "\(text) steps!"
+                let newText = ModelInterface.sharedInstance.addThousandSeperator(text)
+                number.text = "\(newText) steps!"
             }
             //        let days = ModelInterface.sharedInstance().daysDifference(<#T##startString: String##String#>, endDate: <#T##NSDate#>)
             message.text = "It only took you 91 days? Keep it up! Here's to the next million!"
@@ -48,7 +49,8 @@ class AchievementsViewController: UIViewController {
         }
         else if !currentLifetimeDistanceAchievements.isEmpty {
             if let text = currentLifetimeDistanceAchievements.last {
-                number.text = "\(text) km!"
+                let newText = ModelInterface.sharedInstance.addThousandSeperator(text)
+                number.text = "\(newText) km!"
             }
             //        let days = ModelInterface.sharedInstance().daysDifference(<#T##startString: String##String#>, endDate: <#T##NSDate#>)
             message.text = "It only took you 91 days? Keep it up! Here's to the next thousand!"
