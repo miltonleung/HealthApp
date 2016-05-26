@@ -28,15 +28,46 @@ class AchievementsViewController: UIViewController {
             });
         }
     }
+//    override func viewWillLayoutSubviews() {
+//        super.viewWillLayoutSubviews()
+//        
+////        AchievementsView.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5).CGColor
+//        AchievementsView.layer.shadowColor = UIColor.blackColor().CGColor
+//
+//        AchievementsView.layer.shadowOffset = CGSize(width: 1, height: -1)
+//        AchievementsView.layer.shadowOpacity = 0.8
+//        AchievementsView.layer.shadowRadius = 3
+//        AchievementsView.clipsToBounds = true
+//        view.addSubview(AchievementsView)
+//    }
     override func viewDidLoad() {
         super.viewDidLoad()
         AchievementsView.layer.cornerRadius = 11
+        AchievementsView.backgroundColor = UIColor(patternImage: UIImage(named: "SingleAchievements")!)
         
+//        AchievementsView.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5).CGColor
+//        AchievementsView.layer.shadowOffset = CGSize(width: 1, height: -1)
+//        AchievementsView.layer.shadowRadius = 3
+//        
+//        view.addSubview(AchievementsView)
+
         updateAchievements()
         
     }
     
     func updateAchievements() {
+        let reps = currentLifetimeStepsAchievements.count + currentLifetimeDistanceAchievements.count
+        if reps == 1 {
+            AchievementsView.backgroundColor = UIColor(patternImage: UIImage(named: "SingleAchievements")!)
+        }
+        else if reps == 2 {
+            AchievementsView.backgroundColor = UIColor(patternImage: UIImage(named: "TwoAchievements")!)
+        }
+        else {
+            AchievementsView.backgroundColor = UIColor(patternImage: UIImage(named: "MultipleAchievements")!)
+
+        }
+        
         if !currentLifetimeStepsAchievements.isEmpty {
             if let text = currentLifetimeStepsAchievements.last {
                 let newText = ModelInterface.sharedInstance.addThousandSeperator(text)

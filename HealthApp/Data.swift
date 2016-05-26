@@ -26,7 +26,7 @@ class Data {
     
     var totalSteps: Int = 0 {
         willSet {
-//            currentLifetimeStepsAchievements = [Int]()
+            //            currentLifetimeStepsAchievements = [Int]()
         }
         didSet {
             print("New total steps value set")
@@ -37,7 +37,7 @@ class Data {
     }
     var totalDistance: Int = 0 {
         willSet {
-//            currentLifetimeDistanceAchievements = [Int]()
+            //            currentLifetimeDistanceAchievements = [Int]()
         }
         didSet {
             print("New total distance value set")
@@ -50,7 +50,9 @@ class Data {
     var checkedBoth: Int = 0 {
         didSet {
             if checkedBoth == 2 {
-                NSNotificationCenter.defaultCenter().postNotificationName("lifetimeNotification", object: nil)
+                if (!currentLifetimeDistanceAchievements.isEmpty || !currentLifetimeStepsAchievements.isEmpty) {
+                    NSNotificationCenter.defaultCenter().postNotificationName("lifetimeNotification", object: nil)
+                }
                 checkedBoth = 0
             }
         }
@@ -66,7 +68,7 @@ class Data {
             thousandTargetCounter += 1000
         }
         checkedBoth += 1
-//        NSNotificationCenter.defaultCenter().postNotificationName("lifetimeNotification", object: nil, userInfo: lifetimeDistanceDictionary)
+        //        NSNotificationCenter.defaultCenter().postNotificationName("lifetimeNotification", object: nil, userInfo: lifetimeDistanceDictionary)
     }
     
     func updateLifetimeStepsAchievement() {
@@ -80,7 +82,7 @@ class Data {
             millionTargetCounter += 1000000
         }
         checkedBoth += 1
-//        NSNotificationCenter.defaultCenter().postNotificationName("lifetimeNotification", object: nil, userInfo: lifetimeStepsDictionary)
+        //        NSNotificationCenter.defaultCenter().postNotificationName("lifetimeNotification", object: nil, userInfo: lifetimeStepsDictionary)
     }
     
 }
