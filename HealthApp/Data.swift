@@ -8,19 +8,21 @@
 
 import Foundation
 
+var lifetimeDistanceAchievements = []
+var doneLifetimeDistanceAchievements = [Int]()
+var currentLifetimeDistanceAchievements = [Int]()
+
+var lifetimeStepsAchievements = []
+var doneLifetimeStepsAchievements = [Int]()
+var currentLifetimeStepsAchievements = [Int]()
+
+var millionTargetCounter = 1000000
+var thousandTargetCounter = 1000
+
 class Data {
     var viewcontroller = ViewController()
     
-    var lifetimeDistanceAchievements = []
-    var doneLifetimeDistanceAchievements = [Int]()
-    var currentLifetimeDistanceAchievements = [Int]()
     
-    var lifetimeStepsAchievements = []
-    var doneLifetimeStepsAchievements = [Int]()
-    var currentLifetimeStepsAchievements = [Int]()
-    
-    var millionTargetCounter = 1000000
-    var thousandTargetCounter = 1000
     
     var totalSteps: Int = 0 {
         willSet {
@@ -45,6 +47,14 @@ class Data {
         }
     }
     
+    var checkedBoth: Int = 0 {
+        didSet {
+            if checkedBoth == 2 {
+                NSNotificationCenter.defaultCenter().postNotificationName("lifetimeNotification", object: nil)
+                checkedBoth = 0
+            }
+        }
+    }
     func updateLifetimeDistanceAchievement() {
         var lifetimeDistanceDictionary = [Int: Int]()
         
@@ -52,10 +62,11 @@ class Data {
             doneLifetimeDistanceAchievements.append(thousandTargetCounter)
             currentLifetimeDistanceAchievements.append(thousandTargetCounter)
             let size = lifetimeDistanceDictionary.count
-            lifetimeDistanceDictionary[size + 1] = totalDistance
+            lifetimeDistanceDictionary[size + 1] = thousandTargetCounter
             thousandTargetCounter += 1000
         }
-        NSNotificationCenter.defaultCenter().postNotificationName("lifetimeNotification", object: nil, userInfo: lifetimeDistanceDictionary)
+        checkedBoth += 1
+//        NSNotificationCenter.defaultCenter().postNotificationName("lifetimeNotification", object: nil, userInfo: lifetimeDistanceDictionary)
     }
     
     func updateLifetimeStepsAchievement() {
@@ -65,10 +76,11 @@ class Data {
             doneLifetimeStepsAchievements.append(millionTargetCounter)
             currentLifetimeStepsAchievements.append(millionTargetCounter)
             let size = lifetimeStepsDictionary.count
-            lifetimeStepsDictionary[size + 1] = totalSteps
+            lifetimeStepsDictionary[size + 1] = millionTargetCounter
             millionTargetCounter += 1000000
         }
-        NSNotificationCenter.defaultCenter().postNotificationName("lifetimeNotification", object: nil, userInfo: lifetimeStepsDictionary)
+        checkedBoth += 1
+//        NSNotificationCenter.defaultCenter().postNotificationName("lifetimeNotification", object: nil, userInfo: lifetimeStepsDictionary)
     }
     
 }

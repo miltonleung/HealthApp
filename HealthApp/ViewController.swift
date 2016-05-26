@@ -1,4 +1,4 @@
-//
+
 //  ViewController.swift
 //  HealthApp
 //
@@ -17,29 +17,41 @@ class ViewController: UIViewController {
     var healthManager:HealthManager?
     var firstDate: String = ""
     let pedometer = CMPedometer()
+    var size = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
         healthManager = HealthManager()
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "performLifetimeSegue:", name:"lifetimeNotification", object: nil)
-        
-        
+//        NSNotificationCenter.defaultCenter().addObserver(self, selector: "unwrapNotification:", name:"lifetimeNotification", object: nil)
+//        
+//        NSNotificationCenter.defaultCenter().addObserver(self, selector: "performLifetimeSegue:", name:"multipleAchievement", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "performLifetimeSegue", name: "lifetimeNotification", object: nil)
         authorizeHealthKit()
         updateBanner()
     }
     
-    func performLifetimeSegue(notification: NSNotification) {
-        if let awards = notification.userInfo as? Dictionary<Int, Int> {
-            let size = awards.count
-            for index in 1 ... size {
-                print(index)
-                self.performSegueWithIdentifier("lifetimeSegue", sender: nil)
-            }
-        } else {
-            print("error in userinfo type")
-        }
+    
+    
+    
+    func unwrapNotification(notification: NSNotification) {
+//        if let awards = notification.userInfo as? Dictionary<Int, Int> {
+//            size = awards.count
+        
+            performLifetimeSegue()
+//        } else {
+//            print("error in userinfo type")
+//        }
+    }
+    
+    func performLifetimeSegue() {
+        print("I'm here")
+//        while(size > 0) {
+            self.performSegueWithIdentifier("lifetimeSegue", sender: nil)
+//            size -= 1
+//        }
     }
     
     @IBAction func achievementButton(sender: AnyObject) {

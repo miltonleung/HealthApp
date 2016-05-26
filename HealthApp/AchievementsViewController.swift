@@ -9,7 +9,7 @@
 import UIKit
 
 class AchievementsViewController: UIViewController {
-
+    
     let data = Data()
     
     @IBOutlet weak var AchievementsView: UIView!
@@ -17,22 +17,49 @@ class AchievementsViewController: UIViewController {
     @IBOutlet weak var number: UILabel!
     @IBOutlet weak var message: UILabel!
     @IBAction func closeButton(sender: AnyObject) {
-        dismissViewControllerAnimated(true, completion: nil)
+        
+        if (!currentLifetimeDistanceAchievements.isEmpty || !currentLifetimeStepsAchievements.isEmpty) {
+            updateAchievements()
+        }
+        else {
+            //        dismissViewControllerAnimated(false, completion: nil)
+            dismissViewControllerAnimated(true, completion: { () -> Void in
+                //            NSNotificationCenter.defaultCenter().postNotificationName("multipleAchievement", object: nil)
+            });
+        }
     }
     override func viewDidLoad() {
         super.viewDidLoad()
         AchievementsView.layer.cornerRadius = 11
-        // Do any additional setup after loading the view.
-        number.text = "\(data.currentLifetimeDistanceAchievements.last) km!"
-//        let days = ModelInterface.sharedInstance().daysDifference(<#T##startString: String##String#>, endDate: <#T##NSDate#>)
-        message.text = "It only took you 91 days? Keep it up! Here's to the next thousand!"
+        
+        updateAchievements()
+        
     }
-
+    
+    func updateAchievements() {
+        if !currentLifetimeStepsAchievements.isEmpty {
+            if let text = currentLifetimeStepsAchievements.last {
+                number.text = "\(text) steps!"
+            }
+            //        let days = ModelInterface.sharedInstance().daysDifference(<#T##startString: String##String#>, endDate: <#T##NSDate#>)
+            message.text = "It only took you 91 days? Keep it up! Here's to the next million!"
+            
+            currentLifetimeStepsAchievements.removeLast()
+        }
+        else if !currentLifetimeDistanceAchievements.isEmpty {
+            if let text = currentLifetimeDistanceAchievements.last {
+                number.text = "\(text) km!"
+            }
+            //        let days = ModelInterface.sharedInstance().daysDifference(<#T##startString: String##String#>, endDate: <#T##NSDate#>)
+            message.text = "It only took you 91 days? Keep it up! Here's to the next thousand!"
+            
+            currentLifetimeDistanceAchievements.removeLast()
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
-
 }
