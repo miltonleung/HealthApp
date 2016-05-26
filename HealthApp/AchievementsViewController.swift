@@ -22,34 +22,13 @@ class AchievementsViewController: UIViewController {
             updateAchievements()
         }
         else {
-            //        dismissViewControllerAnimated(false, completion: nil)
-            dismissViewControllerAnimated(true, completion: { () -> Void in
-                //            NSNotificationCenter.defaultCenter().postNotificationName("multipleAchievement", object: nil)
-            });
+            dismissViewControllerAnimated(true, completion: nil)
         }
     }
-//    override func viewWillLayoutSubviews() {
-//        super.viewWillLayoutSubviews()
-//        
-////        AchievementsView.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5).CGColor
-//        AchievementsView.layer.shadowColor = UIColor.blackColor().CGColor
-//
-//        AchievementsView.layer.shadowOffset = CGSize(width: 1, height: -1)
-//        AchievementsView.layer.shadowOpacity = 0.8
-//        AchievementsView.layer.shadowRadius = 3
-//        AchievementsView.clipsToBounds = true
-//        view.addSubview(AchievementsView)
-//    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         AchievementsView.layer.cornerRadius = 11
-        AchievementsView.backgroundColor = UIColor(patternImage: UIImage(named: "SingleAchievements")!)
-        
-//        AchievementsView.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5).CGColor
-//        AchievementsView.layer.shadowOffset = CGSize(width: 1, height: -1)
-//        AchievementsView.layer.shadowRadius = 3
-//        
-//        view.addSubview(AchievementsView)
 
         updateAchievements()
         
