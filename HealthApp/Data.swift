@@ -21,7 +21,7 @@ var thousandTargetCounter = 1000
 
 var firstDate:String = "2010-01-01"
 
-var wordsOfEnc = ["Bravo", "Way to Go", "You are a Legend", "You Deserve A Pat On The Back", "Looking Good", "Impressive", "Unbelievable", "Are you kidding me?!?", "Beautiful", "Well Done", "You Take The Biscuit Every Time", "Outstanding", "You really outdid yourself", "Outstanding", "Coolio", "DAYUM!!"]
+let wordsOfEnc = ["Bravo", "Way to Go", "You are a Legend", "You Deserve A Pat On The Back", "Looking Good", "Impressive", "Unbelievable", "Are you kidding me?!?", "Beautiful", "Well Done", "You Take The Biscuit Every Time", "Outstanding", "You really outdid yourself", "Outstanding", "Coolio", "DAYUM!!"]
 
 class Data {
     var viewcontroller = ViewController()

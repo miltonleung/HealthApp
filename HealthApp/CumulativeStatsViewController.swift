@@ -45,9 +45,7 @@ class CumulativeStatsViewController: UIViewController {
         }
     }
     
-    func updateFirstDate() {
-        
-        
+    func updateFirstDate() { 
         self.date.text = "since \(ModelInterface.sharedInstance.getDayNameByString(firstDate))"
     }
     
