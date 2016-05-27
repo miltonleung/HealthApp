@@ -19,23 +19,19 @@ extension ModelInterface: AchievementProtocol {
         var done:Int = 0
         var retMessage = ""
         
-        if var doneDaily = NSUserDefaults.standardUserDefaults().arrayForKey("doneDaily") as? [Int] {
-            
-            if doneDaily.count > 0 {
-                done = doneDaily.last!
-                retMessage = dailyAchievements[done]!
-            }
-            
-            for (steps, message) in dailyAchievements {
-                if distance >= steps && steps > done && !doneDaily.contains(steps) {
-                    doneDaily.append(steps)
-                    retMessage = message
-                    done = steps
-                }
+        if doneDailyDistanceAchievements.count > 0 {
+            done = doneDailyDistanceAchievements.last!
+            retMessage = dailyAchievements[done]!
+        }
+        
+        for (steps, message) in dailyAchievements {
+            if distance >= steps && steps > done && !doneDailyDistanceAchievements.contains(steps) {
+                doneDailyDistanceAchievements.append(steps)
+                retMessage = message
+                done = steps
             }
         }
         return retMessage
-        
         
     }
     

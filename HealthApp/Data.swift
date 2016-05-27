@@ -21,6 +21,7 @@ var thousandTargetCounter = 1000
 
 var firstDate:String = "2010-01-01"
 
+var doneDailyDistanceAchievements = [Int]()
 let dailyAchievements = [1: "Baby Steps", 3: "You have reached 3 km!", 5: "You have reached 5 km!"]
 
 let wordsOfEnc = ["Bravo", "Way to Go", "You are a Legend", "You Deserve A Pat On The Back", "Looking Good", "Impressive", "Unbelievable", "Are you kidding me?!?", "Beautiful", "Well Done", "You Take The Biscuit Every Time", "Outstanding", "You really outdid yourself", "Outstanding", "Coolio", "DAYUM!!"]

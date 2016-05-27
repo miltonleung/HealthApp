@@ -94,14 +94,13 @@ class ViewController: UIViewController {
     }
     
     func updateBanner(distance: NSNumber) {
-        let currentBannerText = self.banner.text
         self.banner.text = ModelInterface.sharedInstance.hardestHole(distance.doubleValue/1000)
         
         
         let a = distance.integerValue/1000
         let achievementString = ModelInterface.sharedInstance.reachedAchievement(a)
         
-        if distance.doubleValue/1000 - Double(a) <= 0.5 {
+        if achievementString != "" && distance.doubleValue/1000 - Double(a) <= 0.5 {
             self.banner.text = achievementString
         }
     }
