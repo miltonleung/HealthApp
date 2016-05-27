@@ -52,8 +52,8 @@ class AchievementsViewController: UIViewController {
                 let newText = ModelInterface.sharedInstance.addThousandSeperator(text)
                 number.text = "\(newText) steps!"
             }
-            //        let days = ModelInterface.sharedInstance().daysDifference(<#T##startString: String##String#>, endDate: <#T##NSDate#>)
-            message.text = "It only took you 91 days? Keep it up! Here's to the next million!"
+                    let days = ModelInterface.sharedInstance.daysDifference(firstDate, endDate: NSDate())
+            message.text = "It only took you \(days) days? Keep it up! Here's to the next million!"
             
             currentLifetimeStepsAchievements.removeLast()
         }
@@ -63,7 +63,8 @@ class AchievementsViewController: UIViewController {
                 number.text = "\(newText) km!"
             }
             //        let days = ModelInterface.sharedInstance().daysDifference(<#T##startString: String##String#>, endDate: <#T##NSDate#>)
-            message.text = "It only took you 91 days? Keep it up! Here's to the next thousand!"
+            let days = ModelInterface.sharedInstance.daysDifference(firstDate, endDate: NSDate())
+            message.text = "It only took you \(days) days? Keep it up! Here's to the next thousand!"
             
             currentLifetimeDistanceAchievements.removeLast()
         }

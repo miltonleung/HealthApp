@@ -20,7 +20,7 @@ class CumulativeStatsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+        
         healthManager = HealthManager()
         
         authorizeHealthKit()
@@ -47,16 +47,10 @@ class CumulativeStatsViewController: UIViewController {
     
     func updateFirstDate() {
         
-        self.healthManager?.readFirstDate({ (date, error) -> Void in
-            if (error != nil) {
-                print("Error reading first date from HealthKit")
-                return
-            }
-            
-            self.date.text = "since \(ModelInterface.sharedInstance.getDayNameByString(date))"
-        });
+        
+        self.date.text = "since \(ModelInterface.sharedInstance.getDayNameByString(firstDate))"
     }
-
+    
     func updateTotalSteps() {
         let stepsCount = HKQuantityType.quantityTypeForIdentifier(HKQuantityTypeIdentifierStepCount)
         
@@ -94,5 +88,5 @@ class CumulativeStatsViewController: UIViewController {
             });
         });
     }
-
+    
 }

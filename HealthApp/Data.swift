@@ -19,6 +19,8 @@ var currentLifetimeStepsAchievements = [Int]()
 var millionTargetCounter = 1000000
 var thousandTargetCounter = 1000
 
+var firstDate:String = "2010-01-01"
+
 class Data {
     var viewcontroller = ViewController()
     

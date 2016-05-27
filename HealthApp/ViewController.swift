@@ -15,7 +15,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var banner: UILabel!
     
     var healthManager:HealthManager?
-    var firstDate: String = ""
     let pedometer = CMPedometer()
     
     override func viewDidLoad() {
@@ -27,7 +26,19 @@ class ViewController: UIViewController {
 
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "performLifetimeSegue", name: "lifetimeNotification", object: nil)
         authorizeHealthKit()
+        setFirstDate()
         updateBanner()
+    }
+    
+    func setFirstDate() {
+        
+        self.healthManager?.readFirstDate({ (date, error) -> Void in
+            if (error != nil) {
+                print("Error reading first date from HealthKit")
+                return
+            }
+            firstDate = date
+        });
     }
     
     func performLifetimeSegue() {
