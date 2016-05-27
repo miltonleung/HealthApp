@@ -30,6 +30,7 @@ class ViewController: UIViewController {
         let firstRun = NSUserDefaults.standardUserDefaults().boolForKey("firstRun") as Bool
         if !firstRun {
             print("first time")
+           
             
             NSUserDefaults.standardUserDefaults().setInteger(8, forKey: "targetDistance")
             NSUserDefaults.standardUserDefaults().setInteger(10000, forKey: "targetSteps")
@@ -40,15 +41,30 @@ class ViewController: UIViewController {
             NSUserDefaults.standardUserDefaults().setObject(array, forKey: "doneLifetimeDistance")
             NSUserDefaults.standardUserDefaults().setObject(array, forKey: "doneLifetimeSteps")
             
-            NSUserDefaults.standardUserDefaults().setBool(true, forKey: "firstRun")
-            
             NSUserDefaults.standardUserDefaults().setInteger(1000000, forKey: "millionTargetCounter")
             NSUserDefaults.standardUserDefaults().setInteger(1000, forKey: "thousandTargetCounter")
+            
+            
+            
+            
         }
         
-        authorizeHealthKit()
-        setFirstDate()
+//        authorizeHealthKit()
+//        setFirstDate()
 //        print(NSUserDefaults.standardUserDefaults().dictionaryRepresentation())
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(true)
+        
+        print("viewdidappera")
+        let firstRun = NSUserDefaults.standardUserDefaults().boolForKey("firstRun") as Bool
+        if !firstRun {
+            print("hi")
+             self.performSegueWithIdentifier("welcomeSegue", sender: nil)
+             setFirstDate()
+            NSUserDefaults.standardUserDefaults().setBool(true, forKey: "firstRun")
+        }
     }
     func unwrapNotification(notification: NSNotification) {
         if let dailyDistanceDictionary = notification.userInfo as? Dictionary<Int, NSNumber> {
