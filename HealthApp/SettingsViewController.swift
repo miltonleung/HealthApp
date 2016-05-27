@@ -16,11 +16,13 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
     @IBAction func closeButton(sender: AnyObject) {
         
         if (inputTarget.text != "" && inputTarget.text != "0") {
-            targetDistance = Int(inputTarget.text!)!
+            let td = Int(inputTarget.text!)!
+            NSUserDefaults.standardUserDefaults().setInteger(td, forKey: "targetDistance")
         }
         
         if (inputSteps.text != "" && inputSteps.text != "0") {
-            targetSteps = Int(inputSteps.text!)! * 1000
+            let ts = Int(inputSteps.text!)! * 1000
+            NSUserDefaults.standardUserDefaults().setInteger(ts, forKey: "targetSteps")
         }
         
         dismissViewControllerAnimated(true, completion: nil)
@@ -36,8 +38,10 @@ class SettingsViewController: UIViewController, UITextFieldDelegate {
         inputSteps.delegate = self
     }
     override func viewWillAppear(animated: Bool) {
-        inputTarget.text = String(targetDistance)
-        inputSteps.text = String(targetSteps/1000)
+        let td = NSUserDefaults.standardUserDefaults().integerForKey("targetDistance")
+        inputTarget.text = String(td)
+        let ts = NSUserDefaults.standardUserDefaults().integerForKey("targetSteps")
+        inputSteps.text = String(ts/1000)
     }
     
     func dismissKeyboard() {

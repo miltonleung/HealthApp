@@ -29,6 +29,10 @@ class ViewController: UIViewController {
         let firstRun = NSUserDefaults.standardUserDefaults().boolForKey("firstRun") as Bool
         if !firstRun {
             print("first time")
+            
+            NSUserDefaults.standardUserDefaults().setInteger(8, forKey: "targetDistance")
+            NSUserDefaults.standardUserDefaults().setInteger(10000, forKey: "targetSteps")
+            
             NSUserDefaults.standardUserDefaults().setBool(true, forKey: "firstRun")
         }
         

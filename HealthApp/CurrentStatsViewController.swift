@@ -21,14 +21,20 @@ class CurrentStatsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
     }
     
     override func viewWillAppear(animated: Bool) {
-        let steps = ModelInterface.sharedInstance.addThousandSeperator(targetSteps)
+        
+        let ts = NSUserDefaults.standardUserDefaults().integerForKey("targetSteps")
+        let steps = ModelInterface.sharedInstance.addThousandSeperator(ts)
+            
+            
         outOfSteps.text = "out of \(steps)"
-        outOfDistance.text = "out of \(targetDistance) km"
+        
+        let td = NSUserDefaults.standardUserDefaults().integerForKey("targetDistance")
+        
+        outOfDistance.text = "out of \(td) km"
+        
         
         let dateext = ModelInterface.sharedInstance.convertDate(NSDate())
         self.date.text = "for \(ModelInterface.sharedInstance.getDayNameByString(dateext))"

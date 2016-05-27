@@ -47,7 +47,8 @@ class GraphViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(false)
         
-        dailyTarget.text = "daily goal: \(targetDistance) km"
+        let td = NSUserDefaults.standardUserDefaults().integerForKey("targetDistance")
+        dailyTarget.text = "daily goal: \(td) km"
         
         days = [String]()
         
@@ -175,16 +176,17 @@ class GraphViewController: UIViewController {
         chartData.highlightEnabled = false
         chartData.setValueFont(UIFont(name: "Muli", size: 12))
         
+        let td = NSUserDefaults.standardUserDefaults().integerForKey("targetDistance")
         
         if isWeekly == 1 {
             barChartView.rightAxis.removeAllLimitLines()
-            let ll = ChartLimitLine(limit: Double(targetDistance), label: "")
+            let ll = ChartLimitLine(limit: Double(td), label: "")
             ll.lineWidth = 1.5
             barChartView.rightAxis.addLimitLine(ll)
             
         } else {
             barChartView.rightAxis.removeAllLimitLines()
-            let ll = ChartLimitLine(limit: Double(targetDistance) * 31.0, label: "")
+            let ll = ChartLimitLine(limit: Double(td) * 31.0, label: "")
             ll.lineWidth = 1.5
             barChartView.rightAxis.addLimitLine(ll)
         }

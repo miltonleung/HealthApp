@@ -15,8 +15,3 @@ var doneAchievements = [Int]()
 var lifetimeDistance = [1000000]
 
 var doneLifeTimeDistance = [Int]()
-
-var targetDistance = 8
-var targetSteps = 10000
-
-
