@@ -34,7 +34,7 @@ class ViewController: UIViewController {
             NSUserDefaults.standardUserDefaults().setInteger(8, forKey: "targetDistance")
             NSUserDefaults.standardUserDefaults().setInteger(10000, forKey: "targetSteps")
             
-            let array = [Int]()
+            let array = [1]
             NSUserDefaults.standardUserDefaults().setObject(array, forKey: "doneDaily")
             
             NSUserDefaults.standardUserDefaults().setBool(true, forKey: "firstRun")
@@ -42,7 +42,7 @@ class ViewController: UIViewController {
         
         authorizeHealthKit()
         setFirstDate()
-//        updateBanner()
+        //        updateBanner()
     }
     func unwrapNotification(notification: NSNotification) {
         if let dailyDistanceDictionary = notification.userInfo as? Dictionary<Int, NSNumber> {
@@ -94,48 +94,14 @@ class ViewController: UIViewController {
     }
     
     func updateBanner(distance: NSNumber) {
-        print("i'm over here")
-//        if (CMPedometer.isStepCountingAvailable() && CMPedometer.isDistanceAvailable()) {
-//            let beginningOfDay = NSCalendar.currentCalendar().dateBySettingHour(0, minute: 0, second: 0, ofDate: NSDate(), options: [])
-//            self.pedometer.queryPedometerDataFromDate(beginningOfDay!, toDate: NSDate()) { (data : CMPedometerData?, error) -> Void in
-//                dispatch_async(dispatch_get_main_queue(), { () -> Void in
-//                    if error == nil {
-//                        if let distance = data?.distance {
+        let currentBannerText = self.banner.text
+//        self.banner.text = ModelInterface.sharedInstance.hardestHole(distance.doubleValue/1000)
         
-                            let currentBannerText = self.banner.text
-                            self.banner.text = ModelInterface.sharedInstance.hardestHole(distance.doubleValue/1000)
-                            
-                            let achievementString = ModelInterface.sharedInstance.reachedAchievement(distance.integerValue/1000)
-                            
-                            if achievementString != currentBannerText {
-                                self.banner.text = ModelInterface.sharedInstance.reachedAchievement(distance.integerValue/1000)
-                            }
-                            
-                            
-//                            print(data?.distance)
-//                        }
-//                    }
-//                });
-//            }
-//            self.pedometer.startPedometerUpdatesFromDate(beginningOfDay!) { (data : CMPedometerData?, error) -> Void in
-//                dispatch_async(dispatch_get_main_queue(), { () -> Void in
-//                    if let distance = data?.distance {
-//                        
-//                        let currentBannerText = self.banner.text
-//                        self.banner.text = ModelInterface.sharedInstance.hardestHole(distance.doubleValue/1000)
-//                        
-//                        let achievementString = ModelInterface.sharedInstance.reachedAchievement(distance.integerValue/1000)
-//                        
-//                        if achievementString != currentBannerText && achievementString != "" {
-//                            self.banner.text = ModelInterface.sharedInstance.reachedAchievement(distance.integerValue/1000)
-//                        }
-//
-//                        print(data?.distance)
-//                    }
-//                });
-//            }
-//        }
+        let achievementString = ModelInterface.sharedInstance.reachedAchievement(distance.integerValue/1000)
         
+        if achievementString != currentBannerText {
+            self.banner.text = ModelInterface.sharedInstance.reachedAchievement(distance.integerValue/1000)
+        }
     }
     
     

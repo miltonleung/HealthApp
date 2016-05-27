@@ -11,7 +11,6 @@
 		5212CAA71CD5BD5000041771 /* ModelInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5212CAA61CD5BD5000041771 /* ModelInterface.swift */; };
 		5212CAA91CD5BD7300041771 /* DateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5212CAA81CD5BD7300041771 /* DateModel.swift */; };
 		5253C8B61CD6976B00F2713A /* AchievementModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5253C8B51CD6976B00F2713A /* AchievementModel.swift */; };
-		5253C8B81CD697DD00F2713A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5253C8B71CD697DD00F2713A /* Constants.swift */; };
 		5253C8BA1CD69FD000F2713A /* TestForAchievements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5253C8B91CD69FD000F2713A /* TestForAchievements.swift */; };
 		5253C8BC1CD7054A00F2713A /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5253C8BB1CD7054A00F2713A /* PageViewController.swift */; };
 		5253C8BE1CD7394C00F2713A /* CurrentStatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5253C8BD1CD7394C00F2713A /* CurrentStatsViewController.swift */; };
@@ -250,7 +249,6 @@
 		5212CAA61CD5BD5000041771 /* ModelInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelInterface.swift; sourceTree = "<group>"; };
 		5212CAA81CD5BD7300041771 /* DateModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateModel.swift; sourceTree = "<group>"; };
 		5253C8B51CD6976B00F2713A /* AchievementModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AchievementModel.swift; sourceTree = "<group>"; };
-		5253C8B71CD697DD00F2713A /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		5253C8B91CD69FD000F2713A /* TestForAchievements.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TestForAchievements.swift; path = ../HealthApp/TestForAchievements.swift; sourceTree = "<group>"; };
 		5253C8BB1CD7054A00F2713A /* PageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		5253C8BD1CD7394C00F2713A /* CurrentStatsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentStatsViewController.swift; sourceTree = "<group>"; };
@@ -748,7 +746,6 @@
 				52888D6C1CD880D100A30E8A /* Fonts */,
 				5253C8B41CD6975000F2713A /* Model */,
 				528B38141CD461B500F8338D /* HealthApp.entitlements */,
-				5253C8B71CD697DD00F2713A /* Constants.swift */,
 				52EBEFE31CF6C4050028EDAC /* Data.swift */,
 				528B37E21CD4612B00F8338D /* AppDelegate.swift */,
 				528B38101CD4614F00F8338D /* HealthManager.swift */,
@@ -889,12 +886,12 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 52888E841CD88C1800A30E8A /* Products */;
-					ProjectRef = 52888E831CD88C1800A30E8A /* Charts.xcodeproj */;
-				},
-				{
 					ProductGroup = 52888E961CD88CC000A30E8A /* Products */;
 					ProjectRef = 52888E951CD88CC000A30E8A /* Charts.xcodeproj */;
+				},
+				{
+					ProductGroup = 52888E841CD88C1800A30E8A /* Products */;
+					ProjectRef = 52888E831CD88C1800A30E8A /* Charts.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -1062,7 +1059,6 @@
 				52888F881CD88CC000A30E8A /* ILineRadarChartDataSet.swift in Sources */,
 				52888FC31CD88CC000A30E8A /* ChartViewPortHandler.swift in Sources */,
 				52888F821CD88CC000A30E8A /* IBarChartDataSet.swift in Sources */,
-				5253C8B81CD697DD00F2713A /* Constants.swift in Sources */,
 				52888F551CD88CC000A30E8A /* BarChartView.swift in Sources */,
 				52888F5A1CD88CC000A30E8A /* CombinedChartView.swift in Sources */,
 				52E966501CF16573008D60E6 /* SettingsViewController.swift in Sources */,
