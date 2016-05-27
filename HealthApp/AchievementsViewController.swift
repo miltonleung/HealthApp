@@ -25,11 +25,11 @@ class AchievementsViewController: UIViewController {
             dismissViewControllerAnimated(true, completion: nil)
         }
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         AchievementsView.layer.cornerRadius = 11
-
+        
         
         updateAchievements()
     }
@@ -44,7 +44,7 @@ class AchievementsViewController: UIViewController {
         }
         else {
             AchievementsView.backgroundColor = UIColor(patternImage: UIImage(named: "MultipleAchievements")!)
-
+            
         }
         
         let random = Int(arc4random_uniform(UInt32(wordsOfEnc.count)))
@@ -54,7 +54,7 @@ class AchievementsViewController: UIViewController {
                 let newText = ModelInterface.sharedInstance.addThousandSeperator(text)
                 number.text = "\(newText) steps!"
             }
-                    let days = ModelInterface.sharedInstance.daysDifference(firstDate, endDate: NSDate())
+            let days = ModelInterface.sharedInstance.daysDifference(firstDate, endDate: NSDate())
             message.text = "\(wordsOfEnc[random])! It only took you \(days) days? Keep it up! Here's to the next million!"
             
             currentLifetimeStepsAchievements.removeLast()
@@ -64,7 +64,6 @@ class AchievementsViewController: UIViewController {
                 let newText = ModelInterface.sharedInstance.addThousandSeperator(text)
                 number.text = "\(newText) km!"
             }
-            //        let days = ModelInterface.sharedInstance().daysDifference(<#T##startString: String##String#>, endDate: <#T##NSDate#>)
             let days = ModelInterface.sharedInstance.daysDifference(firstDate, endDate: NSDate())
             message.text = "\(wordsOfEnc[random])! It only took you \(days) days? Keep it up! Here's to the next thousand!"
             
