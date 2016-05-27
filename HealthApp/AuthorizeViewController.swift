@@ -1,5 +1,5 @@
 //
-//  WelcomeViewController.swift
+//  AuthorizeViewController.swift
 //  HealthApp
 //
 //  Created by Milton Leung on 2016-05-27.
@@ -9,7 +9,7 @@
 import UIKit
 import HealthKit
 
-class WelcomeViewController: UIViewController {
+class AuthorizeViewController: UIViewController {
 
     @IBOutlet weak var authorizeView: UIView!
     @IBOutlet weak var message: UILabel!
@@ -38,6 +38,7 @@ class WelcomeViewController: UIViewController {
             if authorized {
                 print("HealthKit authorized")
                 self.dismissViewControllerAnimated(true, completion: nil)
+                self.setFirstDate()
             }
             else {
                 print("HealthKit denied")
@@ -47,5 +48,14 @@ class WelcomeViewController: UIViewController {
             }
         }
     }
-
+    func setFirstDate() {
+        
+        self.healthManager?.readFirstDate({ (date, error) -> Void in
+            if (error != nil) {
+                print("Error reading first date from HealthKit")
+                return
+            }
+            firstDate = date
+        });
+    }
 }

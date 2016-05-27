@@ -28,8 +28,13 @@
             <string>Muli-Light</string>
             <string>Muli-Light</string>
             <string>Muli-Light</string>
+            <string>Muli-Light</string>
+            <string>Muli-Light</string>
         </mutableArray>
         <mutableArray key="Muli-Regular.ttf">
+            <string>Muli</string>
+            <string>Muli</string>
+            <string>Muli</string>
             <string>Muli</string>
             <string>Muli</string>
             <string>Muli</string>
@@ -139,6 +144,127 @@
             </objects>
             <point key="canvasLocation" x="-692" y="260"/>
         </scene>
+        <!--Intro View Controller-->
+        <scene sceneID="YYr-e4-doT">
+            <objects>
+                <viewController id="43X-Kf-pQB" customClass="IntroViewController" customModule="HealthApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="z4f-FB-pph"/>
+                        <viewControllerLayoutGuide type="bottom" id="0yS-44-UKy"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="eXp-sh-qyo">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gXR-zn-1o2">
+                                <rect key="frame" x="157" y="77" width="285" height="343"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gMj-sZ-o2X">
+                                        <rect key="frame" x="89" y="87" width="106.5" height="31"/>
+                                        <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="24"/>
+                                        <color key="textColor" red="0.28627450980392155" green="0.41176470588235292" blue="0.5607843137254902" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We want to make exercise interesting. Just leave the fitness tracking to us and we’ll notify you once you hit a milestone!" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Txx-8x-ih6" userLabel="Message">
+                                        <rect key="frame" x="13" y="133" width="258" height="49.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="258" id="yjZ-sW-62m"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="13"/>
+                                        <color key="textColor" red="0.28627450980392155" green="0.41176470588235292" blue="0.5607843137254902" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dq3-lu-0Df">
+                                        <rect key="frame" x="5" y="289" width="134" height="49"/>
+                                        <color key="backgroundColor" red="0.3411764705882353" green="0.396078431372549" blue="0.6588235294117647" alpha="0.77000000000000002" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="49" id="B74-Jk-uFv"/>
+                                            <constraint firstAttribute="width" constant="134" id="GGe-vn-Zpl"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Muli-Light" family="Muli" pointSize="20"/>
+                                        <state key="normal" title="Start Fresh">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="11"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="freshButton:" destination="43X-Kf-pQB" eventType="touchUpInside" id="BWF-3R-PMR"/>
+                                        </connections>
+                                    </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Hi" translatesAutoresizingMaskIntoConstraints="NO" id="fjY-du-4HL">
+                                        <rect key="frame" x="112" y="16" width="61" height="61"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="61" id="8kB-dy-oD6"/>
+                                            <constraint firstAttribute="width" constant="61" id="RfC-pS-8TA"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Would you like to begin tracking now or use existing data you already have?" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RH5-Xh-xpD" userLabel="Message">
+                                        <rect key="frame" x="13" y="239" width="258" height="33"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="258" id="Pky-TE-h4T"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="258" id="fWE-or-QnQ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="13"/>
+                                        <color key="textColor" red="0.28627450980000002" green="0.41176470590000003" blue="0.56078431370000004" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TV9-Tb-3ud">
+                                        <rect key="frame" x="147" y="289" width="134" height="49"/>
+                                        <color key="backgroundColor" red="0.3411764706" green="0.39607843139999999" blue="0.6588235294" alpha="0.77000000000000002" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="49" id="LIa-jS-wLQ"/>
+                                            <constraint firstAttribute="width" constant="134" id="jxB-fF-7yr"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Muli-Light" family="Muli" pointSize="20"/>
+                                        <state key="normal" title="Existing">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="11"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="existingButton:" destination="43X-Kf-pQB" eventType="touchUpInside" id="dxE-Ac-lFj"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.81960784313725488" green="0.84705882352941175" blue="1" alpha="0.96999999999999997" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="TV9-Tb-3ud" secondAttribute="trailing" constant="5" id="0C6-e7-2LU"/>
+                                    <constraint firstItem="gMj-sZ-o2X" firstAttribute="centerX" secondItem="gXR-zn-1o2" secondAttribute="centerX" id="AWx-Jl-acr"/>
+                                    <constraint firstItem="TV9-Tb-3ud" firstAttribute="top" secondItem="RH5-Xh-xpD" secondAttribute="bottom" constant="17" id="Ap8-bM-NTe"/>
+                                    <constraint firstAttribute="bottom" secondItem="TV9-Tb-3ud" secondAttribute="bottom" constant="5" id="Ehi-wy-mT4"/>
+                                    <constraint firstItem="fjY-du-4HL" firstAttribute="centerX" secondItem="gXR-zn-1o2" secondAttribute="centerX" id="HSR-mZ-S0b"/>
+                                    <constraint firstItem="Txx-8x-ih6" firstAttribute="top" secondItem="gMj-sZ-o2X" secondAttribute="bottom" constant="15" id="KGB-nN-j98"/>
+                                    <constraint firstAttribute="height" constant="343" id="Nn2-n2-FBd"/>
+                                    <constraint firstAttribute="bottom" secondItem="dq3-lu-0Df" secondAttribute="bottom" constant="5" id="Obl-4T-v7y"/>
+                                    <constraint firstItem="dq3-lu-0Df" firstAttribute="leading" secondItem="gXR-zn-1o2" secondAttribute="leading" constant="5" id="QdS-O3-sok"/>
+                                    <constraint firstItem="gMj-sZ-o2X" firstAttribute="top" secondItem="fjY-du-4HL" secondAttribute="bottom" constant="10" id="UgP-wD-KND"/>
+                                    <constraint firstAttribute="width" constant="285" id="XTR-bO-B7G"/>
+                                    <constraint firstItem="Txx-8x-ih6" firstAttribute="centerX" secondItem="gXR-zn-1o2" secondAttribute="centerX" id="ZCX-j9-8oH"/>
+                                    <constraint firstItem="fjY-du-4HL" firstAttribute="top" secondItem="gXR-zn-1o2" secondAttribute="top" constant="16" id="nDu-LD-GSw"/>
+                                    <constraint firstItem="RH5-Xh-xpD" firstAttribute="centerX" secondItem="gXR-zn-1o2" secondAttribute="centerX" id="v0g-dM-zU8"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="gXR-zn-1o2" firstAttribute="centerY" secondItem="eXp-sh-qyo" secondAttribute="centerY" multiplier="0.83" id="Sel-xG-Erg"/>
+                            <constraint firstItem="gXR-zn-1o2" firstAttribute="centerX" secondItem="eXp-sh-qyo" secondAttribute="centerX" id="brV-Ol-Hvs"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="welcomeView" destination="gXR-zn-1o2" id="ftB-q3-gqs"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="phX-fm-n01" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-122" y="1010"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -206,7 +332,7 @@
                     <connections>
                         <outlet property="banner" destination="ZR0-ec-RYC" id="pwh-zF-q66"/>
                         <segue destination="HvX-cF-QBg" kind="presentation" identifier="lifetimeSegue" modalPresentationStyle="overCurrentContext" id="azM-6p-Cxi"/>
-                        <segue destination="7SV-VU-RfY" kind="presentation" identifier="welcomeSegue" modalPresentationStyle="overCurrentContext" id="Cbj-D7-IYU"/>
+                        <segue destination="43X-Kf-pQB" kind="presentation" identifier="introSegue" modalPresentationStyle="overCurrentContext" id="6AQ-vQ-Xoe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -227,10 +353,10 @@
             </objects>
             <point key="canvasLocation" x="870" y="260"/>
         </scene>
-        <!--Welcome View Controller-->
+        <!--Authorize View Controller-->
         <scene sceneID="m5j-qS-UIq">
             <objects>
-                <viewController id="7SV-VU-RfY" customClass="WelcomeViewController" customModule="HealthApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="7SV-VU-RfY" customClass="AuthorizeViewController" customModule="HealthApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="aKz-tg-Iyn"/>
                         <viewControllerLayoutGuide type="bottom" id="reQ-f0-4fa"/>
@@ -265,7 +391,6 @@
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="accept:" destination="7SV-VU-RfY" eventType="touchUpInside" id="CAB-dI-MdS"/>
-                                            <action selector="closeButton:" destination="UI8-c1-9my" eventType="touchUpInside" id="Iki-oX-JVH"/>
                                         </connections>
                                     </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Heart" translatesAutoresizingMaskIntoConstraints="NO" id="fig-MB-bvH">
@@ -275,8 +400,8 @@
                                             <constraint firstAttribute="width" constant="61" id="rLO-XD-8E9"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="This app needs your permission to track your steps and distance." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="213-my-1qi">
-                                        <rect key="frame" x="15" y="125" width="207" height="33"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This app needs your permission to track your steps and distance." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="213-my-1qi">
+                                        <rect key="frame" x="39" y="125" width="207" height="33"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="207" id="XVo-po-ru3"/>
                                         </constraints>
@@ -314,7 +439,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p68-36-u87" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-118" y="990"/>
+            <point key="canvasLocation" x="-122" y="1672"/>
         </scene>
         <!--Current Stats View Controller-->
         <scene sceneID="TCy-BN-7bT">
@@ -692,13 +817,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u9N-Jq-97p" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-726" y="990"/>
+            <point key="canvasLocation" x="-761" y="1010"/>
         </scene>
     </scenes>
     <resources>
         <image name="Gear" width="61" height="61"/>
         <image name="GearIcon" width="40" height="40"/>
         <image name="Heart" width="61" height="61"/>
+        <image name="Hi" width="61" height="61"/>
         <image name="Image" width="640" height="1136"/>
         <image name="Medal" width="61" height="61"/>
         <image name="buttonBackground" width="66" height="17"/>

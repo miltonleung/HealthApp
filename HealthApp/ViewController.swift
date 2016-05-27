@@ -61,8 +61,8 @@ class ViewController: UIViewController {
         let firstRun = NSUserDefaults.standardUserDefaults().boolForKey("firstRun") as Bool
         if !firstRun {
             print("hi")
-             self.performSegueWithIdentifier("welcomeSegue", sender: nil)
-             setFirstDate()
+             self.performSegueWithIdentifier("introSegue", sender: nil)
+//             setFirstDate()
             NSUserDefaults.standardUserDefaults().setBool(true, forKey: "firstRun")
         }
     }
