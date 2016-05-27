@@ -23,8 +23,9 @@ class ViewController: UIViewController {
         
         healthManager = HealthManager()
         
-
+        
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "performLifetimeSegue", name: "lifetimeNotification", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "unwrapNotification:", name: "dailyNotification", object: nil)
         
         let firstRun = NSUserDefaults.standardUserDefaults().boolForKey("firstRun") as Bool
         if !firstRun {
@@ -33,14 +34,26 @@ class ViewController: UIViewController {
             NSUserDefaults.standardUserDefaults().setInteger(8, forKey: "targetDistance")
             NSUserDefaults.standardUserDefaults().setInteger(10000, forKey: "targetSteps")
             
+            let array = [Int]()
+            NSUserDefaults.standardUserDefaults().setObject(array, forKey: "doneDaily")
+            
             NSUserDefaults.standardUserDefaults().setBool(true, forKey: "firstRun")
         }
         
         authorizeHealthKit()
         setFirstDate()
-        updateBanner()
+//        updateBanner()
     }
-    
+    func unwrapNotification(notification: NSNotification) {
+        if let dailyDistanceDictionary = notification.userInfo as? Dictionary<Int, NSNumber> {
+            if let dailyDistance = dailyDistanceDictionary[1] {
+                updateBanner(dailyDistance)
+            }
+        }
+        else {
+            print("error in userinfo type")
+        }
+    }
     func setFirstDate() {
         
         self.healthManager?.readFirstDate({ (date, error) -> Void in
@@ -53,12 +66,12 @@ class ViewController: UIViewController {
     }
     
     func performLifetimeSegue() {
-
-            self.performSegueWithIdentifier("lifetimeSegue", sender: nil)
-
+        
+        self.performSegueWithIdentifier("lifetimeSegue", sender: nil)
+        
     }
     
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -80,15 +93,15 @@ class ViewController: UIViewController {
         }
     }
     
-    func updateBanner() {
+    func updateBanner(distance: NSNumber) {
+        print("i'm over here")
+//        if (CMPedometer.isStepCountingAvailable() && CMPedometer.isDistanceAvailable()) {
+//            let beginningOfDay = NSCalendar.currentCalendar().dateBySettingHour(0, minute: 0, second: 0, ofDate: NSDate(), options: [])
+//            self.pedometer.queryPedometerDataFromDate(beginningOfDay!, toDate: NSDate()) { (data : CMPedometerData?, error) -> Void in
+//                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+//                    if error == nil {
+//                        if let distance = data?.distance {
         
-        if (CMPedometer.isStepCountingAvailable() && CMPedometer.isDistanceAvailable()) {
-            let beginningOfDay = NSCalendar.currentCalendar().dateBySettingHour(0, minute: 0, second: 0, ofDate: NSDate(), options: [])
-            self.pedometer.queryPedometerDataFromDate(beginningOfDay!, toDate: NSDate()) { (data : CMPedometerData?, error) -> Void in
-                dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                    if error == nil {
-                        if let distance = data?.distance {
-                            
                             let currentBannerText = self.banner.text
                             self.banner.text = ModelInterface.sharedInstance.hardestHole(distance.doubleValue/1000)
                             
@@ -99,29 +112,29 @@ class ViewController: UIViewController {
                             }
                             
                             
-                            print(data?.distance)
-                        }
-                    }
-                });
-            }
-            self.pedometer.startPedometerUpdatesFromDate(beginningOfDay!) { (data : CMPedometerData?, error) -> Void in
-                dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                    if let distance = data?.distance {
-                        
-                        let currentBannerText = self.banner.text
-                        self.banner.text = ModelInterface.sharedInstance.hardestHole(distance.doubleValue/1000)
-                        
-                        let achievementString = ModelInterface.sharedInstance.reachedAchievement(distance.integerValue/1000)
-                        
-                        if achievementString != currentBannerText && achievementString != "" {
-                            self.banner.text = ModelInterface.sharedInstance.reachedAchievement(distance.integerValue/1000)
-                        }
-                        
-                        print(data?.distance)
-                    }
-                });
-            }
-        }
+//                            print(data?.distance)
+//                        }
+//                    }
+//                });
+//            }
+//            self.pedometer.startPedometerUpdatesFromDate(beginningOfDay!) { (data : CMPedometerData?, error) -> Void in
+//                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+//                    if let distance = data?.distance {
+//                        
+//                        let currentBannerText = self.banner.text
+//                        self.banner.text = ModelInterface.sharedInstance.hardestHole(distance.doubleValue/1000)
+//                        
+//                        let achievementString = ModelInterface.sharedInstance.reachedAchievement(distance.integerValue/1000)
+//                        
+//                        if achievementString != currentBannerText && achievementString != "" {
+//                            self.banner.text = ModelInterface.sharedInstance.reachedAchievement(distance.integerValue/1000)
+//                        }
+//
+//                        print(data?.distance)
+//                    }
+//                });
+//            }
+//        }
         
     }
     

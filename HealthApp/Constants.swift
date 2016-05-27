@@ -8,10 +8,6 @@
 
 import Foundation
 
-var achievements = [1: "Baby Steps", 3: "You have reached 3 km!", 5: "You have reached 5 km!"]
+let achievements = [1: "Baby Steps", 3: "You have reached 3 km!", 5: "You have reached 5 km!"]
 
 var doneAchievements = [Int]()
-
-var lifetimeDistance = [1000000]
-
-var doneLifeTimeDistance = [Int]()

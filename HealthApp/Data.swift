@@ -26,8 +26,12 @@ let wordsOfEnc = ["Bravo", "Way to Go", "You are a Legend", "You Deserve A Pat O
 class Data {
     var viewcontroller = ViewController()
     
-    
-    
+    var dailyDistance: NSNumber = 0 {
+        didSet {
+            var dailyDistanceDictionary = [1 : dailyDistance]
+            NSNotificationCenter.defaultCenter().postNotificationName("dailyNotification", object: nil, userInfo: dailyDistanceDictionary)
+        }
+    }
     var totalSteps: Int = 0 {
         willSet {
             //            currentLifetimeStepsAchievements = [Int]()

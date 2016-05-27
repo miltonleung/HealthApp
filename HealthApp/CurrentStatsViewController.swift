@@ -17,7 +17,7 @@ class CurrentStatsViewController: UIViewController {
     @IBOutlet weak var outOfSteps: UILabel!
     @IBOutlet weak var outOfDistance: UILabel!
     let pedometer = CMPedometer()
-//    var delegate: CurrentStatsViewControllerProtocol?
+    let dataModel = Data()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,6 +55,7 @@ class CurrentStatsViewController: UIViewController {
                             print(data?.numberOfSteps)
                         }
                         if let distance = data?.distance {
+                            self.dataModel.dailyDistance = distance
                             self.currentDistance.text = String(format: "%.2f", distance.doubleValue/1000)
                             print(data?.distance)
                         }
@@ -69,6 +70,7 @@ class CurrentStatsViewController: UIViewController {
                         print(data?.numberOfSteps)
                     }
                     if let distance = data?.distance {
+                        self.dataModel.dailyDistance = distance
                         self.currentDistance.text = String(format: "%.2f", distance.doubleValue/1000)
                         print(data?.distance)
                     }

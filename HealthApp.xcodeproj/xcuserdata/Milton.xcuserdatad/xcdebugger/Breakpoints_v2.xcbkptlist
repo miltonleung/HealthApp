@@ -26,12 +26,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HealthApp/ViewController.swift"
-            timestampString = "486014285.503234"
+            timestampString = "486017730.803463"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "110"
-            endingLineNumber = "110"
-            landmarkName = "updateBanner()"
+            startingLineNumber = "123"
+            endingLineNumber = "123"
+            landmarkName = "updateBanner(_:)"
             landmarkType = "5">
             <Locations>
                <Location
@@ -154,11 +154,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HealthApp/ViewController.swift"
-            timestampString = "486014285.503234"
+            timestampString = "486017730.803463"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "57"
-            endingLineNumber = "57"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
             landmarkName = "performLifetimeSegue()"
             landmarkType = "5">
          </BreakpointContent>
