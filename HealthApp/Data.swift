@@ -9,15 +9,11 @@
 import Foundation
 
 let lifetimeDistanceAchievements = []
-//var doneLifetimeDistanceAchievements = [Int]()
 var currentLifetimeDistanceAchievements = [Int]()
 
 let lifetimeStepsAchievements = []
-//var doneLifetimeStepsAchievements = [Int]()
 var currentLifetimeStepsAchievements = [Int]()
 
-var millionTargetCounter = 1000000
-var thousandTargetCounter = 1000
 
 var firstDate:String = "2010-01-01"
 
@@ -70,17 +66,18 @@ class Data {
     }
     func updateLifetimeDistanceAchievement() {
         var lifetimeDistanceDictionary = [Int: Int]()
+        var thousandTargetCounter = NSUserDefaults.standardUserDefaults().integerForKey("thousandTargetCounter")
         
         if var doneLifetimeDistanceAchievements = NSUserDefaults.standardUserDefaults().arrayForKey("doneLifetimeDistance") as? [Int] {
             
-            while (totalDistance > thousandTargetCounter && !doneLifetimeDistanceAchievements.contains(thousandTargetCounter)) {
+            while (totalDistance >= thousandTargetCounter && !doneLifetimeDistanceAchievements.contains(thousandTargetCounter)) {
                 doneLifetimeDistanceAchievements.append(thousandTargetCounter)
                 currentLifetimeDistanceAchievements.append(thousandTargetCounter)
                 let size = lifetimeDistanceDictionary.count
                 lifetimeDistanceDictionary[size + 1] = thousandTargetCounter
                 thousandTargetCounter += 1000
             }
-            
+            NSUserDefaults.standardUserDefaults().setInteger(thousandTargetCounter, forKey: "thousandTargetCounter")
             NSUserDefaults.standardUserDefaults().setObject(doneLifetimeDistanceAchievements, forKey: "doneLifetimeDistance")
             checkedBoth += 1
 
@@ -89,17 +86,18 @@ class Data {
     
     func updateLifetimeStepsAchievement() {
         var lifetimeStepsDictionary = [Int: Int]()
+        var millionTargetCounter = NSUserDefaults.standardUserDefaults().integerForKey("millionTargetCounter")
         
         if var doneLifetimeStepsAchievements = NSUserDefaults.standardUserDefaults().arrayForKey("doneLifetimeSteps") as? [Int] {
             
-            while (totalSteps > millionTargetCounter && !doneLifetimeStepsAchievements.contains(millionTargetCounter)) {
+            while (totalSteps >= millionTargetCounter && !doneLifetimeStepsAchievements.contains(millionTargetCounter)) {
                 doneLifetimeStepsAchievements.append(millionTargetCounter)
                 currentLifetimeStepsAchievements.append(millionTargetCounter)
                 let size = lifetimeStepsDictionary.count
                 lifetimeStepsDictionary[size + 1] = millionTargetCounter
                 millionTargetCounter += 1000000
             }
-            
+            NSUserDefaults.standardUserDefaults().setInteger(millionTargetCounter, forKey: "millionTargetCounter")
             NSUserDefaults.standardUserDefaults().setObject(doneLifetimeStepsAchievements, forKey: "doneLifetimeSteps")
             checkedBoth += 1
 

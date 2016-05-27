@@ -38,15 +38,17 @@ class ViewController: UIViewController {
             NSUserDefaults.standardUserDefaults().setObject(array, forKey: "doneDaily")
             
             NSUserDefaults.standardUserDefaults().setObject(array, forKey: "doneLifetimeDistance")
-//            NSUserDefaults.standardUserDefaults().setObject(array, forKey: "")
             NSUserDefaults.standardUserDefaults().setObject(array, forKey: "doneLifetimeSteps")
             
             NSUserDefaults.standardUserDefaults().setBool(true, forKey: "firstRun")
+            
+            NSUserDefaults.standardUserDefaults().setInteger(1000000, forKey: "millionTargetCounter")
+            NSUserDefaults.standardUserDefaults().setInteger(1000, forKey: "thousandTargetCounter")
         }
         
         authorizeHealthKit()
         setFirstDate()
-        print(NSUserDefaults.standardUserDefaults().dictionaryRepresentation())
+//        print(NSUserDefaults.standardUserDefaults().dictionaryRepresentation())
     }
     func unwrapNotification(notification: NSNotification) {
         if let dailyDistanceDictionary = notification.userInfo as? Dictionary<Int, NSNumber> {
