@@ -8,11 +8,11 @@
 
 import Foundation
 
-var lifetimeDistanceAchievements = []
+let lifetimeDistanceAchievements = []
 var doneLifetimeDistanceAchievements = [Int]()
 var currentLifetimeDistanceAchievements = [Int]()
 
-var lifetimeStepsAchievements = []
+let lifetimeStepsAchievements = []
 var doneLifetimeStepsAchievements = [Int]()
 var currentLifetimeStepsAchievements = [Int]()
 

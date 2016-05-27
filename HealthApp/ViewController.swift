@@ -25,6 +25,13 @@ class ViewController: UIViewController {
         
 
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "performLifetimeSegue", name: "lifetimeNotification", object: nil)
+        
+        let firstRun = NSUserDefaults.standardUserDefaults().boolForKey("firstRun") as Bool
+        if !firstRun {
+            print("first time")
+            NSUserDefaults.standardUserDefaults().setBool(true, forKey: "firstRun")
+        }
+        
         authorizeHealthKit()
         setFirstDate()
         updateBanner()

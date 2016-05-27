@@ -30,8 +30,8 @@ class AchievementsViewController: UIViewController {
         super.viewDidLoad()
         AchievementsView.layer.cornerRadius = 11
 
-        updateAchievements()
         
+        updateAchievements()
     }
     
     func updateAchievements() {
