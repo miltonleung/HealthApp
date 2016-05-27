@@ -47,13 +47,15 @@ class AchievementsViewController: UIViewController {
 
         }
         
+        let random = Int(arc4random_uniform(UInt32(wordsOfEnc.count)))
+        
         if !currentLifetimeStepsAchievements.isEmpty {
             if let text = currentLifetimeStepsAchievements.last {
                 let newText = ModelInterface.sharedInstance.addThousandSeperator(text)
                 number.text = "\(newText) steps!"
             }
                     let days = ModelInterface.sharedInstance.daysDifference(firstDate, endDate: NSDate())
-            message.text = "It only took you \(days) days? Keep it up! Here's to the next million!"
+            message.text = "\(wordsOfEnc[random])! It only took you \(days) days? Keep it up! Here's to the next million!"
             
             currentLifetimeStepsAchievements.removeLast()
         }
@@ -64,7 +66,7 @@ class AchievementsViewController: UIViewController {
             }
             //        let days = ModelInterface.sharedInstance().daysDifference(<#T##startString: String##String#>, endDate: <#T##NSDate#>)
             let days = ModelInterface.sharedInstance.daysDifference(firstDate, endDate: NSDate())
-            message.text = "It only took you \(days) days? Keep it up! Here's to the next thousand!"
+            message.text = "\(wordsOfEnc[random])! It only took you \(days) days? Keep it up! Here's to the next thousand!"
             
             currentLifetimeDistanceAchievements.removeLast()
         }
