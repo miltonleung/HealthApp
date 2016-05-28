@@ -10,6 +10,7 @@ import Foundation
 
 protocol ConvertProtocol {
     func convertDate(date: NSDate) -> String
+    func convertStringtoDate(string: String) -> NSDate
     func getDayNameBy(stringDate: String) -> String
     func getMonthNameBy(stringDate: String) -> String
     func getDayNameByString(stringDate: String) -> String
@@ -26,7 +27,13 @@ extension ModelInterface: ConvertProtocol {
         let str = dateFormatter.stringFromDate(date)
         return str
     }
-    
+    func convertStringtoDate(string: String) -> NSDate {
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        let date = dateFormatter.dateFromString(string)
+        return date!
+        
+    }
     func getDayNameBy(stringDate: String) -> String
     {
         let df  = NSDateFormatter()

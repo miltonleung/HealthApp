@@ -14,9 +14,6 @@ var currentLifetimeDistanceAchievements = [Int]()
 let lifetimeStepsAchievements = []
 var currentLifetimeStepsAchievements = [Int]()
 
-
-var firstDate:String = "2010-01-01"
-
 var doneDailyDistanceAchievements = [Int]()
 let dailyAchievements = [1: "Baby Steps", 3: "You have reached 3 km!", 5: "You have reached 5 km!"]
 

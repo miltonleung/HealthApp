@@ -55,7 +55,7 @@ class AuthorizeViewController: UIViewController {
                 print("Error reading first date from HealthKit")
                 return
             }
-            firstDate = date
+            NSUserDefaults.standardUserDefaults().setObject(date, forKey: "firstDate")
         });
     }
 }

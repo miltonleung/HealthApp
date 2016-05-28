@@ -44,8 +44,8 @@ class ViewController: UIViewController {
             NSUserDefaults.standardUserDefaults().setInteger(1000000, forKey: "millionTargetCounter")
             NSUserDefaults.standardUserDefaults().setInteger(1000, forKey: "thousandTargetCounter")
             
-            
-            
+            let today = ModelInterface.sharedInstance.convertDate(NSDate())
+            NSUserDefaults.standardUserDefaults().setObject(today, forKey: "firstDate")
             
         }
         
@@ -60,7 +60,6 @@ class ViewController: UIViewController {
         print("viewdidappera")
         let firstRun = NSUserDefaults.standardUserDefaults().boolForKey("firstRun") as Bool
         if !firstRun {
-            print("hi")
              self.performSegueWithIdentifier("introSegue", sender: nil)
 //             setFirstDate()
             NSUserDefaults.standardUserDefaults().setBool(true, forKey: "firstRun")
@@ -76,16 +75,16 @@ class ViewController: UIViewController {
             print("error in userinfo type")
         }
     }
-    func setFirstDate() {
-        
-        self.healthManager?.readFirstDate({ (date, error) -> Void in
-            if (error != nil) {
-                print("Error reading first date from HealthKit")
-                return
-            }
-            firstDate = date
-        });
-    }
+//    func setFirstDate() {
+//        
+//        self.healthManager?.readFirstDate({ (date, error) -> Void in
+//            if (error != nil) {
+//                print("Error reading first date from HealthKit")
+//                return
+//            }
+//            firstDate = date
+//        });
+//    }
     
     func performLifetimeSegue() {
         

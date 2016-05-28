@@ -45,8 +45,10 @@ class CumulativeStatsViewController: UIViewController {
         }
     }
     
-    func updateFirstDate() { 
-        self.date.text = "since \(ModelInterface.sharedInstance.getDayNameByString(firstDate))"
+    func updateFirstDate() {
+        if let firstDate = NSUserDefaults.standardUserDefaults().stringForKey("firstDate") {
+            self.date.text = "since \(ModelInterface.sharedInstance.getDayNameByString(firstDate))"
+        }
     }
     
     func updateTotalSteps() {
@@ -80,8 +82,18 @@ class CumulativeStatsViewController: UIViewController {
             dispatch_async(dispatch_get_main_queue(), { () -> Void in
                 let totalResult = Int(totalDistance.1.doubleValueForUnit(HKUnit.meterUnitWithMetricPrefix(.Kilo)))
                 self.data.totalDistance = totalResult
-                let totalResultwithCommas = ModelInterface.sharedInstance.addThousandSeperator(totalResult)
-                self.cumulativeDistance.text = "\(totalResultwithCommas) km"
+                
+                
+                let unrounded = totalDistance.1.doubleValueForUnit(HKUnit.meterUnitWithMetricPrefix(.Kilo))
+                
+                var numberFormatter = NSNumberFormatter()
+                numberFormatter.numberStyle = NSNumberFormatterStyle.DecimalStyle
+                numberFormatter.minimumFractionDigits = 0
+                numberFormatter.maximumFractionDigits = 1
+                let rounded = numberFormatter.stringFromNumber(unrounded)!
+//                let totalResultwithCommas = String(format: "%.1f", rounded)
+                
+                self.cumulativeDistance.text = "\(rounded) km"
                 print(self.cumulativeDistance.text!)
             });
         });

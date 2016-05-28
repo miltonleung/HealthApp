@@ -223,15 +223,22 @@ class HealthManager {
         intervalComponent.year = 100
         let anchorDate = NSCalendar.currentCalendar().dateFromComponents(intervalComponent)
         
-        let query = HKStatisticsCollectionQuery(quantityType: sampleType, quantitySamplePredicate: nil, options: .CumulativeSum, anchorDate: anchorDate!, intervalComponents: intervalComponent)
+        let firstDate = NSUserDefaults.standardUserDefaults().stringForKey("firstDate")
+        let tempStart = ModelInterface.sharedInstance.convertStringtoDate(firstDate!)
+        let startDate = NSCalendar.currentCalendar().startOfDayForDate(tempStart)
+
+        let predicate = HKQuery.predicateForSamplesWithStartDate(startDate, endDate: NSDate(), options: HKQueryOptions.StrictStartDate)
+        
+        let query = HKStatisticsCollectionQuery(quantityType: sampleType, quantitySamplePredicate: predicate, options: .CumulativeSum, anchorDate: anchorDate!, intervalComponents: intervalComponent)
         query.initialResultsHandler = { query, result, error in
             if let queryError = error {
                 completion(nil, queryError)
                 return
             }
-            let startDate = NSDate.distantPast()
-            let endDate = NSDate()
             
+//            let startDate = NSDate.distantPast()
+            let endDate = NSDate()
+
             guard let statsCollection = result else {
                 // Perform proper error handling here
                 fatalError("*** An error occurred while calculating the statistics: \(error?.localizedDescription) ***")
@@ -257,7 +264,8 @@ class HealthManager {
                 completion(nil, queryError)
                 return
             }
-            let startDate = NSDate.distantPast()
+
+//            let startDate = NSDate.distantPast()
             let endDate = NSDate()
             
             guard let statsCollection = statisticsCollection else {

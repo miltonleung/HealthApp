@@ -48,26 +48,27 @@ class AchievementsViewController: UIViewController {
         }
         
         let random = Int(arc4random_uniform(UInt32(wordsOfEnc.count)))
-        
-        if !currentLifetimeStepsAchievements.isEmpty {
-            if let text = currentLifetimeStepsAchievements.last {
-                let newText = ModelInterface.sharedInstance.addThousandSeperator(text)
-                number.text = "\(newText) steps!"
+        if let firstDate = NSUserDefaults.standardUserDefaults().stringForKey("firstDate") {
+            if !currentLifetimeStepsAchievements.isEmpty {
+                if let text = currentLifetimeStepsAchievements.last {
+                    let newText = ModelInterface.sharedInstance.addThousandSeperator(text)
+                    number.text = "\(newText) steps!"
+                }
+                let days = ModelInterface.sharedInstance.daysDifference(firstDate, endDate: NSDate())
+                message.text = "\(wordsOfEnc[random])! It only took you \(days) days? Keep it up! Here's to the next million!"
+                
+                currentLifetimeStepsAchievements.removeLast()
             }
-            let days = ModelInterface.sharedInstance.daysDifference(firstDate, endDate: NSDate())
-            message.text = "\(wordsOfEnc[random])! It only took you \(days) days? Keep it up! Here's to the next million!"
-            
-            currentLifetimeStepsAchievements.removeLast()
-        }
-        else if !currentLifetimeDistanceAchievements.isEmpty {
-            if let text = currentLifetimeDistanceAchievements.last {
-                let newText = ModelInterface.sharedInstance.addThousandSeperator(text)
-                number.text = "\(newText) km!"
+            else if !currentLifetimeDistanceAchievements.isEmpty {
+                if let text = currentLifetimeDistanceAchievements.last {
+                    let newText = ModelInterface.sharedInstance.addThousandSeperator(text)
+                    number.text = "\(newText) km!"
+                }
+                let days = ModelInterface.sharedInstance.daysDifference(firstDate, endDate: NSDate())
+                message.text = "\(wordsOfEnc[random])! It only took you \(days) days? Keep it up! Here's to the next thousand!"
+                
+                currentLifetimeDistanceAchievements.removeLast()
             }
-            let days = ModelInterface.sharedInstance.daysDifference(firstDate, endDate: NSDate())
-            message.text = "\(wordsOfEnc[random])! It only took you \(days) days? Keep it up! Here's to the next thousand!"
-            
-            currentLifetimeDistanceAchievements.removeLast()
         }
     }
     
