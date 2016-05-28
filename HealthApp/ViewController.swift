@@ -32,8 +32,8 @@ class ViewController: UIViewController {
             print("first time")
            
             
-            NSUserDefaults.standardUserDefaults().setInteger(8, forKey: "targetDistance")
-            NSUserDefaults.standardUserDefaults().setInteger(10000, forKey: "targetSteps")
+            NSUserDefaults.standardUserDefaults().setInteger(6, forKey: "targetDistance")
+            NSUserDefaults.standardUserDefaults().setInteger(8000, forKey: "targetSteps")
             
             let array = [1]
             NSUserDefaults.standardUserDefaults().setObject(array, forKey: "doneDaily")
