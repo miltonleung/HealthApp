@@ -37,6 +37,7 @@ class GraphViewController: UIViewController {
     var days = [String]()
     var healthManager: HealthManager?
     var weeklyOrMonthly = 1
+    let data = Data()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -104,6 +105,8 @@ class GraphViewController: UIViewController {
                 print("Error reading past week steps from Healthkit")
                 return
             }
+            
+            self.data.weeklyDistances = distances
             
             self.days = [String]()
             for date in dates {

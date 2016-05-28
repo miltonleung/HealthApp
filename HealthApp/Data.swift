@@ -17,7 +17,7 @@ var currentLifetimeStepsAchievements = [Int]()
 var doneDailyDistanceAchievements = [Int]()
 let dailyAchievements = [1: "Baby Steps", 3: "You have reached 3 km!", 5: "You have reached 5 km!"]
 
-let wordsOfEnc = ["Bravo", "Way to Go", "You are a Legend", "You Deserve A Pat On The Back", "Looking Good", "Impressive", "Unbelievable", "Are you kidding me?!?", "Beautiful", "Well Done", "You Take The Biscuit Every Time", "Outstanding", "You really outdid yourself", "Outstanding", "Coolio", "DAYUM!!"]
+let wordsOfEnc = ["Bravo", "Way to Go", "You are a Legend", "You Deserve A Pat On The Back", "Looking Good", "Impressive", "Unbelievable", "Are you kidding me?!?", "Beautiful", "Well Done", "You Take The Biscuit Every Time", "Outstanding", "You really outdid yourself", "Outstanding", "Coolio", "DAYUM!!", "You’re making it look easy!"]
 
 class Data {
     var viewcontroller = ViewController()
@@ -26,6 +26,12 @@ class Data {
         didSet {
             var dailyDistanceDictionary = [1 : dailyDistance]
             NSNotificationCenter.defaultCenter().postNotificationName("dailyNotification", object: nil, userInfo: dailyDistanceDictionary)
+        }
+    }
+    var weeklyDistances = [Double]() {
+        didSet {
+            var weeklyDistancesDictionary = [1: weeklyDistances]
+            NSNotificationCenter.defaultCenter().postNotificationName("checkInStatus", object: nil, userInfo: weeklyDistancesDictionary)
         }
     }
     var totalSteps: Int = 0 {

@@ -17,6 +17,12 @@ class ViewController: UIViewController {
     var healthManager:HealthManager?
     let pedometer = CMPedometer()
     
+    // Passed to ProgressViewController
+    var scenario: Int! // 0 flying, 1 Pass, 2 Inconsistency, 3 Lower
+    var average: Double!
+    var targetDistance: Int!
+    var count: Int!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -29,29 +35,84 @@ class ViewController: UIViewController {
         
         let firstRun = NSUserDefaults.standardUserDefaults().boolForKey("firstRun") as Bool
         if !firstRun {
-            print("first time")
-           
-            
-            NSUserDefaults.standardUserDefaults().setInteger(6, forKey: "targetDistance")
-            NSUserDefaults.standardUserDefaults().setInteger(8000, forKey: "targetSteps")
-            
-            let array = [1]
-            NSUserDefaults.standardUserDefaults().setObject(array, forKey: "doneDaily")
-            
-            NSUserDefaults.standardUserDefaults().setObject(array, forKey: "doneLifetimeDistance")
-            NSUserDefaults.standardUserDefaults().setObject(array, forKey: "doneLifetimeSteps")
-            
-            NSUserDefaults.standardUserDefaults().setInteger(1000000, forKey: "millionTargetCounter")
-            NSUserDefaults.standardUserDefaults().setInteger(1000, forKey: "thousandTargetCounter")
-            
-            let today = ModelInterface.sharedInstance.convertDate(NSDate())
-            NSUserDefaults.standardUserDefaults().setObject(today, forKey: "firstDate")
-            
+            reset()
         }
         
-//        authorizeHealthKit()
-//        setFirstDate()
-//        print(NSUserDefaults.standardUserDefaults().dictionaryRepresentation())
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "checkInUnwrap:", name: "checkInStatus", object: nil)
+    }
+    
+    func reset() {
+        print("Resetting")
+        NSUserDefaults.standardUserDefaults().setInteger(6, forKey: "targetDistance")
+        NSUserDefaults.standardUserDefaults().setInteger(8000, forKey: "targetSteps")
+        
+        let array = [1]
+        NSUserDefaults.standardUserDefaults().setObject(array, forKey: "doneDaily")
+        
+        NSUserDefaults.standardUserDefaults().setObject(array, forKey: "doneLifetimeDistance")
+        NSUserDefaults.standardUserDefaults().setObject(array, forKey: "doneLifetimeSteps")
+        
+        NSUserDefaults.standardUserDefaults().setInteger(1000000, forKey: "millionTargetCounter")
+        NSUserDefaults.standardUserDefaults().setInteger(1000, forKey: "thousandTargetCounter")
+        
+        let today = ModelInterface.sharedInstance.convertDate(NSDate())
+        NSUserDefaults.standardUserDefaults().setObject(today, forKey: "firstDate")
+        
+        NSUserDefaults.standardUserDefaults().setObject(today, forKey: "checkIn")
+    }
+    func checkInUnwrap(notification: NSNotification) {
+        if let checkIn = NSUserDefaults.standardUserDefaults().stringForKey("checkIn") {
+            let daysSince = ModelInterface.sharedInstance.daysDifference(checkIn, endDate: NSDate())
+            if daysSince >= 5 {
+                if let weeklyDictionary = notification.userInfo as? Dictionary<Int, [Double]> {
+                    if let weeklyDistances = weeklyDictionary[1] {
+                        var counter = 0
+                        targetDistance = NSUserDefaults.standardUserDefaults().integerForKey("targetDistance")
+                        let target = Double(targetDistance)
+                        for d in weeklyDistances {
+                            if d >= target {
+                                counter += 1
+                            }
+                        }
+                        count = counter
+                        var sum = 0.0
+                        for d in weeklyDistances {
+                            sum += d
+                        }
+                        average = sum/Double(weeklyDistances.count)
+                        
+                        if counter == 7 {
+                            scenario = 0
+                        }
+                        else if counter >= 4 && abs(average - target) <= 1.4 {
+                            scenario = 1
+                        }
+                        else if counter <= 4 && weeklyDistances.maxElement()! - weeklyDistances.minElement()! >= 4 && weeklyDistances.maxElement() >= target {
+                            scenario = 2
+                        }
+                        else {
+                            scenario = 3
+                        }
+                        self.performSegueWithIdentifier("progress", sender: nil)
+                    }
+                }
+                let today = ModelInterface.sharedInstance.convertDate(NSDate())
+                NSUserDefaults.standardUserDefaults().setObject(today, forKey: "checkIn")
+            }
+        }
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if (segue.identifier == "progress") {
+            let progress = segue.destinationViewController as! ProgressViewController
+            progress.scenario = scenario
+            progress.average = average
+            progress.targetDistance = targetDistance
+            progress.count = count
+        }
+        else {
+            super.prepareForSegue(segue, sender: sender)
+        }
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -60,8 +121,7 @@ class ViewController: UIViewController {
         print("viewdidappera")
         let firstRun = NSUserDefaults.standardUserDefaults().boolForKey("firstRun") as Bool
         if !firstRun {
-             self.performSegueWithIdentifier("introSegue", sender: nil)
-//             setFirstDate()
+            self.performSegueWithIdentifier("introSegue", sender: nil)
             NSUserDefaults.standardUserDefaults().setBool(true, forKey: "firstRun")
         }
     }
@@ -75,43 +135,14 @@ class ViewController: UIViewController {
             print("error in userinfo type")
         }
     }
-//    func setFirstDate() {
-//        
-//        self.healthManager?.readFirstDate({ (date, error) -> Void in
-//            if (error != nil) {
-//                print("Error reading first date from HealthKit")
-//                return
-//            }
-//            firstDate = date
-//        });
-//    }
     
     func performLifetimeSegue() {
-        
         self.performSegueWithIdentifier("lifetimeSegue", sender: nil)
-        
     }
-    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    func authorizeHealthKit()
-    {
-        healthManager!.authorizeHealthKit { (authorized, error) -> Void in
-            if authorized {
-                print("HealthKit authorized")
-                
-            }
-            else {
-                print("HealthKit denied")
-                if error != nil {
-                    print("\(error)")
-                }
-            }
-        }
     }
     
     func updateBanner(distance: NSNumber) {

@@ -30,8 +30,14 @@
             <string>Muli-Light</string>
             <string>Muli-Light</string>
             <string>Muli-Light</string>
+            <string>Muli-Light</string>
+            <string>Muli-Light</string>
         </mutableArray>
         <mutableArray key="Muli-Regular.ttf">
+            <string>Muli</string>
+            <string>Muli</string>
+            <string>Muli</string>
+            <string>Muli</string>
             <string>Muli</string>
             <string>Muli</string>
             <string>Muli</string>
@@ -322,12 +328,141 @@
                     <connections>
                         <outlet property="authorizeView" destination="59Z-Ug-TG0" id="kK7-uB-fia"/>
                         <outlet property="welcomeView" destination="gXR-zn-1o2" id="ftB-q3-gqs"/>
-                        <segue destination="7SV-VU-RfY" kind="showDetail" identifier="authorizeSegue" action="showViewController:sender:" id="wyS-8f-vaV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="phX-fm-n01" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-122" y="1010"/>
+        </scene>
+        <!--Progress View Controller-->
+        <scene sceneID="7Ju-q8-bCN">
+            <objects>
+                <viewController id="v9a-C7-Xw3" customClass="ProgressViewController" customModule="HealthApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Nh3-W0-P2G"/>
+                        <viewControllerLayoutGuide type="bottom" id="VGb-Hx-N0h"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vlI-EP-ijL">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0mm-r0-aOM">
+                                <rect key="frame" x="158" y="140" width="285" height="320"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Progress" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3rh-QF-MKr">
+                                        <rect key="frame" x="93" y="79" width="98" height="31"/>
+                                        <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="24"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Progress" translatesAutoresizingMaskIntoConstraints="NO" id="KN3-eM-YJg">
+                                        <rect key="frame" x="112" y="8" width="61" height="61"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="61" id="XIn-Dy-7hB"/>
+                                            <constraint firstAttribute="width" constant="61" id="roR-NR-qge"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qiZ-bS-sex">
+                                        <rect key="frame" x="13" y="125" width="258" height="0.0"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="258" id="bur-Zf-2oM"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="13"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bRp-lk-UyF">
+                                        <rect key="frame" x="5" y="266" width="134" height="49"/>
+                                        <color key="backgroundColor" red="0.30196078431372547" green="0.64313725490196072" blue="0.7803921568627451" alpha="0.77689655172413796" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="49" id="9Bo-rW-cVg"/>
+                                            <constraint firstAttribute="width" constant="134" id="ASq-bv-iTr"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Muli-Light" family="Muli" pointSize="20"/>
+                                        <state key="normal" title="🙅">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="11"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="noButton:" destination="v9a-C7-Xw3" eventType="touchUpInside" id="bQn-qW-bPa"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m69-yy-z2p">
+                                        <rect key="frame" x="146" y="266" width="134" height="49"/>
+                                        <color key="backgroundColor" red="0.30196078431372547" green="0.64313725490196072" blue="0.7803921568627451" alpha="0.77689655172413796" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="49" id="ZiD-7L-CIa"/>
+                                            <constraint firstAttribute="width" constant="134" id="gp6-q9-nkr"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Muli-Light" family="Muli" pointSize="20"/>
+                                        <state key="normal" title="+1">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="11"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="addButton:" destination="v9a-C7-Xw3" eventType="touchUpInside" id="siM-pF-cGR"/>
+                                            <action selector="noButton:" destination="v9a-C7-Xw3" eventType="touchUpInside" id="dbM-71-Xqz"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pWT-qg-mjl">
+                                        <rect key="frame" x="142.5" y="220.5" width="0.0" height="0.0"/>
+                                        <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="13"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g2q-mA-Ukt">
+                                        <rect key="frame" x="142" y="236" width="0.0" height="0.0"/>
+                                        <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="13"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.19607843137254902" green="0.36078431372549019" blue="0.47843137254901957" alpha="0.94999999999999996" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="3rh-QF-MKr" firstAttribute="top" secondItem="KN3-eM-YJg" secondAttribute="bottom" constant="10" id="1kO-9A-Q76"/>
+                                    <constraint firstItem="qiZ-bS-sex" firstAttribute="top" secondItem="3rh-QF-MKr" secondAttribute="bottom" constant="15" id="CaV-XF-Hmz"/>
+                                    <constraint firstItem="KN3-eM-YJg" firstAttribute="top" secondItem="0mm-r0-aOM" secondAttribute="top" constant="8" id="NWt-2J-Zro"/>
+                                    <constraint firstAttribute="bottom" secondItem="m69-yy-z2p" secondAttribute="bottom" constant="5" id="QaL-Bv-tfc"/>
+                                    <constraint firstItem="qiZ-bS-sex" firstAttribute="centerX" secondItem="0mm-r0-aOM" secondAttribute="centerX" id="UJR-EY-Eqo"/>
+                                    <constraint firstAttribute="height" constant="320" id="al1-6h-zhV"/>
+                                    <constraint firstAttribute="width" constant="285" id="ePG-kb-12o"/>
+                                    <constraint firstItem="bRp-lk-UyF" firstAttribute="leading" secondItem="0mm-r0-aOM" secondAttribute="leading" constant="5" id="fli-hh-zaU"/>
+                                    <constraint firstItem="pWT-qg-mjl" firstAttribute="centerX" secondItem="0mm-r0-aOM" secondAttribute="centerX" id="hS5-gr-Pv6"/>
+                                    <constraint firstItem="bRp-lk-UyF" firstAttribute="top" secondItem="pWT-qg-mjl" secondAttribute="bottom" constant="45" id="hSS-s2-W4X"/>
+                                    <constraint firstItem="g2q-mA-Ukt" firstAttribute="centerX" secondItem="0mm-r0-aOM" secondAttribute="centerX" id="hma-Uy-uFK"/>
+                                    <constraint firstItem="3rh-QF-MKr" firstAttribute="centerX" secondItem="0mm-r0-aOM" secondAttribute="centerX" id="hrV-nf-pAB"/>
+                                    <constraint firstAttribute="trailing" secondItem="m69-yy-z2p" secondAttribute="trailing" constant="5" id="lxL-1C-0bg"/>
+                                    <constraint firstItem="bRp-lk-UyF" firstAttribute="top" secondItem="g2q-mA-Ukt" secondAttribute="bottom" constant="29" id="nO5-4a-CdF"/>
+                                    <constraint firstItem="KN3-eM-YJg" firstAttribute="centerX" secondItem="0mm-r0-aOM" secondAttribute="centerX" id="q5w-1W-I6C"/>
+                                    <constraint firstAttribute="bottom" secondItem="bRp-lk-UyF" secondAttribute="bottom" constant="5" id="sIy-GI-k2r"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="0mm-r0-aOM" firstAttribute="centerX" secondItem="vlI-EP-ijL" secondAttribute="centerX" id="BUj-la-4cq"/>
+                            <constraint firstItem="0mm-r0-aOM" firstAttribute="centerY" secondItem="vlI-EP-ijL" secondAttribute="centerY" id="Nl8-sG-ah0"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="add" destination="m69-yy-z2p" id="9jf-yc-hX3"/>
+                        <outlet property="dailyAverage" destination="pWT-qg-mjl" id="i3f-aJ-5wJ"/>
+                        <outlet property="dailyTarget" destination="g2q-mA-Ukt" id="NXL-8w-o1a"/>
+                        <outlet property="message" destination="qiZ-bS-sex" id="arW-mB-82B"/>
+                        <outlet property="progressView" destination="0mm-r0-aOM" id="8fc-gZ-eJi"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="G7f-ef-cM0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-480" y="998"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -397,6 +532,7 @@
                         <outlet property="banner" destination="ZR0-ec-RYC" id="pwh-zF-q66"/>
                         <segue destination="HvX-cF-QBg" kind="presentation" identifier="lifetimeSegue" modalPresentationStyle="overCurrentContext" id="azM-6p-Cxi"/>
                         <segue destination="43X-Kf-pQB" kind="presentation" identifier="introSegue" modalPresentationStyle="overCurrentContext" id="6AQ-vQ-Xoe"/>
+                        <segue destination="v9a-C7-Xw3" kind="presentation" identifier="progress" modalPresentationStyle="overCurrentContext" id="u3r-Gy-Tvt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -416,28 +552,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AV8-Na-nHM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="870" y="260"/>
-        </scene>
-        <!--Authorize View Controller-->
-        <scene sceneID="m5j-qS-UIq">
-            <objects>
-                <viewController id="7SV-VU-RfY" customClass="AuthorizeViewController" customModule="HealthApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="aKz-tg-Iyn"/>
-                        <viewControllerLayoutGuide type="bottom" id="reQ-f0-4fa"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="442-YP-ywO">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    </view>
-                    <connections>
-                        <outlet property="authorizeView" destination="59Z-Ug-TG0" id="ly8-oo-Koq"/>
-                        <outlet property="message" destination="213-my-1qi" id="bMH-ff-fbW"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="p68-36-u87" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-122" y="1672"/>
         </scene>
         <!--Current Stats View Controller-->
         <scene sceneID="TCy-BN-7bT">
@@ -825,6 +939,7 @@
         <image name="Hi" width="61" height="61"/>
         <image name="Image" width="640" height="1136"/>
         <image name="Medal" width="61" height="61"/>
+        <image name="Progress" width="61" height="61"/>
         <image name="buttonBackground" width="66" height="17"/>
     </resources>
 </document>
