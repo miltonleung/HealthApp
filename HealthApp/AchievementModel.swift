@@ -9,13 +9,13 @@
 import Foundation
 
 protocol AchievementProtocol {
-    func reachedAchievement(distance: Int) -> String
+    func reachedAchievement(distance: Int) -> (Int, String)
     func hardestHole(distance: Double) -> String
     
 }
 
 extension ModelInterface: AchievementProtocol {
-    func reachedAchievement(distance: Int) -> String {
+    func reachedAchievement(distance: Int) -> (Int, String) {
         var done:Int = 0
         var retMessage = ""
         
@@ -31,7 +31,7 @@ extension ModelInterface: AchievementProtocol {
                 done = steps
             }
         }
-        return retMessage
+        return (done, retMessage)
         
     }
     

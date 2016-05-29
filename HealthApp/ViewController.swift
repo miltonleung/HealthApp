@@ -150,9 +150,11 @@ class ViewController: UIViewController {
         
         
         let a = distance.integerValue/1000
-        let achievementString = ModelInterface.sharedInstance.reachedAchievement(a)
+        let achievement = ModelInterface.sharedInstance.reachedAchievement(a)
+        let achievementString = achievement.1
+        let achievementNumber  = achievement.0
         
-        if achievementString != "" && distance.doubleValue/1000 - Double(a) <= 0.5 {
+        if achievementString != "" && distance.doubleValue/1000 - Double(achievementNumber) <= 1.5 {
             self.banner.text = achievementString
         }
     }
