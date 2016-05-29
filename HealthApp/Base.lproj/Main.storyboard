@@ -65,6 +65,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="amr-G8-mIa">
+                                <rect key="frame" x="180" y="236" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="310" id="VZb-xa-kaZ"/>
+                                    <constraint firstAttribute="width" constant="307" id="dom-0X-vRX"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4T0-2Z-FHz">
+                                <rect key="frame" x="180" y="176" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="307" id="HQ9-1k-sYN"/>
+                                    <constraint firstAttribute="height" constant="310" id="tKY-3B-5kn"/>
+                                </constraints>
+                            </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fu6-OL-wRP">
                                 <rect key="frame" x="147" y="94" width="307" height="310"/>
                                 <subviews>
@@ -137,7 +151,11 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="fu6-OL-wRP" firstAttribute="centerY" secondItem="EUt-Pe-O4j" secondAttribute="centerY" multiplier="0.83" id="GWF-SQ-k5c"/>
+                            <constraint firstItem="amr-G8-mIa" firstAttribute="centerX" secondItem="EUt-Pe-O4j" secondAttribute="centerX" id="Ir7-ep-o3j"/>
+                            <constraint firstItem="amr-G8-mIa" firstAttribute="centerY" secondItem="EUt-Pe-O4j" secondAttribute="centerY" multiplier="0.83" id="des-21-yAx"/>
+                            <constraint firstItem="4T0-2Z-FHz" firstAttribute="centerY" secondItem="EUt-Pe-O4j" secondAttribute="centerY" multiplier="0.83" id="rcZ-aM-syV"/>
                             <constraint firstItem="fu6-OL-wRP" firstAttribute="centerX" secondItem="EUt-Pe-O4j" secondAttribute="centerX" id="t5T-pu-C7C"/>
+                            <constraint firstItem="4T0-2Z-FHz" firstAttribute="centerX" secondItem="EUt-Pe-O4j" secondAttribute="centerX" id="tKX-2H-Fdt"/>
                         </constraints>
                     </view>
                     <connections>
@@ -146,6 +164,8 @@
                         <outlet property="icon" destination="dyF-oy-JgI" id="V5f-VT-P0X"/>
                         <outlet property="message" destination="CAl-E9-gkZ" id="WRk-Y0-JZq"/>
                         <outlet property="number" destination="1td-PH-Ye5" id="qT7-YC-PmL"/>
+                        <outlet property="secondLayer" destination="4T0-2Z-FHz" id="jUx-B1-XYU"/>
+                        <outlet property="thirdLayer" destination="amr-G8-mIa" id="DGK-QX-ZYK"/>
                         <outlet property="titleLabel" destination="PbS-Sc-8Ew" id="5vp-mv-iMi"/>
                     </connections>
                 </viewController>

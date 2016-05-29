@@ -19,6 +19,9 @@ class AchievementsViewController: UIViewController {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var close: UIButton!
     @IBOutlet weak var icon: UIImageView!
+    @IBOutlet weak var secondLayer: UIImageView!
+
+    @IBOutlet weak var thirdLayer: UIImageView!
     @IBAction func closeButton(sender: AnyObject) {
         
         if (!currentLifetimeDistanceAchievements.isEmpty || !currentLifetimeStepsAchievements.isEmpty) {
@@ -32,43 +35,50 @@ class AchievementsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         AchievementsView.layer.cornerRadius = 11
-//        if let thisDistance = currentLifetimeDistanceAchievements.last {
-//            if thisDistance % 1000 != 0 {
-//                close.setTitle("Cool", forState: UIControlState.Normal)
-//                close.backgroundColor = UIColor(red: 2, green: 115, blue: 227, alpha: 100)
-//            }
-//        }
+
         
         updateAchievements()
     }
     
     func updateAchievements() {
-        let reps = currentLifetimeStepsAchievements.count + currentLifetimeDistanceAchievements.count
-        if reps == 1 {
-            
-            AchievementsView.backgroundColor = UIColor(patternImage: UIImage(named: "SingleAchievements")!)
+        let tempCombinedAchievements = currentLifetimeStepsAchievements + currentLifetimeDistanceAchievements
+        let reps = tempCombinedAchievements.count
+        if reps >= 1 {
+            if tempCombinedAchievements[0] % 1000 == 0 {
+                AchievementsView.backgroundColor = UIColor(patternImage: UIImage(named: "FirstLight")!)
+            } else {
+                AchievementsView.backgroundColor = UIColor(patternImage: UIImage(named: "FirstDark")!)
+            }
         }
-        else if reps == 2 {
-            AchievementsView.backgroundColor = UIColor(patternImage: UIImage(named: "TwoAchievements")!)
+        if reps >= 2 {
+            if tempCombinedAchievements[1] % 1000 == 0 {
+                secondLayer.image = UIImage(named: "SecondLight")
+            } else {
+                secondLayer.image = UIImage(named: "SecondDark")
+            }
         }
-        else {
-            AchievementsView.backgroundColor = UIColor(patternImage: UIImage(named: "MultipleAchievements")!)
+        if reps >= 3 {
+            if tempCombinedAchievements[2] % 1000 == 0 {
+                thirdLayer.image = UIImage(named: "ThirdLight")
+            } else {
+                thirdLayer.image = UIImage(named: "ThirdDark")
+            }
             
         }
         let random = Int(arc4random_uniform(UInt32(wordsOfEnc.count)))
         if let firstDate = NSUserDefaults.standardUserDefaults().stringForKey("firstDate") {
             if !currentLifetimeStepsAchievements.isEmpty {
-                if let text = currentLifetimeStepsAchievements.last {
+                if let text = currentLifetimeStepsAchievements.first {
                     let newText = ModelInterface.sharedInstance.addThousandSeperator(text)
                     number.text = "\(newText) steps!"
                 }
                 let days = ModelInterface.sharedInstance.daysDifference(firstDate, endDate: NSDate())
                 message.text = "\(wordsOfEnc[random])! It only took you \(days) days? Keep it up! Here's to the next million!"
                 
-                currentLifetimeStepsAchievements.removeLast()
+                currentLifetimeStepsAchievements.removeFirst()
             }
             else if !currentLifetimeDistanceAchievements.isEmpty {
-                if let text = currentLifetimeDistanceAchievements.last {
+                if let text = currentLifetimeDistanceAchievements.first {
                     let newText = ModelInterface.sharedInstance.addThousandSeperator(text)
                     number.text = "\(newText) km!"
                     let days = ModelInterface.sharedInstance.daysDifference(firstDate, endDate: NSDate())
@@ -88,7 +98,7 @@ class AchievementsViewController: UIViewController {
                         }
                     }
                 }
-                currentLifetimeDistanceAchievements.removeLast()
+                currentLifetimeDistanceAchievements.removeFirst()
             }
         }
     }
