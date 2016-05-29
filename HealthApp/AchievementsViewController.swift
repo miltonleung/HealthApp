@@ -35,7 +35,7 @@ class AchievementsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         AchievementsView.layer.cornerRadius = 11
-
+        titleLabel.text = "Lifetime Achievement"
         
         updateAchievements()
     }
@@ -71,6 +71,15 @@ class AchievementsViewController: UIViewController {
                 if let text = currentLifetimeStepsAchievements.first {
                     let newText = ModelInterface.sharedInstance.addThousandSeperator(text)
                     number.text = "\(newText) steps!"
+                    if text <= 1000000 {
+                        icon.image = UIImage(named: "Bronze")
+                    }
+                    else if text <= 2000000 {
+                        icon.image = UIImage(named: "Silver")
+                    }
+                    else {
+                        icon.image = UIImage(named: "Gold")
+                    }
                 }
                 let days = ModelInterface.sharedInstance.daysDifference(firstDate, endDate: NSDate())
                 message.text = "\(wordsOfEnc[random])! It only took you \(days) days? Keep it up! Here's to the next million!"
@@ -83,7 +92,15 @@ class AchievementsViewController: UIViewController {
                     number.text = "\(newText) km!"
                     let days = ModelInterface.sharedInstance.daysDifference(firstDate, endDate: NSDate())
                     if text % 1000 == 0 {
-                        icon.image = UIImage(named: "Medal")
+                        if text <= 1000 {
+                            icon.image = UIImage(named: "Bronze")
+                        }
+                        else if text <= 2000 {
+                            icon.image = UIImage(named: "Silver")
+                        }
+                        else {
+                            icon.image = UIImage(named: "Gold")
+                        }
                         titleLabel.text = "Lifetime Achievement"
                         message.text = "\(wordsOfEnc[random])! It only took you \(days) days? Keep it up! Here's to the next thousand!"
                     }

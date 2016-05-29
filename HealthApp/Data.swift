@@ -17,12 +17,12 @@ let lifetimeDistanceAchievementsDescription =
      3476: "the moon’s diameter is 3,476?",
      6371: "the Earth’s radius is 6,371 km?"]
 let lifetimeDistanceAchievementsImage =
-    [4: "Moon",
-     24: "Shark",
-     27: "NY",
-     920: "Earth",
-     3476: "Dolphin",
-     6371: "Cube"]
+    [4: "Shark",
+     24: "Dolphin",
+     27: "Cube",
+     920: "NY",
+     3476: "Moon",
+     6371: "Earth"]
 var currentLifetimeDistanceAchievements = [Int]()
 
 let lifetimeStepsAchievements = []

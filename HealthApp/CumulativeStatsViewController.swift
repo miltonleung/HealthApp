@@ -27,6 +27,11 @@ class CumulativeStatsViewController: UIViewController {
         updateFirstDate()
     }
     
+    override func viewWillAppear(animated: Bool) {
+        self.updateTotalSteps()
+        self.updateTotalDistance()
+    }
+    
     func authorizeHealthKit() {
         healthManager!.authorizeHealthKit { (authorized, error) -> Void in
             if authorized {
