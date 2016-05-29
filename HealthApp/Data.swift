@@ -8,7 +8,21 @@
 
 import Foundation
 
-let lifetimeDistanceAchievements = []
+let lifetimeDistanceAchievements = [4: "Just Keep Swimming", 24: "Can You Hear Me?", 27: "27 by 27 by 27", 920: "New York, New York", 3476: "Fly Me to the Moon", 6371: "We Are The World"]
+let lifetimeDistanceAchievementsDescription =
+    [4: "a shark can smell blood from 4km away.",
+     24: "a dolphin can detect underwater sounds from 24 km!",
+     27: "everyone in the world (over 7 billion people) can fit in a 27 km cube!",
+     920: "New York has 920 km of shoreline!",
+     3476: "the moon’s diameter is 3,476?",
+     6371: "the Earth’s radius is 6,371 km?"]
+let lifetimeDistanceAchievementsImage =
+    [4: "Moon",
+     24: "Shark",
+     27: "NY",
+     920: "Earth",
+     3476: "Dolphin",
+     6371: "Cube"]
 var currentLifetimeDistanceAchievements = [Int]()
 
 let lifetimeStepsAchievements = []
@@ -81,9 +95,18 @@ class Data {
                 thousandTargetCounter += 1000
             }
             NSUserDefaults.standardUserDefaults().setInteger(thousandTargetCounter, forKey: "thousandTargetCounter")
+            
+            for (distance, message) in lifetimeDistanceAchievements {
+                if totalDistance >= distance && !doneLifetimeDistanceAchievements.contains(distance) {
+                    doneLifetimeDistanceAchievements.append(distance)
+                    currentLifetimeDistanceAchievements.append(distance)
+                }
+            }
+            
+            
             NSUserDefaults.standardUserDefaults().setObject(doneLifetimeDistanceAchievements, forKey: "doneLifetimeDistance")
             checkedBoth += 1
-
+            
         }
     }
     
@@ -103,7 +126,7 @@ class Data {
             NSUserDefaults.standardUserDefaults().setInteger(millionTargetCounter, forKey: "millionTargetCounter")
             NSUserDefaults.standardUserDefaults().setObject(doneLifetimeStepsAchievements, forKey: "doneLifetimeSteps")
             checkedBoth += 1
-
+            
         }
     }
     
