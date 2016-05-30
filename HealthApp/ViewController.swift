@@ -59,15 +59,18 @@ class ViewController: UIViewController {
         let temp:[Int: String] = [1: today]
         var data = NSKeyedArchiver.archivedDataWithRootObject(temp)
         NSUserDefaults.standardUserDefaults().setObject(today, forKey: "firstDate")
+        NSUserDefaults.standardUserDefaults().setObject(today, forKey: "firstLogin")
         NSUserDefaults.standardUserDefaults().setObject(data, forKey: "doneLifetimeDistanceDates")
         NSUserDefaults.standardUserDefaults().setObject(data, forKey: "doneLifetimeStepsDates")
         
         NSUserDefaults.standardUserDefaults().setObject(today, forKey: "checkIn")
     }
     func checkInUnwrap(notification: NSNotification) {
+        let firstLogin = NSUserDefaults.standardUserDefaults().stringForKey("firstLogin")
         if let checkIn = NSUserDefaults.standardUserDefaults().stringForKey("checkIn") {
             let daysSince = ModelInterface.sharedInstance.daysDifference(checkIn, endDate: NSDate())
-            if daysSince >= 5 {
+            if daysSince >= 5 || (checkIn == firstLogin && checkedInToday == false) {
+                checkedInToday = true
                 if let weeklyDictionary = notification.userInfo as? Dictionary<Int, [Double]> {
                     if let weeklyDistances = weeklyDictionary[1] {
                         var counter = 0
