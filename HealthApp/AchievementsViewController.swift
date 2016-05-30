@@ -36,11 +36,13 @@ class AchievementsViewController: UIViewController {
         super.viewDidLoad()
         AchievementsView.layer.cornerRadius = 11
         titleLabel.text = "Lifetime Achievement"
-        
+
         updateAchievements()
     }
     
     func updateAchievements() {
+        secondLayer.hidden = true
+        thirdLayer.hidden = true
         let tempCombinedAchievements = currentLifetimeStepsAchievements + currentLifetimeDistanceAchievements
         let reps = tempCombinedAchievements.count
         if reps >= 1 {
@@ -51,6 +53,7 @@ class AchievementsViewController: UIViewController {
             }
         }
         if reps >= 2 {
+            secondLayer.hidden = false
             if tempCombinedAchievements[1] % 1000 == 0 {
                 secondLayer.image = UIImage(named: "SecondLight")
             } else {
@@ -58,6 +61,7 @@ class AchievementsViewController: UIViewController {
             }
         }
         if reps >= 3 {
+            thirdLayer.hidden = false
             if tempCombinedAchievements[2] % 1000 == 0 {
                 thirdLayer.image = UIImage(named: "ThirdLight")
             } else {
