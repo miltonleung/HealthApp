@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "528B37DE1CD4612B00F8338D"
-               BuildableName = "HealthApp.app"
-               BlueprintName = "HealthApp"
-               ReferencedContainer = "container:HealthApp.xcodeproj">
+               BuildableName = "SmallSteps.app"
+               BlueprintName = "SmallSteps"
+               ReferencedContainer = "container:SmallSteps.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "528B37F21CD4612B00F8338D"
-               BuildableName = "HealthAppTests.xctest"
-               BlueprintName = "HealthAppTests"
-               ReferencedContainer = "container:HealthApp.xcodeproj">
+               BuildableName = "SmallSteps.xctest"
+               BlueprintName = "SmallStepsTests"
+               ReferencedContainer = "container:SmallSteps.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -43,9 +43,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "528B37FD1CD4612B00F8338D"
-               BuildableName = "HealthAppUITests.xctest"
-               BlueprintName = "HealthAppUITests"
-               ReferencedContainer = "container:HealthApp.xcodeproj">
+               BuildableName = "SmallSteps.xctest"
+               BlueprintName = "SmallStepsUITests"
+               ReferencedContainer = "container:SmallSteps.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -53,9 +53,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "528B37DE1CD4612B00F8338D"
-            BuildableName = "HealthApp.app"
-            BlueprintName = "HealthApp"
-            ReferencedContainer = "container:HealthApp.xcodeproj">
+            BuildableName = "SmallSteps.app"
+            BlueprintName = "SmallSteps"
+            ReferencedContainer = "container:SmallSteps.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -76,9 +76,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "528B37DE1CD4612B00F8338D"
-            BuildableName = "HealthApp.app"
-            BlueprintName = "HealthApp"
-            ReferencedContainer = "container:HealthApp.xcodeproj">
+            BuildableName = "SmallSteps.app"
+            BlueprintName = "SmallSteps"
+            ReferencedContainer = "container:SmallSteps.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -95,9 +95,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "528B37DE1CD4612B00F8338D"
-            BuildableName = "HealthApp.app"
-            BlueprintName = "HealthApp"
-            ReferencedContainer = "container:HealthApp.xcodeproj">
+            BuildableName = "SmallSteps.app"
+            BlueprintName = "SmallSteps"
+            ReferencedContainer = "container:SmallSteps.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

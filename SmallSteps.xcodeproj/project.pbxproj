@@ -382,16 +382,16 @@
 		52888F361CD88CC000A30E8A /* Charts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Charts.h; sourceTree = "<group>"; };
 		52888F371CD88CC000A30E8A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		52888FD61CD88E7C00A30E8A /* GraphViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphViewController.swift; sourceTree = "<group>"; };
-		528B37DF1CD4612B00F8338D /* HealthApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HealthApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		528B37DF1CD4612B00F8338D /* SmallSteps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmallSteps.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		528B37E21CD4612B00F8338D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		528B37E41CD4612B00F8338D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		528B37E71CD4612B00F8338D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		528B37E91CD4612B00F8338D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		528B37EE1CD4612B00F8338D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		528B37F31CD4612B00F8338D /* HealthAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HealthAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		528B37F31CD4612B00F8338D /* SmallSteps.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SmallSteps.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		528B37F71CD4612B00F8338D /* HealthAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthAppTests.swift; sourceTree = "<group>"; };
 		528B37F91CD4612B00F8338D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		528B37FE1CD4612B00F8338D /* HealthAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HealthAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		528B37FE1CD4612B00F8338D /* SmallSteps.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SmallSteps.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		528B38021CD4612B00F8338D /* HealthAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthAppUITests.swift; sourceTree = "<group>"; };
 		528B38041CD4612B00F8338D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		528B38101CD4614F00F8338D /* HealthManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthManager.swift; sourceTree = "<group>"; };
@@ -741,9 +741,9 @@
 		528B37E01CD4612B00F8338D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				528B37DF1CD4612B00F8338D /* HealthApp.app */,
-				528B37F31CD4612B00F8338D /* HealthAppTests.xctest */,
-				528B37FE1CD4612B00F8338D /* HealthAppUITests.xctest */,
+				528B37DF1CD4612B00F8338D /* SmallSteps.app */,
+				528B37F31CD4612B00F8338D /* SmallSteps.xctest */,
+				528B37FE1CD4612B00F8338D /* SmallSteps.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -799,9 +799,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		528B37DE1CD4612B00F8338D /* HealthApp */ = {
+		528B37DE1CD4612B00F8338D /* SmallSteps */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 528B38071CD4612B00F8338D /* Build configuration list for PBXNativeTarget "HealthApp" */;
+			buildConfigurationList = 528B38071CD4612B00F8338D /* Build configuration list for PBXNativeTarget "SmallSteps" */;
 			buildPhases = (
 				528B37DB1CD4612B00F8338D /* Sources */,
 				528B37DC1CD4612B00F8338D /* Frameworks */,
@@ -813,14 +813,14 @@
 			dependencies = (
 				52888FD41CD88CDF00A30E8A /* PBXTargetDependency */,
 			);
-			name = HealthApp;
+			name = SmallSteps;
 			productName = HealthApp;
-			productReference = 528B37DF1CD4612B00F8338D /* HealthApp.app */;
+			productReference = 528B37DF1CD4612B00F8338D /* SmallSteps.app */;
 			productType = "com.apple.product-type.application";
 		};
-		528B37F21CD4612B00F8338D /* HealthAppTests */ = {
+		528B37F21CD4612B00F8338D /* SmallStepsTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 528B380A1CD4612B00F8338D /* Build configuration list for PBXNativeTarget "HealthAppTests" */;
+			buildConfigurationList = 528B380A1CD4612B00F8338D /* Build configuration list for PBXNativeTarget "SmallStepsTests" */;
 			buildPhases = (
 				528B37EF1CD4612B00F8338D /* Sources */,
 				528B37F01CD4612B00F8338D /* Frameworks */,
@@ -831,14 +831,14 @@
 			dependencies = (
 				528B37F51CD4612B00F8338D /* PBXTargetDependency */,
 			);
-			name = HealthAppTests;
+			name = SmallStepsTests;
 			productName = HealthAppTests;
-			productReference = 528B37F31CD4612B00F8338D /* HealthAppTests.xctest */;
+			productReference = 528B37F31CD4612B00F8338D /* SmallSteps.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		528B37FD1CD4612B00F8338D /* HealthAppUITests */ = {
+		528B37FD1CD4612B00F8338D /* SmallStepsUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 528B380D1CD4612B00F8338D /* Build configuration list for PBXNativeTarget "HealthAppUITests" */;
+			buildConfigurationList = 528B380D1CD4612B00F8338D /* Build configuration list for PBXNativeTarget "SmallStepsUITests" */;
 			buildPhases = (
 				528B37FA1CD4612B00F8338D /* Sources */,
 				528B37FB1CD4612B00F8338D /* Frameworks */,
@@ -849,9 +849,9 @@
 			dependencies = (
 				528B38001CD4612B00F8338D /* PBXTargetDependency */,
 			);
-			name = HealthAppUITests;
+			name = SmallStepsUITests;
 			productName = HealthAppUITests;
-			productReference = 528B37FE1CD4612B00F8338D /* HealthAppUITests.xctest */;
+			productReference = 528B37FE1CD4612B00F8338D /* SmallSteps.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -885,7 +885,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 528B37DA1CD4612B00F8338D /* Build configuration list for PBXProject "HealthApp" */;
+			buildConfigurationList = 528B37DA1CD4612B00F8338D /* Build configuration list for PBXProject "SmallSteps" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -898,19 +898,19 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 52888E961CD88CC000A30E8A /* Products */;
-					ProjectRef = 52888E951CD88CC000A30E8A /* Charts.xcodeproj */;
-				},
-				{
 					ProductGroup = 52888E841CD88C1800A30E8A /* Products */;
 					ProjectRef = 52888E831CD88C1800A30E8A /* Charts.xcodeproj */;
+				},
+				{
+					ProductGroup = 52888E961CD88CC000A30E8A /* Products */;
+					ProjectRef = 52888E951CD88CC000A30E8A /* Charts.xcodeproj */;
 				},
 			);
 			projectRoot = "";
 			targets = (
-				528B37DE1CD4612B00F8338D /* HealthApp */,
-				528B37F21CD4612B00F8338D /* HealthAppTests */,
-				528B37FD1CD4612B00F8338D /* HealthAppUITests */,
+				528B37DE1CD4612B00F8338D /* SmallSteps */,
+				528B37F21CD4612B00F8338D /* SmallStepsTests */,
+				528B37FD1CD4612B00F8338D /* SmallStepsUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -1172,12 +1172,12 @@
 		};
 		528B37F51CD4612B00F8338D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 528B37DE1CD4612B00F8338D /* HealthApp */;
+			target = 528B37DE1CD4612B00F8338D /* SmallSteps */;
 			targetProxy = 528B37F41CD4612B00F8338D /* PBXContainerItemProxy */;
 		};
 		528B38001CD4612B00F8338D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 528B37DE1CD4612B00F8338D /* HealthApp */;
+			target = 528B37DE1CD4612B00F8338D /* SmallSteps */;
 			targetProxy = 528B37FF1CD4612B00F8338D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -1287,7 +1287,7 @@
 				INFOPLIST_FILE = HealthApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = milton.HealthApp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = SmallSteps;
 			};
 			name = Debug;
 		};
@@ -1301,7 +1301,7 @@
 				INFOPLIST_FILE = HealthApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = milton.HealthApp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = SmallSteps;
 			};
 			name = Release;
 		};
@@ -1312,8 +1312,8 @@
 				INFOPLIST_FILE = HealthAppTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = milton.HealthAppTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HealthApp.app/HealthApp";
+				PRODUCT_NAME = SmallSteps;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SmallSteps.app/SmallSteps";
 			};
 			name = Debug;
 		};
@@ -1324,8 +1324,8 @@
 				INFOPLIST_FILE = HealthAppTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = milton.HealthAppTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HealthApp.app/HealthApp";
+				PRODUCT_NAME = SmallSteps;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SmallSteps.app/SmallSteps";
 			};
 			name = Release;
 		};
@@ -1335,7 +1335,7 @@
 				INFOPLIST_FILE = HealthAppUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = milton.HealthAppUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = SmallSteps;
 				TEST_TARGET_NAME = HealthApp;
 			};
 			name = Debug;
@@ -1346,7 +1346,7 @@
 				INFOPLIST_FILE = HealthAppUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = milton.HealthAppUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = SmallSteps;
 				TEST_TARGET_NAME = HealthApp;
 			};
 			name = Release;
@@ -1354,7 +1354,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		528B37DA1CD4612B00F8338D /* Build configuration list for PBXProject "HealthApp" */ = {
+		528B37DA1CD4612B00F8338D /* Build configuration list for PBXProject "SmallSteps" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				528B38051CD4612B00F8338D /* Debug */,
@@ -1363,7 +1363,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		528B38071CD4612B00F8338D /* Build configuration list for PBXNativeTarget "HealthApp" */ = {
+		528B38071CD4612B00F8338D /* Build configuration list for PBXNativeTarget "SmallSteps" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				528B38081CD4612B00F8338D /* Debug */,
@@ -1372,7 +1372,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		528B380A1CD4612B00F8338D /* Build configuration list for PBXNativeTarget "HealthAppTests" */ = {
+		528B380A1CD4612B00F8338D /* Build configuration list for PBXNativeTarget "SmallStepsTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				528B380B1CD4612B00F8338D /* Debug */,
@@ -1381,7 +1381,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		528B380D1CD4612B00F8338D /* Build configuration list for PBXNativeTarget "HealthAppUITests" */ = {
+		528B380D1CD4612B00F8338D /* Build configuration list for PBXNativeTarget "SmallStepsUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				528B380E1CD4612B00F8338D /* Debug */,
