@@ -23,6 +23,16 @@ let lifetimeDistanceAchievementsImage =
      920: "NY",
      3476: "Moon",
      6371: "Earth"]
+let achievementsImages =
+    ["BronzeS",
+     "SilverS",
+     "GoldS",
+     "SharkS",
+     "DolphinS",
+     "CubeS",
+     "NYS",
+     "MoonS",
+     "EarthS"]
 var currentLifetimeDistanceAchievements = [Int]()
 
 let lifetimeStepsAchievements = []

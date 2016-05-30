@@ -147,6 +147,8 @@
 		528B38031CD4612B00F8338D /* HealthAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528B38021CD4612B00F8338D /* HealthAppUITests.swift */; };
 		528B38111CD4614F00F8338D /* HealthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528B38101CD4614F00F8338D /* HealthManager.swift */; };
 		528B38131CD461B500F8338D /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 528B38121CD461B500F8338D /* HealthKit.framework */; };
+		52A665EA1CFBA48A00C52E84 /* ShowcaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A665E91CFBA48A00C52E84 /* ShowcaseViewController.swift */; };
+		52A665F31CFBA78F00C52E84 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A665F21CFBA78F00C52E84 /* CollectionViewCell.swift */; };
 		52E5DA0C1CF8D69100478BA5 /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E5DA0B1CF8D69100478BA5 /* IntroViewController.swift */; };
 		52E966501CF16573008D60E6 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E9664F1CF16573008D60E6 /* SettingsViewController.swift */; };
 		52EBEFE41CF6C4050028EDAC /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EBEFE31CF6C4050028EDAC /* Data.swift */; };
@@ -395,6 +397,8 @@
 		528B38101CD4614F00F8338D /* HealthManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthManager.swift; sourceTree = "<group>"; };
 		528B38121CD461B500F8338D /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		528B38141CD461B500F8338D /* HealthApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = HealthApp.entitlements; sourceTree = "<group>"; };
+		52A665E91CFBA48A00C52E84 /* ShowcaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowcaseViewController.swift; sourceTree = "<group>"; };
+		52A665F21CFBA78F00C52E84 /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		52E5DA0B1CF8D69100478BA5 /* IntroViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
 		52E9664F1CF16573008D60E6 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		52EBEFE31CF6C4050028EDAC /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
@@ -757,7 +761,9 @@
 				52E5DA0B1CF8D69100478BA5 /* IntroViewController.swift */,
 				525AA2E71CF95F3500704498 /* ProgressViewController.swift */,
 				528B37E61CD4612B00F8338D /* Main.storyboard */,
+				52A665E91CFBA48A00C52E84 /* ShowcaseViewController.swift */,
 				5211CDB61CF51F3E002DA19E /* AchievementsViewController.swift */,
+				52A665F21CFBA78F00C52E84 /* CollectionViewCell.swift */,
 				52E9664F1CF16573008D60E6 /* SettingsViewController.swift */,
 				5253C8BF1CD73A2600F2713A /* CumulativeStatsViewController.swift */,
 				5253C8BD1CD7394C00F2713A /* CurrentStatsViewController.swift */,
@@ -892,12 +898,12 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 52888E841CD88C1800A30E8A /* Products */;
-					ProjectRef = 52888E831CD88C1800A30E8A /* Charts.xcodeproj */;
-				},
-				{
 					ProductGroup = 52888E961CD88CC000A30E8A /* Products */;
 					ProjectRef = 52888E951CD88CC000A30E8A /* Charts.xcodeproj */;
+				},
+				{
+					ProductGroup = 52888E841CD88C1800A30E8A /* Products */;
+					ProjectRef = 52888E831CD88C1800A30E8A /* Charts.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -1066,6 +1072,7 @@
 				52888FC31CD88CC000A30E8A /* ChartViewPortHandler.swift in Sources */,
 				52888F821CD88CC000A30E8A /* IBarChartDataSet.swift in Sources */,
 				52888F551CD88CC000A30E8A /* BarChartView.swift in Sources */,
+				52A665F31CFBA78F00C52E84 /* CollectionViewCell.swift in Sources */,
 				52888F5A1CD88CC000A30E8A /* CombinedChartView.swift in Sources */,
 				52E966501CF16573008D60E6 /* SettingsViewController.swift in Sources */,
 				52888F751CD88CC000A30E8A /* ChartDataEntry.swift in Sources */,
@@ -1079,6 +1086,7 @@
 				52888FB41CD88CC000A30E8A /* CombinedChartRenderer.swift in Sources */,
 				52888FA91CD88CC000A30E8A /* ChartAxisRendererBase.swift in Sources */,
 				52888FB61CD88CC000A30E8A /* LineChartRenderer.swift in Sources */,
+				52A665EA1CFBA48A00C52E84 /* ShowcaseViewController.swift in Sources */,
 				52888F841CD88CC000A30E8A /* IBubbleChartDataSet.swift in Sources */,
 				528B37E31CD4612B00F8338D /* AppDelegate.swift in Sources */,
 				52888F771CD88CC000A30E8A /* CombinedChartData.swift in Sources */,

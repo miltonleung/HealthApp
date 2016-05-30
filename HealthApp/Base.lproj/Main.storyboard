@@ -32,8 +32,10 @@
             <string>Muli-Light</string>
             <string>Muli-Light</string>
             <string>Muli-Light</string>
+            <string>Muli-Light</string>
         </mutableArray>
         <mutableArray key="Muli-Regular.ttf">
+            <string>Muli</string>
             <string>Muli</string>
             <string>Muli</string>
             <string>Muli</string>
@@ -357,6 +359,125 @@
             </objects>
             <point key="canvasLocation" x="-122" y="1010"/>
         </scene>
+        <!--Showcase View Controller-->
+        <scene sceneID="eET-la-kY1">
+            <objects>
+                <viewController id="Mc7-vA-LAY" customClass="ShowcaseViewController" customModule="HealthApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="oCL-j9-Zcm"/>
+                        <viewControllerLayoutGuide type="bottom" id="4Ty-0Z-RvQ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="M4N-Je-bDb">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1tO-ou-6Mk">
+                                <rect key="frame" x="157" y="118.5" width="285" height="363"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Achievements" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uhd-MX-Z0W">
+                                        <rect key="frame" x="62" y="87" width="160" height="31"/>
+                                        <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="24"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Doc-Wr-8VD">
+                                        <rect key="frame" x="5" y="309" width="275" height="49"/>
+                                        <color key="backgroundColor" red="0.49803921568627452" green="0.25490196078431371" blue="0.2627450980392157" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="49" id="RzL-uH-ZkO"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Muli-Light" family="Muli" pointSize="20"/>
+                                        <state key="normal" title="Sweet">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="11"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="closeButton:" destination="Mc7-vA-LAY" eventType="touchUpInside" id="u1z-Bq-oxv"/>
+                                        </connections>
+                                    </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Tri" translatesAutoresizingMaskIntoConstraints="NO" id="hB8-AK-Mr8">
+                                        <rect key="frame" x="112" y="16" width="61" height="61"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="61" id="0Go-CS-yEZ"/>
+                                            <constraint firstAttribute="height" constant="61" id="bfw-dr-dHg"/>
+                                        </constraints>
+                                    </imageView>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="5UE-ZK-ojq">
+                                        <rect key="frame" x="41" y="128" width="202" height="176"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="202" id="wea-Wn-AlZ"/>
+                                        </constraints>
+                                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="23" minimumInteritemSpacing="41" id="jfv-uh-v5d">
+                                            <size key="itemSize" width="40" height="40"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
+                                        <cells>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="amb-Cz-lVi" customClass="CollectionViewCell" customModule="HealthApp" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                                    <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9nx-NZ-9We">
+                                                            <rect key="frame" x="1" y="1" width="48" height="48"/>
+                                                        </imageView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                </view>
+                                                <constraints>
+                                                    <constraint firstItem="9nx-NZ-9We" firstAttribute="centerX" secondItem="amb-Cz-lVi" secondAttribute="centerX" id="DXs-Vy-Tx1"/>
+                                                    <constraint firstItem="9nx-NZ-9We" firstAttribute="centerY" secondItem="amb-Cz-lVi" secondAttribute="centerY" id="uoy-fs-iYZ"/>
+                                                </constraints>
+                                                <connections>
+                                                    <outlet property="achievementImage" destination="9nx-NZ-9We" id="Aaf-qc-4qm"/>
+                                                </connections>
+                                            </collectionViewCell>
+                                        </cells>
+                                        <connections>
+                                            <outlet property="dataSource" destination="Mc7-vA-LAY" id="Zsx-as-e07"/>
+                                            <outlet property="delegate" destination="Mc7-vA-LAY" id="Phy-Sb-y7Y"/>
+                                        </connections>
+                                    </collectionView>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.41176470588235292" blue="0.41176470588235292" alpha="0.96999999999999997" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="285" id="6cm-99-hII"/>
+                                    <constraint firstAttribute="bottom" secondItem="Doc-Wr-8VD" secondAttribute="bottom" constant="5" id="7XX-Hy-Ukt"/>
+                                    <constraint firstItem="hB8-AK-Mr8" firstAttribute="centerX" secondItem="1tO-ou-6Mk" secondAttribute="centerX" id="Gef-oH-c7b"/>
+                                    <constraint firstAttribute="height" constant="363" id="Hdt-Yn-ooV"/>
+                                    <constraint firstItem="hB8-AK-Mr8" firstAttribute="top" secondItem="1tO-ou-6Mk" secondAttribute="top" constant="16" id="JGT-uh-qsw"/>
+                                    <constraint firstItem="Doc-Wr-8VD" firstAttribute="top" secondItem="5UE-ZK-ojq" secondAttribute="bottom" constant="5" id="L6E-fa-y0l"/>
+                                    <constraint firstItem="uhd-MX-Z0W" firstAttribute="top" secondItem="hB8-AK-Mr8" secondAttribute="bottom" constant="10" id="TTs-vZ-Vh4"/>
+                                    <constraint firstItem="uhd-MX-Z0W" firstAttribute="centerX" secondItem="1tO-ou-6Mk" secondAttribute="centerX" id="UPJ-dV-wgZ"/>
+                                    <constraint firstItem="5UE-ZK-ojq" firstAttribute="top" secondItem="uhd-MX-Z0W" secondAttribute="bottom" constant="10" id="am7-lJ-h6g"/>
+                                    <constraint firstItem="Doc-Wr-8VD" firstAttribute="leading" secondItem="1tO-ou-6Mk" secondAttribute="leading" constant="5" id="hdJ-Od-uRE"/>
+                                    <constraint firstAttribute="trailing" secondItem="Doc-Wr-8VD" secondAttribute="trailing" constant="5" id="m5S-zk-HPt"/>
+                                    <constraint firstItem="5UE-ZK-ojq" firstAttribute="centerX" secondItem="1tO-ou-6Mk" secondAttribute="centerX" id="rdi-Pu-KXL"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="1tO-ou-6Mk" firstAttribute="centerY" secondItem="M4N-Je-bDb" secondAttribute="centerY" id="QAr-Gb-aJN"/>
+                            <constraint firstItem="1tO-ou-6Mk" firstAttribute="centerX" secondItem="M4N-Je-bDb" secondAttribute="centerX" id="xdN-pF-iPX"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="showcaseView" destination="1tO-ou-6Mk" id="Aq3-yJ-SOr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fg1-8T-d04" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-397" y="1035"/>
+        </scene>
         <!--Progress View Controller-->
         <scene sceneID="7Ju-q8-bCN">
             <objects>
@@ -485,7 +606,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G7f-ef-cM0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-480" y="998"/>
+            <point key="canvasLocation" x="-502" y="1058"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -521,10 +642,18 @@
                                     <segue destination="UI8-c1-9my" kind="presentation" identifier="" modalPresentationStyle="overCurrentContext" id="9Bt-Dx-nH9"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b3Q-yj-UDS">
+                                <rect key="frame" x="60" y="25" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="Mc7-vA-LAY" kind="presentation" modalPresentationStyle="overCurrentContext" id="ROt-dU-LuQ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.97309277520399429" green="0.9479504660864978" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="qno-gL-zLA" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="0DL-BU-OVV"/>
+                            <constraint firstItem="qno-gL-zLA" firstAttribute="top" secondItem="b3Q-yj-UDS" secondAttribute="bottom" constant="-55" id="2SL-cI-dwY"/>
                             <constraint firstAttribute="trailingMargin" secondItem="qno-gL-zLA" secondAttribute="trailing" constant="-20" id="3j2-0A-3uF"/>
                             <constraint firstItem="pxX-RA-AWM" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-10" id="4bh-ns-rXq"/>
                             <constraint firstAttribute="trailingMargin" secondItem="pxX-RA-AWM" secondAttribute="trailing" constant="-20" id="4jR-Pc-I0V"/>
@@ -535,6 +664,7 @@
                             <constraint firstItem="ZR0-ec-RYC" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="GxA-10-l45"/>
                             <constraint firstItem="pxX-RA-AWM" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.65" id="WAy-3w-0Vw"/>
                             <constraint firstItem="pxX-RA-AWM" firstAttribute="top" secondItem="ZR0-ec-RYC" secondAttribute="bottom" constant="35" id="WYB-H9-tlc"/>
+                            <constraint firstItem="b3Q-yj-UDS" firstAttribute="leading" secondItem="PRL-or-Sf4" secondAttribute="trailing" constant="14" id="Ytw-AV-LJa"/>
                             <constraint firstAttribute="trailingMargin" secondItem="pxX-RA-AWM" secondAttribute="trailing" constant="-20" id="bW9-jq-Hal"/>
                             <constraint firstItem="pxX-RA-AWM" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="gj8-vz-NHe"/>
                             <constraint firstItem="PRL-or-Sf4" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-14" id="jce-4p-NZG"/>
@@ -963,6 +1093,7 @@
         <image name="Image" width="640" height="1136"/>
         <image name="Medal" width="61" height="61"/>
         <image name="Progress" width="61" height="61"/>
+        <image name="Tri" width="61" height="61"/>
         <image name="buttonBackground" width="66" height="17"/>
     </resources>
 </document>
