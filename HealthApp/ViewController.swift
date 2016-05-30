@@ -56,7 +56,11 @@ class ViewController: UIViewController {
         NSUserDefaults.standardUserDefaults().setInteger(1000, forKey: "thousandTargetCounter")
         
         let today = ModelInterface.sharedInstance.convertDate(NSDate())
+        let temp:[Int: String] = [1: today]
+        var data = NSKeyedArchiver.archivedDataWithRootObject(temp)
         NSUserDefaults.standardUserDefaults().setObject(today, forKey: "firstDate")
+        NSUserDefaults.standardUserDefaults().setObject(data, forKey: "doneLifetimeDistanceDates")
+        NSUserDefaults.standardUserDefaults().setObject(data, forKey: "doneLifetimeStepsDates")
         
         NSUserDefaults.standardUserDefaults().setObject(today, forKey: "checkIn")
     }

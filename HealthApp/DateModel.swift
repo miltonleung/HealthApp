@@ -17,6 +17,7 @@ protocol ConvertProtocol {
     func addThousandSeperator(number: Int) -> String
     func getDayNumberBy(stringDate: String) -> Int
     func daysDifference(startString: String, endDate: NSDate) -> Int
+    func daysDifferenceStrings(startString: String, endString: String) -> Int
 }
 
 extension ModelInterface: ConvertProtocol {
@@ -86,6 +87,16 @@ extension ModelInterface: ConvertProtocol {
         let startDate = dateFormatter.dateFromString(startString)
         let calendar = NSCalendar.currentCalendar()
         let components = calendar.components([.Day], fromDate: startDate!, toDate: endDate, options: [])
+        return components.day
+    }
+    func daysDifferenceStrings(startString: String, endString: String) -> Int
+    {
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        let startDate = dateFormatter.dateFromString(startString)
+        let endDate = dateFormatter.dateFromString(endString)
+        let calendar = NSCalendar.currentCalendar()
+        let components = calendar.components([.Day], fromDate: startDate!, toDate: endDate!, options: [])
         return components.day
     }
 }

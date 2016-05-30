@@ -94,6 +94,9 @@ class Data {
     func updateLifetimeDistanceAchievement() {
         var lifetimeDistanceDictionary = [Int: Int]()
         var thousandTargetCounter = NSUserDefaults.standardUserDefaults().integerForKey("thousandTargetCounter")
+        var data = NSUserDefaults.standardUserDefaults().objectForKey("doneLifetimeDistanceDates") as! NSData
+        var doneDates = NSKeyedUnarchiver.unarchiveObjectWithData(data) as! Dictionary<Int,String>
+        let today = ModelInterface.sharedInstance.convertDate(NSDate())
         
         if var doneLifetimeDistanceAchievements = NSUserDefaults.standardUserDefaults().arrayForKey("doneLifetimeDistance") as? [Int] {
             
@@ -102,7 +105,14 @@ class Data {
                 currentLifetimeDistanceAchievements.append(thousandTargetCounter)
                 let size = lifetimeDistanceDictionary.count
                 lifetimeDistanceDictionary[size + 1] = thousandTargetCounter
+                
+                
+                doneDates[thousandTargetCounter] = today
+                var data = NSKeyedArchiver.archivedDataWithRootObject(doneDates)
+                NSUserDefaults.standardUserDefaults().setObject(data, forKey: "doneLifetimeDistanceDates")
+                
                 thousandTargetCounter += 1000
+                
             }
             NSUserDefaults.standardUserDefaults().setInteger(thousandTargetCounter, forKey: "thousandTargetCounter")
             
@@ -110,6 +120,10 @@ class Data {
                 if totalDistance >= distance && !doneLifetimeDistanceAchievements.contains(distance) {
                     doneLifetimeDistanceAchievements.append(distance)
                     currentLifetimeDistanceAchievements.append(distance)
+                    
+                    doneDates[distance] = today
+                    var data = NSKeyedArchiver.archivedDataWithRootObject(doneDates)
+                    NSUserDefaults.standardUserDefaults().setObject(data, forKey: "doneLifetimeDistanceDates")
                 }
             }
             
@@ -123,6 +137,9 @@ class Data {
     func updateLifetimeStepsAchievement() {
         var lifetimeStepsDictionary = [Int: Int]()
         var millionTargetCounter = NSUserDefaults.standardUserDefaults().integerForKey("millionTargetCounter")
+        var data = NSUserDefaults.standardUserDefaults().objectForKey("doneLifetimeStepsDates") as! NSData
+        var doneDates = NSKeyedUnarchiver.unarchiveObjectWithData(data) as! Dictionary<Int,String>
+        let today = ModelInterface.sharedInstance.convertDate(NSDate())
         
         if var doneLifetimeStepsAchievements = NSUserDefaults.standardUserDefaults().arrayForKey("doneLifetimeSteps") as? [Int] {
             
@@ -131,6 +148,11 @@ class Data {
                 currentLifetimeStepsAchievements.append(millionTargetCounter)
                 let size = lifetimeStepsDictionary.count
                 lifetimeStepsDictionary[size + 1] = millionTargetCounter
+                
+                doneDates[millionTargetCounter] = today
+                var data = NSKeyedArchiver.archivedDataWithRootObject(doneDates)
+                NSUserDefaults.standardUserDefaults().setObject(data, forKey: "doneLifetimeStepsDates")
+                
                 millionTargetCounter += 1000000
             }
             NSUserDefaults.standardUserDefaults().setInteger(millionTargetCounter, forKey: "millionTargetCounter")
