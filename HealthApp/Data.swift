@@ -35,8 +35,6 @@ let achievementsImages =
      "EarthS"]
 var currentLifetimeDistanceAchievements = [Int]()
 
-var checkedInToday = false
-
 let lifetimeStepsAchievements = []
 var currentLifetimeStepsAchievements = [Int]()
 
