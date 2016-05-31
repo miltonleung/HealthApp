@@ -38,6 +38,9 @@ class ViewController: UIViewController {
             reset()
         }
         
+        let settings = UIUserNotificationSettings(forTypes: [.Alert, .Badge], categories: nil)
+        UIApplication.sharedApplication().registerUserNotificationSettings(settings)
+        
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "checkInUnwrap:", name: "checkInStatus", object: nil)
     }
     
@@ -73,7 +76,7 @@ class ViewController: UIViewController {
         let checkedInToday = NSUserDefaults.standardUserDefaults().boolForKey("progressReportedToday")
         if let checkIn = NSUserDefaults.standardUserDefaults().stringForKey("checkIn") {
             let daysSince = ModelInterface.sharedInstance.daysDifference(checkIn, endDate: NSDate())
-            if daysSince >= 5 || (checkIn == firstLogin && checkedInToday == false) {
+            if daysSince >= 3 || (checkIn == firstLogin && checkedInToday == false) {
                 NSUserDefaults.standardUserDefaults().setBool(true, forKey: "progressReportedToday")
                 if let weeklyDictionary = notification.userInfo as? Dictionary<Int, [Double]> {
                     if let weeklyDistances = weeklyDictionary[1] {
@@ -107,8 +110,26 @@ class ViewController: UIViewController {
                         self.performSegueWithIdentifier("progress", sender: nil)
                     }
                 }
+                queueNotification()
                 let today = ModelInterface.sharedInstance.convertDate(NSDate())
                 NSUserDefaults.standardUserDefaults().setObject(today, forKey: "checkIn")
+            }
+        }
+    }
+    func queueNotification() {
+        if let settings = UIApplication.sharedApplication().currentUserNotificationSettings() {
+            
+            if settings.types.contains(.Alert) {
+                let notification = UILocalNotification()
+                
+                let fireDate = NSCalendar.currentCalendar().dateByAddingUnit(.Day, value: 3, toDate: NSDate(), options: NSCalendarOptions(rawValue: 0))
+                
+                notification.fireDate = fireDate
+                notification.alertBody = "Your progress report is ready for review!"
+                notification.alertAction = "view"
+                notification.soundName = UILocalNotificationDefaultSoundName
+//                notification.userInfo = ["progress": 1]
+                UIApplication.sharedApplication().scheduleLocalNotification(notification)
             }
         }
     }

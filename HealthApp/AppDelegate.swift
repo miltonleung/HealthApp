@@ -16,6 +16,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+//        if let options = launchOptions {
+//            if let notification = options[UIApplicationLaunchOptionsLocalNotificationKey] as? UILocalNotification {
+//                if let userInfo = notification.userInfo {
+//                    let progress = userInfo["progress"] as! Int
+//                    if progress == 1 {
+//                        pageNumber = 2
+//                    }
+//                }
+//            }
+//        }
         return true
     }
 
