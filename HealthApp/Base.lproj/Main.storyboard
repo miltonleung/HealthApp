@@ -697,7 +697,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zTA-RW-HtL">
-                                <rect key="frame" x="70" y="355" width="82" height="22"/>
+                                <rect key="frame" x="70" y="338" width="82" height="22"/>
                                 <fontDescription key="fontDescription" name="Muli-Light" family="Muli" pointSize="14"/>
                                 <state key="normal" title="weekly">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -711,7 +711,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M1K-ib-J6C">
-                                <rect key="frame" x="448" y="355" width="82" height="22"/>
+                                <rect key="frame" x="448" y="338" width="82" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="82" id="0d3-b7-PGN"/>
                                     <constraint firstAttribute="height" constant="22" id="5ld-YK-L0X"/>
@@ -728,19 +728,19 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V1s-rh-agr">
-                                <rect key="frame" x="300" y="405" width="0.0" height="0.0"/>
+                                <rect key="frame" x="300" y="395" width="0.0" height="0.0"/>
                                 <fontDescription key="fontDescription" name="Muli-Light" family="Muli" pointSize="14"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="daily average: 8 km" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="phd-mJ-cnM">
-                                <rect key="frame" x="235" y="382" width="129.5" height="17.5"/>
+                                <rect key="frame" x="235" y="372" width="129.5" height="17.5"/>
                                 <fontDescription key="fontDescription" name="Muli-Light" family="Muli" pointSize="14"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e58-TZ-8yW" customClass="BarChartView" customModule="SmallSteps" customModuleProvider="target">
-                                <rect key="frame" x="20" y="410" width="560" height="180"/>
+                                <rect key="frame" x="20" y="400" width="560" height="180"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dmo-gk-A42" customClass="KDCircularProgress" customModule="SmallSteps" customModuleProvider="target">
@@ -873,7 +873,7 @@
                             <constraint firstItem="zTA-RW-HtL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="50" id="66e-Jv-OQX"/>
                             <constraint firstItem="EGq-An-fFV" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="74" id="Bv4-gD-2v8"/>
                             <constraint firstItem="V1s-rh-agr" firstAttribute="top" secondItem="phd-mJ-cnM" secondAttribute="bottom" constant="5" id="Cfm-wL-ukQ"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="e58-TZ-8yW" secondAttribute="bottom" constant="10" id="FiW-xW-yqw"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="e58-TZ-8yW" secondAttribute="bottom" constant="20" id="FiW-xW-yqw"/>
                             <constraint firstItem="dmo-gk-A42" firstAttribute="centerY" secondItem="Gia-d6-6Ml" secondAttribute="centerY" id="Jsh-3U-GTS"/>
                             <constraint firstItem="4Rd-t7-g44" firstAttribute="width" secondItem="TFp-UK-1Lw" secondAttribute="width" id="KRe-Wf-YbT"/>
                             <constraint firstItem="e58-TZ-8yW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="OeF-Yb-aRR"/>
@@ -886,10 +886,10 @@
                             <constraint firstItem="4Rd-t7-g44" firstAttribute="height" secondItem="TFp-UK-1Lw" secondAttribute="height" id="X27-Ws-GZK"/>
                             <constraint firstItem="dmo-gk-A42" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="aeU-V7-0up"/>
                             <constraint firstItem="phd-mJ-cnM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bPA-tM-c2w"/>
-                            <constraint firstItem="phd-mJ-cnM" firstAttribute="top" secondItem="M1K-ib-J6C" secondAttribute="bottom" constant="5" id="cr9-rx-8gv"/>
+                            <constraint firstItem="phd-mJ-cnM" firstAttribute="top" secondItem="M1K-ib-J6C" secondAttribute="bottom" constant="12" id="cr9-rx-8gv"/>
                             <constraint firstItem="TFp-UK-1Lw" firstAttribute="top" secondItem="Gia-d6-6Ml" secondAttribute="bottom" id="gQV-sw-rgx"/>
                             <constraint firstItem="EGq-An-fFV" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" multiplier="0.96" id="h0s-Z2-v5i"/>
-                            <constraint firstItem="phd-mJ-cnM" firstAttribute="top" secondItem="zTA-RW-HtL" secondAttribute="bottom" constant="5" id="k53-uF-AHf"/>
+                            <constraint firstItem="phd-mJ-cnM" firstAttribute="top" secondItem="zTA-RW-HtL" secondAttribute="bottom" constant="12" id="k53-uF-AHf"/>
                             <constraint firstAttribute="trailingMargin" secondItem="M1K-ib-J6C" secondAttribute="trailing" constant="50" id="mUu-Wa-FjD"/>
                             <constraint firstItem="Gia-d6-6Ml" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-5" id="o7g-5e-2YS"/>
                             <constraint firstAttribute="trailingMargin" secondItem="TFp-UK-1Lw" secondAttribute="trailing" constant="1" id="qZT-If-fCu"/>
