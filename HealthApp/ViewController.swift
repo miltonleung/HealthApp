@@ -12,11 +12,12 @@ import CoreMotion
 
 class ViewController: UIViewController {
     
-//    @IBOutlet weak var banner: UILabel!
-//    
+    //    @IBOutlet weak var banner: UILabel!
+    //
     var healthManager:HealthManager?
-//    let pedometer = CMPedometer()
+    let pedometer = CMPedometer()
     
+    // GRAPH
     @IBOutlet weak var barChartView: BarChartView!
     @IBOutlet weak var weeklyLabel: UIButton!
     @IBOutlet weak var monthlyLabel: UIButton!
@@ -41,6 +42,60 @@ class ViewController: UIViewController {
     var weeklyOrMonthly = 1
     let data = Data()
     
+    // PROGRESS
+    @IBOutlet weak var outterCircle: KDCircularProgress!
+    @IBOutlet weak var innerCircle: KDCircularProgress!
+    @IBOutlet weak var circlePercentage: UILabel!
+    @IBOutlet weak var denominator: UILabel!
+    
+    // STEPS & DISTANCE
+    @IBOutlet weak var stepsLabel: UIButton!
+    @IBOutlet weak var distanceLabel: UIButton!
+    var totalSteps:Int?
+    var totalDistance:Int?
+    var currentSteps:Int?
+    var currentDistance:Double?
+    @IBAction func distanceButton(sender: UIButton) {
+        if sender.selected == true {
+            sender.selected = false
+            stepsLabel.selected = false
+            outterCircle.alpha = 1
+            innerCircle.alpha = 1
+            updateCirclePercentage()
+            denominator.text = "of target reached"
+            updateStepsProgressfromStart()
+            updateDistanceProgressfromStart()
+        } else {
+            stepsLabel.selected = false
+            sender.selected = true
+            outterCircle.alpha = 0.2
+            innerCircle.alpha = 1
+            circlePercentage.text = String(format: "%.1f", currentDistance!/Double(totalDistance!))
+            denominator.text = "of distance travelled"
+            updateDistanceProgressfromStart()
+        }
+    }
+    @IBAction func stepsButton(sender: UIButton) {
+        if sender.selected == true {
+            sender.selected = false
+            stepsLabel.selected = false
+            outterCircle.alpha = 1
+            innerCircle.alpha = 1
+            updateCirclePercentage()
+            denominator.text = "of target reached"
+            updateStepsProgressfromStart()
+            updateDistanceProgressfromStart()
+        } else {
+            distanceLabel.selected = false
+            sender.selected = true
+            innerCircle.alpha = 0.1
+            outterCircle.alpha = 1
+            circlePercentage.text = String(format: "%.1f", currentSteps!/totalSteps!)
+            denominator.text = "of steps taken"
+            updateStepsProgressfromStart()
+        }
+    }
+    
     // Passed to ProgressViewController
     var scenario: Int! // 0 flying, 1 Pass, 2 Inconsistency, 3 Lower
     var average: Double!
@@ -52,13 +107,25 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         
         healthManager = HealthManager()
-
-    weeklyLabel.selected = true
-    healthManager = HealthManager()
-    self.dailyAverage.text = "daily average: 0 km"
-
-//        NSNotificationCenter.defaultCenter().addObserver(self, selector: "performLifetimeSegue", name: "lifetimeNotification", object: nil)
-//        NSNotificationCenter.defaultCenter().addObserver(self, selector: "unwrapNotification:", name: "dailyNotification", object: nil)
+        
+        // PROGRESS
+        outterCircle.angle = 0
+        innerCircle.angle = 0
+        denominator.text = "of target reached"
+        circlePercentage.text = "0"
+        
+        // STEPS & DISTANCE
+//        updatePedometer()
+        totalSteps = NSUserDefaults.standardUserDefaults().integerForKey("targetSteps")
+        totalDistance = NSUserDefaults.standardUserDefaults().integerForKey("targetDistance")
+        
+        // GRAPH
+        weeklyLabel.selected = true
+        healthManager = HealthManager()
+        self.dailyAverage.text = "daily average: 0 km"
+        
+        //        NSNotificationCenter.defaultCenter().addObserver(self, selector: "performLifetimeSegue", name: "lifetimeNotification", object: nil)
+        //        NSNotificationCenter.defaultCenter().addObserver(self, selector: "unwrapNotification:", name: "dailyNotification", object: nil)
         
         let firstRun = NSUserDefaults.standardUserDefaults().boolForKey("firstRun") as Bool
         if !firstRun {
@@ -68,13 +135,13 @@ class ViewController: UIViewController {
         let settings = UIUserNotificationSettings(forTypes: [.Alert, .Badge], categories: nil)
         UIApplication.sharedApplication().registerUserNotificationSettings(settings)
         
-//        NSNotificationCenter.defaultCenter().addObserver(self, selector: "checkInUnwrap:", name: "checkInStatus", object: nil)
+        //        NSNotificationCenter.defaultCenter().addObserver(self, selector: "checkInUnwrap:", name: "checkInStatus", object: nil)
     }
     
     func reset() {
         print("Resetting")
         NSUserDefaults.standardUserDefaults().setInteger(6, forKey: "targetDistance")
-        NSUserDefaults.standardUserDefaults().setInteger(8000, forKey: "targetSteps")
+        NSUserDefaults.standardUserDefaults().setInteger(6000, forKey: "targetSteps")
         
         let array = [1]
         NSUserDefaults.standardUserDefaults().setObject(array, forKey: "doneDaily")
@@ -98,51 +165,51 @@ class ViewController: UIViewController {
         
         NSUserDefaults.standardUserDefaults().setObject(today, forKey: "checkIn")
     }
-//    func checkInUnwrap(notification: NSNotification) {
-//        let firstLogin = NSUserDefaults.standardUserDefaults().stringForKey("firstLogin")
-//        let checkedInToday = NSUserDefaults.standardUserDefaults().boolForKey("progressReportedToday")
-//        if let checkIn = NSUserDefaults.standardUserDefaults().stringForKey("checkIn") {
-//            let daysSince = ModelInterface.sharedInstance.daysDifference(checkIn, endDate: NSDate())
-//            if daysSince >= 3 || (checkIn == firstLogin && checkedInToday == false) {
-//                NSUserDefaults.standardUserDefaults().setBool(true, forKey: "progressReportedToday")
-//                if let weeklyDictionary = notification.userInfo as? Dictionary<Int, [Double]> {
-//                    if let weeklyDistances = weeklyDictionary[1] {
-//                        var counter = 0
-//                        targetDistance = NSUserDefaults.standardUserDefaults().integerForKey("targetDistance")
-//                        let target = Double(targetDistance)
-//                        for d in weeklyDistances {
-//                            if d >= target {
-//                                counter += 1
-//                            }
-//                        }
-//                        count = counter
-//                        var sum = 0.0
-//                        for d in weeklyDistances {
-//                            sum += d
-//                        }
-//                        average = sum/Double(weeklyDistances.count)
-//                        
-//                        if counter == 7 {
-//                            scenario = 0
-//                        }
-//                        else if counter >= 4 && abs(average - target) <= 1.4 {
-//                            scenario = 1
-//                        }
-//                        else if counter <= 4 && weeklyDistances.maxElement()! - weeklyDistances.minElement()! >= 4 && weeklyDistances.maxElement() >= target {
-//                            scenario = 2
-//                        }
-//                        else {
-//                            scenario = 3
-//                        }
-//                        self.performSegueWithIdentifier("progress", sender: nil)
-//                    }
-//                }
-//                queueNotification()
-//                let today = ModelInterface.sharedInstance.convertDate(NSDate())
-//                NSUserDefaults.standardUserDefaults().setObject(today, forKey: "checkIn")
-//            }
-//        }
-//    }
+    //    func checkInUnwrap(notification: NSNotification) {
+    //        let firstLogin = NSUserDefaults.standardUserDefaults().stringForKey("firstLogin")
+    //        let checkedInToday = NSUserDefaults.standardUserDefaults().boolForKey("progressReportedToday")
+    //        if let checkIn = NSUserDefaults.standardUserDefaults().stringForKey("checkIn") {
+    //            let daysSince = ModelInterface.sharedInstance.daysDifference(checkIn, endDate: NSDate())
+    //            if daysSince >= 3 || (checkIn == firstLogin && checkedInToday == false) {
+    //                NSUserDefaults.standardUserDefaults().setBool(true, forKey: "progressReportedToday")
+    //                if let weeklyDictionary = notification.userInfo as? Dictionary<Int, [Double]> {
+    //                    if let weeklyDistances = weeklyDictionary[1] {
+    //                        var counter = 0
+    //                        targetDistance = NSUserDefaults.standardUserDefaults().integerForKey("targetDistance")
+    //                        let target = Double(targetDistance)
+    //                        for d in weeklyDistances {
+    //                            if d >= target {
+    //                                counter += 1
+    //                            }
+    //                        }
+    //                        count = counter
+    //                        var sum = 0.0
+    //                        for d in weeklyDistances {
+    //                            sum += d
+    //                        }
+    //                        average = sum/Double(weeklyDistances.count)
+    //
+    //                        if counter == 7 {
+    //                            scenario = 0
+    //                        }
+    //                        else if counter >= 4 && abs(average - target) <= 1.4 {
+    //                            scenario = 1
+    //                        }
+    //                        else if counter <= 4 && weeklyDistances.maxElement()! - weeklyDistances.minElement()! >= 4 && weeklyDistances.maxElement() >= target {
+    //                            scenario = 2
+    //                        }
+    //                        else {
+    //                            scenario = 3
+    //                        }
+    //                        self.performSegueWithIdentifier("progress", sender: nil)
+    //                    }
+    //                }
+    //                queueNotification()
+    //                let today = ModelInterface.sharedInstance.convertDate(NSDate())
+    //                NSUserDefaults.standardUserDefaults().setObject(today, forKey: "checkIn")
+    //            }
+    //        }
+    //    }
     func queueNotification() {
         if let settings = UIApplication.sharedApplication().currentUserNotificationSettings() {
             
@@ -155,7 +222,7 @@ class ViewController: UIViewController {
                 notification.alertBody = "Your progress report is ready for review!"
                 notification.alertAction = "view"
                 notification.soundName = UILocalNotificationDefaultSoundName
-//                notification.userInfo = ["progress": 1]
+                //                notification.userInfo = ["progress": 1]
                 UIApplication.sharedApplication().scheduleLocalNotification(notification)
             }
         }
@@ -184,16 +251,16 @@ class ViewController: UIViewController {
             NSUserDefaults.standardUserDefaults().setBool(true, forKey: "firstRun")
         }
     }
-//    func unwrapNotification(notification: NSNotification) {
-//        if let dailyDistanceDictionary = notification.userInfo as? Dictionary<Int, NSNumber> {
-//            if let dailyDistance = dailyDistanceDictionary[1] {
-//                updateBanner(dailyDistance)
-//            }
-//        }
-//        else {
-//            print("error in userinfo type")
-//        }
-//    }
+    //    func unwrapNotification(notification: NSNotification) {
+    //        if let dailyDistanceDictionary = notification.userInfo as? Dictionary<Int, NSNumber> {
+    //            if let dailyDistance = dailyDistanceDictionary[1] {
+    //                updateBanner(dailyDistance)
+    //            }
+    //        }
+    //        else {
+    //            print("error in userinfo type")
+    //        }
+    //    }
     
     func performLifetimeSegue() {
         self.performSegueWithIdentifier("lifetimeSegue", sender: nil)
@@ -204,19 +271,120 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-//    func updateBanner(distance: NSNumber) {
-//        self.banner.text = ModelInterface.sharedInstance.hardestHole(distance.doubleValue/1000)
-//        
-//        
-//        let a = distance.integerValue/1000
-//        let achievement = ModelInterface.sharedInstance.reachedAchievement(a)
-//        let achievementString = achievement.1
-//        let achievementNumber  = achievement.0
-//        
-//        if achievementString != "" && distance.doubleValue/1000 - Double(achievementNumber) <= 1.5 {
-//            self.banner.text = achievementString
-//        }
-//    }
+    //    func updateBanner(distance: NSNumber) {
+    //        self.banner.text = ModelInterface.sharedInstance.hardestHole(distance.doubleValue/1000)
+    //
+    //
+    //        let a = distance.integerValue/1000
+    //        let achievement = ModelInterface.sharedInstance.reachedAchievement(a)
+    //        let achievementString = achievement.1
+    //        let achievementNumber  = achievement.0
+    //
+    //        if achievementString != "" && distance.doubleValue/1000 - Double(achievementNumber) <= 1.5 {
+    //            self.banner.text = achievementString
+    //        }
+    //    }
+    
+    func updatePedometer() {
+        
+        if (CMPedometer.isStepCountingAvailable() && CMPedometer.isDistanceAvailable()) {
+            let beginningOfDay = NSCalendar.currentCalendar().dateBySettingHour(0, minute: 0, second: 0, ofDate: NSDate(), options: [])
+            self.pedometer.queryPedometerDataFromDate(beginningOfDay!, toDate: NSDate()) { (data : CMPedometerData?, error) -> Void in
+                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                    if error == nil {
+                        if let numberOfSteps = data?.numberOfSteps {
+                            let result = ModelInterface.sharedInstance.addThousandSeperator(numberOfSteps.integerValue)
+                            self.stepsLabel.setTitle("\(result) steps", forState: UIControlState.Normal)
+                            self.updateStepsProgress(numberOfSteps.integerValue)
+                            self.currentSteps = numberOfSteps.integerValue
+                            self.updateCirclePercentage()
+                            print(data?.numberOfSteps)
+                        }
+                        if let distance = data?.distance {
+                            //                            self.dataModel.dailyDistance = distance
+                            let distanceText = String(format: "%.2f", distance.doubleValue/1000)
+                            self.distanceLabel.setTitle("\(distanceText) km", forState: UIControlState.Normal)
+                            self.updateDistanceProgress(distance.doubleValue/1000.0)
+                            self.currentDistance = distance.doubleValue/1000
+                            self.updateCirclePercentage()
+                            print(data?.distance)
+                        }
+                    }
+                });
+            }
+            self.pedometer.startPedometerUpdatesFromDate(beginningOfDay!) { (data : CMPedometerData?, error) -> Void in
+                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                    if let numberOfSteps = data?.numberOfSteps {
+                        let result = ModelInterface.sharedInstance.addThousandSeperator(numberOfSteps.integerValue)
+                        self.stepsLabel.setTitle("\(result) steps", forState: UIControlState.Normal)
+                        self.updateStepsProgress(numberOfSteps.integerValue)
+                        self.currentSteps = numberOfSteps.integerValue
+                        self.updateCirclePercentage()
+                        print(data?.numberOfSteps)
+                    }
+                    if let distance = data?.distance {
+                        //                        self.dataModel.dailyDistance = distance
+                        let distanceText = String(format: "%.2f", distance.doubleValue/1000)
+                        self.distanceLabel.setTitle("\(distanceText) km", forState: UIControlState.Normal)
+                        self.updateDistanceProgress(distance.doubleValue/1000.0)
+                        self.currentDistance = distance.doubleValue/1000
+                        self.updateCirclePercentage()
+                        print(data?.distance)
+                    }
+                });
+            }
+        }
+    }
+    
+    func updateCirclePercentage() {
+        if (currentDistance != nil && currentSteps != nil) {
+            let percentage = 0.5 * (currentDistance!/Double(totalDistance!)) + 0.5 * Double(currentSteps!/totalSteps!)
+            circlePercentage.text = String(format: "%.1f", percentage)
+        }
+    }
+    
+    func updateStepsProgress(steps: Int) {
+        let angle = 360 * steps/totalSteps!
+        
+        if angle > 360 {
+            outterCircle.animateToAngle(360.0, duration: 1, relativeDuration: true, completion: nil)
+        }
+        else {
+            outterCircle.animateToAngle(Double(angle), duration: 1, relativeDuration: true, completion: nil)
+        }
+    }
+    func updateDistanceProgress(distance: Double) {
+        let angle = 360.0 * distance/Double(totalDistance!)
+        
+        if angle > 360 {
+            innerCircle.animateToAngle(360.0, duration: 1, relativeDuration: true, completion: nil)
+        }
+        else {
+            innerCircle.animateToAngle(angle, duration: 1, relativeDuration: true, completion: nil)
+        }
+    }
+    
+    func updateStepsProgressfromStart() {
+        let angle = 360 * currentSteps!/totalSteps!
+        
+        if angle > 360 {
+            outterCircle.animateFromAngle(0.0, toAngle: 360.0, duration: 0.1, completion: nil)
+        }
+        else {
+            outterCircle.animateFromAngle(0.0, toAngle: Double(angle), duration: 0.1, completion: nil)
+        }
+    }
+    func updateDistanceProgressfromStart() {
+        let angle = 360.0 * currentDistance!/Double(totalDistance!)
+        
+        if angle > 360 {
+            innerCircle.animateFromAngle(0.0, toAngle: 360.0, duration: 0.1, completion: nil)
+        }
+        else {
+            innerCircle.animateFromAngle(0.0, toAngle: angle, duration: 0.1, completion: nil)
+        }
+    }
+    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(false)
         
@@ -224,6 +392,8 @@ class ViewController: UIViewController {
         dailyTarget.text = "daily goal: \(td) km"
         
         days = [String]()
+        
+        updatePedometer()
         
         barChartView.backgroundColor = UIColor.clearColor()
         if weeklyOrMonthly == 0 {
@@ -379,6 +549,6 @@ class ViewController: UIViewController {
         chartDataSet.colors = [UIColor(red: 242/255, green: 242/255, blue: 242/255, alpha: 0.88)]
         
     }
-
+    
 }
 
