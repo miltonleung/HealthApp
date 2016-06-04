@@ -44,7 +44,6 @@ let dailyAchievements = [1: "Baby Steps", 3: "You have reached 3 km!", 5: "You h
 let wordsOfEnc = ["Bravo", "Way to Go", "You are a Legend", "You Deserve A Pat On The Back", "Looking Good", "Impressive", "Unbelievable", "Are you kidding me?!?", "Beautiful", "Well Done", "You Take The Biscuit Every Time", "You really outdid yourself", "Outstanding", "Coolio", "DAYUM!!", "You’re making it look easy!"]
 
 class Data {
-    var viewcontroller = ViewController()
     
     var dailyDistance: NSNumber = 0 {
         didSet {

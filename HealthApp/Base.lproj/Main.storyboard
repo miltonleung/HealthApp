@@ -33,6 +33,9 @@
             <string>Muli-Light</string>
             <string>Muli-Light</string>
             <string>Muli-Light</string>
+            <string>Muli-Light</string>
+            <string>Muli-Light</string>
+            <string>Muli-Light</string>
         </mutableArray>
         <mutableArray key="Muli-Regular.ttf">
             <string>Muli</string>
@@ -61,7 +64,7 @@
         <!--Achievements View Controller-->
         <scene sceneID="PLj-yg-Ibn">
             <objects>
-                <viewController id="HvX-cF-QBg" customClass="AchievementsViewController" customModule="HealthApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="HvX-cF-QBg" customClass="AchievementsViewController" customModule="SmallSteps" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="bos-fP-8aD"/>
                         <viewControllerLayoutGuide type="bottom" id="2MX-sj-0ur"/>
@@ -181,7 +184,7 @@
         <!--Intro View Controller-->
         <scene sceneID="YYr-e4-doT">
             <objects>
-                <viewController id="43X-Kf-pQB" customClass="IntroViewController" customModule="HealthApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="43X-Kf-pQB" customClass="IntroViewController" customModule="SmallSteps" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="z4f-FB-pph"/>
                         <viewControllerLayoutGuide type="bottom" id="0yS-44-UKy"/>
@@ -365,7 +368,7 @@
         <!--Showcase View Controller-->
         <scene sceneID="eET-la-kY1">
             <objects>
-                <viewController id="Mc7-vA-LAY" customClass="ShowcaseViewController" customModule="HealthApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Mc7-vA-LAY" customClass="ShowcaseViewController" customModule="SmallSteps" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="oCL-j9-Zcm"/>
                         <viewControllerLayoutGuide type="bottom" id="4Ty-0Z-RvQ"/>
@@ -422,7 +425,7 @@
                                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         </collectionViewFlowLayout>
                                         <cells>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="amb-Cz-lVi" customClass="CollectionViewCell" customModule="HealthApp" customModuleProvider="target">
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="amb-Cz-lVi" customClass="CollectionViewCell" customModule="SmallSteps" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -554,7 +557,7 @@
         <!--Progress View Controller-->
         <scene sceneID="7Ju-q8-bCN">
             <objects>
-                <viewController id="v9a-C7-Xw3" customClass="ProgressViewController" customModule="HealthApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="v9a-C7-Xw3" customClass="ProgressViewController" customModule="SmallSteps" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Nh3-W0-P2G"/>
                         <viewControllerLayoutGuide type="bottom" id="VGb-Hx-N0h"/>
@@ -684,7 +687,8 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="HealthApp" customModuleProvider="target" sceneMemberID="viewController">
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SmallSteps" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -693,145 +697,142 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="qno-gL-zLA">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZR0-ec-RYC">
-                                <rect key="frame" x="297" y="79" width="5" height="45"/>
-                                <fontDescription key="fontDescription" name="Muli-Light" family="Muli" pointSize="17"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zTA-RW-HtL">
+                                <rect key="frame" x="80" y="355" width="82" height="22"/>
+                                <fontDescription key="fontDescription" name="Muli-Light" family="Muli" pointSize="14"/>
+                                <state key="normal" title="weekly">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <state key="selected" backgroundImage="buttonBackground"/>
+                                <state key="highlighted">
+                                    <color key="titleColor" red="0.0" green="1" blue="0.4839373911" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="weekly:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NAr-wq-SsJ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M1K-ib-J6C">
+                                <rect key="frame" x="438" y="355" width="82" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="82" id="0d3-b7-PGN"/>
+                                    <constraint firstAttribute="height" constant="22" id="5ld-YK-L0X"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Muli-Light" family="Muli" pointSize="14"/>
+                                <state key="normal" title="monthly">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <state key="selected" backgroundImage="buttonBackground">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="monthly:" destination="BYZ-38-t0r" eventType="touchUpInside" id="14Y-Pc-klO"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V1s-rh-agr">
+                                <rect key="frame" x="300" y="405" width="0.0" height="0.0"/>
+                                <fontDescription key="fontDescription" name="Muli-Light" family="Muli" pointSize="14"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pxX-RA-AWM">
-                                <rect key="frame" x="0.0" y="159" width="600" height="390"/>
-                                <connections>
-                                    <segue destination="KEZ-UB-2XL" kind="embed" id="WKt-t7-A4w"/>
-                                </connections>
-                            </containerView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PRL-or-Sf4">
-                                <rect key="frame" x="6" y="20" width="40" height="40"/>
-                                <state key="normal" backgroundImage="GearIcon"/>
-                                <connections>
-                                    <segue destination="UI8-c1-9my" kind="presentation" identifier="" modalPresentationStyle="overCurrentContext" id="9Bt-Dx-nH9"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZgR-VA-FlI">
-                                <rect key="frame" x="51" y="20" width="40" height="40"/>
-                                <state key="normal" backgroundImage="Award"/>
-                                <connections>
-                                    <segue destination="Mc7-vA-LAY" kind="presentation" modalPresentationStyle="overCurrentContext" id="BIP-k9-Zr2"/>
-                                </connections>
-                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="daily average: 8 km" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="phd-mJ-cnM">
+                                <rect key="frame" x="235" y="382" width="130" height="18"/>
+                                <fontDescription key="fontDescription" name="Muli-Light" family="Muli" pointSize="14"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e58-TZ-8yW" customClass="BarChartView" customModule="SmallSteps" customModuleProvider="target">
+                                <rect key="frame" x="20" y="410" width="560" height="180"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.97309277520399429" green="0.9479504660864978" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.074509803921568626" green="0.16078431372549018" blue="0.23921568627450979" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="qno-gL-zLA" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="0DL-BU-OVV"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="qno-gL-zLA" secondAttribute="trailing" constant="-20" id="3j2-0A-3uF"/>
-                            <constraint firstItem="pxX-RA-AWM" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-10" id="4bh-ns-rXq"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="pxX-RA-AWM" secondAttribute="trailing" constant="-20" id="4jR-Pc-I0V"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="qno-gL-zLA" secondAttribute="bottom" id="7HJ-HF-Lzs"/>
-                            <constraint firstItem="ZR0-ec-RYC" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="59" id="9ZG-td-QnY"/>
-                            <constraint firstItem="pxX-RA-AWM" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="9oD-sZ-Jg9"/>
-                            <constraint firstItem="PRL-or-Sf4" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Gko-Ss-Dg2"/>
-                            <constraint firstItem="ZR0-ec-RYC" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="GxA-10-l45"/>
-                            <constraint firstItem="pxX-RA-AWM" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.65" id="WAy-3w-0Vw"/>
-                            <constraint firstItem="pxX-RA-AWM" firstAttribute="top" secondItem="ZR0-ec-RYC" secondAttribute="bottom" constant="35" id="WYB-H9-tlc"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="pxX-RA-AWM" secondAttribute="trailing" constant="-20" id="bW9-jq-Hal"/>
-                            <constraint firstItem="pxX-RA-AWM" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="gj8-vz-NHe"/>
-                            <constraint firstItem="PRL-or-Sf4" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-14" id="jce-4p-NZG"/>
-                            <constraint firstItem="qno-gL-zLA" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="k3r-ur-xjX"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="pxX-RA-AWM" secondAttribute="trailing" constant="-10" id="su5-Tn-R6X"/>
-                            <constraint firstItem="pxX-RA-AWM" firstAttribute="centerY" secondItem="qno-gL-zLA" secondAttribute="centerY" multiplier="1.18" id="vYr-1i-K9D"/>
+                            <constraint firstItem="V1s-rh-agr" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="0C6-Kz-5Kw"/>
+                            <constraint firstItem="zTA-RW-HtL" firstAttribute="width" secondItem="M1K-ib-J6C" secondAttribute="width" id="0dp-GM-cyf"/>
+                            <constraint firstItem="e58-TZ-8yW" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.3" id="344-b1-aQY"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="e58-TZ-8yW" secondAttribute="trailing" id="3nq-TU-b1b"/>
+                            <constraint firstItem="zTA-RW-HtL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="60" id="66e-Jv-OQX"/>
+                            <constraint firstItem="V1s-rh-agr" firstAttribute="top" secondItem="phd-mJ-cnM" secondAttribute="bottom" constant="5" id="Cfm-wL-ukQ"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="e58-TZ-8yW" secondAttribute="bottom" constant="10" id="FiW-xW-yqw"/>
+                            <constraint firstItem="e58-TZ-8yW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="OeF-Yb-aRR"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="e58-TZ-8yW" secondAttribute="leading" id="RB3-48-t8S"/>
+                            <constraint firstItem="phd-mJ-cnM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bPA-tM-c2w"/>
+                            <constraint firstItem="phd-mJ-cnM" firstAttribute="top" secondItem="M1K-ib-J6C" secondAttribute="bottom" constant="5" id="cr9-rx-8gv"/>
+                            <constraint firstItem="phd-mJ-cnM" firstAttribute="top" secondItem="zTA-RW-HtL" secondAttribute="bottom" constant="5" id="k53-uF-AHf"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="M1K-ib-J6C" secondAttribute="trailing" constant="60" id="mUu-Wa-FjD"/>
+                            <constraint firstItem="zTA-RW-HtL" firstAttribute="height" secondItem="M1K-ib-J6C" secondAttribute="height" id="rgi-ce-0Hg"/>
+                            <constraint firstItem="e58-TZ-8yW" firstAttribute="top" secondItem="V1s-rh-agr" secondAttribute="bottom" constant="5" id="sy0-Tp-4i6"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="4bh-ns-rXq"/>
-                                <exclude reference="4jR-Pc-I0V"/>
-                                <exclude reference="9oD-sZ-Jg9"/>
-                                <exclude reference="su5-Tn-R6X"/>
-                            </mask>
-                        </variation>
                     </view>
                     <connections>
-                        <outlet property="banner" destination="ZR0-ec-RYC" id="pwh-zF-q66"/>
+                        <outlet property="barChartView" destination="e58-TZ-8yW" id="ZRb-y8-KDF"/>
+                        <outlet property="dailyAverage" destination="phd-mJ-cnM" id="fIv-tn-aMH"/>
+                        <outlet property="dailyTarget" destination="V1s-rh-agr" id="vjV-r6-epC"/>
+                        <outlet property="monthlyLabel" destination="M1K-ib-J6C" id="YoE-aV-ddo"/>
+                        <outlet property="weeklyLabel" destination="zTA-RW-HtL" id="JDu-Pj-Uue"/>
                         <segue destination="HvX-cF-QBg" kind="presentation" identifier="lifetimeSegue" modalPresentationStyle="overCurrentContext" id="azM-6p-Cxi"/>
                         <segue destination="43X-Kf-pQB" kind="presentation" identifier="introSegue" modalPresentationStyle="overCurrentContext" id="6AQ-vQ-Xoe"/>
                         <segue destination="v9a-C7-Xw3" kind="presentation" identifier="progress" modalPresentationStyle="overCurrentContext" id="u3r-Gy-Tvt"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="26" y="260"/>
-        </scene>
-        <!--Page View Controller-->
-        <scene sceneID="jDu-EC-Uia">
-            <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="KEZ-UB-2XL" customClass="PageViewController" customModule="HealthApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <connections>
-                        <segue destination="15V-Jg-sjG" kind="show" identifier="" id="mul-0I-9j8"/>
-                        <segue destination="nFZ-GX-ATK" kind="show" identifier="" id="rEN-Bv-XPv"/>
-                        <segue destination="4P1-3E-UAj" kind="show" id="rH7-SU-16q"/>
-                    </connections>
-                </pageViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="AV8-Na-nHM" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="870" y="260"/>
+            <point key="canvasLocation" x="-11" y="187"/>
         </scene>
         <!--Current Stats View Controller-->
         <scene sceneID="TCy-BN-7bT">
             <objects>
-                <viewController storyboardIdentifier="stepPage" id="15V-Jg-sjG" customClass="CurrentStatsViewController" customModule="HealthApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="stepPage" id="15V-Jg-sjG" customClass="CurrentStatsViewController" customModule="SmallSteps" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="C3n-kc-lFH"/>
                         <viewControllerLayoutGuide type="bottom" id="YMI-pV-fPx"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kFP-sb-qLP">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="390"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tHC-UJ-264">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tHC-UJ-264">
                                 <rect key="frame" x="543" y="107" width="12" height="25"/>
                                 <fontDescription key="fontDescription" name="Muli-Light" family="Muli" pointSize="20"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SVY-Jj-1rb">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SVY-Jj-1rb">
                                 <rect key="frame" x="544" y="167" width="12" height="25"/>
                                 <fontDescription key="fontDescription" name="Muli-Light" family="Muli" pointSize="20"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Daily Statistics" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i3I-4W-Uwy">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Daily Statistics" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i3I-4W-Uwy">
                                 <rect key="frame" x="217" y="5" width="166" height="30"/>
                                 <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="24"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nyt-UQ-iqD">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nyt-UQ-iqD">
                                 <rect key="frame" x="282" y="40" width="36.5" height="17.5"/>
                                 <fontDescription key="fontDescription" name="Muli-Light" family="Muli" pointSize="14"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="steps:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tHb-KD-H32">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="steps:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tHb-KD-H32">
                                 <rect key="frame" x="52" y="107" width="55.5" height="25"/>
                                 <fontDescription key="fontDescription" name="Muli-Light" family="Muli" pointSize="20"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZLT-fE-i26">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZLT-fE-i26">
                                 <rect key="frame" x="563" y="117" width="0.0" height="0.0"/>
                                 <fontDescription key="fontDescription" name="Muli-Light" family="Muli" pointSize="10"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aon-Wi-JFt">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aon-Wi-JFt">
                                 <rect key="frame" x="563" y="165" width="0.0" height="0.0"/>
                                 <fontDescription key="fontDescription" name="Muli-Light" family="Muli" pointSize="10"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="distance:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="617-bk-kjb">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="distance:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="617-bk-kjb">
                                 <rect key="frame" x="52" y="167" width="85" height="25"/>
                                 <fontDescription key="fontDescription" name="Muli-Light" family="Muli" pointSize="20"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -873,39 +874,39 @@
         <!--Graph View Controller-->
         <scene sceneID="YG1-q1-POn">
             <objects>
-                <viewController storyboardIdentifier="graphPage" id="4P1-3E-UAj" customClass="GraphViewController" customModule="HealthApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="graphPage" id="4P1-3E-UAj" customClass="GraphViewController" customModule="SmallSteps" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="xCr-vg-Lln"/>
                         <viewControllerLayoutGuide type="bottom" id="Yxe-2O-bLW"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="m8H-kx-GxW">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="390"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ilI-11-Hkt">
-                                <rect key="frame" x="300.5" y="131" width="0.0" height="0.0"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ilI-11-Hkt">
+                                <rect key="frame" x="300" y="204" width="0.0" height="0.0"/>
                                 <fontDescription key="fontDescription" name="Muli-Light" family="Muli" pointSize="14"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c7G-Zf-wHu" customClass="BarChartView" customModule="HealthApp" customModuleProvider="target">
-                                <rect key="frame" x="20" y="136" width="560" height="253.5"/>
+                            <view opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="c7G-Zf-wHu" customClass="BarChartView" customModule="SmallSteps" customModuleProvider="target">
+                                <rect key="frame" x="20" y="209" width="560" height="390"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Graphs" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3aM-hY-Qcq">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Graphs" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3aM-hY-Qcq">
                                 <rect key="frame" x="259" y="5" width="82" height="30"/>
                                 <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="24"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="daily average: 8 km" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w7M-ks-tUD">
-                                <rect key="frame" x="235" y="108" width="130" height="17.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="daily average: 8 km" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w7M-ks-tUD">
+                                <rect key="frame" x="235" y="181" width="130" height="17.5"/>
                                 <fontDescription key="fontDescription" name="Muli-Light" family="Muli" pointSize="14"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yzU-5u-WXB">
-                                <rect key="frame" x="90" y="81" width="82" height="22"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yzU-5u-WXB">
+                                <rect key="frame" x="90" y="154" width="82" height="22"/>
                                 <fontDescription key="fontDescription" name="Muli-Light" family="Muli" pointSize="14"/>
                                 <state key="normal" title="weekly">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -918,8 +919,8 @@
                                     <action selector="weekly:" destination="4P1-3E-UAj" eventType="touchUpInside" id="qFI-b4-ugH"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xMq-b4-GVS">
-                                <rect key="frame" x="428" y="81" width="82" height="22"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xMq-b4-GVS">
+                                <rect key="frame" x="428" y="154" width="82" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="22" id="4cs-OJ-8jr"/>
                                     <constraint firstAttribute="width" constant="82" id="Ef5-8a-VBN"/>
@@ -967,51 +968,51 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="02G-xt-3w8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1587" y="477"/>
+            <point key="canvasLocation" x="646" y="389"/>
         </scene>
         <!--Cumulative Stats View Controller-->
         <scene sceneID="Jyd-H8-Alf">
             <objects>
-                <viewController storyboardIdentifier="distancePage" id="nFZ-GX-ATK" customClass="CumulativeStatsViewController" customModule="HealthApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="distancePage" id="nFZ-GX-ATK" customClass="CumulativeStatsViewController" customModule="SmallSteps" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="L14-a4-wzU"/>
                         <viewControllerLayoutGuide type="bottom" id="XKT-rD-WNk"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="S0d-Qf-EqC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="390"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hmg-Ld-ZZI">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hmg-Ld-ZZI">
                                 <rect key="frame" x="555" y="142" width="0.0" height="0.0"/>
                                 <fontDescription key="fontDescription" name="Muli-Light" family="Muli" pointSize="20"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lifetime Statistics" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FWn-G5-LoY">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Lifetime Statistics" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FWn-G5-LoY">
                                 <rect key="frame" x="200" y="5" width="200.5" height="30.5"/>
                                 <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="24"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="376-Vg-TSS">
-                                <rect key="frame" x="300.5" y="40" width="0.0" height="0.0"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="376-Vg-TSS">
+                                <rect key="frame" x="300" y="40" width="0.0" height="0.0"/>
                                 <fontDescription key="fontDescription" name="Muli-Light" family="Muli" pointSize="14"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="total steps:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="76j-Hb-Lny">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="total steps:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="76j-Hb-Lny">
                                 <rect key="frame" x="52" y="107" width="105" height="25"/>
                                 <fontDescription key="fontDescription" name="Muli-Light" family="Muli" pointSize="20"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q8W-W2-wHT">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q8W-W2-wHT">
                                 <rect key="frame" x="555" y="107" width="0.0" height="0.0"/>
                                 <fontDescription key="fontDescription" name="Muli-Light" family="Muli" pointSize="20"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="total distance:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JJg-WS-H3a">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="total distance:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JJg-WS-H3a">
                                 <rect key="frame" x="52" y="167" width="135" height="25"/>
                                 <fontDescription key="fontDescription" name="Muli-Light" family="Muli" pointSize="20"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -1047,7 +1048,7 @@
         <!--Settings View Controller-->
         <scene sceneID="MCx-GL-Wzn">
             <objects>
-                <viewController id="UI8-c1-9my" customClass="SettingsViewController" customModule="HealthApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="UI8-c1-9my" customClass="SettingsViewController" customModule="SmallSteps" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="gzO-kJ-YGx"/>
                         <viewControllerLayoutGuide type="bottom" id="fy7-JJ-BaZ"/>
@@ -1157,12 +1158,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Award" width="40" height="40"/>
         <image name="Gear" width="61" height="61"/>
-        <image name="GearIcon" width="40" height="40"/>
         <image name="Heart" width="61" height="61"/>
         <image name="Hi" width="61" height="61"/>
-        <image name="Image" width="640" height="1136"/>
         <image name="Medal" width="61" height="61"/>
         <image name="Progress" width="61" height="61"/>
         <image name="Tri" width="61" height="61"/>
