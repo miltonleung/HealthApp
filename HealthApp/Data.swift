@@ -35,6 +35,8 @@ let achievementsImages =
      "EarthS"]
 var currentLifetimeDistanceAchievements = [Int]()
 
+var lastweekDistance = [Int: [Double]]()
+
 let lifetimeStepsAchievements = []
 var currentLifetimeStepsAchievements = [Int]()
 
@@ -54,6 +56,7 @@ class Data {
     var weeklyDistances = [Double]() {
         didSet {
             var weeklyDistancesDictionary = [1: weeklyDistances]
+            lastweekDistance = [1: weeklyDistances]
             NSNotificationCenter.defaultCenter().postNotificationName("checkInStatus", object: nil, userInfo: weeklyDistancesDictionary)
         }
     }

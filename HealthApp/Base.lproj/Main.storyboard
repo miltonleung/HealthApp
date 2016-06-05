@@ -363,7 +363,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="phX-fm-n01" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-122" y="1010"/>
+            <point key="canvasLocation" x="-734" y="489"/>
         </scene>
         <!--Showcase View Controller-->
         <scene sceneID="eET-la-kY1">
@@ -552,7 +552,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fg1-8T-d04" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-583" y="1947"/>
+            <point key="canvasLocation" x="-45" y="1156"/>
         </scene>
         <!--Progress View Controller-->
         <scene sceneID="7Ju-q8-bCN">
@@ -682,7 +682,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G7f-ef-cM0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-502" y="1058"/>
+            <point key="canvasLocation" x="323" y="987"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -696,8 +696,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zTA-RW-HtL">
-                                <rect key="frame" x="70" y="339" width="82" height="22"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zTA-RW-HtL">
+                                <rect key="frame" x="70" y="338" width="82" height="22"/>
                                 <fontDescription key="fontDescription" name="Muli-Light" family="Muli" pointSize="14"/>
                                 <state key="normal" title="weekly">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -710,8 +710,8 @@
                                     <action selector="weekly:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NAr-wq-SsJ"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M1K-ib-J6C">
-                                <rect key="frame" x="448" y="339" width="82" height="22"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M1K-ib-J6C">
+                                <rect key="frame" x="448" y="338" width="82" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="82" id="0d3-b7-PGN"/>
                                     <constraint firstAttribute="height" constant="22" id="5ld-YK-L0X"/>
@@ -733,8 +733,8 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="daily average: 8 km" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="phd-mJ-cnM">
-                                <rect key="frame" x="239" y="373" width="121.5" height="16.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="daily average: 8 km" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="phd-mJ-cnM">
+                                <rect key="frame" x="235" y="372" width="129.5" height="17.5"/>
                                 <fontDescription key="fontDescription" name="Muli-Light" family="Muli" pointSize="14"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -863,7 +863,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P4i-JS-Scc">
-                                <rect key="frame" x="20" y="25" width="28" height="23"/>
+                                <rect key="frame" x="10" y="20" width="63" height="55"/>
                                 <state key="normal" backgroundImage="Menu"/>
                                 <connections>
                                     <action selector="menuButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="P58-t8-YpG"/>
@@ -892,7 +892,7 @@
                             <constraint firstItem="sES-CY-wg2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="WTt-kk-FQK"/>
                             <constraint firstItem="sES-CY-wg2" firstAttribute="top" secondItem="TDA-bE-6sw" secondAttribute="bottom" constant="-7" id="WVW-Wr-Q6X"/>
                             <constraint firstItem="4Rd-t7-g44" firstAttribute="height" secondItem="TFp-UK-1Lw" secondAttribute="height" id="X27-Ws-GZK"/>
-                            <constraint firstItem="P4i-JS-Scc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="acT-b9-rFO"/>
+                            <constraint firstItem="P4i-JS-Scc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-10" id="acT-b9-rFO"/>
                             <constraint firstItem="dmo-gk-A42" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="aeU-V7-0up"/>
                             <constraint firstItem="phd-mJ-cnM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bPA-tM-c2w"/>
                             <constraint firstItem="phd-mJ-cnM" firstAttribute="top" secondItem="M1K-ib-J6C" secondAttribute="bottom" constant="12" id="cr9-rx-8gv"/>
@@ -902,7 +902,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="M1K-ib-J6C" secondAttribute="trailing" constant="50" id="mUu-Wa-FjD"/>
                             <constraint firstItem="Gia-d6-6Ml" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-5" id="o7g-5e-2YS"/>
                             <constraint firstAttribute="trailingMargin" secondItem="TFp-UK-1Lw" secondAttribute="trailing" constant="1" id="qZT-If-fCu"/>
-                            <constraint firstItem="P4i-JS-Scc" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="25" id="rGX-3O-vrd"/>
+                            <constraint firstItem="P4i-JS-Scc" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="20" id="rGX-3O-vrd"/>
                             <constraint firstItem="zTA-RW-HtL" firstAttribute="height" secondItem="M1K-ib-J6C" secondAttribute="height" id="rgi-ce-0Hg"/>
                             <constraint firstItem="e58-TZ-8yW" firstAttribute="top" secondItem="V1s-rh-agr" secondAttribute="bottom" constant="5" id="sy0-Tp-4i6"/>
                             <constraint firstItem="Gia-d6-6Ml" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="vvU-zg-TNo"/>
@@ -927,6 +927,8 @@
                         <segue destination="43X-Kf-pQB" kind="presentation" identifier="introSegue" modalPresentationStyle="overCurrentContext" id="6AQ-vQ-Xoe"/>
                         <segue destination="v9a-C7-Xw3" kind="presentation" identifier="progress" modalPresentationStyle="overCurrentContext" id="u3r-Gy-Tvt"/>
                         <segue destination="nYq-Y5-uoL" kind="presentation" identifier="openMenu" id="MRj-Ah-4IB"/>
+                        <segue destination="UI8-c1-9my" kind="presentation" identifier="settings" modalPresentationStyle="overCurrentContext" id="StZ-6I-GS3"/>
+                        <segue destination="Mc7-vA-LAY" kind="presentation" identifier="medals" modalPresentationStyle="overCurrentContext" id="fTv-Rc-VWx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -1030,7 +1032,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vIU-wr-ZR1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="492" y="1046"/>
+            <point key="canvasLocation" x="1006" y="987"/>
         </scene>
         <!--Menu View Controller-->
         <scene sceneID="4OT-gB-0gR">
@@ -1079,7 +1081,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MxI-fV-977">
                                                     <rect key="frame" x="36.5" y="64" width="12.5" height="20.5"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -1408,7 +1410,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u9N-Jq-97p" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-761" y="1010"/>
+            <point key="canvasLocation" x="-294" y="1126"/>
         </scene>
     </scenes>
     <resources>
@@ -1416,7 +1418,7 @@
         <image name="Heart" width="61" height="61"/>
         <image name="Hi" width="61" height="61"/>
         <image name="Medal" width="61" height="61"/>
-        <image name="Menu" width="28" height="23"/>
+        <image name="Menu" width="63" height="55"/>
         <image name="Progress" width="61" height="61"/>
         <image name="Ruler" width="137" height="32"/>
         <image name="RulerSelected" width="137" height="32"/>

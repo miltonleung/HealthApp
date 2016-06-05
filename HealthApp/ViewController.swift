@@ -10,6 +10,10 @@ import UIKit
 import HealthKit
 import CoreMotion
 
+protocol MenuSelectDelegate {
+    func segue(segueIdentifier: String)
+}
+
 class ViewController: UIViewController {
     
     //    @IBOutlet weak var banner: UILabel!
@@ -133,7 +137,7 @@ class ViewController: UIViewController {
         circlePercentage.text = "0"
         
         // STEPS & DISTANCE
-//        updatePedometer()
+        //        updatePedometer()
         totalSteps = NSUserDefaults.standardUserDefaults().integerForKey("targetSteps")
         totalDistance = NSUserDefaults.standardUserDefaults().integerForKey("targetDistance")
         
@@ -183,51 +187,59 @@ class ViewController: UIViewController {
         
         NSUserDefaults.standardUserDefaults().setObject(today, forKey: "checkIn")
     }
-    //    func checkInUnwrap(notification: NSNotification) {
-    //        let firstLogin = NSUserDefaults.standardUserDefaults().stringForKey("firstLogin")
-    //        let checkedInToday = NSUserDefaults.standardUserDefaults().boolForKey("progressReportedToday")
-    //        if let checkIn = NSUserDefaults.standardUserDefaults().stringForKey("checkIn") {
-    //            let daysSince = ModelInterface.sharedInstance.daysDifference(checkIn, endDate: NSDate())
-    //            if daysSince >= 3 || (checkIn == firstLogin && checkedInToday == false) {
-    //                NSUserDefaults.standardUserDefaults().setBool(true, forKey: "progressReportedToday")
-    //                if let weeklyDictionary = notification.userInfo as? Dictionary<Int, [Double]> {
-    //                    if let weeklyDistances = weeklyDictionary[1] {
-    //                        var counter = 0
-    //                        targetDistance = NSUserDefaults.standardUserDefaults().integerForKey("targetDistance")
-    //                        let target = Double(targetDistance)
-    //                        for d in weeklyDistances {
-    //                            if d >= target {
-    //                                counter += 1
-    //                            }
-    //                        }
-    //                        count = counter
-    //                        var sum = 0.0
-    //                        for d in weeklyDistances {
-    //                            sum += d
-    //                        }
-    //                        average = sum/Double(weeklyDistances.count)
-    //
-    //                        if counter == 7 {
-    //                            scenario = 0
-    //                        }
-    //                        else if counter >= 4 && abs(average - target) <= 1.4 {
-    //                            scenario = 1
-    //                        }
-    //                        else if counter <= 4 && weeklyDistances.maxElement()! - weeklyDistances.minElement()! >= 4 && weeklyDistances.maxElement() >= target {
-    //                            scenario = 2
-    //                        }
-    //                        else {
-    //                            scenario = 3
-    //                        }
-    //                        self.performSegueWithIdentifier("progress", sender: nil)
-    //                    }
-    //                }
-    //                queueNotification()
-    //                let today = ModelInterface.sharedInstance.convertDate(NSDate())
-    //                NSUserDefaults.standardUserDefaults().setObject(today, forKey: "checkIn")
-    //            }
-    //        }
-    //    }
+    func checkInUnwrap(notification: NSNotification) {
+        let firstLogin = NSUserDefaults.standardUserDefaults().stringForKey("firstLogin")
+        let checkedInToday = NSUserDefaults.standardUserDefaults().boolForKey("progressReportedToday")
+        if let checkIn = NSUserDefaults.standardUserDefaults().stringForKey("checkIn") {
+            let daysSince = ModelInterface.sharedInstance.daysDifference(checkIn, endDate: NSDate())
+            if daysSince >= 3 || (checkIn == firstLogin && checkedInToday == false) {
+                NSUserDefaults.standardUserDefaults().setBool(true, forKey: "progressReportedToday")
+                
+                if let weeklyDictionary = notification.userInfo as? Dictionary<Int, [Double]> {
+                    performProgress(weeklyDictionary)
+                }
+                
+                queueNotification()
+                let today = ModelInterface.sharedInstance.convertDate(NSDate())
+                NSUserDefaults.standardUserDefaults().setObject(today, forKey: "checkIn")
+            }
+        }
+    }
+    
+    func performProgress(weeklyDictionary: Dictionary<Int, [Double]>) {
+        if let weeklyDistances = weeklyDictionary[1] {
+            var counter = 0
+            targetDistance = NSUserDefaults.standardUserDefaults().integerForKey("targetDistance")
+            let target = Double(targetDistance)
+            for d in weeklyDistances {
+                if d >= target {
+                    counter += 1
+                }
+            }
+            count = counter
+            var sum = 0.0
+            for d in weeklyDistances {
+                sum += d
+            }
+            average = sum/Double(weeklyDistances.count)
+            
+            if counter == 7 {
+                scenario = 0
+            }
+            else if counter >= 4 && abs(average - target) <= 1.4 {
+                scenario = 1
+            }
+            else if counter <= 4 && weeklyDistances.maxElement()! - weeklyDistances.minElement()! >= 4 && weeklyDistances.maxElement() >= target {
+                scenario = 2
+            }
+            else {
+                scenario = 3
+            }
+            self.performSegueWithIdentifier("progress", sender: nil)
+        }
+
+    }
+    
     func queueNotification() {
         if let settings = UIApplication.sharedApplication().currentUserNotificationSettings() {
             
@@ -257,6 +269,7 @@ class ViewController: UIViewController {
         else if let destinationViewController = segue.destinationViewController as? MenuViewController {
             destinationViewController.transitioningDelegate = self
             destinationViewController.interactor = interactor
+            destinationViewController.menuSelectDelegate = self
         }
         else {
             super.prepareForSegue(segue, sender: sender)
@@ -585,5 +598,18 @@ extension ViewController: UIViewControllerTransitioningDelegate {
     }
     func interactionControllerForPresentation(animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
         return interactor.hasStarted ? interactor : nil
+    }
+}
+extension ViewController: MenuSelectDelegate {
+    func segue(segueIdentifier: String) {
+        if segueIdentifier == "progress" {
+            dismissViewControllerAnimated(true) {
+                self.performProgress(lastweekDistance)
+            }
+        } else {
+            dismissViewControllerAnimated(true) {
+                self.performSegueWithIdentifier("\(segueIdentifier)", sender: nil)
+            }
+        }
     }
 }
