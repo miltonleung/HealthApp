@@ -13,7 +13,9 @@ import CoreMotion
 protocol MenuSelectDelegate {
     func segue(segueIdentifier: String)
 }
-
+protocol RefreshDelegate {
+    func refresh(td: Int, ts: Int)
+}
 class ViewController: UIViewController {
     
     //    @IBOutlet weak var banner: UILabel!
@@ -92,7 +94,11 @@ class ViewController: UIViewController {
             sender.selected = true
             outterCircle.alpha = 0.2
             innerCircle.alpha = 1
-            circlePercentage.text = String(format: "%.1f", currentDistance!/Double(totalDistance!))
+            if currentDistance!/Double(totalDistance!) * 100 < 10 {
+                circlePercentage.text = String(format: "%.1f", currentDistance!/Double(totalDistance!) * 100)
+            } else {
+                circlePercentage.text = String(Int(currentDistance!/Double(totalDistance!) * 100))
+            }
             denominator.text = "of distance travelled"
             updateDistanceProgressfromStart()
         }
@@ -112,7 +118,11 @@ class ViewController: UIViewController {
             sender.selected = true
             innerCircle.alpha = 0.1
             outterCircle.alpha = 1
-            circlePercentage.text = String(format: "%.1f", currentSteps!/totalSteps!)
+            if Double(currentSteps!)/Double(totalSteps!) * 100.0 < 10 {
+                circlePercentage.text = String(format: "%.1f", Int(Double(currentSteps!)/Double(totalSteps!) * 100.0))
+            } else {
+                circlePercentage.text = String(Int(Double(currentSteps!)/Double(totalSteps!) * 100.0))
+            }
             denominator.text = "of steps taken"
             updateStepsProgressfromStart()
         }
@@ -237,7 +247,7 @@ class ViewController: UIViewController {
             }
             self.performSegueWithIdentifier("progress", sender: nil)
         }
-
+        
     }
     
     func queueNotification() {
@@ -266,6 +276,10 @@ class ViewController: UIViewController {
             progress.targetDistance = targetDistance
             progress.count = count
         }
+        else if segue.identifier == "settings" {
+            let settings = segue.destinationViewController as! SettingsViewController
+            settings.delegate = self
+        }
         else if let destinationViewController = segue.destinationViewController as? MenuViewController {
             destinationViewController.transitioningDelegate = self
             destinationViewController.interactor = interactor
@@ -279,7 +293,7 @@ class ViewController: UIViewController {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(true)
         
-        print("viewdidappera")
+        
         let firstRun = NSUserDefaults.standardUserDefaults().boolForKey("firstRun") as Bool
         if !firstRun {
             self.performSegueWithIdentifier("introSegue", sender: nil)
@@ -374,7 +388,11 @@ class ViewController: UIViewController {
     func updateCirclePercentage() {
         if (currentDistance != nil && currentSteps != nil) {
             let percentage = 0.5 * (currentDistance!/Double(totalDistance!)) + 0.5 * Double(currentSteps!/totalSteps!)
-            circlePercentage.text = String(format: "%.1f", percentage)
+            if percentage * 100 < 10 {
+                circlePercentage.text = String(format: "%.1f", percentage * 100)
+            } else {
+                circlePercentage.text = String(Int(percentage * 100))
+            }
         }
     }
     
@@ -403,21 +421,23 @@ class ViewController: UIViewController {
         let angle = 360 * currentSteps!/totalSteps!
         
         if angle > 360 {
-            outterCircle.animateFromAngle(0.0, toAngle: 360.0, duration: 0.1, completion: nil)
+            outterCircle.animateFromAngle(0.0, toAngle: 360.0, duration: 1, completion: nil)
         }
         else {
-            outterCircle.animateFromAngle(0.0, toAngle: Double(angle), duration: 0.1, completion: nil)
+            outterCircle.animateFromAngle(0.0, toAngle: Double(angle), duration: 1, completion: nil)
         }
     }
     func updateDistanceProgressfromStart() {
+        
         let angle = 360.0 * currentDistance!/Double(totalDistance!)
         
         if angle > 360 {
-            innerCircle.animateFromAngle(0.0, toAngle: 360.0, duration: 0.1, completion: nil)
+            innerCircle.animateFromAngle(0.0, toAngle: 360.0, duration: 1, completion: nil)
         }
         else {
-            innerCircle.animateFromAngle(0.0, toAngle: angle, duration: 0.1, completion: nil)
+            innerCircle.animateFromAngle(0.0, toAngle: angle, duration: 1, completion: nil)
         }
+        
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -611,5 +631,33 @@ extension ViewController: MenuSelectDelegate {
                 self.performSegueWithIdentifier("\(segueIdentifier)", sender: nil)
             }
         }
+    }
+}
+extension ViewController: RefreshDelegate {
+    func refresh(td: Int, ts: Int) {
+        totalDistance = td
+        totalSteps = ts
+        
+        let distanceAngle = 360.0 * currentDistance!/Double(totalDistance!)
+        
+        if distanceAngle > 360 {
+            innerCircle.animateToAngle(360.0, duration: 1, relativeDuration: true, completion: nil)
+        }
+        else {
+            innerCircle.animateToAngle(distanceAngle, duration: 1, relativeDuration: true, completion: nil)
+        }
+        
+        let stepsAngle = 360.0 * Double(currentSteps!)/Double(totalSteps!)
+        
+        if stepsAngle > 360 {
+            outterCircle.animateToAngle(360.0, duration: 1, relativeDuration: true, completion: nil)
+        }
+        else {
+            outterCircle.animateToAngle(Double(stepsAngle), duration: 1, relativeDuration: true, completion: nil)
+        }
+        
+        updateCirclePercentage()
+        
+        dailyTarget.text = "daily goal: \(td) km"
     }
 }

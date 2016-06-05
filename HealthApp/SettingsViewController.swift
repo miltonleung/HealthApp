@@ -14,22 +14,27 @@ class SettingsViewController: UIViewController, UITextFieldDelegate, UIPickerVie
     @IBOutlet weak var stepsPicker: UITextField!
     @IBOutlet weak var distancePicker: UITextField!
     
+    var delegate: RefreshDelegate?
+    
     var stepsOptions = ["1000", "2000", "3000", "4000", "5000", "6000", "7000", "8000", "9000", "10000", "11000", "12000"]
     var distanceOptions = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20"]
     
     @IBAction func closeButton(sender: AnyObject) {
-        
+        var td:Int?
+        var ts:Int?
         if (distancePicker.text != "" && distancePicker.text != "0") {
-            let td = Int(distancePicker.text!)!
-            NSUserDefaults.standardUserDefaults().setInteger(td, forKey: "targetDistance")
+            td = Int(distancePicker.text!)!
+            NSUserDefaults.standardUserDefaults().setInteger(td!, forKey: "targetDistance")
         }
         
         if (stepsPicker.text != "" && stepsPicker.text != "0") {
-            let ts = Int(stepsPicker.text!)!
-            NSUserDefaults.standardUserDefaults().setInteger(ts, forKey: "targetSteps")
+            ts = Int(stepsPicker.text!)!
+            NSUserDefaults.standardUserDefaults().setInteger(ts!, forKey: "targetSteps")
         }
         
-        dismissViewControllerAnimated(true, completion: nil)
+        dismissViewControllerAnimated(true) {
+            self.delegate?.refresh(td!, ts: ts!)
+        }
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,12 +55,20 @@ class SettingsViewController: UIViewController, UITextFieldDelegate, UIPickerVie
         
         distancePicker.delegate = self
         stepsPicker.delegate = self
-    }
-    override func viewWillAppear(animated: Bool) {
+        
         let td = NSUserDefaults.standardUserDefaults().integerForKey("targetDistance")
         distancePicker.text = String(td)
         let ts = NSUserDefaults.standardUserDefaults().integerForKey("targetSteps")
         stepsPicker.text = String(ts)
+        
+        let stepsRow = stepsOptions.indexOf(String(ts))
+        stepsPickerView.selectRow(stepsRow!, inComponent: 0, animated: false)
+        
+        let distanceRow = distanceOptions.indexOf(String(td))
+        distancePickerView.selectRow(distanceRow!, inComponent: 0, animated: false)
+    }
+    override func viewWillAppear(animated: Bool) {
+        
     }
     
     func dismissKeyboard() {
