@@ -151,8 +151,14 @@
 		528B38131CD461B500F8338D /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 528B38121CD461B500F8338D /* HealthKit.framework */; };
 		52A665EA1CFBA48A00C52E84 /* ShowcaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A665E91CFBA48A00C52E84 /* ShowcaseViewController.swift */; };
 		52A665F31CFBA78F00C52E84 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A665F21CFBA78F00C52E84 /* CollectionViewCell.swift */; };
+		52C59EB61D041583008F0A15 /* Interactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C59EB51D041583008F0A15 /* Interactor.swift */; };
+		52C59EBF1D0415EC008F0A15 /* MenuHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C59EBE1D0415EC008F0A15 /* MenuHelper.swift */; };
+		52C59EC11D0416FE008F0A15 /* PresentMenuAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C59EC01D0416FE008F0A15 /* PresentMenuAnimator.swift */; };
+		52C59EC31D041A1A008F0A15 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C59EC21D041A1A008F0A15 /* MenuViewController.swift */; };
+		52C59EC51D041C5E008F0A15 /* DismissMenuAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C59EC41D041C5E008F0A15 /* DismissMenuAnimator.swift */; };
 		52E5DA0C1CF8D69100478BA5 /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E5DA0B1CF8D69100478BA5 /* IntroViewController.swift */; };
 		52E966501CF16573008D60E6 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E9664F1CF16573008D60E6 /* SettingsViewController.swift */; };
+		52EBC39F1D042EBF0052CF86 /* MenuCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EBC39E1D042EBF0052CF86 /* MenuCollectionViewCell.swift */; };
 		52EBEFE41CF6C4050028EDAC /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EBEFE31CF6C4050028EDAC /* Data.swift */; };
 		878103AC127A4133E68707AF /* libPods-SmallSteps.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 74F932C52271542A9E744EEF /* libPods-SmallSteps.a */; };
 /* End PBXBuildFile section */
@@ -406,8 +412,14 @@
 		528B38141CD461B500F8338D /* HealthApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = HealthApp.entitlements; sourceTree = "<group>"; };
 		52A665E91CFBA48A00C52E84 /* ShowcaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowcaseViewController.swift; sourceTree = "<group>"; };
 		52A665F21CFBA78F00C52E84 /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		52C59EB51D041583008F0A15 /* Interactor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Interactor.swift; sourceTree = "<group>"; };
+		52C59EBE1D0415EC008F0A15 /* MenuHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuHelper.swift; sourceTree = "<group>"; };
+		52C59EC01D0416FE008F0A15 /* PresentMenuAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentMenuAnimator.swift; sourceTree = "<group>"; };
+		52C59EC21D041A1A008F0A15 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		52C59EC41D041C5E008F0A15 /* DismissMenuAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DismissMenuAnimator.swift; sourceTree = "<group>"; };
 		52E5DA0B1CF8D69100478BA5 /* IntroViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
 		52E9664F1CF16573008D60E6 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		52EBC39E1D042EBF0052CF86 /* MenuCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuCollectionViewCell.swift; sourceTree = "<group>"; };
 		52EBEFE31CF6C4050028EDAC /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		74F932C52271542A9E744EEF /* libPods-SmallSteps.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SmallSteps.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -783,6 +795,8 @@
 				525AA2E71CF95F3500704498 /* ProgressViewController.swift */,
 				52481ADA1D036914007C1526 /* KDCircularProgress.swift */,
 				528B37E61CD4612B00F8338D /* Main.storyboard */,
+				52EBC39E1D042EBF0052CF86 /* MenuCollectionViewCell.swift */,
+				52C59EC21D041A1A008F0A15 /* MenuViewController.swift */,
 				52A665E91CFBA48A00C52E84 /* ShowcaseViewController.swift */,
 				5211CDB61CF51F3E002DA19E /* AchievementsViewController.swift */,
 				52A665F21CFBA78F00C52E84 /* CollectionViewCell.swift */,
@@ -795,6 +809,10 @@
 				52888E921CD88CC000A30E8A /* Charts */,
 				528B37E91CD4612B00F8338D /* Assets.xcassets */,
 				528B37EE1CD4612B00F8338D /* Info.plist */,
+				52C59EB51D041583008F0A15 /* Interactor.swift */,
+				52C59EBE1D0415EC008F0A15 /* MenuHelper.swift */,
+				52C59EC01D0416FE008F0A15 /* PresentMenuAnimator.swift */,
+				52C59EC41D041C5E008F0A15 /* DismissMenuAnimator.swift */,
 			);
 			path = HealthApp;
 			sourceTree = "<group>";
@@ -931,12 +949,12 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 52888E961CD88CC000A30E8A /* Products */;
-					ProjectRef = 52888E951CD88CC000A30E8A /* Charts.xcodeproj */;
-				},
-				{
 					ProductGroup = 52888E841CD88C1800A30E8A /* Products */;
 					ProjectRef = 52888E831CD88C1800A30E8A /* Charts.xcodeproj */;
+				},
+				{
+					ProductGroup = 52888E961CD88CC000A30E8A /* Products */;
+					ProjectRef = 52888E951CD88CC000A30E8A /* Charts.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -1109,6 +1127,7 @@
 				52888FA31CD88CC000A30E8A /* ChartViewPortJob.swift in Sources */,
 				52888FA01CD88CC000A30E8A /* AnimatedMoveViewJob.swift in Sources */,
 				5212CAA91CD5BD7300041771 /* DateModel.swift in Sources */,
+				52EBC39F1D042EBF0052CF86 /* MenuCollectionViewCell.swift in Sources */,
 				52888F591CD88CC000A30E8A /* ChartViewBase.swift in Sources */,
 				5253C8C01CD73A2600F2713A /* CumulativeStatsViewController.swift in Sources */,
 				52EBEFE41CF6C4050028EDAC /* Data.swift in Sources */,
@@ -1158,17 +1177,20 @@
 				52A665F31CFBA78F00C52E84 /* CollectionViewCell.swift in Sources */,
 				52888F5A1CD88CC000A30E8A /* CombinedChartView.swift in Sources */,
 				52E966501CF16573008D60E6 /* SettingsViewController.swift in Sources */,
+				52C59EC51D041C5E008F0A15 /* DismissMenuAnimator.swift in Sources */,
 				52888F751CD88CC000A30E8A /* ChartDataEntry.swift in Sources */,
 				52E5DA0C1CF8D69100478BA5 /* IntroViewController.swift in Sources */,
 				52888F811CD88CC000A30E8A /* ScatterChartDataSet.swift in Sources */,
 				52888F631CD88CC000A30E8A /* ChartLegend.swift in Sources */,
 				52888FAD1CD88CC000A30E8A /* ChartXAxisRenderer.swift in Sources */,
+				52C59EC11D0416FE008F0A15 /* PresentMenuAnimator.swift in Sources */,
 				52888F901CD88CC000A30E8A /* ChartDefaultXAxisValueFormatter.swift in Sources */,
 				52888FA71CD88CC000A30E8A /* BubbleChartRenderer.swift in Sources */,
 				52888F9D1CD88CC000A30E8A /* ChartDataProvider.swift in Sources */,
 				52888FB41CD88CC000A30E8A /* CombinedChartRenderer.swift in Sources */,
 				52888FA91CD88CC000A30E8A /* ChartAxisRendererBase.swift in Sources */,
 				52888FB61CD88CC000A30E8A /* LineChartRenderer.swift in Sources */,
+				52C59EC31D041A1A008F0A15 /* MenuViewController.swift in Sources */,
 				52A665EA1CFBA48A00C52E84 /* ShowcaseViewController.swift in Sources */,
 				52888F841CD88CC000A30E8A /* IBubbleChartDataSet.swift in Sources */,
 				528B37E31CD4612B00F8338D /* AppDelegate.swift in Sources */,
@@ -1184,6 +1206,8 @@
 				52888FAE1CD88CC000A30E8A /* ChartXAxisRendererBarChart.swift in Sources */,
 				52888F7C1CD88CC000A30E8A /* PieChartData.swift in Sources */,
 				52888F541CD88CC000A30E8A /* ChartAnimator.swift in Sources */,
+				52C59EBF1D0415EC008F0A15 /* MenuHelper.swift in Sources */,
+				52C59EB61D041583008F0A15 /* Interactor.swift in Sources */,
 				52888F6E1CD88CC000A30E8A /* BubbleChartData.swift in Sources */,
 				52888F6A1CD88CC000A30E8A /* BarChartDataEntry.swift in Sources */,
 				52888F641CD88CC000A30E8A /* ChartLimitLine.swift in Sources */,

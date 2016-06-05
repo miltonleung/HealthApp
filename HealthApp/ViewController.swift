@@ -17,6 +17,24 @@ class ViewController: UIViewController {
     var healthManager:HealthManager?
     let pedometer = CMPedometer()
     
+    let interactor = Interactor()
+    @IBAction func menuButton(sender: UIButton) {
+        performSegueWithIdentifier("openMenu", sender: nil)
+    }
+    @IBAction func edgePanGesture(sender: UIScreenEdgePanGestureRecognizer) {
+        let translation = sender.translationInView(view)
+        
+        let progress = MenuHelper.calculateProgress(translation, viewBounds: view.bounds, direction: .Right)
+        
+        MenuHelper.mapGestureStateToInteractor(
+            sender.state,
+            progress: progress,
+            interactor: interactor){
+                self.performSegueWithIdentifier("openMenu", sender: nil)
+        }
+    }
+    
+    
     // GRAPH
     @IBOutlet weak var barChartView: BarChartView!
     @IBOutlet weak var weeklyLabel: UIButton!
@@ -235,6 +253,10 @@ class ViewController: UIViewController {
             progress.average = average
             progress.targetDistance = targetDistance
             progress.count = count
+        }
+        else if let destinationViewController = segue.destinationViewController as? MenuViewController {
+            destinationViewController.transitioningDelegate = self
+            destinationViewController.interactor = interactor
         }
         else {
             super.prepareForSegue(segue, sender: sender)
@@ -546,9 +568,22 @@ class ViewController: UIViewController {
         
         barChartView.drawGridBackgroundEnabled = true
         
-        chartDataSet.colors = [UIColor(red: 242/255, green: 242/255, blue: 242/255, alpha: 0.88)]
+        chartDataSet.colors = [UIColor(red: 228/255, green: 241/255, blue: 254/255, alpha: 0.88)]
         
     }
-    
 }
 
+extension ViewController: UIViewControllerTransitioningDelegate {
+    func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return PresentMenuAnimator()
+    }
+    func animationControllerForDismissedController(dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return DismissMenuAnimator()
+    }
+    func interactionControllerForDismissal(animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
+        return interactor.hasStarted ? interactor : nil
+    }
+    func interactionControllerForPresentation(animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
+        return interactor.hasStarted ? interactor : nil
+    }
+}
