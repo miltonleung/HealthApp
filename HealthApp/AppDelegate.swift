@@ -28,6 +28,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //            }
 //        }
         FIRApp.configure()
+        
+        UIApplication.sharedApplication().statusBarStyle = .LightContent
         return true
     }
 
