@@ -11,6 +11,8 @@ import HealthKit
 
 class CumulativeStatsViewController: UIViewController {
     
+    @IBOutlet weak var popUpView: UIView!
+    
     @IBOutlet weak var cumulativeSteps: UILabel!
     @IBOutlet weak var cumulativeDistance: UILabel!
     @IBOutlet weak var date: UILabel!
@@ -18,10 +20,15 @@ class CumulativeStatsViewController: UIViewController {
     var healthManager:HealthManager?
     let data = Data()
     
+    @IBAction func closeButton(sender: UIButton) {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
         healthManager = HealthManager()
+        
+        popUpView.layer.cornerRadius = 11
         
         authorizeHealthKit()
         updateFirstDate()

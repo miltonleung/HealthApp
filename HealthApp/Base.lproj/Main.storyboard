@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -21,20 +21,13 @@
             <string>Muli-Light</string>
             <string>Muli-Light</string>
             <string>Muli-Light</string>
-            <string>Muli-Light</string>
-            <string>Muli-Light</string>
-            <string>Muli-Light</string>
-            <string>Muli-Light</string>
-            <string>Muli-Light</string>
-            <string>Muli-Light</string>
-            <string>Muli-Light</string>
-            <string>Muli-Light</string>
-            <string>Muli-Light</string>
-            <string>Muli-Light</string>
-            <string>Muli-Light</string>
-            <string>Muli-Light</string>
         </mutableArray>
         <mutableArray key="Muli-Regular.ttf">
+            <string>Muli</string>
+            <string>Muli</string>
+            <string>Muli</string>
+            <string>Muli</string>
+            <string>Muli</string>
             <string>Muli</string>
             <string>Muli</string>
             <string>Muli</string>
@@ -551,10 +544,10 @@
             </objects>
             <point key="canvasLocation" x="-45" y="1156"/>
         </scene>
-        <!--View Controller-->
+        <!--Cumulative Stats View Controller-->
         <scene sceneID="yEH-h2-40I">
             <objects>
-                <viewController id="t0V-Rl-oNs" sceneMemberID="viewController">
+                <viewController id="t0V-Rl-oNs" customClass="CumulativeStatsViewController" customModule="SmallSteps" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="3ev-KW-Sl8"/>
                         <viewControllerLayoutGuide type="bottom" id="gos-WX-ohP"/>
@@ -588,6 +581,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
+                                            <action selector="closeButton:" destination="t0V-Rl-oNs" eventType="touchUpInside" id="rEZ-5p-Mc0"/>
                                             <action selector="closeButton:" destination="UI8-c1-9my" eventType="touchUpInside" id="y5c-fv-5da"/>
                                         </connections>
                                     </button>
@@ -599,26 +593,32 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="total distance (km)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SI9-Rs-lIx">
-                                        <rect key="frame" x="15" y="167" width="143" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="total steps" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sZe-f6-1f5">
-                                        <rect key="frame" x="15" y="129" width="81" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="15" y="166" width="150" height="21"/>
+                                        <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="17"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="steps" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0GW-AX-yci">
-                                        <rect key="frame" x="235" y="129" width="42" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="234" y="129" width="43" height="21"/>
+                                        <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="17"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="km" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aAp-iY-1Yl">
-                                        <rect key="frame" x="253" y="167" width="24" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="252" y="165" width="25" height="21"/>
+                                        <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e2n-5M-S7o">
+                                        <rect key="frame" x="142" y="110" width="0.0" height="0.0"/>
+                                        <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="13"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="total steps" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sZe-f6-1f5">
+                                        <rect key="frame" x="19" y="130" width="84.5" height="21"/>
+                                        <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="17"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -626,35 +626,43 @@
                                 <color key="backgroundColor" red="0.50588235294117645" green="0.81176470588235294" blue="0.8784313725490196" alpha="0.96999999999999997" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="h3v-mV-9eB" secondAttribute="bottom" constant="5" id="434-4T-IaQ"/>
-                                    <constraint firstItem="sZe-f6-1f5" firstAttribute="leading" secondItem="qH6-RJ-J0Q" secondAttribute="leading" constant="15" id="5V1-mk-uLQ"/>
-                                    <constraint firstItem="SI9-Rs-lIx" firstAttribute="top" secondItem="sZe-f6-1f5" secondAttribute="bottom" constant="17" id="A3F-wm-OTf"/>
+                                    <constraint firstItem="sZe-f6-1f5" firstAttribute="top" secondItem="e2n-5M-S7o" secondAttribute="bottom" constant="20" id="8a9-c2-v1q"/>
+                                    <constraint firstItem="0GW-AX-yci" firstAttribute="top" secondItem="e2n-5M-S7o" secondAttribute="bottom" constant="19" id="Dt3-ir-blb"/>
                                     <constraint firstItem="yyD-tx-ll8" firstAttribute="top" secondItem="WAX-B2-472" secondAttribute="bottom" constant="10" id="FUJ-O9-358"/>
+                                    <constraint firstItem="e2n-5M-S7o" firstAttribute="top" secondItem="yyD-tx-ll8" secondAttribute="bottom" id="GEz-Km-ICK"/>
                                     <constraint firstItem="WAX-B2-472" firstAttribute="centerX" secondItem="qH6-RJ-J0Q" secondAttribute="centerX" id="IAL-bs-Pk0"/>
                                     <constraint firstItem="WAX-B2-472" firstAttribute="top" secondItem="qH6-RJ-J0Q" secondAttribute="top" constant="8" id="Ie3-vw-hAE"/>
-                                    <constraint firstItem="aAp-iY-1Yl" firstAttribute="top" secondItem="0GW-AX-yci" secondAttribute="bottom" constant="17" id="MjX-WU-nmT"/>
+                                    <constraint firstItem="aAp-iY-1Yl" firstAttribute="top" secondItem="0GW-AX-yci" secondAttribute="bottom" constant="15" id="MjX-WU-nmT"/>
                                     <constraint firstAttribute="trailing" secondItem="h3v-mV-9eB" secondAttribute="trailing" constant="5" id="QAs-77-EGO"/>
                                     <constraint firstAttribute="height" constant="280" id="Rov-Wv-HNe"/>
+                                    <constraint firstItem="sZe-f6-1f5" firstAttribute="leading" secondItem="qH6-RJ-J0Q" secondAttribute="leading" constant="19" id="SVE-bz-Fxx"/>
                                     <constraint firstItem="SI9-Rs-lIx" firstAttribute="leading" secondItem="qH6-RJ-J0Q" secondAttribute="leading" constant="15" id="UCj-P4-eYD"/>
                                     <constraint firstItem="yyD-tx-ll8" firstAttribute="centerX" secondItem="qH6-RJ-J0Q" secondAttribute="centerX" id="Vxq-zS-ACs"/>
+                                    <constraint firstItem="SI9-Rs-lIx" firstAttribute="top" secondItem="sZe-f6-1f5" secondAttribute="bottom" constant="15" id="Z6A-gj-5yV"/>
                                     <constraint firstAttribute="trailing" secondItem="aAp-iY-1Yl" secondAttribute="trailing" constant="8" id="hui-Qv-om7"/>
                                     <constraint firstItem="h3v-mV-9eB" firstAttribute="leading" secondItem="qH6-RJ-J0Q" secondAttribute="leading" constant="5" id="lc9-W4-te0"/>
-                                    <constraint firstItem="sZe-f6-1f5" firstAttribute="top" secondItem="yyD-tx-ll8" secondAttribute="bottom" constant="19" id="q9I-fT-ose"/>
                                     <constraint firstAttribute="trailing" secondItem="0GW-AX-yci" secondAttribute="trailing" constant="8" id="rt2-PZ-dLL"/>
                                     <constraint firstAttribute="width" constant="285" id="s8t-L9-SqQ"/>
-                                    <constraint firstItem="0GW-AX-yci" firstAttribute="top" secondItem="yyD-tx-ll8" secondAttribute="bottom" constant="19" id="t4d-p6-eXU"/>
+                                    <constraint firstItem="e2n-5M-S7o" firstAttribute="centerX" secondItem="qH6-RJ-J0Q" secondAttribute="centerX" id="wEv-o5-1Gt"/>
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="qH6-RJ-J0Q" firstAttribute="centerX" secondItem="wVp-PV-KXT" secondAttribute="centerX" id="SNQ-wD-wVa"/>
                             <constraint firstItem="qH6-RJ-J0Q" firstAttribute="centerY" secondItem="wVp-PV-KXT" secondAttribute="centerY" id="ZVt-oB-Zhd"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="cumulativeDistance" destination="aAp-iY-1Yl" id="DaU-Px-vgx"/>
+                        <outlet property="cumulativeSteps" destination="0GW-AX-yci" id="SUP-Dx-MKh"/>
+                        <outlet property="date" destination="e2n-5M-S7o" id="jRy-2O-Maa"/>
+                        <outlet property="popUpView" destination="qH6-RJ-J0Q" id="PoU-uX-oo5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qoM-gF-VlP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="99" y="914"/>
+            <point key="canvasLocation" x="99" y="927"/>
         </scene>
         <!--Progress View Controller-->
         <scene sceneID="7Ju-q8-bCN">
@@ -1031,7 +1039,7 @@
                         <segue destination="nYq-Y5-uoL" kind="presentation" identifier="openMenu" id="MRj-Ah-4IB"/>
                         <segue destination="UI8-c1-9my" kind="presentation" identifier="settings" modalPresentationStyle="overCurrentContext" id="StZ-6I-GS3"/>
                         <segue destination="Mc7-vA-LAY" kind="presentation" identifier="medals" modalPresentationStyle="overCurrentContext" id="fTv-Rc-VWx"/>
-                        <segue destination="t0V-Rl-oNs" kind="presentation" identifier="statistics" id="jng-6G-Hlx"/>
+                        <segue destination="t0V-Rl-oNs" kind="presentation" identifier="statistics" modalPresentationStyle="overCurrentContext" id="jng-6G-Hlx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -1043,99 +1051,6 @@
                 </screenEdgePanGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-11" y="187"/>
-        </scene>
-        <!--Current Stats View Controller-->
-        <scene sceneID="TCy-BN-7bT">
-            <objects>
-                <viewController storyboardIdentifier="stepPage" id="15V-Jg-sjG" customClass="CurrentStatsViewController" customModule="SmallSteps" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="C3n-kc-lFH"/>
-                        <viewControllerLayoutGuide type="bottom" id="YMI-pV-fPx"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="kFP-sb-qLP">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tHC-UJ-264">
-                                <rect key="frame" x="543" y="107" width="12" height="25"/>
-                                <fontDescription key="fontDescription" name="Muli-Light" family="Muli" pointSize="20"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SVY-Jj-1rb">
-                                <rect key="frame" x="544" y="167" width="12" height="25"/>
-                                <fontDescription key="fontDescription" name="Muli-Light" family="Muli" pointSize="20"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Daily Statistics" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i3I-4W-Uwy">
-                                <rect key="frame" x="217" y="5" width="166" height="30"/>
-                                <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="24"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nyt-UQ-iqD">
-                                <rect key="frame" x="282" y="40" width="36.5" height="17.5"/>
-                                <fontDescription key="fontDescription" name="Muli-Light" family="Muli" pointSize="14"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="steps:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tHb-KD-H32">
-                                <rect key="frame" x="52" y="107" width="55.5" height="25"/>
-                                <fontDescription key="fontDescription" name="Muli-Light" family="Muli" pointSize="20"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZLT-fE-i26">
-                                <rect key="frame" x="563" y="117" width="0.0" height="0.0"/>
-                                <fontDescription key="fontDescription" name="Muli-Light" family="Muli" pointSize="10"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aon-Wi-JFt">
-                                <rect key="frame" x="563" y="165" width="0.0" height="0.0"/>
-                                <fontDescription key="fontDescription" name="Muli-Light" family="Muli" pointSize="10"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="distance:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="617-bk-kjb">
-                                <rect key="frame" x="52" y="167" width="85" height="25"/>
-                                <fontDescription key="fontDescription" name="Muli-Light" family="Muli" pointSize="20"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" red="0.8417232090202833" green="1" blue="0.8950669295446696" alpha="0.0" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstItem="Nyt-UQ-iqD" firstAttribute="centerX" secondItem="kFP-sb-qLP" secondAttribute="centerX" id="2Wl-la-CgM"/>
-                            <constraint firstItem="tHC-UJ-264" firstAttribute="top" secondItem="C3n-kc-lFH" secondAttribute="bottom" constant="107" id="3NL-9D-mMz"/>
-                            <constraint firstItem="SVY-Jj-1rb" firstAttribute="top" secondItem="tHC-UJ-264" secondAttribute="bottom" constant="35" id="3hv-eH-7gG"/>
-                            <constraint firstItem="i3I-4W-Uwy" firstAttribute="centerX" secondItem="kFP-sb-qLP" secondAttribute="centerX" id="82b-eL-zAR"/>
-                            <constraint firstItem="Nyt-UQ-iqD" firstAttribute="top" secondItem="i3I-4W-Uwy" secondAttribute="bottom" constant="5" id="Iaw-ZF-APP"/>
-                            <constraint firstItem="tHb-KD-H32" firstAttribute="leading" secondItem="kFP-sb-qLP" secondAttribute="leadingMargin" constant="32" id="Lli-g0-zeu"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="ZLT-fE-i26" secondAttribute="trailing" constant="17" id="Pwh-ev-dbk"/>
-                            <constraint firstItem="tHb-KD-H32" firstAttribute="top" secondItem="C3n-kc-lFH" secondAttribute="bottom" constant="107" id="Zn7-H9-DGT"/>
-                            <constraint firstItem="Aon-Wi-JFt" firstAttribute="top" secondItem="ZLT-fE-i26" secondAttribute="bottom" constant="48" id="bI0-0D-ANk"/>
-                            <constraint firstItem="617-bk-kjb" firstAttribute="top" secondItem="tHb-KD-H32" secondAttribute="bottom" constant="35" id="kxN-o7-EWR"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Aon-Wi-JFt" secondAttribute="trailing" constant="17" id="lO8-3P-E4L"/>
-                            <constraint firstItem="i3I-4W-Uwy" firstAttribute="top" secondItem="C3n-kc-lFH" secondAttribute="bottom" constant="5" id="oMC-ph-sd5"/>
-                            <constraint firstItem="ZLT-fE-i26" firstAttribute="top" secondItem="C3n-kc-lFH" secondAttribute="bottom" constant="117" id="p9Y-Fw-mEe"/>
-                            <constraint firstItem="ZLT-fE-i26" firstAttribute="leading" secondItem="tHC-UJ-264" secondAttribute="trailing" constant="8" id="v63-CO-3fi"/>
-                            <constraint firstItem="617-bk-kjb" firstAttribute="leading" secondItem="kFP-sb-qLP" secondAttribute="leadingMargin" constant="32" id="zZc-Ol-gK7"/>
-                            <constraint firstItem="Aon-Wi-JFt" firstAttribute="leading" secondItem="SVY-Jj-1rb" secondAttribute="trailing" constant="7" id="zzh-gx-wfP"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="currentDistance" destination="SVY-Jj-1rb" id="4B8-dG-Rev"/>
-                        <outlet property="currentSteps" destination="tHC-UJ-264" id="HkX-Cs-JhH"/>
-                        <outlet property="date" destination="Nyt-UQ-iqD" id="Dxl-PK-NiV"/>
-                        <outlet property="outOfDistance" destination="Aon-Wi-JFt" id="jgg-op-QP0"/>
-                        <outlet property="outOfSteps" destination="ZLT-fE-i26" id="hg5-q3-DSh"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="vIU-wr-ZR1" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1006" y="987"/>
         </scene>
         <!--Menu View Controller-->
         <scene sceneID="4OT-gB-0gR">
@@ -1230,81 +1145,6 @@
             </objects>
             <point key="canvasLocation" x="615" y="187"/>
         </scene>
-        <!--Cumulative Stats View Controller-->
-        <scene sceneID="Jyd-H8-Alf">
-            <objects>
-                <viewController storyboardIdentifier="distancePage" id="nFZ-GX-ATK" customClass="CumulativeStatsViewController" customModule="SmallSteps" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="L14-a4-wzU"/>
-                        <viewControllerLayoutGuide type="bottom" id="XKT-rD-WNk"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="S0d-Qf-EqC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hmg-Ld-ZZI">
-                                <rect key="frame" x="555" y="162" width="0.0" height="0.0"/>
-                                <fontDescription key="fontDescription" name="Muli-Light" family="Muli" pointSize="20"/>
-                                <color key="textColor" red="0.29803921568627451" green="0.29803921568627451" blue="0.29803921568627451" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lifetime Statistics" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FWn-G5-LoY">
-                                <rect key="frame" x="200" y="25" width="200.5" height="30.5"/>
-                                <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="24"/>
-                                <color key="textColor" red="0.29803921568627451" green="0.29803921568627451" blue="0.29803921568627451" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="376-Vg-TSS">
-                                <rect key="frame" x="300" y="60" width="0.0" height="0.0"/>
-                                <fontDescription key="fontDescription" name="Muli-Light" family="Muli" pointSize="14"/>
-                                <color key="textColor" red="0.29803921568627451" green="0.29803921568627451" blue="0.29803921568627451" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="total steps:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="76j-Hb-Lny">
-                                <rect key="frame" x="52" y="127" width="105" height="25"/>
-                                <fontDescription key="fontDescription" name="Muli-Light" family="Muli" pointSize="20"/>
-                                <color key="textColor" red="0.29803921568627451" green="0.29803921568627451" blue="0.29803921568627451" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q8W-W2-wHT">
-                                <rect key="frame" x="555" y="127" width="0.0" height="0.0"/>
-                                <fontDescription key="fontDescription" name="Muli-Light" family="Muli" pointSize="20"/>
-                                <color key="textColor" red="0.29803921568627451" green="0.29803921568627451" blue="0.29803921568627451" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="total distance:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JJg-WS-H3a">
-                                <rect key="frame" x="52" y="187" width="135" height="25"/>
-                                <fontDescription key="fontDescription" name="Muli-Light" family="Muli" pointSize="20"/>
-                                <color key="textColor" red="0.29803921568627451" green="0.29803921568627451" blue="0.29803921568627451" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" red="1" green="0.66512963370067069" blue="0.68081878585008027" alpha="0.0" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstItem="JJg-WS-H3a" firstAttribute="top" secondItem="76j-Hb-Lny" secondAttribute="bottom" constant="35" id="42E-DC-29e"/>
-                            <constraint firstItem="FWn-G5-LoY" firstAttribute="centerX" secondItem="S0d-Qf-EqC" secondAttribute="centerX" id="Boo-Xh-0L1"/>
-                            <constraint firstItem="JJg-WS-H3a" firstAttribute="leading" secondItem="S0d-Qf-EqC" secondAttribute="leadingMargin" constant="32" id="Djw-Un-2nO"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="hmg-Ld-ZZI" secondAttribute="trailing" constant="25" id="VeY-1j-KJr"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Q8W-W2-wHT" secondAttribute="trailing" constant="25" id="WBy-Sg-Ez1"/>
-                            <constraint firstItem="376-Vg-TSS" firstAttribute="centerX" secondItem="S0d-Qf-EqC" secondAttribute="centerX" id="WVn-99-gzV"/>
-                            <constraint firstItem="Q8W-W2-wHT" firstAttribute="top" secondItem="L14-a4-wzU" secondAttribute="bottom" constant="107" id="ZdY-uc-agL"/>
-                            <constraint firstItem="FWn-G5-LoY" firstAttribute="top" secondItem="L14-a4-wzU" secondAttribute="bottom" constant="5" id="a8d-C5-PFn"/>
-                            <constraint firstItem="76j-Hb-Lny" firstAttribute="top" secondItem="L14-a4-wzU" secondAttribute="bottom" constant="107" id="dPF-yD-CDj"/>
-                            <constraint firstItem="hmg-Ld-ZZI" firstAttribute="top" secondItem="Q8W-W2-wHT" secondAttribute="bottom" constant="35" id="i0t-hm-vH6"/>
-                            <constraint firstItem="376-Vg-TSS" firstAttribute="top" secondItem="FWn-G5-LoY" secondAttribute="bottom" constant="5" id="qUk-Kj-KEB"/>
-                            <constraint firstItem="76j-Hb-Lny" firstAttribute="leading" secondItem="S0d-Qf-EqC" secondAttribute="leadingMargin" constant="32" id="z0U-d6-wpQ"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="cumulativeDistance" destination="hmg-Ld-ZZI" id="7dt-OS-XRj"/>
-                        <outlet property="cumulativeSteps" destination="Q8W-W2-wHT" id="Vke-Q3-i2l"/>
-                        <outlet property="date" destination="376-Vg-TSS" id="6Jn-W0-zck"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="UuY-Ta-RwW" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1129" y="1046"/>
-        </scene>
         <!--Settings View Controller-->
         <scene sceneID="MCx-GL-Wzn">
             <objects>
@@ -1358,14 +1198,14 @@
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="target distance (km)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bss-rV-wcx">
-                                        <rect key="frame" x="15" y="167" width="155" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="15" y="167" width="161.5" height="21"/>
+                                        <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="17"/>
                                         <color key="textColor" red="0.4392156862745098" green="0.4392156862745098" blue="0.4392156862745098" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="target steps " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PFY-gj-9EK">
-                                        <rect key="frame" x="15" y="129" width="97" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="15" y="129" width="101" height="21"/>
+                                        <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="17"/>
                                         <color key="textColor" red="0.4392156862745098" green="0.4392156862745098" blue="0.4392156862745098" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
