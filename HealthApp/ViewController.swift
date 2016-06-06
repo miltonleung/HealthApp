@@ -135,6 +135,11 @@ class ViewController: UIViewController {
     var targetDistance: Int!
     var count: Int!
     
+    // Passed to LifetimeStatistics
+    var lifetimeFirstDate:String!
+    var lifetimeTotalSteps:Int!
+    var lifetimeTotalDistance:Double!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -162,9 +167,10 @@ class ViewController: UIViewController {
         weeklyLabel.selected = true
         self.dailyAverage.text = "daily average: 0 km"
         
-        //        NSNotificationCenter.defaultCenter().addObserver(self, selector: "performLifetimeSegue", name: "lifetimeNotification", object: nil)
+                NSNotificationCenter.defaultCenter().addObserver(self, selector: "performLifetimeSegue", name: "lifetimeNotification", object: nil)
         //        NSNotificationCenter.defaultCenter().addObserver(self, selector: "unwrapNotification:", name: "dailyNotification", object: nil)
         
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "viewWillAppear:", name: "enterForeground", object: nil)
         
         let settings = UIUserNotificationSettings(forTypes: [.Alert, .Badge], categories: nil)
         UIApplication.sharedApplication().registerUserNotificationSettings(settings)
@@ -285,6 +291,12 @@ class ViewController: UIViewController {
         else if segue.identifier == "introSegue" {
             let intro = segue.destinationViewController as! IntroViewController
             intro.delegate = self
+        }
+        else if segue.identifier == "statistics" {
+            let statistics = segue.destinationViewController as! CumulativeStatsViewController
+            statistics.firstDate = lifetimeFirstDate
+            statistics.totalDistance = lifetimeTotalDistance
+            statistics.totalSteps = lifetimeTotalSteps
         }
         else if let destinationViewController = segue.destinationViewController as? MenuViewController {
             destinationViewController.transitioningDelegate = self
@@ -456,6 +468,11 @@ class ViewController: UIViewController {
         
         updatePedometer()
         
+        // LIFETIME STATISTICS
+        updateFirstDate()
+        updateTotalSteps()
+        updateTotalDistance()
+        
         barChartView.backgroundColor = UIColor.clearColor()
         if weeklyOrMonthly == 0 {
             
@@ -610,6 +627,43 @@ class ViewController: UIViewController {
         chartDataSet.colors = [UIColor(red: 228/255, green: 241/255, blue: 254/255, alpha: 0.88)]
         
     }
+    
+    func updateFirstDate() {
+        if let firstDate = NSUserDefaults.standardUserDefaults().stringForKey("firstDate") {
+            self.lifetimeFirstDate = ModelInterface.sharedInstance.getDayNameByString(firstDate)
+        }
+    }
+    
+    func updateTotalSteps() {
+        let stepsCount = HKQuantityType.quantityTypeForIdentifier(HKQuantityTypeIdentifierStepCount)
+        
+        self.healthManager?.readTotalSample(stepsCount!, completion: { (totalSteps, error) -> Void in
+            if (error != nil) {
+                print("Error reading total steps from HealthKit")
+                return;
+            }
+            
+            self.lifetimeTotalSteps = Int(totalSteps.1.doubleValueForUnit(HKUnit.countUnit()))
+            self.data.totalSteps = self.lifetimeTotalSteps
+            
+        });
+    }
+    func updateTotalDistance() {
+        let distanceType = HKQuantityType.quantityTypeForIdentifier(HKQuantityTypeIdentifierDistanceWalkingRunning)
+        
+        self.healthManager?.readTotalSample(distanceType!, completion: { (totalDistance, error) -> Void in
+            if (error != nil) {
+                print("Error reading total distance from HealthKit")
+                return
+            }
+            
+            let totalResult = Int(totalDistance.1.doubleValueForUnit(HKUnit.meterUnitWithMetricPrefix(.Kilo)))
+            self.data.totalDistance = totalResult
+            self.lifetimeTotalDistance = totalDistance.1.doubleValueForUnit(HKUnit.meterUnitWithMetricPrefix(.Kilo))
+            
+        });
+    }
+    
 }
 
 extension ViewController: UIViewControllerTransitioningDelegate {

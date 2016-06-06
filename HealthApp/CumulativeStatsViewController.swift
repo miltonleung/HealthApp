@@ -20,6 +20,11 @@ class CumulativeStatsViewController: UIViewController {
     var healthManager:HealthManager?
     let data = Data()
     
+    // Passed in from view controller
+    var firstDate:String!
+    var totalSteps:Int!
+    var totalDistance:Double!
+    
     @IBAction func closeButton(sender: UIButton) {
         dismissViewControllerAnimated(true, completion: nil)
     }
@@ -59,56 +64,30 @@ class CumulativeStatsViewController: UIViewController {
     
     func updateFirstDate() {
         if let firstDate = NSUserDefaults.standardUserDefaults().stringForKey("firstDate") {
-            self.date.text = "since \(ModelInterface.sharedInstance.getDayNameByString(firstDate))"
+            self.date.text = "since \(firstDate)"
         }
     }
     
     func updateTotalSteps() {
-        let stepsCount = HKQuantityType.quantityTypeForIdentifier(HKQuantityTypeIdentifierStepCount)
         
-        self.healthManager?.readTotalSample(stepsCount!, completion: { (totalSteps, error) -> Void in
-            if (error != nil) {
-                print("Error reading total steps from HealthKit")
-                return;
-            }
-            
-            
-            dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                let totalResult = Int(totalSteps.1.doubleValueForUnit(HKUnit.countUnit()))
-                self.data.totalSteps = totalResult
-                let totalResultwithCommas = ModelInterface.sharedInstance.addThousandSeperator(totalResult)
-                self.cumulativeSteps.text = "\(totalResultwithCommas)"
-                print(self.cumulativeSteps.text!)
-            });
-        });
+        let totalResultwithCommas = ModelInterface.sharedInstance.addThousandSeperator(totalSteps)
+        self.cumulativeSteps.text = "\(totalResultwithCommas)"
+        print(self.cumulativeSteps.text!)
+        
     }
     func updateTotalDistance() {
-        let distanceType = HKQuantityType.quantityTypeForIdentifier(HKQuantityTypeIdentifierDistanceWalkingRunning)
         
-        self.healthManager?.readTotalSample(distanceType!, completion: { (totalDistance, error) -> Void in
-            if (error != nil) {
-                print("Error reading total distance from HealthKit")
-                return
-            }
-            
-            dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                let totalResult = Int(totalDistance.1.doubleValueForUnit(HKUnit.meterUnitWithMetricPrefix(.Kilo)))
-                self.data.totalDistance = totalResult
-                
-                
-                let unrounded = totalDistance.1.doubleValueForUnit(HKUnit.meterUnitWithMetricPrefix(.Kilo))
-                
-                var numberFormatter = NSNumberFormatter()
-                numberFormatter.numberStyle = NSNumberFormatterStyle.DecimalStyle
-                numberFormatter.minimumFractionDigits = 0
-                numberFormatter.maximumFractionDigits = 1
-                let rounded = numberFormatter.stringFromNumber(unrounded)!
-//                let totalResultwithCommas = String(format: "%.1f", rounded)
-                
-                self.cumulativeDistance.text = "\(rounded) km"
-                print(self.cumulativeDistance.text!)
-            });
-        });
+        
+        var numberFormatter = NSNumberFormatter()
+        numberFormatter.numberStyle = NSNumberFormatterStyle.DecimalStyle
+        numberFormatter.minimumFractionDigits = 0
+        numberFormatter.maximumFractionDigits = 1
+        let rounded = numberFormatter.stringFromNumber(totalDistance)!
+        //                let totalResultwithCommas = String(format: "%.1f", rounded)
+        
+        self.cumulativeDistance.text = "\(rounded) km"
+        print(self.cumulativeDistance.text!)
+        
     }
     
 }
