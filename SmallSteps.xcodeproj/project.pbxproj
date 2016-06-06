@@ -14,8 +14,6 @@
 		52481ADB1D036914007C1526 /* KDCircularProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52481ADA1D036914007C1526 /* KDCircularProgress.swift */; };
 		5253C8B61CD6976B00F2713A /* AchievementModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5253C8B51CD6976B00F2713A /* AchievementModel.swift */; };
 		5253C8BA1CD69FD000F2713A /* TestForAchievements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5253C8B91CD69FD000F2713A /* TestForAchievements.swift */; };
-		5253C8BC1CD7054A00F2713A /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5253C8BB1CD7054A00F2713A /* PageViewController.swift */; };
-		5253C8BE1CD7394C00F2713A /* CurrentStatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5253C8BD1CD7394C00F2713A /* CurrentStatsViewController.swift */; };
 		5253C8C01CD73A2600F2713A /* CumulativeStatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5253C8BF1CD73A2600F2713A /* CumulativeStatsViewController.swift */; };
 		525AA2E81CF95F3500704498 /* ProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525AA2E71CF95F3500704498 /* ProgressViewController.swift */; };
 		52888D711CD8810600A30E8A /* Muli-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 52888D6D1CD8810600A30E8A /* Muli-Italic.ttf */; };
@@ -140,7 +138,6 @@
 		52888FC41CD88CC000A30E8A /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 52888F371CD88CC000A30E8A /* Info.plist */; };
 		52888FD11CD88CDF00A30E8A /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52888FCA1CD88CC000A30E8A /* Charts.framework */; };
 		52888FD21CD88CDF00A30E8A /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 52888FCA1CD88CC000A30E8A /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		52888FD71CD88E7C00A30E8A /* GraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52888FD61CD88E7C00A30E8A /* GraphViewController.swift */; };
 		528B37E31CD4612B00F8338D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528B37E21CD4612B00F8338D /* AppDelegate.swift */; };
 		528B37E51CD4612B00F8338D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528B37E41CD4612B00F8338D /* ViewController.swift */; };
 		528B37E81CD4612B00F8338D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 528B37E61CD4612B00F8338D /* Main.storyboard */; };
@@ -267,8 +264,6 @@
 		52481ADA1D036914007C1526 /* KDCircularProgress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KDCircularProgress.swift; sourceTree = "<group>"; };
 		5253C8B51CD6976B00F2713A /* AchievementModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AchievementModel.swift; sourceTree = "<group>"; };
 		5253C8B91CD69FD000F2713A /* TestForAchievements.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TestForAchievements.swift; path = ../HealthApp/TestForAchievements.swift; sourceTree = "<group>"; };
-		5253C8BB1CD7054A00F2713A /* PageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
-		5253C8BD1CD7394C00F2713A /* CurrentStatsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentStatsViewController.swift; sourceTree = "<group>"; };
 		5253C8BF1CD73A2600F2713A /* CumulativeStatsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CumulativeStatsViewController.swift; sourceTree = "<group>"; };
 		525AA2E71CF95F3500704498 /* ProgressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressViewController.swift; sourceTree = "<group>"; };
 		52888D6D1CD8810600A30E8A /* Muli-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Muli-Italic.ttf"; sourceTree = "<group>"; };
@@ -394,7 +389,6 @@
 		52888F341CD88CC000A30E8A /* ChartViewPortHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartViewPortHandler.swift; sourceTree = "<group>"; };
 		52888F361CD88CC000A30E8A /* Charts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Charts.h; sourceTree = "<group>"; };
 		52888F371CD88CC000A30E8A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		52888FD61CD88E7C00A30E8A /* GraphViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphViewController.swift; sourceTree = "<group>"; };
 		528B37DF1CD4612B00F8338D /* SmallSteps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmallSteps.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		528B37E21CD4612B00F8338D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		528B37E41CD4612B00F8338D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -802,9 +796,6 @@
 				52A665F21CFBA78F00C52E84 /* CollectionViewCell.swift */,
 				52E9664F1CF16573008D60E6 /* SettingsViewController.swift */,
 				5253C8BF1CD73A2600F2713A /* CumulativeStatsViewController.swift */,
-				5253C8BD1CD7394C00F2713A /* CurrentStatsViewController.swift */,
-				5253C8BB1CD7054A00F2713A /* PageViewController.swift */,
-				52888FD61CD88E7C00A30E8A /* GraphViewController.swift */,
 				52888E831CD88C1800A30E8A /* Charts.xcodeproj */,
 				52888E921CD88CC000A30E8A /* Charts */,
 				528B37E91CD4612B00F8338D /* Assets.xcassets */,
@@ -949,12 +940,12 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 52888E841CD88C1800A30E8A /* Products */;
-					ProjectRef = 52888E831CD88C1800A30E8A /* Charts.xcodeproj */;
-				},
-				{
 					ProductGroup = 52888E961CD88CC000A30E8A /* Products */;
 					ProjectRef = 52888E951CD88CC000A30E8A /* Charts.xcodeproj */;
+				},
+				{
+					ProductGroup = 52888E841CD88C1800A30E8A /* Products */;
+					ProjectRef = 52888E831CD88C1800A30E8A /* Charts.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -1195,7 +1186,6 @@
 				52888F841CD88CC000A30E8A /* IBubbleChartDataSet.swift in Sources */,
 				528B37E31CD4612B00F8338D /* AppDelegate.swift in Sources */,
 				52888F771CD88CC000A30E8A /* CombinedChartData.swift in Sources */,
-				52888FD71CD88E7C00A30E8A /* GraphViewController.swift in Sources */,
 				52888F8D1CD88CC000A30E8A /* ChartDataApproximatorFilter.swift in Sources */,
 				52888FB11CD88CC000A30E8A /* ChartYAxisRenderer.swift in Sources */,
 				52888FBF1CD88CC000A30E8A /* ChartSelectionDetail.swift in Sources */,
@@ -1238,7 +1228,6 @@
 				52888F8C1CD88CC000A30E8A /* IScatterChartDataSet.swift in Sources */,
 				52888FAA1CD88CC000A30E8A /* ChartDataRendererBase.swift in Sources */,
 				525AA2E81CF95F3500704498 /* ProgressViewController.swift in Sources */,
-				5253C8BE1CD7394C00F2713A /* CurrentStatsViewController.swift in Sources */,
 				52888F621CD88CC000A30E8A /* ChartComponentBase.swift in Sources */,
 				52888F5C1CD88CC000A30E8A /* LineChartView.swift in Sources */,
 				52888FA21CD88CC000A30E8A /* AnimatedZoomViewJob.swift in Sources */,
@@ -1247,7 +1236,6 @@
 				52888F601CD88CC000A30E8A /* ScatterChartView.swift in Sources */,
 				52888F971CD88CC000A30E8A /* CombinedHighlighter.swift in Sources */,
 				52888F721CD88CC000A30E8A /* CandleChartDataEntry.swift in Sources */,
-				5253C8BC1CD7054A00F2713A /* PageViewController.swift in Sources */,
 				52888FA81CD88CC000A30E8A /* CandleStickChartRenderer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
