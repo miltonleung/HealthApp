@@ -15,6 +15,7 @@ protocol MenuSelectDelegate {
 }
 protocol RefreshDelegate {
     func refresh(td: Int, ts: Int)
+    func reload()
 }
 class ViewController: UIViewController {
     
@@ -140,6 +141,12 @@ class ViewController: UIViewController {
         
         healthManager = HealthManager()
         
+        
+        let firstRun = NSUserDefaults.standardUserDefaults().boolForKey("firstRun") as Bool
+        if !firstRun {
+            reset()
+        }
+        
         // PROGRESS
         outterCircle.angle = 0
         innerCircle.angle = 0
@@ -153,16 +160,11 @@ class ViewController: UIViewController {
         
         // GRAPH
         weeklyLabel.selected = true
-        healthManager = HealthManager()
         self.dailyAverage.text = "daily average: 0 km"
         
         //        NSNotificationCenter.defaultCenter().addObserver(self, selector: "performLifetimeSegue", name: "lifetimeNotification", object: nil)
         //        NSNotificationCenter.defaultCenter().addObserver(self, selector: "unwrapNotification:", name: "dailyNotification", object: nil)
         
-        let firstRun = NSUserDefaults.standardUserDefaults().boolForKey("firstRun") as Bool
-        if !firstRun {
-            reset()
-        }
         
         let settings = UIUserNotificationSettings(forTypes: [.Alert, .Badge], categories: nil)
         UIApplication.sharedApplication().registerUserNotificationSettings(settings)
@@ -279,6 +281,10 @@ class ViewController: UIViewController {
         else if segue.identifier == "settings" {
             let settings = segue.destinationViewController as! SettingsViewController
             settings.delegate = self
+        }
+        else if segue.identifier == "introSegue" {
+            let intro = segue.destinationViewController as! IntroViewController
+            intro.delegate = self
         }
         else if let destinationViewController = segue.destinationViewController as? MenuViewController {
             destinationViewController.transitioningDelegate = self
@@ -659,5 +665,8 @@ extension ViewController: RefreshDelegate {
         updateCirclePercentage()
         
         dailyTarget.text = "daily goal: \(td) km"
+    }
+    func reload() {
+        viewWillAppear(true)
     }
 }

@@ -14,6 +14,8 @@ class IntroViewController: UIViewController {
     var healthManager:HealthManager?
     var freshOrExisting = 0 // 0 is fresh, 1 is existing
     
+    var delegate: RefreshDelegate?
+    
     @IBOutlet weak var welcomeView: UIView!
     @IBOutlet weak var authorizeView: UIView!
     @IBAction func existingButton(sender: AnyObject) {
@@ -57,7 +59,9 @@ class IntroViewController: UIViewController {
                     NSUserDefaults.standardUserDefaults().setObject(today, forKey: "firstDate")
                     
                 }
-                self.dismissViewControllerAnimated(true, completion: nil)
+                self.dismissViewControllerAnimated(true) {
+                    self.delegate?.reload()
+                }
             }
             else {
                 print("HealthKit denied")
