@@ -64,7 +64,7 @@ class ViewController: UIViewController {
         readData()
     }
     var days = [String]()
-    var weeklyOrMonthly = 1
+    var weeklyOrMonthly:Int?
     let data = Data()
     
     // PROGRESS
@@ -151,6 +151,8 @@ class ViewController: UIViewController {
         if !firstRun {
             reset()
         }
+        
+        weeklyOrMonthly = 1
         
         // PROGRESS
         outterCircle.angle = 0
@@ -465,6 +467,7 @@ class ViewController: UIViewController {
         dailyTarget.text = "daily goal: \(td) km"
         
         days = [String]()
+        
         
         updatePedometer()
         
