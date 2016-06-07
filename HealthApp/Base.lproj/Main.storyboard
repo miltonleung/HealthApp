@@ -839,19 +839,19 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V1s-rh-agr">
-                                <rect key="frame" x="300" y="377" width="0.0" height="0.0"/>
+                                <rect key="frame" x="300" y="383" width="0.0" height="0.0"/>
                                 <fontDescription key="fontDescription" name="Muli-Light" family="Muli" pointSize="14"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="daily average: 8 km" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="phd-mJ-cnM">
-                                <rect key="frame" x="235" y="354" width="130" height="18"/>
+                                <rect key="frame" x="235" y="360" width="130" height="18"/>
                                 <fontDescription key="fontDescription" name="Muli-Light" family="Muli" pointSize="14"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e58-TZ-8yW" customClass="BarChartView" customModule="SmallSteps" customModuleProvider="target">
-                                <rect key="frame" x="20" y="382" width="560" height="198"/>
+                                <rect key="frame" x="20" y="388" width="560" height="192"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gia-d6-6Ml" customClass="KDCircularProgress" customModule="SmallSteps" customModuleProvider="target">
@@ -1006,7 +1006,7 @@
                         <constraints>
                             <constraint firstItem="V1s-rh-agr" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="0C6-Kz-5Kw"/>
                             <constraint firstItem="zTA-RW-HtL" firstAttribute="width" secondItem="M1K-ib-J6C" secondAttribute="width" id="0dp-GM-cyf"/>
-                            <constraint firstItem="e58-TZ-8yW" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.33" id="344-b1-aQY"/>
+                            <constraint firstItem="e58-TZ-8yW" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.32" id="344-b1-aQY"/>
                             <constraint firstAttribute="trailingMargin" secondItem="e58-TZ-8yW" secondAttribute="trailing" id="3nq-TU-b1b"/>
                             <constraint firstItem="zTA-RW-HtL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="50" id="66e-Jv-OQX"/>
                             <constraint firstItem="V1s-rh-agr" firstAttribute="top" secondItem="phd-mJ-cnM" secondAttribute="bottom" constant="5" id="Cfm-wL-ukQ"/>
