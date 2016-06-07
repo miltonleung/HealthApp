@@ -539,9 +539,6 @@ class ViewController: UIViewController {
                 self.days.append(day)
             }
             
-            if !self.days.isEmpty {
-                self.days[self.days.count - 1] = "Today"
-            }
             self.setChart(self.days, values: distances, isWeekly: 1)
             dispatch_async(dispatch_get_main_queue(), { () -> Void  in
                 self.barChartView.animate(yAxisDuration: 1.0)
