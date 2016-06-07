@@ -158,7 +158,7 @@ class ViewController: UIViewController {
         outterCircle.angle = 0
         innerCircle.angle = 0
         denominator.text = "of target reached"
-        circlePercentage.text = "0"
+        circlePercentage.text = "0.0"
         
         // STEPS & DISTANCE
         //        updatePedometer()
@@ -408,7 +408,10 @@ class ViewController: UIViewController {
     func updateCirclePercentage() {
         if (currentDistance != nil && currentSteps != nil) {
             let percentage = 0.5 * (currentDistance!/Double(totalDistance!)) + 0.5 * Double(currentSteps!)/Double(totalSteps!)
-            if percentage * 100 < 10 {
+            if percentage * 100 == 0 {
+                circlePercentage.text = "0.0"
+            }
+            else if percentage * 100 < 10 {
                 circlePercentage.text = String(format: "%.1f", percentage * 100)
             } else {
                 circlePercentage.text = String(Int(percentage * 100))
