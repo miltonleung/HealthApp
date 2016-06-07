@@ -405,7 +405,7 @@ class ViewController: UIViewController {
     
     func updateCirclePercentage() {
         if (currentDistance != nil && currentSteps != nil) {
-            let percentage = 0.5 * (currentDistance!/Double(totalDistance!)) + 0.5 * Double(currentSteps!/totalSteps!)
+            let percentage = 0.5 * (currentDistance!/Double(totalDistance!)) + 0.5 * Double(currentSteps!)/Double(totalSteps!)
             if percentage * 100 < 10 {
                 circlePercentage.text = String(format: "%.1f", percentage * 100)
             } else {
