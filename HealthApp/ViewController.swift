@@ -103,7 +103,7 @@ class ViewController: UIViewController {
             } else {
                 circlePercentage.text = String(Int(currentDistance!/Double(totalDistance!) * 100))
             }
-            denominator.text = "of distance travelled"
+            denominator.text = "of distance reached"
             updateDistanceProgressfromStart()
         }
     }
