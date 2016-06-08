@@ -66,6 +66,9 @@ class ViewController: UIViewController {
     var days = [String]()
     var weeklyOrMonthly:Int?
     let data = Data()
+    var collectedPastWeekVal = [Double]()
+    var collectedPastWeekDates = [String]()
+    
     
     // PROGRESS
     @IBOutlet weak var outterCircle: KDCircularProgress!
@@ -153,6 +156,7 @@ class ViewController: UIViewController {
         }
         
         weeklyOrMonthly = 1
+
         
         // PROGRESS
         outterCircle.angle = 0
@@ -479,6 +483,10 @@ class ViewController: UIViewController {
         updateTotalSteps()
         updateTotalDistance()
         
+        weeklyOrMonthly = 1
+        weeklyLabel.selected = true
+        monthlyLabel.selected = false
+        
         barChartView.backgroundColor = UIColor.clearColor()
         if weeklyOrMonthly == 0 {
             
@@ -486,6 +494,7 @@ class ViewController: UIViewController {
         } else {
             readData()
         }
+        
         
     }
     
@@ -533,13 +542,24 @@ class ViewController: UIViewController {
             
             self.data.weeklyDistances = distances
             
+            if self.collectedPastWeekDates.isEmpty {
+                self.collectedPastWeekDates = dates
+                self.collectedPastWeekVal = distances
+            } else {
+                self.collectedPastWeekDates += dates
+                self.collectedPastWeekVal += distances
+            }
+            while self.collectedPastWeekDates.count > 8 {
+                self.collectedPastWeekDates.removeFirst()
+                self.collectedPastWeekVal.removeFirst()
+            }
             self.days = [String]()
             for date in dates {
                 let day = ModelInterface.sharedInstance.getDayNameBy(date)
                 self.days.append(day)
             }
             
-            self.setChart(self.days, values: distances, isWeekly: 1)
+            self.setChart(self.days, values: self.collectedPastWeekVal, isWeekly: 1)
             dispatch_async(dispatch_get_main_queue(), { () -> Void  in
                 self.barChartView.animate(yAxisDuration: 1.0)
                 if !distances.isEmpty {
