@@ -13,6 +13,8 @@ class ShowcaseViewController: UIViewController, UICollectionViewDataSource, UICo
     @IBOutlet weak var showcaseView: UIView!
     @IBOutlet weak var achievementView: UIView!
     
+    var delegate: RefreshDelegate?
+    
     @IBOutlet weak var header: UILabel!
     @IBOutlet weak var message: UILabel!
     @IBOutlet weak var completed: UILabel!
@@ -24,7 +26,10 @@ class ShowcaseViewController: UIViewController, UICollectionViewDataSource, UICo
     }
     let reuseIdentifier = "cell"
     @IBAction func closeButton(sender: AnyObject) {
-        dismissViewControllerAnimated(true, completion: nil)
+        dismissViewControllerAnimated(true) {
+            NSUserDefaults.standardUserDefaults().setBool(false, forKey: "viewedAchievements")
+            self.delegate?.resetMenuImage()
+        }
     }
     override func viewDidLoad() {
         super.viewDidLoad()

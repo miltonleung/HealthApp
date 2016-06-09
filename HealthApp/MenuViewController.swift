@@ -9,7 +9,7 @@
 import UIKit
 
 class MenuViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
-
+    
     let reuseIdentifier = "cell"
     var images = ["Statistics",
                   "Tri",
@@ -21,8 +21,8 @@ class MenuViewController: UIViewController, UICollectionViewDataSource, UICollec
                   "progress",
                   "coming soon",
                   "settings"]
-
     
+
     @IBAction func closeButton(sender: AnyObject) {
         dismissViewControllerAnimated(true, completion: nil)
     }
@@ -52,29 +52,34 @@ class MenuViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
+    
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.images.count
     }
     
-
+    
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
-
+        
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! MenuCollectionViewCell
         
-
+        
         cell.label.text = labels[indexPath.item]
-        cell.menuImage.image = UIImage(named: "\(images[indexPath.item])")
+        if (medalAlert == true && indexPath.item == 1) || (progressAlert == true && indexPath.item == 2) {
+            cell.menuImage.image = UIImage(named: "\(images[indexPath.item])Alert")
+        }
+        else {
+            cell.menuImage.image = UIImage(named: "\(images[indexPath.item])")
+        }
         
         
         return cell
@@ -92,5 +97,5 @@ class MenuViewController: UIViewController, UICollectionViewDataSource, UICollec
         }
         
     }
-
+    
 }

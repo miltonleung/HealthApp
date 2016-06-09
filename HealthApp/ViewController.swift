@@ -17,6 +17,7 @@ protocol MenuSelectDelegate {
 protocol RefreshDelegate {
     func refresh(td: Int, ts: Int)
     func reload()
+    func resetMenuImage()
 }
 class ViewController: UIViewController {
     
@@ -31,6 +32,7 @@ class ViewController: UIViewController {
     @IBAction func menuButton(sender: UIButton) {
         performSegueWithIdentifier("openMenu", sender: nil)
     }
+    @IBOutlet weak var menu: UIButton!
     @IBAction func edgePanGesture(sender: UIScreenEdgePanGestureRecognizer) {
         let translation = sender.translationInView(view)
         
@@ -159,6 +161,16 @@ class ViewController: UIViewController {
         if !firstRun {
             reset()
         }
+        else {
+            let viewedAchievements = NSUserDefaults.standardUserDefaults().boolForKey("viewedAchievements")
+            let viewedProgress = NSUserDefaults.standardUserDefaults().boolForKey("viewedProgress")
+            if viewedAchievements == false || viewedProgress == false {
+                menu.setBackgroundImage(UIImage(named: "MenuAlert"), forState: UIControlState.Normal)
+            } else {
+                menu.setBackgroundImage(UIImage(named: "Menu"), forState: UIControlState.Normal)
+            }
+            weeklyOrMonthly = 1
+        }
         userID = NSUserDefaults.standardUserDefaults().stringForKey("userID")
         if (userID == nil) {
             FIRAuth.auth()?.signInAnonymouslyWithCompletion() { (user,error) in
@@ -170,7 +182,7 @@ class ViewController: UIViewController {
         
         ref = FIRDatabase.database().reference()
         
-        weeklyOrMonthly = 1
+        
 
         
         // PROGRESS
@@ -196,7 +208,7 @@ class ViewController: UIViewController {
         let settings = UIUserNotificationSettings(forTypes: [.Alert, .Badge], categories: nil)
         UIApplication.sharedApplication().registerUserNotificationSettings(settings)
         
-        //        NSNotificationCenter.defaultCenter().addObserver(self, selector: "checkInUnwrap:", name: "checkInStatus", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "checkInUnwrap:", name: "checkInStatus", object: nil)
     }
     
     func reset() {
@@ -225,6 +237,9 @@ class ViewController: UIViewController {
         NSUserDefaults.standardUserDefaults().setBool(false, forKey: "progressReportedToday")
         
         NSUserDefaults.standardUserDefaults().setObject(today, forKey: "checkIn")
+        
+        NSUserDefaults.standardUserDefaults().setBool(true, forKey: "viewedAchievements")
+        NSUserDefaults.standardUserDefaults().setBool(true, forKey: "viewedProgress")
     }
     func checkInUnwrap(notification: NSNotification) {
         let firstLogin = NSUserDefaults.standardUserDefaults().stringForKey("firstLogin")
@@ -233,7 +248,9 @@ class ViewController: UIViewController {
             let daysSince = ModelInterface.sharedInstance.daysDifference(checkIn, endDate: NSDate())
             if daysSince >= 3 || (checkIn == firstLogin && checkedInToday == false) {
                 NSUserDefaults.standardUserDefaults().setBool(true, forKey: "progressReportedToday")
-                
+                NSUserDefaults.standardUserDefaults().setBool(false, forKey: "viewedProgress")
+                menu.setBackgroundImage(UIImage(named: "MenuAlert"), forState: UIControlState.Normal)
+                progressAlert = true
                 if let weeklyDictionary = notification.userInfo as? Dictionary<Int, [Double]> {
                     performProgress(weeklyDictionary)
                 }
@@ -329,6 +346,10 @@ class ViewController: UIViewController {
             statistics.totalDistance = lifetimeTotalDistance
             statistics.totalSteps = lifetimeTotalSteps
         }
+        else if segue.identifier == "medals" {
+            let showcase = segue.destinationViewController as! ShowcaseViewController
+            showcase.delegate = self
+        }
         else if let destinationViewController = segue.destinationViewController as? MenuViewController {
             destinationViewController.transitioningDelegate = self
             destinationViewController.interactor = interactor
@@ -361,6 +382,9 @@ class ViewController: UIViewController {
     //    }
     
     func performLifetimeSegue() {
+        NSUserDefaults.standardUserDefaults().setBool(false, forKey: "viewedAchievements")
+        menu.setBackgroundImage(UIImage(named: "MenuAlert"), forState: UIControlState.Normal)
+        medalAlert = true
         self.performSegueWithIdentifier("lifetimeSegue", sender: nil)
     }
     
@@ -770,5 +794,12 @@ extension ViewController: RefreshDelegate {
     }
     func reload() {
         viewWillAppear(true)
+    }
+    func resetMenuImage() {
+        let viewedAchievements = NSUserDefaults.standardUserDefaults().boolForKey("viewedAchievements")
+        let viewedProgress = NSUserDefaults.standardUserDefaults().boolForKey("viewedProgress")
+        if viewedAchievements == true && viewedProgress == true {
+            menu.setBackgroundImage(UIImage(named: "Menu"), forState: UIControlState.Normal)
+        }
     }
 }

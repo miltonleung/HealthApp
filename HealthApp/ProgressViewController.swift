@@ -25,7 +25,10 @@ class ProgressViewController: UIViewController {
     @IBOutlet weak var dailyTarget: UILabel!
     
     @IBAction func noButton(sender: AnyObject) {
-        dismissViewControllerAnimated(true, completion: nil)
+        dismissViewControllerAnimated(true) {
+            NSUserDefaults.standardUserDefaults().setBool(true, forKey: "viewedProgress")
+            self.delegate?.resetMenuImage()
+        }
     }
     @IBAction func addButton(sender: AnyObject) {
         var td = targetDistance
@@ -43,7 +46,8 @@ class ProgressViewController: UIViewController {
             NSUserDefaults.standardUserDefaults().setInteger(targetDistance - 1, forKey: "targetDistance")
         }
         dismissViewControllerAnimated(true) {
-            
+            NSUserDefaults.standardUserDefaults().setBool(true, forKey: "viewedProgress")
+            self.delegate?.resetMenuImage()
             self.delegate?.refresh(td, ts: ts)
         }
     }

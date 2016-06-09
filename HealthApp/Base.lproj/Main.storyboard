@@ -663,7 +663,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qoM-gF-VlP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="99" y="927"/>
+            <point key="canvasLocation" x="300" y="1005"/>
         </scene>
         <!--Progress View Controller-->
         <scene sceneID="7Ju-q8-bCN">
@@ -844,7 +844,7 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="daily average: 8 km" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="phd-mJ-cnM">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="daily average: 8 km" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="phd-mJ-cnM">
                                 <rect key="frame" x="235" y="360" width="130" height="18"/>
                                 <fontDescription key="fontDescription" name="Muli-Light" family="Muli" pointSize="14"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -1038,6 +1038,7 @@
                         <outlet property="denominator" destination="sES-CY-wg2" id="c8Y-EL-QGd"/>
                         <outlet property="distanceLabel" destination="4Rd-t7-g44" id="TZE-2B-VSI"/>
                         <outlet property="innerCircle" destination="dmo-gk-A42" id="LMm-hg-KUx"/>
+                        <outlet property="menu" destination="P4i-JS-Scc" id="p4K-3r-9Vl"/>
                         <outlet property="monthlyLabel" destination="M1K-ib-J6C" id="YoE-aV-ddo"/>
                         <outlet property="outterCircle" destination="Gia-d6-6Ml" id="dEk-JL-BHT"/>
                         <outlet property="stepsLabel" destination="TFp-UK-1Lw" id="07j-D8-Fxo"/>
