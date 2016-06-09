@@ -289,6 +289,7 @@ class ViewController: UIViewController {
             progress.average = average
             progress.targetDistance = targetDistance
             progress.count = count
+            progress.delegate = self
         }
         else if segue.identifier == "settings" {
             let settings = segue.destinationViewController as! SettingsViewController

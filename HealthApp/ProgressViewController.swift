@@ -17,6 +17,8 @@ class ProgressViewController: UIViewController {
     var targetDistance: Int!
     var count: Int!
     
+    var delegate: RefreshDelegate?
+    
     @IBOutlet weak var add: UIButton!
     @IBOutlet weak var message: UILabel!
     @IBOutlet weak var dailyAverage: UILabel!
@@ -26,16 +28,24 @@ class ProgressViewController: UIViewController {
         dismissViewControllerAnimated(true, completion: nil)
     }
     @IBAction func addButton(sender: AnyObject) {
+        var td = targetDistance
+        let ts = NSUserDefaults.standardUserDefaults().integerForKey("targetSteps")
         if scenario == 0 {
+            td = targetDistance + 2
             NSUserDefaults.standardUserDefaults().setInteger(targetDistance + 2, forKey: "targetDistance")
         } else if scenario == 1 {
+            td = targetDistance + 1
             NSUserDefaults.standardUserDefaults().setInteger(targetDistance + 1, forKey: "targetDistance")
         } else if scenario == 2 {
             
         } else if scenario == 3 {
+            td = targetDistance - 1
             NSUserDefaults.standardUserDefaults().setInteger(targetDistance - 1, forKey: "targetDistance")
         }
-        dismissViewControllerAnimated(true, completion: nil)
+        dismissViewControllerAnimated(true) {
+            
+            self.delegate?.refresh(td, ts: ts)
+        }
     }
 
     override func viewDidLoad() {
