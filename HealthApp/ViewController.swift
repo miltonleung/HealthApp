@@ -1,4 +1,3 @@
-
 //  ViewController.swift
 //  HealthApp
 //
@@ -9,6 +8,8 @@
 import UIKit
 import HealthKit
 import CoreMotion
+import Firebase
+import FirebaseAuth
 
 protocol MenuSelectDelegate {
     func segue(segueIdentifier: String)
@@ -23,6 +24,8 @@ class ViewController: UIViewController {
     //
     var healthManager:HealthManager?
     let pedometer = CMPedometer()
+    
+    var ref = FIRDatabaseReference.init()
     
     let interactor = Interactor()
     @IBAction func menuButton(sender: UIButton) {
@@ -41,6 +44,8 @@ class ViewController: UIViewController {
         }
     }
     
+    //FIREBASE
+    var userID:String?
     
     // GRAPH
     @IBOutlet weak var barChartView: BarChartView!
@@ -154,6 +159,16 @@ class ViewController: UIViewController {
         if !firstRun {
             reset()
         }
+        userID = NSUserDefaults.standardUserDefaults().stringForKey("userID")
+        if (userID == nil) {
+            FIRAuth.auth()?.signInAnonymouslyWithCompletion() { (user,error) in
+                if let user = user {
+                    self.userID = user.uid
+                }
+            }
+        }
+        
+        ref = FIRDatabase.database().reference()
         
         weeklyOrMonthly = 1
 
@@ -246,6 +261,7 @@ class ViewController: UIViewController {
                 sum += d
             }
             average = sum/Double(weeklyDistances.count)
+            callFirebase(average, counter: counter, target: targetDistance)
             
             if counter == 7 {
                 scenario = 0
@@ -262,6 +278,14 @@ class ViewController: UIViewController {
             self.performSegueWithIdentifier("progress", sender: nil)
         }
         
+    }
+    func callFirebase(average: Double, counter: Int, target: Int) {
+        let key = ref.child("progress").childByAutoId().key
+        let progress = ["average": average,
+                        "counter": counter,
+                        "target": target]
+        let updates = ["/users/\(userID)/\(key)/": progress]
+        ref.updateChildValues(updates)
     }
     
     func queueNotification() {

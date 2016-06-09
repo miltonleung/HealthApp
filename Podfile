@@ -5,6 +5,8 @@
 
 target 'SmallSteps' do	
 	pod 'Firebase'
+    pod 'Firebase/Database'
+    pod 'Firebase/Auth'
 end
 
 target 'SmallStepsTests' do
