@@ -27,6 +27,7 @@ class ProgressViewController: UIViewController {
     @IBAction func noButton(sender: AnyObject) {
         dismissViewControllerAnimated(true) {
             NSUserDefaults.standardUserDefaults().setBool(true, forKey: "viewedProgress")
+            progressAlert = false
             self.delegate?.resetMenuImage()
         }
     }
@@ -47,6 +48,7 @@ class ProgressViewController: UIViewController {
         }
         dismissViewControllerAnimated(true) {
             NSUserDefaults.standardUserDefaults().setBool(true, forKey: "viewedProgress")
+            progressAlert = false
             self.delegate?.resetMenuImage()
             self.delegate?.refresh(td, ts: ts)
         }

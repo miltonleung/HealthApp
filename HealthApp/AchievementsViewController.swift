@@ -28,6 +28,7 @@ class AchievementsViewController: UIViewController {
             updateAchievements()
         }
         else {
+            medalAlert = true
             dismissViewControllerAnimated(true, completion: nil)
         }
     }

@@ -161,29 +161,26 @@ class ViewController: UIViewController {
         if !firstRun {
             reset()
         }
-        else {
-            let viewedAchievements = NSUserDefaults.standardUserDefaults().boolForKey("viewedAchievements")
-            let viewedProgress = NSUserDefaults.standardUserDefaults().boolForKey("viewedProgress")
-            if viewedAchievements == false || viewedProgress == false {
-                menu.setBackgroundImage(UIImage(named: "MenuAlert"), forState: UIControlState.Normal)
-            } else {
-                menu.setBackgroundImage(UIImage(named: "Menu"), forState: UIControlState.Normal)
-            }
-            weeklyOrMonthly = 1
-        }
-        userID = NSUserDefaults.standardUserDefaults().stringForKey("userID")
-        if (userID == nil) {
-            FIRAuth.auth()?.signInAnonymouslyWithCompletion() { (user,error) in
-                if let user = user {
-                    self.userID = user.uid
-                }
+        
+        let viewedAchievements = NSUserDefaults.standardUserDefaults().boolForKey("viewedAchievements")
+        let viewedProgress = NSUserDefaults.standardUserDefaults().boolForKey("viewedProgress")
+        progressAlert = !viewedProgress
+        medalAlert = !viewedAchievementsh
+        
+        weeklyOrMonthly = 1
+        
+        
+        FIRAuth.auth()?.signInAnonymouslyWithCompletion() { (user,error) in
+            if let user = user {
+                self.userID = user.uid
             }
         }
+        
         
         ref = FIRDatabase.database().reference()
         
         
-
+        
         
         // PROGRESS
         outterCircle.angle = 0
@@ -200,7 +197,7 @@ class ViewController: UIViewController {
         weeklyLabel.selected = true
         self.dailyAverage.text = "daily average: 0 km"
         
-                NSNotificationCenter.defaultCenter().addObserver(self, selector: "performLifetimeSegue", name: "lifetimeNotification", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "performLifetimeSegue", name: "lifetimeNotification", object: nil)
         //        NSNotificationCenter.defaultCenter().addObserver(self, selector: "unwrapNotification:", name: "dailyNotification", object: nil)
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "viewWillAppear:", name: "enterForeground", object: nil)
@@ -544,6 +541,12 @@ class ViewController: UIViewController {
             readData()
         }
         
+        if medalAlert == true || progressAlert == true {
+            menu.setBackgroundImage(UIImage(named: "MenuAlert"), forState: UIControlState.Normal)
+        } else {
+            menu.setBackgroundImage(UIImage(named: "Menu"), forState: UIControlState.Normal)
+        }
+        
         
     }
     
@@ -798,8 +801,11 @@ extension ViewController: RefreshDelegate {
     func resetMenuImage() {
         let viewedAchievements = NSUserDefaults.standardUserDefaults().boolForKey("viewedAchievements")
         let viewedProgress = NSUserDefaults.standardUserDefaults().boolForKey("viewedProgress")
-        if viewedAchievements == true && viewedProgress == true {
+        if medalAlert == false && progressAlert == false {
             menu.setBackgroundImage(UIImage(named: "Menu"), forState: UIControlState.Normal)
+        }
+        else {
+            menu.setBackgroundImage(UIImage(named: "MenuAlert"), forState: UIControlState.Normal)
         }
     }
 }

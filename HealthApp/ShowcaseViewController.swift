@@ -27,7 +27,8 @@ class ShowcaseViewController: UIViewController, UICollectionViewDataSource, UICo
     let reuseIdentifier = "cell"
     @IBAction func closeButton(sender: AnyObject) {
         dismissViewControllerAnimated(true) {
-            NSUserDefaults.standardUserDefaults().setBool(false, forKey: "viewedAchievements")
+            NSUserDefaults.standardUserDefaults().setBool(true, forKey: "viewedAchievements")
+            medalAlert = false
             self.delegate?.resetMenuImage()
         }
     }
