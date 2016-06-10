@@ -92,6 +92,12 @@ class MenuViewController: UIViewController, UICollectionViewDataSource, UICollec
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         // handle tap events
         print("You selected cell #\(indexPath.item)!")
+        if labels[indexPath.item] == "progress" {
+            progressAlert = false
+        }
+        else if labels[indexPath.item] == "medals" {
+            medalAlert = false
+        }
         if labels[indexPath.item] != "coming soon" {
             menuSelectDelegate?.segue(labels[indexPath.item])
         }
