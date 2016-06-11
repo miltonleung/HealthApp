@@ -844,7 +844,7 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="daily average: 8 km" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="phd-mJ-cnM">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="daily average: 8 km" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="phd-mJ-cnM">
                                 <rect key="frame" x="235" y="360" width="130" height="18"/>
                                 <fontDescription key="fontDescription" name="Muli-Light" family="Muli" pointSize="14"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -940,7 +940,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="0.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EGq-An-fFV">
-                                <rect key="frame" x="282.5" y="99" width="72.5" height="73"/>
+                                <rect key="frame" x="284" y="99" width="72.5" height="73"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-UltraLight" family="Avenir Next" pointSize="53"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -1009,7 +1009,7 @@
                             <constraint firstAttribute="leadingMargin" secondItem="e58-TZ-8yW" secondAttribute="leading" id="RB3-48-t8S"/>
                             <constraint firstItem="dmo-gk-A42" firstAttribute="height" secondItem="Gia-d6-6Ml" secondAttribute="height" multiplier="0.85" id="RBU-6K-FlQ"/>
                             <constraint firstItem="sES-CY-wg2" firstAttribute="top" secondItem="EGq-An-fFV" secondAttribute="bottom" constant="-15" id="SQR-m4-KlF"/>
-                            <constraint firstItem="TDA-bE-6sw" firstAttribute="leading" secondItem="EGq-An-fFV" secondAttribute="trailing" constant="2" id="Tmw-KM-sjO"/>
+                            <constraint firstItem="TDA-bE-6sw" firstAttribute="leading" secondItem="EGq-An-fFV" secondAttribute="trailing" id="Tmw-KM-sjO"/>
                             <constraint firstItem="4Rd-t7-g44" firstAttribute="height" secondItem="TFp-UK-1Lw" secondAttribute="height" id="X27-Ws-GZK"/>
                             <constraint firstItem="sES-CY-wg2" firstAttribute="top" secondItem="TDA-bE-6sw" secondAttribute="bottom" constant="-5.5" id="Y62-Nd-Rxp"/>
                             <constraint firstItem="sES-CY-wg2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ZiJ-3j-Ty2"/>
