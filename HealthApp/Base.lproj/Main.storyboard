@@ -815,7 +815,7 @@
                                 </state>
                                 <state key="selected" backgroundImage="buttonBackground"/>
                                 <state key="highlighted">
-                                    <color key="titleColor" red="0.0" green="1" blue="0.4839373911" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="weekly:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NAr-wq-SsJ"/>

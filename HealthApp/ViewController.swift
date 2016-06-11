@@ -59,23 +59,26 @@ class ViewController: UIViewController {
     @IBAction func monthly(sender: UIButton) {
         weeklyLabel.selected = false
         sender.selected = true
-        days = [String]()
+        //        days = [String]()
         weeklyOrMonthly = 0
-        readMonthlyData()
+        self.setChart(self.collectedPastYearDates, values: self.collectedPastYearVal, isWeekly: 0)
     }
     @IBAction func weekly(sender: UIButton) {
         monthlyLabel.selected = false
         sender.selected = true
-        days = [String]()
+        //        days = [String]()
         weeklyOrMonthly = 1
-        readData()
+        self.setChart(self.collectedPastWeekDates, values: self.collectedPastWeekVal, isWeekly: 1)
+        
+        
     }
     var days = [String]()
     var weeklyOrMonthly:Int?
     let data = Data()
     var collectedPastWeekVal = [Double]()
     var collectedPastWeekDates = [String]()
-    
+    var collectedPastYearVal = [Double]()
+    var collectedPastYearDates = [String]()
     
     // PROGRESS
     @IBOutlet weak var outterCircle: KDCircularProgress!
@@ -165,7 +168,7 @@ class ViewController: UIViewController {
         let viewedAchievements = NSUserDefaults.standardUserDefaults().boolForKey("viewedAchievements")
         let viewedProgress = NSUserDefaults.standardUserDefaults().boolForKey("viewedProgress")
         progressAlert = !viewedProgress
-        medalAlert = !viewedAchievementsh
+        medalAlert = !viewedAchievements
         
         weeklyOrMonthly = 1
         
@@ -179,6 +182,8 @@ class ViewController: UIViewController {
         
         ref = FIRDatabase.database().reference()
         
+        readMonthlyData()
+        readData()
         
         
         
@@ -534,12 +539,10 @@ class ViewController: UIViewController {
         monthlyLabel.selected = false
         
         barChartView.backgroundColor = UIColor.clearColor()
-        if weeklyOrMonthly == 0 {
-            
-            readMonthlyData()
-        } else {
-            readData()
-        }
+        
+        
+        readMonthlyData()
+        readData()
         
         if medalAlert == true || progressAlert == true {
             menu.setBackgroundImage(UIImage(named: "MenuAlert"), forState: UIControlState.Normal)
@@ -564,8 +567,9 @@ class ViewController: UIViewController {
                 let day = ModelInterface.sharedInstance.getMonthNameBy(date)
                 self.days.append(day)
             }
-            
-            self.setChart(self.days, values: distances, isWeekly: 0)
+            self.collectedPastYearVal = distances
+            self.collectedPastYearDates = self.days
+            //            self.setChart(self.days, values: distances, isWeekly: 0)
             
             dispatch_async(dispatch_get_main_queue(), { () -> Void  in
                 self.barChartView.animate(yAxisDuration: 1.0)
@@ -610,7 +614,7 @@ class ViewController: UIViewController {
                 let day = ModelInterface.sharedInstance.getDayNameBy(date)
                 self.days.append(day)
             }
-            
+            self.collectedPastWeekDates = self.days
             self.setChart(self.days, values: self.collectedPastWeekVal, isWeekly: 1)
             dispatch_async(dispatch_get_main_queue(), { () -> Void  in
                 self.barChartView.animate(yAxisDuration: 1.0)
