@@ -182,8 +182,8 @@ class ViewController: UIViewController {
         
         ref = FIRDatabase.database().reference()
         
-        readMonthlyData()
-        readData()
+//        readMonthlyData()
+//        readData()
         
         
         

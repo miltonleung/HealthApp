@@ -102,35 +102,35 @@ class HealthManager {
                 completion(dates, distance, nil)
             }
         }
-        query.statisticsUpdateHandler = { query, resultStatistics, statisticsCollection, error in
-            
-            guard let statsCollection = statisticsCollection else {
-                // Perform proper error handling here
-                fatalError("*** An error occurred while calculating the statistics: \(error?.localizedDescription) ***")
-            }
-            let endDates = NSDate()
-            guard let startDates = NSCalendar.currentCalendar().dateByAddingUnit(.Day, value: -7, toDate: beginningOfDay!, options: []) else {
-                fatalError("*** Unable to calculate the start date ***")
-            }
-            
-            dates = [String]()
-            distance = [Double]()
-            
-            statsCollection.enumerateStatisticsFromDate(startDates, toDate: endDates) {
-                [unowned self] statistics, stop in
-                if let quantity = statistics.sumQuantity()?.doubleValueForUnit(HKUnit.meterUnitWithMetricPrefix(.Kilo)){
-                    
-                    let str = ModelInterface.sharedInstance.convertDate(statistics.startDate)
-                    distance.append(quantity)
-                    dates.append(str)
-                    print("new data available")
-                }
-                
-                if  statisticsCollection != nil {
-                    completion(dates, distance, nil)
-                }
-            }
-        }
+//        query.statisticsUpdateHandler = { query, resultStatistics, statisticsCollection, error in
+//            
+//            guard let statsCollection = statisticsCollection else {
+//                // Perform proper error handling here
+//                fatalError("*** An error occurred while calculating the statistics: \(error?.localizedDescription) ***")
+//            }
+//            let endDates = NSDate()
+//            guard let startDates = NSCalendar.currentCalendar().dateByAddingUnit(.Day, value: -7, toDate: beginningOfDay!, options: []) else {
+//                fatalError("*** Unable to calculate the start date ***")
+//            }
+//            
+//            dates = [String]()
+//            distance = [Double]()
+//            
+//            statsCollection.enumerateStatisticsFromDate(startDates, toDate: endDates) {
+//                [unowned self] statistics, stop in
+//                if let quantity = statistics.sumQuantity()?.doubleValueForUnit(HKUnit.meterUnitWithMetricPrefix(.Kilo)){
+//                    
+//                    let str = ModelInterface.sharedInstance.convertDate(statistics.startDate)
+//                    distance.append(quantity)
+//                    dates.append(str)
+//                    print("new data available")
+//                }
+//                
+//                if  statisticsCollection != nil {
+//                    completion(dates, distance, nil)
+//                }
+//            }
+//        }
         self.healthKitStore.executeQuery(query)
             
         
