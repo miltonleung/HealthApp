@@ -64,9 +64,6 @@ class Data {
         }
     }
     var totalSteps: Int = 0 {
-        willSet {
-            //            currentLifetimeStepsAchievements = [Int]()
-        }
         didSet {
             print("New total steps value set")
             if totalSteps != 0 {
@@ -75,9 +72,6 @@ class Data {
         }
     }
     var totalDistance: Int = 0 {
-        willSet {
-            //            currentLifetimeDistanceAchievements = [Int]()
-        }
         didSet {
             print("New total distance value set")
             if totalDistance != 0 {
@@ -100,7 +94,7 @@ class Data {
         var thousandTargetCounter = NSUserDefaults.standardUserDefaults().integerForKey("thousandTargetCounter")
         var data = NSUserDefaults.standardUserDefaults().objectForKey("doneLifetimeDistanceDates") as! NSData
         var doneDates = NSKeyedUnarchiver.unarchiveObjectWithData(data) as! Dictionary<Int,String>
-        let today = ModelInterface.sharedInstance.convertDate(NSDate())
+        let today = DateHelper.convertDate(NSDate())
         
         if var doneLifetimeDistanceAchievements = NSUserDefaults.standardUserDefaults().arrayForKey("doneLifetimeDistance") as? [Int] {
             
@@ -140,7 +134,7 @@ class Data {
         var millionTargetCounter = NSUserDefaults.standardUserDefaults().integerForKey("millionTargetCounter")
         var data = NSUserDefaults.standardUserDefaults().objectForKey("doneLifetimeStepsDates") as! NSData
         var doneDates = NSKeyedUnarchiver.unarchiveObjectWithData(data) as! Dictionary<Int,String>
-        let today = ModelInterface.sharedInstance.convertDate(NSDate())
+        let today = DateHelper.convertDate(NSDate())
         
         if var doneLifetimeStepsAchievements = NSUserDefaults.standardUserDefaults().arrayForKey("doneLifetimeSteps") as? [Int] {
             

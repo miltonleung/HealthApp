@@ -20,8 +20,6 @@ protocol RefreshDelegate {
 }
 class ViewController: UIViewController {
     
-    //    @IBOutlet weak var banner: UILabel!
-    //
     var healthManager:HealthManager?
     let pedometer = CMPedometer()
     
@@ -55,7 +53,6 @@ class ViewController: UIViewController {
     @IBAction func monthly(sender: UIButton) {
         weeklyLabel.selected = false
         sender.selected = true
-        //        days = [String]()
         weeklyOrMonthly = 0
         if !collectedPastYearVal.isEmpty {
             var average = 0.0
@@ -63,7 +60,7 @@ class ViewController: UIViewController {
                 average += distance
             }
             let startDate = collectedPastYearFirstDate
-            let averageDenom = ModelInterface.sharedInstance.daysDifference(startDate!, endDate: NSDate())
+            let averageDenom = DateHelper.daysDifference(startDate!, endDate: NSDate())
             let avg = average/Double(averageDenom)
             self.dailyAverage.text = "daily average: \(String(format: "%.2f", avg)) km"
         }
@@ -72,7 +69,6 @@ class ViewController: UIViewController {
     @IBAction func weekly(sender: UIButton) {
         monthlyLabel.selected = false
         sender.selected = true
-        //        days = [String]()
         weeklyOrMonthly = 1
         if !collectedPastWeekVal.isEmpty {
             var average = 0.0
@@ -189,11 +185,6 @@ class ViewController: UIViewController {
         
         ref = FIRDatabase.database().reference()
         
-//        readMonthlyData()
-//        readData()
-        
-        
-        
         // PROGRESS
         outterCircle.angle = 0
         innerCircle.angle = 0
@@ -210,7 +201,6 @@ class ViewController: UIViewController {
         self.dailyAverage.text = "daily average: 0 km"
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "performLifetimeSegue", name: "lifetimeNotification", object: nil)
-        //        NSNotificationCenter.defaultCenter().addObserver(self, selector: "unwrapNotification:", name: "dailyNotification", object: nil)
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "viewWillAppear:", name: "enterForeground", object: nil)
         
@@ -234,7 +224,7 @@ class ViewController: UIViewController {
         NSUserDefaults.standardUserDefaults().setInteger(1000000, forKey: "millionTargetCounter")
         NSUserDefaults.standardUserDefaults().setInteger(1000, forKey: "thousandTargetCounter")
         
-        let today = ModelInterface.sharedInstance.convertDate(NSDate())
+        let today = DateHelper.convertDate(NSDate())
         let temp:[Int: String] = [1: today]
         var data = NSKeyedArchiver.archivedDataWithRootObject(temp)
         NSUserDefaults.standardUserDefaults().setObject(today, forKey: "firstDate")
@@ -254,7 +244,7 @@ class ViewController: UIViewController {
         let firstLogin = NSUserDefaults.standardUserDefaults().stringForKey("firstLogin")
         let checkedInToday = NSUserDefaults.standardUserDefaults().boolForKey("progressReportedToday")
         if let checkIn = NSUserDefaults.standardUserDefaults().stringForKey("checkIn") {
-            let daysSince = ModelInterface.sharedInstance.daysDifference(checkIn, endDate: NSDate())
+            let daysSince = DateHelper.daysDifference(checkIn, endDate: NSDate())
             if daysSince >= 3 || (checkIn == firstLogin && checkedInToday == false) {
                 NSUserDefaults.standardUserDefaults().setBool(true, forKey: "progressReportedToday")
                 NSUserDefaults.standardUserDefaults().setBool(false, forKey: "viewedProgress")
@@ -265,7 +255,7 @@ class ViewController: UIViewController {
                 }
                 
                 queueNotification()
-                let today = ModelInterface.sharedInstance.convertDate(NSDate())
+                let today = DateHelper.convertDate(NSDate())
                 NSUserDefaults.standardUserDefaults().setObject(today, forKey: "checkIn")
             }
         }
@@ -326,7 +316,6 @@ class ViewController: UIViewController {
                 notification.alertBody = "Your progress report is ready for review!"
                 notification.alertAction = "view"
                 notification.soundName = UILocalNotificationDefaultSoundName
-                //                notification.userInfo = ["progress": 1]
                 UIApplication.sharedApplication().scheduleLocalNotification(notification)
             }
         }
@@ -383,16 +372,6 @@ class ViewController: UIViewController {
             NSUserDefaults.standardUserDefaults().setBool(true, forKey: "firstRun")
         }
     }
-    //    func unwrapNotification(notification: NSNotification) {
-    //        if let dailyDistanceDictionary = notification.userInfo as? Dictionary<Int, NSNumber> {
-    //            if let dailyDistance = dailyDistanceDictionary[1] {
-    //                updateBanner(dailyDistance)
-    //            }
-    //        }
-    //        else {
-    //            print("error in userinfo type")
-    //        }
-    //    }
     
     func performLifetimeSegue() {
         NSUserDefaults.standardUserDefaults().setBool(false, forKey: "viewedAchievements")
@@ -406,20 +385,6 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    //    func updateBanner(distance: NSNumber) {
-    //        self.banner.text = ModelInterface.sharedInstance.hardestHole(distance.doubleValue/1000)
-    //
-    //
-    //        let a = distance.integerValue/1000
-    //        let achievement = ModelInterface.sharedInstance.reachedAchievement(a)
-    //        let achievementString = achievement.1
-    //        let achievementNumber  = achievement.0
-    //
-    //        if achievementString != "" && distance.doubleValue/1000 - Double(achievementNumber) <= 1.5 {
-    //            self.banner.text = achievementString
-    //        }
-    //    }
-    
     func updatePedometer() {
         
         if (CMPedometer.isStepCountingAvailable() && CMPedometer.isDistanceAvailable()) {
@@ -428,7 +393,7 @@ class ViewController: UIViewController {
                 dispatch_async(dispatch_get_main_queue(), { () -> Void in
                     if error == nil {
                         if let numberOfSteps = data?.numberOfSteps {
-                            let result = ModelInterface.sharedInstance.addThousandSeperator(numberOfSteps.integerValue)
+                            let result = DateHelper.addThousandSeperator(numberOfSteps.integerValue)
                             self.stepsLabel.setTitle("\(result) steps", forState: UIControlState.Normal)
                             self.updateStepsProgress(numberOfSteps.integerValue)
                             self.currentSteps = numberOfSteps.integerValue
@@ -436,7 +401,6 @@ class ViewController: UIViewController {
                             print(data?.numberOfSteps)
                         }
                         if let distance = data?.distance {
-                            //                            self.dataModel.dailyDistance = distance
                             let distanceText = String(format: "%.2f", distance.doubleValue/1000)
                             self.distanceLabel.setTitle("\(distanceText) km", forState: UIControlState.Normal)
                             self.updateDistanceProgress(distance.doubleValue/1000.0)
@@ -450,7 +414,7 @@ class ViewController: UIViewController {
             self.pedometer.startPedometerUpdatesFromDate(beginningOfDay!) { (data : CMPedometerData?, error) -> Void in
                 dispatch_async(dispatch_get_main_queue(), { () -> Void in
                     if let numberOfSteps = data?.numberOfSteps {
-                        let result = ModelInterface.sharedInstance.addThousandSeperator(numberOfSteps.integerValue)
+                        let result = DateHelper.addThousandSeperator(numberOfSteps.integerValue)
                         self.stepsLabel.setTitle("\(result) steps", forState: UIControlState.Normal)
                         self.updateStepsProgress(numberOfSteps.integerValue)
                         self.currentSteps = numberOfSteps.integerValue
@@ -458,7 +422,6 @@ class ViewController: UIViewController {
                         print(data?.numberOfSteps)
                     }
                     if let distance = data?.distance {
-                        //                        self.dataModel.dailyDistance = distance
                         let distanceText = String(format: "%.2f", distance.doubleValue/1000)
                         self.distanceLabel.setTitle("\(distanceText) km", forState: UIControlState.Normal)
                         self.updateDistanceProgress(distance.doubleValue/1000.0)
@@ -575,13 +538,12 @@ class ViewController: UIViewController {
             
             self.days = [String]()
             for date in dates {
-                let day = ModelInterface.sharedInstance.getMonthNameBy(date)
+                let day = DateHelper.getMonthNameBy(date)
                 self.days.append(day)
             }
             self.collectedPastYearFirstDate = dates.first
             self.collectedPastYearVal = distances
             self.collectedPastYearDates = self.days
-            //            self.setChart(self.days, values: distances, isWeekly: 0)
             
             dispatch_async(dispatch_get_main_queue(), { () -> Void  in
                 self.barChartView.animate(yAxisDuration: 1.0)
@@ -613,7 +575,7 @@ class ViewController: UIViewController {
             }
             self.days = [String]()
             for date in dates {
-                let day = ModelInterface.sharedInstance.getDayNameBy(date)
+                let day = DateHelper.getDayNameBy(date)
                 self.days.append(day)
             }
             self.collectedPastWeekDates = self.days
@@ -700,7 +662,6 @@ class ViewController: UIViewController {
         
         barChartView.backgroundColor = UIColor(red: 189/255, green: 195/255, blue: 199/255, alpha: 0)
         barChartView.descriptionText = ""
-        //        barChartView.animate(yAxisDuration: 2.0)
         barChartView.gridBackgroundColor = UIColor(red: 189/255, green: 195/255, blue: 199/255, alpha: 0)
         
         barChartView.drawGridBackgroundEnabled = true
@@ -711,7 +672,7 @@ class ViewController: UIViewController {
     
     func updateFirstDate() {
         if let firstDate = NSUserDefaults.standardUserDefaults().stringForKey("firstDate") {
-            self.lifetimeFirstDate = ModelInterface.sharedInstance.getDayNameByString(firstDate)
+            self.lifetimeFirstDate = DateHelper.getDayNameByString(firstDate)
         }
     }
     

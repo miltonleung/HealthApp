@@ -45,7 +45,6 @@ class MenuViewController: UIViewController, UICollectionViewDataSource, UICollec
             sender.state,
             progress: progress,
             interactor: interactor){
-                // 6
                 self.dismissViewControllerAnimated(true, completion: nil)
         }
     }

@@ -70,7 +70,7 @@ class CumulativeStatsViewController: UIViewController {
     
     func updateTotalSteps() {
         
-        let totalResultwithCommas = ModelInterface.sharedInstance.addThousandSeperator(totalSteps)
+        let totalResultwithCommas = DateHelper.addThousandSeperator(totalSteps)
         self.cumulativeSteps.text = "\(totalResultwithCommas)"
         print(self.cumulativeSteps.text!)
         

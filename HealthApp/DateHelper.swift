@@ -1,41 +1,28 @@
 //
-//  DateModel.swift
-//  HealthApp
+//  DateHelper.swift
+//  SmallSteps
 //
-//  Created by Milton Leung on 2016-04-30.
+//  Created by Milton Leung on 2016-06-10.
 //  Copyright © 2016 Milton Leung. All rights reserved.
 //
 
 import Foundation
 
-protocol ConvertProtocol {
-    func convertDate(date: NSDate) -> String
-    func convertStringtoDate(string: String) -> NSDate
-    func getDayNameBy(stringDate: String) -> String
-    func getMonthNameBy(stringDate: String) -> String
-    func getDayNameByString(stringDate: String) -> String
-    func addThousandSeperator(number: Int) -> String
-    func getDayNumberBy(stringDate: String) -> Int
-    func daysDifference(startString: String, endDate: NSDate) -> Int
-    func daysDifferenceStrings(startString: String, endString: String) -> Int
-}
-
-extension ModelInterface: ConvertProtocol {
-    
-    func convertDate(date: NSDate) -> String {
+class DateHelper {
+    static func convertDate(date: NSDate) -> String {
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
         let str = dateFormatter.stringFromDate(date)
         return str
     }
-    func convertStringtoDate(string: String) -> NSDate {
+    static func convertStringtoDate(string: String) -> NSDate {
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
         let date = dateFormatter.dateFromString(string)
         return date!
         
     }
-    func getDayNameBy(stringDate: String) -> String
+    static func getDayNameBy(stringDate: String) -> String
     {
         let df  = NSDateFormatter()
         df.dateFormat = "YYYY-MM-dd"
@@ -44,7 +31,7 @@ extension ModelInterface: ConvertProtocol {
         return df.stringFromDate(date);
     }
     
-    func getMonthNameBy(stringDate: String) -> String
+    static func getMonthNameBy(stringDate: String) -> String
     {
         let df  = NSDateFormatter()
         df.dateFormat = "YYYY-MM-dd"
@@ -53,7 +40,7 @@ extension ModelInterface: ConvertProtocol {
         return df.stringFromDate(date);
     }
     
-    func getDayNameByString(stringDate: String) -> String
+    static func getDayNameByString(stringDate: String) -> String
     {
         let dateFormatter  = NSDateFormatter()
         dateFormatter.dateFormat = "YYYY-MM-dd"
@@ -65,13 +52,13 @@ extension ModelInterface: ConvertProtocol {
         
         return dateFormatter.stringFromDate(date);
     }
-    func addThousandSeperator(number: Int) -> String
+    static func addThousandSeperator(number: Int) -> String
     {
         var numberFormatter = NSNumberFormatter()
         numberFormatter.numberStyle = NSNumberFormatterStyle.DecimalStyle
         return numberFormatter.stringFromNumber(number)!
     }
-    func getDayNumberBy(stringDate: String) -> Int
+    static func getDayNumberBy(stringDate: String) -> Int
     {
         let df  = NSDateFormatter()
         df.dateFormat = "YYYY-MM-dd"
@@ -80,7 +67,7 @@ extension ModelInterface: ConvertProtocol {
         let retString = df.stringFromDate(date)
         return Int(retString)!
     }
-    func daysDifference(startString: String, endDate: NSDate) -> Int
+    static func daysDifference(startString: String, endDate: NSDate) -> Int
     {
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
@@ -89,7 +76,7 @@ extension ModelInterface: ConvertProtocol {
         let components = calendar.components([.Day], fromDate: startDate!, toDate: endDate, options: [])
         return components.day
     }
-    func daysDifferenceStrings(startString: String, endString: String) -> Int
+    static func daysDifferenceStrings(startString: String, endString: String) -> Int
     {
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"

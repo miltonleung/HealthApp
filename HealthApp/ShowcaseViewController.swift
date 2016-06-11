@@ -110,7 +110,7 @@ class ShowcaseViewController: UIViewController, UICollectionViewDataSource, UICo
                 message.text = "You walked 3000 km!"
                 
                 if let date = doneDistanceDates[3000] {
-                    let days = ModelInterface.sharedInstance.daysDifferenceStrings(firstDate!, endString: date)
+                    let days = DateHelper.daysDifferenceStrings(firstDate!, endString: date)
                     completed.text = "Completed on \(date), took \(days) days"
                 }
             } else {
@@ -118,7 +118,7 @@ class ShowcaseViewController: UIViewController, UICollectionViewDataSource, UICo
                 message.text = "You walked 3000000 steps!"
                 
                 if let date = doneStepsDates[3000000] {
-                    let days = ModelInterface.sharedInstance.daysDifferenceStrings(firstDate!, endString: date)
+                    let days = DateHelper.daysDifferenceStrings(firstDate!, endString: date)
                     completed.text = "Completed on \(date), took \(days) days"
                 }
             }
@@ -133,7 +133,7 @@ class ShowcaseViewController: UIViewController, UICollectionViewDataSource, UICo
                 message.text = "You walked 2000 km!"
                 
                 if let date = doneDistanceDates[2000] {
-                    let days = ModelInterface.sharedInstance.daysDifferenceStrings(firstDate!, endString: date)
+                    let days = DateHelper.daysDifferenceStrings(firstDate!, endString: date)
                     completed.text = "Completed on \(date), took \(days) days"
                 }
             } else {
@@ -141,7 +141,7 @@ class ShowcaseViewController: UIViewController, UICollectionViewDataSource, UICo
                 message.text = "You walked 2000000 steps!"
                 
                 if let date = doneStepsDates[2000000] {
-                    let days = ModelInterface.sharedInstance.daysDifferenceStrings(firstDate!, endString: date)
+                    let days = DateHelper.daysDifferenceStrings(firstDate!, endString: date)
                     completed.text = "Completed on \(date), took \(days) days"
                 }
             }
@@ -156,7 +156,7 @@ class ShowcaseViewController: UIViewController, UICollectionViewDataSource, UICo
                 message.text = "You walked 1000 km!"
                 
                 if let date = doneDistanceDates[1000] {
-                    let days = ModelInterface.sharedInstance.daysDifferenceStrings(firstDate!, endString: date)
+                    let days = DateHelper.daysDifferenceStrings(firstDate!, endString: date)
                     completed.text = "Completed on \(date), took \(days) days"
                 }
             } else {
@@ -164,7 +164,7 @@ class ShowcaseViewController: UIViewController, UICollectionViewDataSource, UICo
                 message.text = "You walked 1000000 steps!"
                 
                 if let date = doneStepsDates[1000000] {
-                    let days = ModelInterface.sharedInstance.daysDifferenceStrings(firstDate!, endString: date)
+                    let days = DateHelper.daysDifferenceStrings(firstDate!, endString: date)
                     completed.text = "Completed on \(date), took \(days) days"
                 }
             }
@@ -182,7 +182,7 @@ class ShowcaseViewController: UIViewController, UICollectionViewDataSource, UICo
                     completed.text = ""
                 }
                 if let date = doneDistanceDates[distanceKey] {
-                    let days = ModelInterface.sharedInstance.daysDifferenceStrings(firstDate!, endString: date)
+                    let days = DateHelper.daysDifferenceStrings(firstDate!, endString: date)
                     completed.text = "Completed on \(date), took \(days) days"
                 }
             }

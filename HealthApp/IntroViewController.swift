@@ -55,7 +55,7 @@ class IntroViewController: UIViewController {
                     self.setFirstDate()
                 }
                 else {
-                    let today = ModelInterface.sharedInstance.convertDate(NSDate())
+                    let today = DateHelper.convertDate(NSDate())
                     NSUserDefaults.standardUserDefaults().setObject(today, forKey: "firstDate")
                     
                 }

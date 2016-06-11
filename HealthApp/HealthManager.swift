@@ -49,7 +49,7 @@ class HealthManager {
                 return
             }
             if let firstDate = results!.first?.startDate {
-                let firstDateasString = ModelInterface.sharedInstance.convertDate(firstDate)
+                let firstDateasString = DateHelper.convertDate(firstDate)
                 completion(firstDateasString, nil)
             }
             
@@ -93,7 +93,7 @@ class HealthManager {
                 [unowned self] statistics, stop in
                 if let quantity = statistics.sumQuantity()?.doubleValueForUnit(HKUnit.meterUnitWithMetricPrefix(.Kilo)){
                     
-                    let str = ModelInterface.sharedInstance.convertDate(statistics.startDate)
+                    let str = DateHelper.convertDate(statistics.startDate)
                     distance.append(quantity)
                     dates.append(str)
                 }
@@ -120,7 +120,7 @@ class HealthManager {
 //                [unowned self] statistics, stop in
 //                if let quantity = statistics.sumQuantity()?.doubleValueForUnit(HKUnit.meterUnitWithMetricPrefix(.Kilo)){
 //                    
-//                    let str = ModelInterface.sharedInstance.convertDate(statistics.startDate)
+//                    let str = DateHelper.convertDate(statistics.startDate)
 //                    distance.append(quantity)
 //                    dates.append(str)
 //                    print("new data available")
@@ -143,7 +143,6 @@ class HealthManager {
         let components = NSCalendar.currentCalendar().components([.Year, .Month], fromDate: NSDate())
         let startOfMonth = NSCalendar.currentCalendar().dateFromComponents(components)!
         
-//        let beginningOfDay = NSCalendar.currentCalendar().dateBySettingHour(0, minute: 0, second: 0, ofDate: NSDate(), options: [])
         let startDate = NSCalendar.currentCalendar().dateByAddingUnit(.Year, value: -1, toDate: startOfMonth, options: [])
         let predicate = HKQuery.predicateForSamplesWithStartDate(startDate, endDate: endDate, options:HKQueryOptions.StrictStartDate)
         
@@ -173,7 +172,7 @@ class HealthManager {
                 [unowned self] statistics, stop in
                 if let quantity = statistics.sumQuantity()?.doubleValueForUnit(HKUnit.meterUnitWithMetricPrefix(.Kilo)){
                     
-                    let str = ModelInterface.sharedInstance.convertDate(statistics.startDate)
+                    let str = DateHelper.convertDate(statistics.startDate)
                     distance.append(quantity)
                     dates.append(str)
                 }
@@ -200,7 +199,7 @@ class HealthManager {
                 [unowned self] statistics, stop in
                 if let quantity = statistics.sumQuantity()?.doubleValueForUnit(HKUnit.meterUnitWithMetricPrefix(.Kilo)){
                     
-                    let str = ModelInterface.sharedInstance.convertDate(statistics.startDate)
+                    let str = DateHelper.convertDate(statistics.startDate)
                     distance.append(quantity)
                     dates.append(str)
                     print("new data available")
@@ -224,7 +223,7 @@ class HealthManager {
         let anchorDate = NSCalendar.currentCalendar().dateFromComponents(intervalComponent)
         
         let firstDate = NSUserDefaults.standardUserDefaults().stringForKey("firstDate")
-        let tempStart = ModelInterface.sharedInstance.convertStringtoDate(firstDate!)
+        let tempStart = DateHelper.convertStringtoDate(firstDate!)
         let startDate = NSCalendar.currentCalendar().startOfDayForDate(tempStart)
 
         let predicate = HKQuery.predicateForSamplesWithStartDate(startDate, endDate: NSDate(), options: HKQueryOptions.StrictStartDate)
@@ -236,7 +235,6 @@ class HealthManager {
                 return
             }
             
-//            let startDate = NSDate.distantPast()
             let endDate = NSDate()
 
             guard let statsCollection = result else {
@@ -248,7 +246,7 @@ class HealthManager {
                 statsCollection.enumerateStatisticsFromDate(startDate, toDate: endDate) {
                     [unowned self] statistics, stop in
                     if let quantity = statistics.sumQuantity() {
-                        let str = ModelInterface.sharedInstance.convertDate(statistics.startDate)
+                        let str = DateHelper.convertDate(statistics.startDate)
                         
                         let dateAndStat:(String, HKQuantity) = (str, quantity)
                         completion(dateAndStat, nil)
@@ -265,7 +263,6 @@ class HealthManager {
                 return
             }
 
-//            let startDate = NSDate.distantPast()
             let endDate = NSDate()
             
             guard let statsCollection = statisticsCollection else {
@@ -277,7 +274,7 @@ class HealthManager {
                 statsCollection.enumerateStatisticsFromDate(startDate, toDate: endDate) {
                     [unowned self] statistics, stop in
                     if let quantity = statistics.sumQuantity() {
-                        let str = ModelInterface.sharedInstance.convertDate(statistics.startDate)
+                        let str = DateHelper.convertDate(statistics.startDate)
                         
                         let dateAndStat:(String, HKQuantity) = (str, quantity)
                         completion(dateAndStat, nil)

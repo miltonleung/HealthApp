@@ -9,14 +9,12 @@
 /* Begin PBXBuildFile section */
 		3F04A6635BEC58B6D440EA55 /* libPods-SmallStepsUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CD1808A242744A4371045EE6 /* libPods-SmallStepsUITests.a */; };
 		5211CDB71CF51F3E002DA19E /* AchievementsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5211CDB61CF51F3E002DA19E /* AchievementsViewController.swift */; };
-		5212CAA71CD5BD5000041771 /* ModelInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5212CAA61CD5BD5000041771 /* ModelInterface.swift */; };
-		5212CAA91CD5BD7300041771 /* DateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5212CAA81CD5BD7300041771 /* DateModel.swift */; };
 		522052111CFD1772007C7787 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 522052101CFD1772007C7787 /* GoogleService-Info.plist */; };
 		52481ADB1D036914007C1526 /* KDCircularProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52481ADA1D036914007C1526 /* KDCircularProgress.swift */; };
-		5253C8B61CD6976B00F2713A /* AchievementModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5253C8B51CD6976B00F2713A /* AchievementModel.swift */; };
 		5253C8BA1CD69FD000F2713A /* TestForAchievements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5253C8B91CD69FD000F2713A /* TestForAchievements.swift */; };
 		5253C8C01CD73A2600F2713A /* CumulativeStatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5253C8BF1CD73A2600F2713A /* CumulativeStatsViewController.swift */; };
 		525AA2E81CF95F3500704498 /* ProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525AA2E71CF95F3500704498 /* ProgressViewController.swift */; };
+		5268CBF81D0BE81600FE2A62 /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5268CBF71D0BE81600FE2A62 /* DateHelper.swift */; };
 		52888D711CD8810600A30E8A /* Muli-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 52888D6D1CD8810600A30E8A /* Muli-Italic.ttf */; };
 		52888D721CD8810600A30E8A /* Muli-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 52888D6E1CD8810600A30E8A /* Muli-Light.ttf */; };
 		52888D731CD8810600A30E8A /* Muli-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 52888D6F1CD8810600A30E8A /* Muli-LightItalic.ttf */; };
@@ -259,14 +257,12 @@
 /* Begin PBXFileReference section */
 		08AA8DBEABF4E18584DCA271 /* Pods-SmallStepsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmallStepsTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SmallStepsTests/Pods-SmallStepsTests.release.xcconfig"; sourceTree = "<group>"; };
 		5211CDB61CF51F3E002DA19E /* AchievementsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AchievementsViewController.swift; sourceTree = "<group>"; };
-		5212CAA61CD5BD5000041771 /* ModelInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelInterface.swift; sourceTree = "<group>"; };
-		5212CAA81CD5BD7300041771 /* DateModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateModel.swift; sourceTree = "<group>"; };
 		522052101CFD1772007C7787 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "HealthApp/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		52481ADA1D036914007C1526 /* KDCircularProgress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KDCircularProgress.swift; sourceTree = "<group>"; };
-		5253C8B51CD6976B00F2713A /* AchievementModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AchievementModel.swift; sourceTree = "<group>"; };
 		5253C8B91CD69FD000F2713A /* TestForAchievements.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TestForAchievements.swift; path = ../HealthApp/TestForAchievements.swift; sourceTree = "<group>"; };
 		5253C8BF1CD73A2600F2713A /* CumulativeStatsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CumulativeStatsViewController.swift; sourceTree = "<group>"; };
 		525AA2E71CF95F3500704498 /* ProgressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressViewController.swift; sourceTree = "<group>"; };
+		5268CBF71D0BE81600FE2A62 /* DateHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
 		52888D6D1CD8810600A30E8A /* Muli-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Muli-Italic.ttf"; sourceTree = "<group>"; };
 		52888D6E1CD8810600A30E8A /* Muli-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Muli-Light.ttf"; sourceTree = "<group>"; };
 		52888D6F1CD8810600A30E8A /* Muli-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Muli-LightItalic.ttf"; sourceTree = "<group>"; };
@@ -456,16 +452,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		5253C8B41CD6975000F2713A /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				5212CAA81CD5BD7300041771 /* DateModel.swift */,
-				5253C8B51CD6976B00F2713A /* AchievementModel.swift */,
-				5212CAA61CD5BD5000041771 /* ModelInterface.swift */,
-			);
-			name = Model;
-			sourceTree = "<group>";
-		};
 		52888D6C1CD880D100A30E8A /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -780,9 +766,9 @@
 			isa = PBXGroup;
 			children = (
 				52888D6C1CD880D100A30E8A /* Fonts */,
-				5253C8B41CD6975000F2713A /* Model */,
 				528B38141CD461B500F8338D /* HealthApp.entitlements */,
 				52EBEFE31CF6C4050028EDAC /* Data.swift */,
+				5268CBF71D0BE81600FE2A62 /* DateHelper.swift */,
 				528B37E21CD4612B00F8338D /* AppDelegate.swift */,
 				528B38101CD4614F00F8338D /* HealthManager.swift */,
 				528B37E41CD4612B00F8338D /* ViewController.swift */,
@@ -961,12 +947,12 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 52888E961CD88CC000A30E8A /* Products */;
-					ProjectRef = 52888E951CD88CC000A30E8A /* Charts.xcodeproj */;
-				},
-				{
 					ProductGroup = 52888E841CD88C1800A30E8A /* Products */;
 					ProjectRef = 52888E831CD88C1800A30E8A /* Charts.xcodeproj */;
+				},
+				{
+					ProductGroup = 52888E961CD88CC000A30E8A /* Products */;
+					ProjectRef = 52888E951CD88CC000A30E8A /* Charts.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -1213,7 +1199,6 @@
 				52888FA61CD88CC000A30E8A /* BarChartRenderer.swift in Sources */,
 				52888FA31CD88CC000A30E8A /* ChartViewPortJob.swift in Sources */,
 				52888FA01CD88CC000A30E8A /* AnimatedMoveViewJob.swift in Sources */,
-				5212CAA91CD5BD7300041771 /* DateModel.swift in Sources */,
 				52EBC39F1D042EBF0052CF86 /* MenuCollectionViewCell.swift in Sources */,
 				52888F591CD88CC000A30E8A /* ChartViewBase.swift in Sources */,
 				5253C8C01CD73A2600F2713A /* CumulativeStatsViewController.swift in Sources */,
@@ -1239,7 +1224,6 @@
 				52888F6D1CD88CC000A30E8A /* BarLineScatterCandleBubbleChartDataSet.swift in Sources */,
 				52888FB21CD88CC000A30E8A /* ChartYAxisRendererHorizontalBarChart.swift in Sources */,
 				528B37E51CD4612B00F8338D /* ViewController.swift in Sources */,
-				5212CAA71CD5BD5000041771 /* ModelInterface.swift in Sources */,
 				52888F7D1CD88CC000A30E8A /* PieChartDataSet.swift in Sources */,
 				52888F6B1CD88CC000A30E8A /* BarChartDataSet.swift in Sources */,
 				52888FB51CD88CC000A30E8A /* HorizontalBarChartRenderer.swift in Sources */,
@@ -1304,12 +1288,12 @@
 				52888F8E1CD88CC000A30E8A /* ChartDataBaseFilter.swift in Sources */,
 				52888F7E1CD88CC000A30E8A /* RadarChartData.swift in Sources */,
 				52888FBB1CD88CC000A30E8A /* ScatterChartRenderer.swift in Sources */,
+				5268CBF81D0BE81600FE2A62 /* DateHelper.swift in Sources */,
 				52888F681CD88CC000A30E8A /* ChartBaseDataSet.swift in Sources */,
 				52888FAF1CD88CC000A30E8A /* ChartXAxisRendererHorizontalBarChart.swift in Sources */,
 				52888F5B1CD88CC000A30E8A /* HorizontalBarChartView.swift in Sources */,
 				52888F561CD88CC000A30E8A /* BarLineChartViewBase.swift in Sources */,
 				52888F701CD88CC000A30E8A /* BubbleChartDataSet.swift in Sources */,
-				5253C8B61CD6976B00F2713A /* AchievementModel.swift in Sources */,
 				52888FAC1CD88CC000A30E8A /* ChartRendererBase.swift in Sources */,
 				52888FB81CD88CC000A30E8A /* LineScatterCandleRadarChartRenderer.swift in Sources */,
 				52888F761CD88CC000A30E8A /* ChartDataSet.swift in Sources */,
