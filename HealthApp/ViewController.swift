@@ -61,6 +61,16 @@ class ViewController: UIViewController {
         sender.selected = true
         //        days = [String]()
         weeklyOrMonthly = 0
+        if !collectedPastYearVal.isEmpty {
+            var average = 0.0
+            for distance in collectedPastYearVal {
+                average += distance
+            }
+            let startDate = collectedPastYearFirstDate
+            let averageDenom = ModelInterface.sharedInstance.daysDifference(startDate!, endDate: NSDate())
+            let avg = average/Double(averageDenom)
+            self.dailyAverage.text = "daily average: \(String(format: "%.2f", avg)) km"
+        }
         self.setChart(self.collectedPastYearDates, values: self.collectedPastYearVal, isWeekly: 0)
     }
     @IBAction func weekly(sender: UIButton) {
@@ -68,6 +78,14 @@ class ViewController: UIViewController {
         sender.selected = true
         //        days = [String]()
         weeklyOrMonthly = 1
+        if !collectedPastWeekVal.isEmpty {
+            var average = 0.0
+            for distance in collectedPastWeekVal {
+                average += distance
+            }
+            let avg = average/Double(collectedPastWeekVal.count)
+            self.dailyAverage.text = "daily average: \(String(format: "%.2f", avg)) km"
+        }
         self.setChart(self.collectedPastWeekDates, values: self.collectedPastWeekVal, isWeekly: 1)
         
         
@@ -79,6 +97,7 @@ class ViewController: UIViewController {
     var collectedPastWeekDates = [String]()
     var collectedPastYearVal = [Double]()
     var collectedPastYearDates = [String]()
+    var collectedPastYearFirstDate:String?
     
     // PROGRESS
     @IBOutlet weak var outterCircle: KDCircularProgress!
@@ -352,6 +371,10 @@ class ViewController: UIViewController {
             let showcase = segue.destinationViewController as! ShowcaseViewController
             showcase.delegate = self
         }
+        else if segue.identifier == "lifetimeSegue" {
+            let achievements = segue.destinationViewController as! AchievementsViewController
+            achievements.delegate = self
+        }
         else if let destinationViewController = segue.destinationViewController as? MenuViewController {
             destinationViewController.transitioningDelegate = self
             destinationViewController.interactor = interactor
@@ -567,22 +590,13 @@ class ViewController: UIViewController {
                 let day = ModelInterface.sharedInstance.getMonthNameBy(date)
                 self.days.append(day)
             }
+            self.collectedPastYearFirstDate = dates.first
             self.collectedPastYearVal = distances
             self.collectedPastYearDates = self.days
             //            self.setChart(self.days, values: distances, isWeekly: 0)
             
             dispatch_async(dispatch_get_main_queue(), { () -> Void  in
                 self.barChartView.animate(yAxisDuration: 1.0)
-                if !distances.isEmpty {
-                    var average = 0.0
-                    for distance in distances {
-                        average += distance
-                    }
-                    let startDate = dates.first
-                    let averageDenom = ModelInterface.sharedInstance.daysDifference(startDate!, endDate: NSDate())
-                    let avg = average/Double(averageDenom)
-                    self.dailyAverage.text = "daily average: \(String(format: "%.2f", avg)) km"
-                }
             });
         });
     }

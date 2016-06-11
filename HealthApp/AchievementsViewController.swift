@@ -20,6 +20,8 @@ class AchievementsViewController: UIViewController {
     @IBOutlet weak var close: UIButton!
     @IBOutlet weak var icon: UIImageView!
     @IBOutlet weak var secondLayer: UIImageView!
+    
+    var delegate: RefreshDelegate?
 
     @IBOutlet weak var thirdLayer: UIImageView!
     @IBAction func closeButton(sender: AnyObject) {
@@ -29,7 +31,9 @@ class AchievementsViewController: UIViewController {
         }
         else {
             medalAlert = true
-            dismissViewControllerAnimated(true, completion: nil)
+            dismissViewControllerAnimated(true) {
+                self.delegate?.resetMenuImage()
+            }
         }
     }
     
