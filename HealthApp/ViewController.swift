@@ -9,7 +9,6 @@ import UIKit
 import HealthKit
 import CoreMotion
 import Firebase
-import FirebaseAuth
 
 protocol MenuSelectDelegate {
     func segue(segueIdentifier: String)
@@ -45,9 +44,6 @@ class ViewController: UIViewController {
                 self.performSegueWithIdentifier("openMenu", sender: nil)
         }
     }
-    
-    //FIREBASE
-    var userID:String?
     
     // GRAPH
     @IBOutlet weak var barChartView: BarChartView!
@@ -191,14 +187,6 @@ class ViewController: UIViewController {
         
         weeklyOrMonthly = 1
         
-        
-        FIRAuth.auth()?.signInAnonymouslyWithCompletion() { (user,error) in
-            if let user = user {
-                self.userID = user.uid
-            }
-        }
-        
-        
         ref = FIRDatabase.database().reference()
         
 //        readMonthlyData()
@@ -322,7 +310,7 @@ class ViewController: UIViewController {
         let progress = ["average": average,
                         "counter": counter,
                         "target": target]
-        let updates = ["/users/\(userID)/\(key)/": progress]
+        let updates = ["/progress/\(key)/": progress]
         ref.updateChildValues(updates)
     }
     

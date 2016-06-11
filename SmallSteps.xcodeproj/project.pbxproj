@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F04A6635BEC58B6D440EA55 /* libPods-SmallStepsUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CD1808A242744A4371045EE6 /* libPods-SmallStepsUITests.a */; };
 		5211CDB71CF51F3E002DA19E /* AchievementsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5211CDB61CF51F3E002DA19E /* AchievementsViewController.swift */; };
 		5212CAA71CD5BD5000041771 /* ModelInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5212CAA61CD5BD5000041771 /* ModelInterface.swift */; };
 		5212CAA91CD5BD7300041771 /* DateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5212CAA81CD5BD7300041771 /* DateModel.swift */; };
@@ -157,7 +158,8 @@
 		52E966501CF16573008D60E6 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E9664F1CF16573008D60E6 /* SettingsViewController.swift */; };
 		52EBC39F1D042EBF0052CF86 /* MenuCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EBC39E1D042EBF0052CF86 /* MenuCollectionViewCell.swift */; };
 		52EBEFE41CF6C4050028EDAC /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EBEFE31CF6C4050028EDAC /* Data.swift */; };
-		878103AC127A4133E68707AF /* libPods-SmallSteps.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 74F932C52271542A9E744EEF /* libPods-SmallSteps.a */; };
+		889EE74E74C97295FCBE0886 /* libPods-SmallSteps.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C328D2293D6424635D346D33 /* libPods-SmallSteps.a */; };
+		9010397E65FE32133835B793 /* libPods-SmallStepsTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A220D65555F0053B44F02567 /* libPods-SmallStepsTests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -255,8 +257,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		2E223A3045C0711520AE7495 /* Pods-SmallSteps.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmallSteps.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SmallSteps/Pods-SmallSteps.debug.xcconfig"; sourceTree = "<group>"; };
-		41F8979501C11A10FB059467 /* Pods-SmallSteps.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmallSteps.release.xcconfig"; path = "Pods/Target Support Files/Pods-SmallSteps/Pods-SmallSteps.release.xcconfig"; sourceTree = "<group>"; };
+		08AA8DBEABF4E18584DCA271 /* Pods-SmallStepsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmallStepsTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SmallStepsTests/Pods-SmallStepsTests.release.xcconfig"; sourceTree = "<group>"; };
 		5211CDB61CF51F3E002DA19E /* AchievementsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AchievementsViewController.swift; sourceTree = "<group>"; };
 		5212CAA61CD5BD5000041771 /* ModelInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelInterface.swift; sourceTree = "<group>"; };
 		5212CAA81CD5BD7300041771 /* DateModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateModel.swift; sourceTree = "<group>"; };
@@ -415,7 +416,14 @@
 		52E9664F1CF16573008D60E6 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		52EBC39E1D042EBF0052CF86 /* MenuCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuCollectionViewCell.swift; sourceTree = "<group>"; };
 		52EBEFE31CF6C4050028EDAC /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
-		74F932C52271542A9E744EEF /* libPods-SmallSteps.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SmallSteps.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8C1CF45ACD1282CB8CAF9A24 /* Pods-SmallSteps.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmallSteps.release.xcconfig"; path = "Pods/Target Support Files/Pods-SmallSteps/Pods-SmallSteps.release.xcconfig"; sourceTree = "<group>"; };
+		A220D65555F0053B44F02567 /* libPods-SmallStepsTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SmallStepsTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A67CA26D8A14B156796B7CF3 /* Pods-SmallStepsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmallStepsUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SmallStepsUITests/Pods-SmallStepsUITests.release.xcconfig"; sourceTree = "<group>"; };
+		C328D2293D6424635D346D33 /* libPods-SmallSteps.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SmallSteps.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD1808A242744A4371045EE6 /* libPods-SmallStepsUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SmallStepsUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE5A88E821B73468869E7737 /* Pods-SmallSteps.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmallSteps.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SmallSteps/Pods-SmallSteps.debug.xcconfig"; sourceTree = "<group>"; };
+		D63AA6E5D6A21196F11ED46B /* Pods-SmallStepsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmallStepsUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SmallStepsUITests/Pods-SmallStepsUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		DC5CA966ADB76939F2F4C63F /* Pods-SmallStepsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmallStepsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SmallStepsTests/Pods-SmallStepsTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -425,7 +433,7 @@
 			files = (
 				528B38131CD461B500F8338D /* HealthKit.framework in Frameworks */,
 				52888FD11CD88CDF00A30E8A /* Charts.framework in Frameworks */,
-				878103AC127A4133E68707AF /* libPods-SmallSteps.a in Frameworks */,
+				889EE74E74C97295FCBE0886 /* libPods-SmallSteps.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -433,6 +441,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9010397E65FE32133835B793 /* libPods-SmallStepsTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -440,21 +449,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F04A6635BEC58B6D440EA55 /* libPods-SmallStepsUITests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2DDB231CB493B7D2E13B07B4 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				2E223A3045C0711520AE7495 /* Pods-SmallSteps.debug.xcconfig */,
-				41F8979501C11A10FB059467 /* Pods-SmallSteps.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		5253C8B41CD6975000F2713A /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -760,8 +761,8 @@
 				528B37F61CD4612B00F8338D /* HealthAppTests */,
 				528B38011CD4612B00F8338D /* HealthAppUITests */,
 				528B37E01CD4612B00F8338D /* Products */,
-				2DDB231CB493B7D2E13B07B4 /* Pods */,
-				E0A558C984064F8162F6A045 /* Frameworks */,
+				66F9736F1C695836D1DC2C14 /* Pods */,
+				F9BAD86E6A5E0F614FDB3FD4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -827,10 +828,25 @@
 			path = HealthAppUITests;
 			sourceTree = "<group>";
 		};
-		E0A558C984064F8162F6A045 /* Frameworks */ = {
+		66F9736F1C695836D1DC2C14 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				74F932C52271542A9E744EEF /* libPods-SmallSteps.a */,
+				CE5A88E821B73468869E7737 /* Pods-SmallSteps.debug.xcconfig */,
+				8C1CF45ACD1282CB8CAF9A24 /* Pods-SmallSteps.release.xcconfig */,
+				DC5CA966ADB76939F2F4C63F /* Pods-SmallStepsTests.debug.xcconfig */,
+				08AA8DBEABF4E18584DCA271 /* Pods-SmallStepsTests.release.xcconfig */,
+				D63AA6E5D6A21196F11ED46B /* Pods-SmallStepsUITests.debug.xcconfig */,
+				A67CA26D8A14B156796B7CF3 /* Pods-SmallStepsUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		F9BAD86E6A5E0F614FDB3FD4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C328D2293D6424635D346D33 /* libPods-SmallSteps.a */,
+				A220D65555F0053B44F02567 /* libPods-SmallStepsTests.a */,
+				CD1808A242744A4371045EE6 /* libPods-SmallStepsUITests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -842,13 +858,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 528B38071CD4612B00F8338D /* Build configuration list for PBXNativeTarget "SmallSteps" */;
 			buildPhases = (
-				CF4F73EF68E18C765094EDD9 /* Check Pods Manifest.lock */,
+				003E356F809D71AFB43EB954 /* [CP] Check Pods Manifest.lock */,
 				528B37DB1CD4612B00F8338D /* Sources */,
 				528B37DC1CD4612B00F8338D /* Frameworks */,
 				528B37DD1CD4612B00F8338D /* Resources */,
 				52888FD51CD88CDF00A30E8A /* Embed Frameworks */,
-				F2D972621067E4D0A1D3696A /* Embed Pods Frameworks */,
-				CC8FAF0523760B7921F9C3AE /* Copy Pods Resources */,
+				90964490E929C13137B506F4 /* [CP] Embed Pods Frameworks */,
+				824938F8A600F931F17FD237 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -864,9 +880,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 528B380A1CD4612B00F8338D /* Build configuration list for PBXNativeTarget "SmallStepsTests" */;
 			buildPhases = (
+				3DB8DB8C6D7D772118F99BAD /* [CP] Check Pods Manifest.lock */,
 				528B37EF1CD4612B00F8338D /* Sources */,
 				528B37F01CD4612B00F8338D /* Frameworks */,
 				528B37F11CD4612B00F8338D /* Resources */,
+				2E405E543EEAB07DB0850848 /* [CP] Embed Pods Frameworks */,
+				60F80CD704CF653A74E6FF1E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -882,9 +901,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 528B380D1CD4612B00F8338D /* Build configuration list for PBXNativeTarget "SmallStepsUITests" */;
 			buildPhases = (
+				15D9039370DB78CFEB1DC4DF /* [CP] Check Pods Manifest.lock */,
 				528B37FA1CD4612B00F8338D /* Sources */,
 				528B37FB1CD4612B00F8338D /* Frameworks */,
 				528B37FC1CD4612B00F8338D /* Resources */,
+				526F70212B3ABA6393888F4A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1051,29 +1072,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		CC8FAF0523760B7921F9C3AE /* Copy Pods Resources */ = {
+		003E356F809D71AFB43EB954 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SmallSteps/Pods-SmallSteps-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		CF4F73EF68E18C765094EDD9 /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1081,14 +1087,104 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		F2D972621067E4D0A1D3696A /* Embed Pods Frameworks */ = {
+		15D9039370DB78CFEB1DC4DF /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		2E405E543EEAB07DB0850848 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SmallStepsTests/Pods-SmallStepsTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3DB8DB8C6D7D772118F99BAD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		526F70212B3ABA6393888F4A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SmallStepsUITests/Pods-SmallStepsUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		60F80CD704CF653A74E6FF1E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SmallStepsTests/Pods-SmallStepsTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		824938F8A600F931F17FD237 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SmallSteps/Pods-SmallSteps-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		90964490E929C13137B506F4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1374,7 +1470,7 @@
 		};
 		528B38081CD4612B00F8338D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2E223A3045C0711520AE7495 /* Pods-SmallSteps.debug.xcconfig */;
+			baseConfigurationReference = CE5A88E821B73468869E7737 /* Pods-SmallSteps.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -1389,7 +1485,7 @@
 		};
 		528B38091CD4612B00F8338D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 41F8979501C11A10FB059467 /* Pods-SmallSteps.release.xcconfig */;
+			baseConfigurationReference = 8C1CF45ACD1282CB8CAF9A24 /* Pods-SmallSteps.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -1404,6 +1500,7 @@
 		};
 		528B380B1CD4612B00F8338D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DC5CA966ADB76939F2F4C63F /* Pods-SmallStepsTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = HealthAppTests/Info.plist;
@@ -1416,6 +1513,7 @@
 		};
 		528B380C1CD4612B00F8338D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 08AA8DBEABF4E18584DCA271 /* Pods-SmallStepsTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = HealthAppTests/Info.plist;
@@ -1428,6 +1526,7 @@
 		};
 		528B380E1CD4612B00F8338D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D63AA6E5D6A21196F11ED46B /* Pods-SmallStepsUITests.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = HealthAppUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -1439,6 +1538,7 @@
 		};
 		528B380F1CD4612B00F8338D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A67CA26D8A14B156796B7CF3 /* Pods-SmallStepsUITests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = HealthAppUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
