@@ -387,51 +387,51 @@ class ViewController: UIViewController {
     
     func updatePedometer() {
         
-        if (CMPedometer.isStepCountingAvailable() && CMPedometer.isDistanceAvailable()) {
-            let beginningOfDay = NSCalendar.currentCalendar().dateBySettingHour(0, minute: 0, second: 0, ofDate: NSDate(), options: [])
-            self.pedometer.queryPedometerDataFromDate(beginningOfDay!, toDate: NSDate()) { (data : CMPedometerData?, error) -> Void in
-                dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                    if error == nil {
-                        if let numberOfSteps = data?.numberOfSteps {
-                            let result = DateHelper.addThousandSeperator(numberOfSteps.integerValue)
+//        if (CMPedometer.isStepCountingAvailable() && CMPedometer.isDistanceAvailable()) {
+//            let beginningOfDay = NSCalendar.currentCalendar().dateBySettingHour(0, minute: 0, second: 0, ofDate: NSDate(), options: [])
+//            self.pedometer.queryPedometerDataFromDate(beginningOfDay!, toDate: NSDate()) { (data : CMPedometerData?, error) -> Void in
+//                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+//                    if error == nil {
+//                        if let numberOfSteps = data?.numberOfSteps {
+                            let result = DateHelper.addThousandSeperator(4549)
                             self.stepsLabel.setTitle("\(result) steps", forState: UIControlState.Normal)
-                            self.updateStepsProgress(numberOfSteps.integerValue)
-                            self.currentSteps = numberOfSteps.integerValue
+                            self.updateStepsProgress(4549)
+                            self.currentSteps = 4549
                             self.updateCirclePercentage()
-                            print(data?.numberOfSteps)
-                        }
-                        if let distance = data?.distance {
-                            let distanceText = String(format: "%.2f", distance.doubleValue/1000)
+                            print(6500)
+//                        }
+//                        if let distance = data?.distance {
+                            let distanceText = String(format: "%.2f", 3.19)
                             self.distanceLabel.setTitle("\(distanceText) km", forState: UIControlState.Normal)
-                            self.updateDistanceProgress(distance.doubleValue/1000.0)
-                            self.currentDistance = distance.doubleValue/1000
+                            self.updateDistanceProgress(3.19)
+                            self.currentDistance = 3.19
                             self.updateCirclePercentage()
-                            print(data?.distance)
-                        }
-                    }
-                });
-            }
-            self.pedometer.startPedometerUpdatesFromDate(beginningOfDay!) { (data : CMPedometerData?, error) -> Void in
-                dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                    if let numberOfSteps = data?.numberOfSteps {
-                        let result = DateHelper.addThousandSeperator(numberOfSteps.integerValue)
-                        self.stepsLabel.setTitle("\(result) steps", forState: UIControlState.Normal)
-                        self.updateStepsProgress(numberOfSteps.integerValue)
-                        self.currentSteps = numberOfSteps.integerValue
-                        self.updateCirclePercentage()
-                        print(data?.numberOfSteps)
-                    }
-                    if let distance = data?.distance {
-                        let distanceText = String(format: "%.2f", distance.doubleValue/1000)
-                        self.distanceLabel.setTitle("\(distanceText) km", forState: UIControlState.Normal)
-                        self.updateDistanceProgress(distance.doubleValue/1000.0)
-                        self.currentDistance = distance.doubleValue/1000
-                        self.updateCirclePercentage()
-                        print(data?.distance)
-                    }
-                });
-            }
-        }
+                            print(2.25)
+//                        }
+//                    }
+//                });
+//            }
+//            self.pedometer.startPedometerUpdatesFromDate(beginningOfDay!) { (data : CMPedometerData?, error) -> Void in
+//                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+//                    if let numberOfSteps = data?.numberOfSteps {
+//                        let result = DateHelper.addThousandSeperator(numberOfSteps.integerValue)
+//                        self.stepsLabel.setTitle("\(result) steps", forState: UIControlState.Normal)
+//                        self.updateStepsProgress(numberOfSteps.integerValue)
+//                        self.currentSteps = numberOfSteps.integerValue
+//                        self.updateCirclePercentage()
+//                        print(data?.numberOfSteps)
+//                    }
+//                    if let distance = data?.distance {
+//                        let distanceText = String(format: "%.2f", distance.doubleValue/1000)
+//                        self.distanceLabel.setTitle("\(distanceText) km", forState: UIControlState.Normal)
+//                        self.updateDistanceProgress(distance.doubleValue/1000.0)
+//                        self.currentDistance = distance.doubleValue/1000
+//                        self.updateCirclePercentage()
+//                        print(data?.distance)
+//                    }
+//                });
+//            }
+//        }
     }
     
     func updateCirclePercentage() {
