@@ -10,7 +10,7 @@ import Foundation
 
 let lifetimeDistanceAchievements = [4: "Just Keep Swimming", 24: "Can You Hear Me?", 27: "27 by 27 by 27", 920: "New York, New York", 3476: "Fly Me to the Moon", 6371: "We Are The World"]
 let lifetimeDistanceAchievementsDescription =
-    [4: "a shark can smell blood from 4km away.",
+    [4: "a shark can smell blood from 4 km away.",
      24: "a dolphin can detect underwater sounds from 24 km!",
      27: "everyone in the world (over 7 billion people) can fit in a 27 km cube!",
      920: "New York has 920 km of shoreline!",
