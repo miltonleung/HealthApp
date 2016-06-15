@@ -371,6 +371,7 @@ class ViewController: UIViewController {
             self.performSegueWithIdentifier("introSegue", sender: nil)
             NSUserDefaults.standardUserDefaults().setBool(true, forKey: "firstRun")
         }
+        self.performSegueWithIdentifier("lifetimeSegue", sender: nil)
     }
     
     func performLifetimeSegue() {

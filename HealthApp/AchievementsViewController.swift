@@ -41,7 +41,7 @@ class AchievementsViewController: UIViewController {
         super.viewDidLoad()
         AchievementsView.layer.cornerRadius = 11
         titleLabel.text = "Lifetime Achievement"
-
+        currentLifetimeDistanceAchievements = [4]
         updateAchievements()
     }
     
