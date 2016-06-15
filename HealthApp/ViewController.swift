@@ -546,7 +546,7 @@ class ViewController: UIViewController {
             self.collectedPastYearDates = self.days
             
             dispatch_async(dispatch_get_main_queue(), { () -> Void  in
-                self.barChartView.animate(yAxisDuration: 1.0)
+//                self.barChartView.animate(yAxisDuration: 1.0)
             });
         });
     }
