@@ -693,17 +693,18 @@ class ViewController: UIViewController {
     func updateTotalDistance() {
         let distanceType = HKQuantityType.quantityTypeForIdentifier(HKQuantityTypeIdentifierDistanceWalkingRunning)
         
-        self.healthManager?.readTotalSample(distanceType!, completion: { (totalDistance, error) -> Void in
-            if (error != nil) {
-                print("Error reading total distance from HealthKit")
-                return
-            }
-            
-            let totalResult = Int(totalDistance.1.doubleValueForUnit(HKUnit.meterUnitWithMetricPrefix(.Kilo)))
-            self.data.totalDistance = totalResult
-            self.lifetimeTotalDistance = totalDistance.1.doubleValueForUnit(HKUnit.meterUnitWithMetricPrefix(.Kilo))
-            
-        });
+//        self.healthManager?.readTotalSample(distanceType!, completion: { (totalDistance, error) -> Void in
+//            if (error != nil) {
+//                print("Error reading total distance from HealthKit")
+//                return
+//            }
+//            
+//            let totalResult = Int(totalDistance.1.doubleValueForUnit(HKUnit.meterUnitWithMetricPrefix(.Kilo)))
+//            self.data.totalDistance = totalResult
+//            self.lifetimeTotalDistance = totalDistance.1.doubleValueForUnit(HKUnit.meterUnitWithMetricPrefix(.Kilo))
+//            
+//        });
+        self.data.totalDistance = 4
     }
     
 }

@@ -7,21 +7,21 @@
 	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
 	<string>ca-app-pub-3940256099942544/4411468910</string>
 	<key>CLIENT_ID</key>
-	<string>428960497655-a83ejn9tt0uo68igrt41n3s7qm5l2939.apps.googleusercontent.com</string>
+	<string>649952882703-nc67fsjng0telu843l1j5vr92vi8a698.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.428960497655-a83ejn9tt0uo68igrt41n3s7qm5l2939</string>
+	<string>com.googleusercontent.apps.649952882703-nc67fsjng0telu843l1j5vr92vi8a698</string>
 	<key>API_KEY</key>
-	<string>AIzaSyCIPb-lKvzYs0V55i_fPGer6nP6nK_47I4</string>
+	<string>AIzaSyCgStzUh8mLVyOfPFFBnMLj5hAoPF83j2s</string>
 	<key>GCM_SENDER_ID</key>
-	<string>428960497655</string>
+	<string>649952882703</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>milton.HealthApp</string>
+	<string>com.milton.SmallSteps</string>
 	<key>PROJECT_ID</key>
-	<string>project-8917071748719327306</string>
+	<string>small-steps-little-victories</string>
 	<key>STORAGE_BUCKET</key>
-	<string>project-8917071748719327306.appspot.com</string>
+	<string>small-steps-little-victories.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<true/>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -33,8 +33,8 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true/>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:428960497655:ios:2013f01656ccdaa4</string>
+	<string>1:649952882703:ios:8b8ee7f4be2448a8</string>
 	<key>DATABASE_URL</key>
-	<string>https://project-8917071748719327306.firebaseio.com</string>
+	<string>https://small-steps-little-victories.firebaseio.com</string>
 </dict>
 </plist>

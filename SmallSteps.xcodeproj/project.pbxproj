@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		12A6EB39AC0C8FDEDAAF1CE3 /* libPods-SmallStepsTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AEC28286C98E798839E491E /* libPods-SmallStepsTests.a */; };
 		5211CDB71CF51F3E002DA19E /* AchievementsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5211CDB61CF51F3E002DA19E /* AchievementsViewController.swift */; };
-		522052111CFD1772007C7787 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 522052101CFD1772007C7787 /* GoogleService-Info.plist */; };
 		52481ADB1D036914007C1526 /* KDCircularProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52481ADA1D036914007C1526 /* KDCircularProgress.swift */; };
+		524C64C01D110CD9002273B2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 524C64BF1D110CD9002273B2 /* GoogleService-Info.plist */; };
 		5253C8BA1CD69FD000F2713A /* TestForAchievements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5253C8B91CD69FD000F2713A /* TestForAchievements.swift */; };
 		5253C8C01CD73A2600F2713A /* CumulativeStatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5253C8BF1CD73A2600F2713A /* CumulativeStatsViewController.swift */; };
 		525AA2E81CF95F3500704498 /* ProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525AA2E71CF95F3500704498 /* ProgressViewController.swift */; };
@@ -261,8 +261,8 @@
 		2AEC28286C98E798839E491E /* libPods-SmallStepsTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SmallStepsTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F8B52F31115F1F952D00DB6 /* Pods-SmallStepsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmallStepsUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SmallStepsUITests/Pods-SmallStepsUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		5211CDB61CF51F3E002DA19E /* AchievementsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AchievementsViewController.swift; sourceTree = "<group>"; };
-		522052101CFD1772007C7787 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "HealthApp/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		52481ADA1D036914007C1526 /* KDCircularProgress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KDCircularProgress.swift; sourceTree = "<group>"; };
+		524C64BF1D110CD9002273B2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5253C8B91CD69FD000F2713A /* TestForAchievements.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TestForAchievements.swift; path = ../HealthApp/TestForAchievements.swift; sourceTree = "<group>"; };
 		5253C8BF1CD73A2600F2713A /* CumulativeStatsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CumulativeStatsViewController.swift; sourceTree = "<group>"; };
 		525AA2E71CF95F3500704498 /* ProgressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressViewController.swift; sourceTree = "<group>"; };
@@ -753,7 +753,7 @@
 			children = (
 				528B38121CD461B500F8338D /* HealthKit.framework */,
 				528B37E11CD4612B00F8338D /* SmallSteps */,
-				522052101CFD1772007C7787 /* GoogleService-Info.plist */,
+				524C64BF1D110CD9002273B2 /* GoogleService-Info.plist */,
 				528B37F61CD4612B00F8338D /* SmallStepsTests */,
 				528B38011CD4612B00F8338D /* SmallStepsUITests */,
 				528B37E01CD4612B00F8338D /* Products */,
@@ -950,12 +950,12 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 52888E841CD88C1800A30E8A /* Products */;
-					ProjectRef = 52888E831CD88C1800A30E8A /* Charts.xcodeproj */;
-				},
-				{
 					ProductGroup = 52888E961CD88CC000A30E8A /* Products */;
 					ProjectRef = 52888E951CD88CC000A30E8A /* Charts.xcodeproj */;
+				},
+				{
+					ProductGroup = 52888E841CD88C1800A30E8A /* Products */;
+					ProjectRef = 52888E831CD88C1800A30E8A /* Charts.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -1038,8 +1038,8 @@
 				52888D711CD8810600A30E8A /* Muli-Italic.ttf in Resources */,
 				52888FC41CD88CC000A30E8A /* Info.plist in Resources */,
 				52888D721CD8810600A30E8A /* Muli-Light.ttf in Resources */,
-				522052111CFD1772007C7787 /* GoogleService-Info.plist in Resources */,
 				52888F381CD88CC000A30E8A /* Cartfile.private in Resources */,
+				524C64C01D110CD9002273B2 /* GoogleService-Info.plist in Resources */,
 				528B37E81CD4612B00F8338D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
