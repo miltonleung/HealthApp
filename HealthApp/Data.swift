@@ -10,7 +10,7 @@ import Foundation
 
 let lifetimeDistanceAchievements = [4: "Just Keep Swimming", 24: "Can You Hear Me?", 27: "27 by 27 by 27", 920: "New York, New York", 3476: "Fly Me to the Moon", 6371: "We Are The World"]
 let lifetimeDistanceAchievementsDescription =
-    [4: "a shark can smell blood from 4km away.",
+    [4: "a shark can smell blood from 4 km away.",
      24: "a dolphin can detect underwater sounds from 24 km!",
      27: "everyone in the world (over 7 billion people) can fit in a 27 km cube!",
      920: "New York has 920 km of shoreline!",
@@ -35,6 +35,8 @@ let achievementsImages =
      "EarthS"]
 var currentLifetimeDistanceAchievements = [Int]()
 
+var lastweekDistance = [Int: [Double]]()
+
 let lifetimeStepsAchievements = []
 var currentLifetimeStepsAchievements = [Int]()
 
@@ -43,8 +45,10 @@ let dailyAchievements = [1: "Baby Steps", 3: "You have reached 3 km!", 5: "You h
 
 let wordsOfEnc = ["Bravo", "Way to Go", "You are a Legend", "You Deserve A Pat On The Back", "Looking Good", "Impressive", "Unbelievable", "Are you kidding me?!?", "Beautiful", "Well Done", "You Take The Biscuit Every Time", "You really outdid yourself", "Outstanding", "Coolio", "DAYUM!!", "You’re making it look easy!"]
 
+var medalAlert:Bool?
+var progressAlert:Bool?
+
 class Data {
-    var viewcontroller = ViewController()
     
     var dailyDistance: NSNumber = 0 {
         didSet {
@@ -55,13 +59,11 @@ class Data {
     var weeklyDistances = [Double]() {
         didSet {
             var weeklyDistancesDictionary = [1: weeklyDistances]
+            lastweekDistance = [1: weeklyDistances]
             NSNotificationCenter.defaultCenter().postNotificationName("checkInStatus", object: nil, userInfo: weeklyDistancesDictionary)
         }
     }
     var totalSteps: Int = 0 {
-        willSet {
-            //            currentLifetimeStepsAchievements = [Int]()
-        }
         didSet {
             print("New total steps value set")
             if totalSteps != 0 {
@@ -70,9 +72,6 @@ class Data {
         }
     }
     var totalDistance: Int = 0 {
-        willSet {
-            //            currentLifetimeDistanceAchievements = [Int]()
-        }
         didSet {
             print("New total distance value set")
             if totalDistance != 0 {
@@ -95,7 +94,7 @@ class Data {
         var thousandTargetCounter = NSUserDefaults.standardUserDefaults().integerForKey("thousandTargetCounter")
         var data = NSUserDefaults.standardUserDefaults().objectForKey("doneLifetimeDistanceDates") as! NSData
         var doneDates = NSKeyedUnarchiver.unarchiveObjectWithData(data) as! Dictionary<Int,String>
-        let today = ModelInterface.sharedInstance.convertDate(NSDate())
+        let today = DateHelper.convertDate(NSDate())
         
         if var doneLifetimeDistanceAchievements = NSUserDefaults.standardUserDefaults().arrayForKey("doneLifetimeDistance") as? [Int] {
             
@@ -135,7 +134,7 @@ class Data {
         var millionTargetCounter = NSUserDefaults.standardUserDefaults().integerForKey("millionTargetCounter")
         var data = NSUserDefaults.standardUserDefaults().objectForKey("doneLifetimeStepsDates") as! NSData
         var doneDates = NSKeyedUnarchiver.unarchiveObjectWithData(data) as! Dictionary<Int,String>
-        let today = ModelInterface.sharedInstance.convertDate(NSDate())
+        let today = DateHelper.convertDate(NSDate())
         
         if var doneLifetimeStepsAchievements = NSUserDefaults.standardUserDefaults().arrayForKey("doneLifetimeSteps") as? [Int] {
             

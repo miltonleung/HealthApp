@@ -20,6 +20,8 @@ class AchievementsViewController: UIViewController {
     @IBOutlet weak var close: UIButton!
     @IBOutlet weak var icon: UIImageView!
     @IBOutlet weak var secondLayer: UIImageView!
+    
+    var delegate: RefreshDelegate?
 
     @IBOutlet weak var thirdLayer: UIImageView!
     @IBAction func closeButton(sender: AnyObject) {
@@ -28,7 +30,10 @@ class AchievementsViewController: UIViewController {
             updateAchievements()
         }
         else {
-            dismissViewControllerAnimated(true, completion: nil)
+            medalAlert = true
+            dismissViewControllerAnimated(true) {
+                self.delegate?.resetMenuImage()
+            }
         }
     }
     
@@ -73,7 +78,7 @@ class AchievementsViewController: UIViewController {
         if let firstDate = NSUserDefaults.standardUserDefaults().stringForKey("firstDate") {
             if !currentLifetimeStepsAchievements.isEmpty {
                 if let text = currentLifetimeStepsAchievements.first {
-                    let newText = ModelInterface.sharedInstance.addThousandSeperator(text)
+                    let newText = DateHelper.addThousandSeperator(text)
                     number.text = "\(newText) steps!"
                     if text <= 1000000 {
                         icon.image = UIImage(named: "Bronze")
@@ -85,16 +90,16 @@ class AchievementsViewController: UIViewController {
                         icon.image = UIImage(named: "Gold")
                     }
                 }
-                let days = ModelInterface.sharedInstance.daysDifference(firstDate, endDate: NSDate())
+                let days = DateHelper.daysDifference(firstDate, endDate: NSDate())
                 message.text = "\(wordsOfEnc[random])! It only took you \(days) days? Keep it up! Here's to the next million!"
                 
                 currentLifetimeStepsAchievements.removeFirst()
             }
             else if !currentLifetimeDistanceAchievements.isEmpty {
                 if let text = currentLifetimeDistanceAchievements.first {
-                    let newText = ModelInterface.sharedInstance.addThousandSeperator(text)
+                    let newText = DateHelper.addThousandSeperator(text)
                     number.text = "\(newText) km!"
-                    let days = ModelInterface.sharedInstance.daysDifference(firstDate, endDate: NSDate())
+                    let days = DateHelper.daysDifference(firstDate, endDate: NSDate())
                     if text % 1000 == 0 {
                         if text <= 1000 {
                             icon.image = UIImage(named: "Bronze")
